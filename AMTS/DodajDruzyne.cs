@@ -12,29 +12,35 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class DodajDruzyne:Form
+    public partial class DodajDruzyne : Form
     {
         MainForm form;
         SqlConnection connection;
         SqlDataAdapter dataAdapter;
         SqlCommandBuilder commandBuilder;
         DataSet dataSet;
-        SqlCommand sqlComm;
         string LoggedIn;
         int numberOfPlayers = 1;
+        string[] emails;
+        string captainName;
+        string captainLastName;
+        int[] imiona = {-1, 62, 23, 27, 31, 35, 39, 43, 47, 51 };
+        int[] nazwiska = {-1, 22, 26, 30, 34, 38, 42, 46, 50, 54 };
 
         public DodajDruzyne(SqlConnection conn, MainForm f1, string LoggedIn)
         {
+            emails = new string[10];
+            emails[0] = LoggedIn;
             this.LoggedIn = LoggedIn;
             form = f1;
             connection = conn;
             InitializeComponent();
 
-            i.Visible = false;
-            imiona.Visible = false;
-
-            imie1.Text = getName(LoggedIn);
-            nazwisko1.Text = getLastName(LoggedIn);
+            registerTeam.Enabled = false;
+            captainName = getName(LoggedIn);
+            captainLastName = getLastName(LoggedIn);
+            imie1.Text = captainName;
+            nazwisko1.Text = captainLastName;
 
             dataAdapter = new SqlDataAdapter("SELECT Nazwisko, Imie FROM UZYTKOWNICY", conn);
             commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -44,112 +50,60 @@ namespace AMTS
 
             foreach (DataRow dataRow in dataSet.Tables["UZYTKOWNICY"].Rows)
             {
-                uzytkownicy.Items.Add(dataRow["Nazwisko"].ToString());
+                uzytkownicy.Items.Add(dataRow["Nazwisko"].ToString() + " " + dataRow["Imie"].ToString());
             }
-
-            foreach (DataRow dataRow in dataSet.Tables["UZYTKOWNICY"].Rows)
-            {
-                imiona.Items.Add(dataRow["Imie"].ToString()); // ?tylko imiona o podanych nazwiskach?
-            }
-
-            // nazwisko1.Text = Form1.LoggedIn.Text; // ?wstawic zalogowanego uzytkownika?
         }
 
         private void teamName_TextChanged(object sender, EventArgs e)
         {
-            if(teamName.Text.Equals(""))
+            if (teamName.Text.Equals(""))
             {
                 registerTeam.Enabled = false;
+            }
+            else
+            {
+                registerTeam.Enabled = true;
             }
         }
 
         private void addPerson_Click(object sender, EventArgs e)
         {
-            if(uzytkownicy.SelectedItem != null)
+            if (numberOfPlayers == 10)
             {
-                imiona.Visible = true; // ?tylko jesli powtarza sie nazwisko?
-                i.Visible = true;
-                if(nazwisko2.Text == "")
+                warningUpLabel.Visible = true;
+            }
+            else
+            if (uzytkownicy.SelectedItem != null)
+            {
+                string player;
+                string playerName;
+                string playerLastName;
+                TextBox nazwisko = null;
+                TextBox imie = null;
+                foreach (Control c in Controls)
                 {
-                    nazwisko2.Text = uzytkownicy.SelectedItem.ToString();
-                    sqlComm = new SqlCommand("SELECT Imie AS Imie FROM UZYTKOWNICY WHERE Nazwisko = " + "'" + uzytkownicy.SelectedItem.ToString() + "'", connection);
-                    imie2.Text = sqlComm.ToString();
-                    nazwisko2.Visible = true;
-                    imie2.Visible = true;
+                    if (c.TabIndex == imiona[numberOfPlayers])
+                        imie = (TextBox)c;
+                    if (c.TabIndex == nazwiska[numberOfPlayers])
+                        nazwisko = (TextBox)c;
                 }
-                else if(nazwisko3.Text == "")
-                {
-                    nazwisko3.Text = uzytkownicy.SelectedItem.ToString();
-                    sqlComm = new SqlCommand("SELECT Imie AS Imie FROM UZYTKOWNICY WHERE Nazwisko = " + "'" + uzytkownicy.SelectedItem.ToString() + "'", connection);
-                    imie3.Text = sqlComm.ToString();
-                    nazwisko3.Visible = true;
-                    imie3.Visible = true;
-                }
-                else if(nazwisko4.Text == "")
-                {
-                    nazwisko4.Text = uzytkownicy.SelectedItem.ToString();
-                    sqlComm = new SqlCommand("SELECT Imie AS Imie FROM UZYTKOWNICY WHERE Nazwisko = " + "'" + uzytkownicy.SelectedItem.ToString() + "'", connection);
-                    imie4.Text = sqlComm.ToString();
-                    nazwisko4.Visible = true;
-                    imie4.Visible = true;
-                }
-                else if(nazwisko5.Text == "")
-                {
-                    nazwisko5.Text = uzytkownicy.SelectedItem.ToString();
-                    sqlComm = new SqlCommand("SELECT Imie AS Imie FROM UZYTKOWNICY WHERE Nazwisko = " + "'" + uzytkownicy.SelectedItem.ToString() + "'", connection);
-                    imie5.Text = sqlComm.ToString();
-                    imie5.Text = dataAdapter.ToString();
-                    nazwisko5.Visible = true;
-                    imie5.Visible = true;
-                }
-                else if(nazwisko6.Text == "")
-                {
-                    nazwisko6.Text = uzytkownicy.SelectedItem.ToString();
-                    sqlComm = new SqlCommand("SELECT Imie AS Imie FROM UZYTKOWNICY WHERE Nazwisko = " + "'" + uzytkownicy.SelectedItem.ToString() + "'", connection);
-                    imie6.Text = sqlComm.ToString();
-                    imie6.Text = dataAdapter.ToString();
-                    nazwisko6.Visible = true;
-                    imie6.Visible = true;
-                }
-                else if(nazwisko7.Text == "")
-                {
-                    nazwisko7.Text = uzytkownicy.SelectedItem.ToString();
-                    sqlComm = new SqlCommand("SELECT Imie AS Imie FROM UZYTKOWNICY WHERE Nazwisko = " + "'" + uzytkownicy.SelectedItem.ToString() + "'", connection);
-                    imie7.Text = sqlComm.ToString();
-                    imie7.Text = dataAdapter.ToString();
-                    nazwisko7.Visible = true;
-                    imie7.Visible = true;
-                }
-                else if(nazwisko8.Text == "")
-                {
-                    nazwisko8.Text = uzytkownicy.SelectedItem.ToString();
-                    sqlComm = new SqlCommand("SELECT Imie AS Imie FROM UZYTKOWNICY WHERE Nazwisko = " + "'" + uzytkownicy.SelectedItem.ToString() + "'", connection);
-                    imie8.Text = sqlComm.ToString();
-                    imie8.Text = dataAdapter.ToString();
-                    nazwisko8.Visible = true;
-                    imie8.Visible = true;
-                }
-                else if(nazwisko9.Text == "")
-                {
-                    nazwisko9.Text = uzytkownicy.SelectedItem.ToString();
-                    sqlComm = new SqlCommand("SELECT Imie AS Imie FROM UZYTKOWNICY WHERE Nazwisko = " + "'" + uzytkownicy.SelectedItem.ToString() + "'", connection);
-                    imie9.Text = sqlComm.ToString();
-                    imie9.Text = dataAdapter.ToString();
-                    nazwisko9.Visible = true;
-                    imie9.Visible = true;
-                }
-                else if(nazwisko10.Text == "")
-                {
-                    nazwisko10.Text = uzytkownicy.SelectedItem.ToString();
-                    sqlComm = new SqlCommand("SELECT Imie AS Imie FROM UZYTKOWNICY WHERE Nazwisko = " + "'" + uzytkownicy.SelectedItem.ToString() + "'", connection);
-                    imie10.Text = sqlComm.ToString();
-                    imie10.Text = dataAdapter.ToString();
-                    nazwisko10.Visible = true;
-                    imie10.Visible = true;
-                }
+                player = uzytkownicy.Text.ToString();
+                playerName = player.Split(' ')[1];
+                playerLastName = player.Split(' ')[0];
+                nazwisko.Text = playerLastName;
+                imie.Text = playerName;
+                nazwisko.Visible = true;
+                imie.Visible = true;
+                SqlCommand sqlcomm = new SqlCommand("SELECT Mail AS EMAIL FROM UZYTKOWNICY WHERE Imie=" + "'" + playerName + "' AND Nazwisko='" + playerLastName + "'", connection);
+                SqlDataReader r = sqlcomm.ExecuteReader();
+                r.Read();
+                Object mail = r["EMAIL"];
+                r.Close();
+                emails[numberOfPlayers] = mail.ToString();
+                numberOfPlayers++;
             }
         }
-        
+
         private void cancelTeam_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -159,11 +113,11 @@ namespace AMTS
         {
             if (numberOfPlayers < 3)
             {
-                warningLabel.Visible = true;
+                warningDownLabel.Visible = true;
             }
             else
             {
-                string comm = "exec dbo.dodajDruzyne '" + teamName + "', '" + imie1 + "', '" + nazwisko1; // problem z nazwisko1 i wszystkimi imionami
+                string comm = "exec dbo.dodajDruzyne '" + teamName.Text + "', '" + captainName + "', '" + captainLastName + "'";
                 SqlCommand sqlcomm = new SqlCommand(comm, connection);
                 sqlcomm.ExecuteNonQuery();
                 this.Close();

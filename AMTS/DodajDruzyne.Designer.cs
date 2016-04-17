@@ -34,7 +34,6 @@
             this.i1 = new System.Windows.Forms.Label();
             this.imie1 = new System.Windows.Forms.TextBox();
             this.addPerson = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.cancelTeam = new System.Windows.Forms.Button();
             this.registerTeam = new System.Windows.Forms.Button();
             this.nazwisko2 = new System.Windows.Forms.TextBox();
@@ -75,20 +74,19 @@
             this.label18 = new System.Windows.Forms.Label();
             this.teamName = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.i = new System.Windows.Forms.Label();
-            this.imiona = new System.Windows.Forms.ComboBox();
             this.imie2 = new System.Windows.Forms.TextBox();
-            this.warningLabel = new System.Windows.Forms.Label();
+            this.warningDownLabel = new System.Windows.Forms.Label();
+            this.warningUpLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uzytkownicy
             // 
             this.uzytkownicy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uzytkownicy.FormattingEnabled = true;
-            this.uzytkownicy.Location = new System.Drawing.Point(208, 44);
+            this.uzytkownicy.Location = new System.Drawing.Point(117, 44);
             this.uzytkownicy.Margin = new System.Windows.Forms.Padding(4);
             this.uzytkownicy.Name = "uzytkownicy";
-            this.uzytkownicy.Size = new System.Drawing.Size(128, 24);
+            this.uzytkownicy.Size = new System.Drawing.Size(278, 24);
             this.uzytkownicy.TabIndex = 1;
             // 
             // nazwisko1
@@ -103,7 +101,7 @@
             // n1
             // 
             this.n1.AutoSize = true;
-            this.n1.Location = new System.Drawing.Point(5, 126);
+            this.n1.Location = new System.Drawing.Point(80, 89);
             this.n1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.n1.Name = "n1";
             this.n1.Size = new System.Drawing.Size(67, 17);
@@ -113,7 +111,7 @@
             // i1
             // 
             this.i1.AutoSize = true;
-            this.i1.Location = new System.Drawing.Point(277, 126);
+            this.i1.Location = new System.Drawing.Point(314, 89);
             this.i1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.i1.Name = "i1";
             this.i1.Size = new System.Drawing.Size(33, 17);
@@ -131,24 +129,14 @@
             // 
             // addPerson
             // 
-            this.addPerson.Location = new System.Drawing.Point(357, 48);
+            this.addPerson.Location = new System.Drawing.Point(402, 42);
             this.addPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addPerson.Name = "addPerson";
-            this.addPerson.Size = new System.Drawing.Size(71, 38);
+            this.addPerson.Size = new System.Drawing.Size(71, 27);
             this.addPerson.TabIndex = 10;
             this.addPerson.Text = "Dodaj";
             this.addPerson.UseVisualStyleBackColor = true;
             this.addPerson.Click += new System.EventHandler(this.addPerson_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(113, 48);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "<Nazwisko>";
             // 
             // cancelTeam
             // 
@@ -562,32 +550,12 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(5, 48);
+            this.label19.Location = new System.Drawing.Point(5, 72);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(82, 17);
             this.label19.TabIndex = 59;
             this.label19.Text = "Członkowie:";
-            // 
-            // i
-            // 
-            this.i.AutoSize = true;
-            this.i.Location = new System.Drawing.Point(149, 82);
-            this.i.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i.Name = "i";
-            this.i.Size = new System.Drawing.Size(49, 17);
-            this.i.TabIndex = 60;
-            this.i.Text = "<Imie>";
-            // 
-            // imiona
-            // 
-            this.imiona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.imiona.FormattingEnabled = true;
-            this.imiona.Location = new System.Drawing.Point(208, 79);
-            this.imiona.Margin = new System.Windows.Forms.Padding(4);
-            this.imiona.Name = "imiona";
-            this.imiona.Size = new System.Drawing.Size(128, 24);
-            this.imiona.TabIndex = 61;
             // 
             // imie2
             // 
@@ -599,26 +567,36 @@
             this.imie2.TabIndex = 62;
             this.imie2.Visible = false;
             // 
-            // warningLabel
+            // warningDownLabel
             // 
-            this.warningLabel.AutoSize = true;
-            this.warningLabel.ForeColor = System.Drawing.Color.Red;
-            this.warningLabel.Location = new System.Drawing.Point(12, 538);
-            this.warningLabel.Name = "warningLabel";
-            this.warningLabel.Size = new System.Drawing.Size(226, 17);
-            this.warningLabel.TabIndex = 63;
-            this.warningLabel.Text = "Masz mniej niż trzech zawodników.";
-            this.warningLabel.Visible = false;
+            this.warningDownLabel.AutoSize = true;
+            this.warningDownLabel.ForeColor = System.Drawing.Color.Red;
+            this.warningDownLabel.Location = new System.Drawing.Point(12, 538);
+            this.warningDownLabel.Name = "warningDownLabel";
+            this.warningDownLabel.Size = new System.Drawing.Size(226, 17);
+            this.warningDownLabel.TabIndex = 63;
+            this.warningDownLabel.Text = "Masz mniej niż trzech zawodników.";
+            this.warningDownLabel.Visible = false;
+            // 
+            // warningUpLabeb
+            // 
+            this.warningUpLabel.AutoSize = true;
+            this.warningUpLabel.ForeColor = System.Drawing.Color.Red;
+            this.warningUpLabel.Location = new System.Drawing.Point(12, 555);
+            this.warningUpLabel.Name = "warningUpLabeb";
+            this.warningUpLabel.Size = new System.Drawing.Size(249, 17);
+            this.warningUpLabel.TabIndex = 64;
+            this.warningUpLabel.Text = "Nie możesz dodać więcej zawodników.";
+            this.warningUpLabel.Visible = false;
             // 
             // DodajDruzyne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 629);
-            this.Controls.Add(this.warningLabel);
+            this.Controls.Add(this.warningUpLabel);
+            this.Controls.Add(this.warningDownLabel);
             this.Controls.Add(this.imie2);
-            this.Controls.Add(this.imiona);
-            this.Controls.Add(this.i);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.teamName);
@@ -659,7 +637,6 @@
             this.Controls.Add(this.i2);
             this.Controls.Add(this.registerTeam);
             this.Controls.Add(this.cancelTeam);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.nazwisko1);
             this.Controls.Add(this.n1);
             this.Controls.Add(this.i1);
@@ -682,7 +659,6 @@
         private System.Windows.Forms.Label n1;
         private System.Windows.Forms.TextBox imie1;
         private System.Windows.Forms.Button addPerson;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button cancelTeam;
         private System.Windows.Forms.Button registerTeam;
         private System.Windows.Forms.TextBox nazwisko2;
@@ -724,9 +700,8 @@
         private System.Windows.Forms.TextBox teamName;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label i1;
-        private System.Windows.Forms.Label i;
-        private System.Windows.Forms.ComboBox imiona;
         private System.Windows.Forms.TextBox imie2;
-        private System.Windows.Forms.Label warningLabel;
+        private System.Windows.Forms.Label warningDownLabel;
+        private System.Windows.Forms.Label warningUpLabel;
     }
 }
