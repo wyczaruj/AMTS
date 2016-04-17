@@ -30,7 +30,7 @@ namespace AMTS
                     server = "Server=PATRYK\\SQLEXPRESSAWPAT;Database=AMTS;Trusted_Connection=true";
                     break;
                 case "PATRYKS":
-                    server = "Server=DESKTOP-I5KKVD2\SQLEXPRESSPAT;Database=AMTS;Trusted_Connection=true";
+                    server = "Server=DESKTOP-I5KKVD2\\SQLEXPRESSPAT;Database=AMTS;Trusted_Connection=true";
                     break;
             }
         }

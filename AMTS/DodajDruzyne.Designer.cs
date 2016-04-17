@@ -78,6 +78,7 @@
             this.i = new System.Windows.Forms.Label();
             this.imiona = new System.Windows.Forms.ComboBox();
             this.imie2 = new System.Windows.Forms.TextBox();
+            this.warningLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uzytkownicy
@@ -85,7 +86,7 @@
             this.uzytkownicy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uzytkownicy.FormattingEnabled = true;
             this.uzytkownicy.Location = new System.Drawing.Point(208, 44);
-            this.uzytkownicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uzytkownicy.Margin = new System.Windows.Forms.Padding(4);
             this.uzytkownicy.Name = "uzytkownicy";
             this.uzytkownicy.Size = new System.Drawing.Size(128, 24);
             this.uzytkownicy.TabIndex = 1;
@@ -564,9 +565,9 @@
             this.label19.Location = new System.Drawing.Point(5, 48);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(89, 17);
+            this.label19.Size = new System.Drawing.Size(82, 17);
             this.label19.TabIndex = 59;
-            this.label19.Text = "Uzytkownicy:";
+            this.label19.Text = "Członkowie:";
             // 
             // i
             // 
@@ -583,7 +584,7 @@
             this.imiona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.imiona.FormattingEnabled = true;
             this.imiona.Location = new System.Drawing.Point(208, 79);
-            this.imiona.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imiona.Margin = new System.Windows.Forms.Padding(4);
             this.imiona.Name = "imiona";
             this.imiona.Size = new System.Drawing.Size(128, 24);
             this.imiona.TabIndex = 61;
@@ -591,18 +592,30 @@
             // imie2
             // 
             this.imie2.Location = new System.Drawing.Point(317, 164);
-            this.imie2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imie2.Margin = new System.Windows.Forms.Padding(4);
             this.imie2.Name = "imie2";
             this.imie2.ReadOnly = true;
             this.imie2.Size = new System.Drawing.Size(159, 22);
             this.imie2.TabIndex = 62;
             this.imie2.Visible = false;
             // 
+            // warningLabel
+            // 
+            this.warningLabel.AutoSize = true;
+            this.warningLabel.ForeColor = System.Drawing.Color.Red;
+            this.warningLabel.Location = new System.Drawing.Point(12, 538);
+            this.warningLabel.Name = "warningLabel";
+            this.warningLabel.Size = new System.Drawing.Size(226, 17);
+            this.warningLabel.TabIndex = 63;
+            this.warningLabel.Text = "Masz mniej niż trzech zawodników.";
+            this.warningLabel.Visible = false;
+            // 
             // DodajDruzyne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 629);
+            this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.imie2);
             this.Controls.Add(this.imiona);
             this.Controls.Add(this.i);
@@ -653,7 +666,7 @@
             this.Controls.Add(this.imie1);
             this.Controls.Add(this.addPerson);
             this.Controls.Add(this.uzytkownicy);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DodajDruzyne";
             this.Text = "Zgłoś drużynę";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DodajDruzyne_FormClosed);
@@ -714,5 +727,6 @@
         private System.Windows.Forms.Label i;
         private System.Windows.Forms.ComboBox imiona;
         private System.Windows.Forms.TextBox imie2;
+        private System.Windows.Forms.Label warningLabel;
     }
 }

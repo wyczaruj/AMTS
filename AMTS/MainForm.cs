@@ -74,6 +74,7 @@ namespace AMTS
             logInButton.Visible = false;
             logOutButton.Visible = true;
             registerButton.Visible = false;
+            niezalogowany.Visible = false;
 
             SqlCommand sqlcomm = new SqlCommand("SELECT Druzyna AS TEAM FROM UZYTKOWNICY WHERE Mail=" + "'" + LoggedIn + "'", connection);
             string DBteam = "BRAK";
@@ -98,10 +99,8 @@ namespace AMTS
                     niezalogowany.Visible = true;
                 else
                 {
-                    niezalogowany.Visible = false;
-                    LogInForm logIn = new LogInForm(connection, this);
                     changeOpenedWindow();
-                    DodajDruzyne dodaj = new DodajDruzyne(connection, this);
+                    DodajDruzyne dodaj = new DodajDruzyne(connection, this, LoggedIn);
                     dodaj.Visible = true;
                 }
             }

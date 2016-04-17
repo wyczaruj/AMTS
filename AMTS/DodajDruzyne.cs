@@ -20,27 +20,34 @@ namespace AMTS
         SqlCommandBuilder commandBuilder;
         DataSet dataSet;
         SqlCommand sqlComm;
+        string LoggedIn;
+        int numberOfPlayers = 1;
 
-        public DodajDruzyne(SqlConnection conn, MainForm f1)
+        public DodajDruzyne(SqlConnection conn, MainForm f1, string LoggedIn)
         {
+            this.LoggedIn = LoggedIn;
             form = f1;
             connection = conn;
             InitializeComponent();
 
             i.Visible = false;
             imiona.Visible = false;
+
+            imie1.Text = getName(LoggedIn);
+            nazwisko1.Text = getLastName(LoggedIn);
+
             dataAdapter = new SqlDataAdapter("SELECT Nazwisko, Imie FROM UZYTKOWNICY", conn);
             commandBuilder = new SqlCommandBuilder(dataAdapter);
 
             dataSet = new DataSet();
             dataAdapter.Fill(dataSet, "UZYTKOWNICY");
 
-            foreach(DataRow dataRow in dataSet.Tables["UZYTKOWNICY"].Rows)
+            foreach (DataRow dataRow in dataSet.Tables["UZYTKOWNICY"].Rows)
             {
                 uzytkownicy.Items.Add(dataRow["Nazwisko"].ToString());
             }
 
-            foreach(DataRow dataRow in dataSet.Tables["UZYTKOWNICY"].Rows)
+            foreach (DataRow dataRow in dataSet.Tables["UZYTKOWNICY"].Rows)
             {
                 imiona.Items.Add(dataRow["Imie"].ToString()); // ?tylko imiona o podanych nazwiskach?
             }
@@ -150,15 +157,43 @@ namespace AMTS
 
         private void registerTeam_Click(object sender, EventArgs e)
         {
-            string comm = "exec dbo.dodajDruzyne '" + teamName + "', '" + imie1 + "', '" + nazwisko1; // problem z nazwisko1 i wszystkimi imionami
-            SqlCommand sqlcomm = new SqlCommand(comm, connection);
-            sqlcomm.ExecuteNonQuery();
-            this.Close();
+            if (numberOfPlayers < 3)
+            {
+                warningLabel.Visible = true;
+            }
+            else
+            {
+                string comm = "exec dbo.dodajDruzyne '" + teamName + "', '" + imie1 + "', '" + nazwisko1; // problem z nazwisko1 i wszystkimi imionami
+                SqlCommand sqlcomm = new SqlCommand(comm, connection);
+                sqlcomm.ExecuteNonQuery();
+                this.Close();
+            }
         }
 
         private void DodajDruzyne_FormClosed(object sender, FormClosedEventArgs e)
         {
             form.changeOpenedWindow();
+        }
+
+        private string getName(string login)
+        {
+            SqlCommand sqlcomm = new SqlCommand("SELECT Imie AS NAME FROM UZYTKOWNICY WHERE Mail=" + "'" + login + "'", connection);
+            SqlDataReader r = sqlcomm.ExecuteReader();
+            r.Read();
+            Object name = r["NAME"];
+            r.Close();
+            return name.ToString();
+        }
+
+        private string getLastName(string login)
+        {
+            SqlCommand sqlcomm = new SqlCommand("SELECT Nazwisko AS LASTNAME FROM UZYTKOWNICY WHERE Mail=" + "'" + login + "'", connection);
+            SqlDataReader r = sqlcomm.ExecuteReader();
+            r.Read();
+            Object lastName = r["LASTNAME"];
+
+            r.Close();
+            return lastName.ToString();
         }
     }
 }
