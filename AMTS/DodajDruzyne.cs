@@ -145,7 +145,6 @@ namespace AMTS
         
         private void cancelTeam_Click(object sender, EventArgs e)
         {
-            form.changeOpenedWindow();
             this.Close();
         }
 
@@ -155,6 +154,11 @@ namespace AMTS
             SqlCommand sqlcomm = new SqlCommand(comm, connection);
             sqlcomm.ExecuteNonQuery();
             this.Close();
+        }
+
+        private void DodajDruzyne_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            form.changeOpenedWindow();
         }
     }
 }
