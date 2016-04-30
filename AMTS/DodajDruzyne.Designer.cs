@@ -77,6 +77,8 @@
             this.imie2 = new System.Windows.Forms.TextBox();
             this.warningDownLabel = new System.Windows.Forms.Label();
             this.warningUpLabel = new System.Windows.Forms.Label();
+            this.TeamNameTakenLabel = new System.Windows.Forms.Label();
+            this.alreadyAddedLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uzytkownicy
@@ -578,22 +580,46 @@
             this.warningDownLabel.Text = "Masz mniej niż trzech zawodników.";
             this.warningDownLabel.Visible = false;
             // 
-            // warningUpLabeb
+            // warningUpLabel
             // 
             this.warningUpLabel.AutoSize = true;
             this.warningUpLabel.ForeColor = System.Drawing.Color.Red;
             this.warningUpLabel.Location = new System.Drawing.Point(12, 555);
-            this.warningUpLabel.Name = "warningUpLabeb";
+            this.warningUpLabel.Name = "warningUpLabel";
             this.warningUpLabel.Size = new System.Drawing.Size(249, 17);
             this.warningUpLabel.TabIndex = 64;
             this.warningUpLabel.Text = "Nie możesz dodać więcej zawodników.";
             this.warningUpLabel.Visible = false;
             // 
+            // TeamNameTakenLabel
+            // 
+            this.TeamNameTakenLabel.AutoSize = true;
+            this.TeamNameTakenLabel.ForeColor = System.Drawing.Color.Red;
+            this.TeamNameTakenLabel.Location = new System.Drawing.Point(404, 19);
+            this.TeamNameTakenLabel.Name = "TeamNameTakenLabel";
+            this.TeamNameTakenLabel.Size = new System.Drawing.Size(92, 17);
+            this.TeamNameTakenLabel.TabIndex = 65;
+            this.TeamNameTakenLabel.Text = "Nazwa zajęta";
+            this.TeamNameTakenLabel.Visible = false;
+            // 
+            // alreadyAddedLabel
+            // 
+            this.alreadyAddedLabel.AutoSize = true;
+            this.alreadyAddedLabel.ForeColor = System.Drawing.Color.Red;
+            this.alreadyAddedLabel.Location = new System.Drawing.Point(12, 521);
+            this.alreadyAddedLabel.Name = "alreadyAddedLabel";
+            this.alreadyAddedLabel.Size = new System.Drawing.Size(190, 17);
+            this.alreadyAddedLabel.TabIndex = 66;
+            this.alreadyAddedLabel.Text = "Już dodałeś tego zawodnika.";
+            this.alreadyAddedLabel.Visible = false;
+            // 
             // DodajDruzyne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 629);
+            this.ClientSize = new System.Drawing.Size(493, 629);
+            this.Controls.Add(this.alreadyAddedLabel);
+            this.Controls.Add(this.TeamNameTakenLabel);
             this.Controls.Add(this.warningUpLabel);
             this.Controls.Add(this.warningDownLabel);
             this.Controls.Add(this.imie2);
@@ -703,5 +729,7 @@
         private System.Windows.Forms.TextBox imie2;
         private System.Windows.Forms.Label warningDownLabel;
         private System.Windows.Forms.Label warningUpLabel;
+        private System.Windows.Forms.Label TeamNameTakenLabel;
+        private System.Windows.Forms.Label alreadyAddedLabel;
     }
 }

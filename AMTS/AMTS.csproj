@@ -68,6 +68,7 @@
     <Compile Include="ChooseServer.Designer.cs">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="DodajDruzyne.cs">
       <SubType>Form</SubType>
     </Compile>
