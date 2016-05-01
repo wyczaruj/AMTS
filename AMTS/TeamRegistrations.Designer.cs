@@ -36,15 +36,17 @@
             this.lastNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.emailColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.captainColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.closeButton = new System.Windows.Forms.Button();
+            this.rejectButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // acceptButton
             // 
-            this.acceptButton.Location = new System.Drawing.Point(658, 479);
+            this.acceptButton.Location = new System.Drawing.Point(461, 478);
             this.acceptButton.Name = "acceptButton";
-            this.acceptButton.Size = new System.Drawing.Size(168, 38);
+            this.acceptButton.Size = new System.Drawing.Size(168, 39);
             this.acceptButton.TabIndex = 3;
-            this.acceptButton.Text = "Potwierdź i zamknij";
+            this.acceptButton.Text = "Zatwierdź zaznaczone";
             this.acceptButton.UseVisualStyleBackColor = true;
             this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
@@ -108,11 +110,33 @@
             // 
             this.captainColumnHeader.Text = "Kapitan";
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(635, 478);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(191, 39);
+            this.closeButton.TabIndex = 7;
+            this.closeButton.Text = "Zamknij";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // rejectButton
+            // 
+            this.rejectButton.Location = new System.Drawing.Point(279, 478);
+            this.rejectButton.Name = "rejectButton";
+            this.rejectButton.Size = new System.Drawing.Size(176, 39);
+            this.rejectButton.TabIndex = 8;
+            this.rejectButton.Text = "Odrzuć zaznaczone";
+            this.rejectButton.UseVisualStyleBackColor = true;
+            this.rejectButton.Click += new System.EventHandler(this.rejectButton_Click);
+            // 
             // TeamRegistrations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 529);
+            this.Controls.Add(this.rejectButton);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.playersListView);
             this.Controls.Add(this.selectAllButton);
             this.Controls.Add(this.teamsListView);
@@ -133,5 +157,7 @@
         private System.Windows.Forms.ColumnHeader lastNameColumnHeader;
         private System.Windows.Forms.ColumnHeader emailColumnHeader;
         private System.Windows.Forms.ColumnHeader captainColumnHeader;
+        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button rejectButton;
     }
 }

@@ -14,8 +14,11 @@ namespace AMTS
             connection = conn;
             mainForm = MF;
             InitializeComponent();
+            LoadForm();
+        }
 
-
+        private void LoadForm()
+        {
             SqlCommand sqlcomm = new SqlCommand("SELECT DISTINCT DRUZYNA AS TEAM FROM ZGLOSZENIA", connection);
             SqlDataReader r = sqlcomm.ExecuteReader();
             while (r.Read())
@@ -100,12 +103,37 @@ namespace AMTS
                     sqlcomm.ExecuteNonQuery();
                 }
             }
-            this.Close();
+            playersListView.Items.Clear();
+            teamsListView.Clear();
+            LoadForm();
         }
 
         private void TeamRegistrations_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.changeOpenedWindow();
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void rejectButton_Click(object sender, EventArgs e)
+        {
+            string teamName;
+            foreach (ListViewItem item in teamsListView.Items)
+            {
+                if (item.Checked)
+                {
+                    teamName = item.Text;
+                    string command = "exec dbo.odrzucZgloszenie '" + teamName + "'";
+                    SqlCommand sqlcomm = new SqlCommand(command, connection);
+                    sqlcomm.ExecuteNonQuery();
+                }
+            }
+            playersListView.Items.Clear();
+            teamsListView.Clear();
+            LoadForm();
         }
     }
 }
