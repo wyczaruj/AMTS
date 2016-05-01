@@ -42,7 +42,15 @@ namespace AMTS
                 }
                 else
                 {
-                    mainForm.successfulLogIn(email);
+                    sqlcomm = new SqlCommand("SELECT Administrator AS ADMIN FROM UZYTKOWNICY WHERE Mail=" + "'" + email + "'", connection);
+                    r = sqlcomm.ExecuteReader();
+                    r.Read();
+                    bool admin = (bool)r["ADMIN"];
+                    r.Close();
+                    if (admin)
+                        mainForm.successfulAdminLogin(email);
+                    else                    
+                        mainForm.successfulLogIn(email);
                     this.Close();
                 }
             }

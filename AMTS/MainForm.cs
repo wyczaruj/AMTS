@@ -135,5 +135,18 @@ namespace AMTS
                 TR.Visible = true;
             }
         }
+
+        public void successfulAdminLogin(string mail)
+        {
+            LoggedIn = true;
+            logInButton.Visible = false;
+            logOutButton.Visible = true;
+            registerButton.Visible = false;
+            niezalogowany.Visible = false;
+            registerTeam.Visible = false;
+            teamRegistrationsButton.Visible = true;
+
+            LoggedInAsLabel.Text = mail + " [ADMIN]";
+        }
     }
 }

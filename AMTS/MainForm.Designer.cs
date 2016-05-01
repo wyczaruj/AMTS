@@ -187,6 +187,7 @@
             this.teamRegistrationsButton.TabIndex = 13;
             this.teamRegistrationsButton.Text = "Zgłoszenia drużyn";
             this.teamRegistrationsButton.UseVisualStyleBackColor = true;
+            this.teamRegistrationsButton.Visible = false;
             this.teamRegistrationsButton.Click += new System.EventHandler(this.teamRegistrationsButton_Click);
             // 
             // numberOfTeamRegistrationsLabel
