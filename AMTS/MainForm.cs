@@ -44,6 +44,8 @@ namespace AMTS
 
         private void logOutButton_Click(object sender, EventArgs e)
         {
+            teamRegistrationsButton.Visible = false;
+            numberOfTeamRegistrationsLabel.Visible = false;
             registerTeam.Visible = true;
             LoggedIn = false;
             LoggedInUser = null;
@@ -122,6 +124,16 @@ namespace AMTS
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void teamRegistrationsButton_Click(object sender, EventArgs e)
+        {
+            if(openedWindow == false)
+            {
+                changeOpenedWindow();
+                TeamRegistrations TR = new TeamRegistrations(connection, this);
+                TR.Visible = true;
+            }
         }
     }
 }

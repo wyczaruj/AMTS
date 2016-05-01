@@ -68,6 +68,12 @@
     <Compile Include="ChooseServer.Designer.cs">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeamRegistrations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamRegistrations.Designer.cs">
+      <DependentUpon>TeamRegistrations.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="DodajDruzyne.cs">
       <SubType>Form</SubType>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Regulamin.resx">
       <DependentUpon>Regulamin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamRegistrations.resx">
+      <DependentUpon>TeamRegistrations.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

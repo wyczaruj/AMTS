@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.LabelZJ = new System.Windows.Forms.Label();
             this.LoggedInAsLabel = new System.Windows.Forms.Label();
             this.logInButton = new System.Windows.Forms.Button();
@@ -41,12 +42,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.registerTeam = new System.Windows.Forms.Button();
             this.niezalogowany = new System.Windows.Forms.Label();
+            this.teamRegistrationsButton = new System.Windows.Forms.Button();
+            this.numberOfTeamRegistrationsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LabelZJ
             // 
             this.LabelZJ.AutoSize = true;
-            this.LabelZJ.Location = new System.Drawing.Point(952, 18);
+            this.LabelZJ.Location = new System.Drawing.Point(927, 18);
             this.LabelZJ.Name = "LabelZJ";
             this.LabelZJ.Size = new System.Drawing.Size(118, 17);
             this.LabelZJ.TabIndex = 0;
@@ -55,7 +58,7 @@
             // LoggedInAsLabel
             // 
             this.LoggedInAsLabel.AutoSize = true;
-            this.LoggedInAsLabel.Location = new System.Drawing.Point(1076, 18);
+            this.LoggedInAsLabel.Location = new System.Drawing.Point(1051, 18);
             this.LoggedInAsLabel.Name = "LoggedInAsLabel";
             this.LoggedInAsLabel.Size = new System.Drawing.Size(41, 17);
             this.LoggedInAsLabel.TabIndex = 1;
@@ -64,7 +67,7 @@
             // 
             // logInButton
             // 
-            this.logInButton.Location = new System.Drawing.Point(1127, 119);
+            this.logInButton.Location = new System.Drawing.Point(1126, 47);
             this.logInButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(104, 33);
@@ -75,7 +78,7 @@
             // 
             // logOutButton
             // 
-            this.logOutButton.Location = new System.Drawing.Point(1091, 37);
+            this.logOutButton.Location = new System.Drawing.Point(1156, 47);
             this.logOutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(75, 33);
@@ -86,7 +89,7 @@
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(1127, 159);
+            this.registerButton.Location = new System.Drawing.Point(1126, 95);
             this.registerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(104, 33);
@@ -98,7 +101,7 @@
             // druzynaLabel
             // 
             this.druzynaLabel.AutoSize = true;
-            this.druzynaLabel.Location = new System.Drawing.Point(1005, 95);
+            this.druzynaLabel.Location = new System.Drawing.Point(927, 95);
             this.druzynaLabel.Name = "druzynaLabel";
             this.druzynaLabel.Size = new System.Drawing.Size(65, 17);
             this.druzynaLabel.TabIndex = 5;
@@ -107,11 +110,11 @@
             // teamLabel
             // 
             this.teamLabel.AutoSize = true;
-            this.teamLabel.Location = new System.Drawing.Point(1079, 95);
+            this.teamLabel.Location = new System.Drawing.Point(1000, 95);
             this.teamLabel.Name = "teamLabel";
-            this.teamLabel.Size = new System.Drawing.Size(59, 17);
+            this.teamLabel.Size = new System.Drawing.Size(204, 17);
             this.teamLabel.TabIndex = 6;
-            this.teamLabel.Text = "druzyna";
+            this.teamLabel.Text = "druzyna [NIEZATWIERDZONA]";
             // 
             // button1
             // 
@@ -176,11 +179,33 @@
             this.niezalogowany.Text = "Zaloguj się.";
             this.niezalogowany.Visible = false;
             // 
+            // teamRegistrationsButton
+            // 
+            this.teamRegistrationsButton.Location = new System.Drawing.Point(1089, 436);
+            this.teamRegistrationsButton.Name = "teamRegistrationsButton";
+            this.teamRegistrationsButton.Size = new System.Drawing.Size(142, 34);
+            this.teamRegistrationsButton.TabIndex = 13;
+            this.teamRegistrationsButton.Text = "Zgłoszenia drużyn";
+            this.teamRegistrationsButton.UseVisualStyleBackColor = true;
+            this.teamRegistrationsButton.Click += new System.EventHandler(this.teamRegistrationsButton_Click);
+            // 
+            // numberOfTeamRegistrationsLabel
+            // 
+            this.numberOfTeamRegistrationsLabel.AutoSize = true;
+            this.numberOfTeamRegistrationsLabel.Location = new System.Drawing.Point(1049, 445);
+            this.numberOfTeamRegistrationsLabel.Name = "numberOfTeamRegistrationsLabel";
+            this.numberOfTeamRegistrationsLabel.Size = new System.Drawing.Size(34, 17);
+            this.numberOfTeamRegistrationsLabel.TabIndex = 14;
+            this.numberOfTeamRegistrationsLabel.Text = "(14)";
+            this.numberOfTeamRegistrationsLabel.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 482);
+            this.ClientSize = new System.Drawing.Size(1252, 482);
+            this.Controls.Add(this.numberOfTeamRegistrationsLabel);
+            this.Controls.Add(this.teamRegistrationsButton);
             this.Controls.Add(this.niezalogowany);
             this.Controls.Add(this.registerTeam);
             this.Controls.Add(this.button4);
@@ -194,9 +219,10 @@
             this.Controls.Add(this.logInButton);
             this.Controls.Add(this.LoggedInAsLabel);
             this.Controls.Add(this.LabelZJ);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Amatorska Liga Tenisa Stołowego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,6 +244,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button registerTeam;
         private System.Windows.Forms.Label niezalogowany;
+        private System.Windows.Forms.Button teamRegistrationsButton;
+        private System.Windows.Forms.Label numberOfTeamRegistrationsLabel;
     }
 }
 
