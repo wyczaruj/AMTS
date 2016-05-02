@@ -35,7 +35,6 @@ namespace AMTS
             mainForm = f1;
             connection = conn;
             InitializeComponent();
-
             registerTeam.Enabled = false;
             captainName = getName(captain.getEmail());
             captainLastName = getLastName(captain.getEmail());
@@ -47,23 +46,31 @@ namespace AMTS
 
             dataSet = new DataSet();
             dataAdapter.Fill(dataSet, "UZYTKOWNICY");
-
+            List<string> playerList = new List<string>();
             foreach (DataRow dataRow in dataSet.Tables["UZYTKOWNICY"].Rows)
             {
                 if (DBNull.Value.Equals(dataRow["Druzyna"]))
-                    uzytkownicy.Items.Add(dataRow["Nazwisko"].ToString() + " " + dataRow["Imie"].ToString());
+                {
+                    string player = dataRow["Nazwisko"].ToString() + " " + dataRow["Imie"].ToString();
+                    uzytkownicyComboBox.Items.Add(player);
+                    playerList.Add(player);
+                }
+                string[] list = playerList.ToArray<string>();
+                var autoComplete = new AutoCompleteStringCollection();
+                autoComplete.AddRange(playerList.ToArray());
+                uzytkownicyComboBox.AutoCompleteCustomSource = autoComplete;
             }
         }
 
         private void teamName_TextChanged(object sender, EventArgs e)
         {
-            if (teamName.Text.Equals(""))
+            if (teamNameTextBox.Text.Equals(""))
             {
                 registerTeam.Enabled = false;
             }
             else
             {
-                SqlCommand sqlcomm = new SqlCommand("SELECT Nazwa AS TEAMNAME FROM DRUZYNY WHERE Nazwa=" + "'" + teamName.Text + "'", connection);
+                SqlCommand sqlcomm = new SqlCommand("SELECT Nazwa AS TEAMNAME FROM DRUZYNY WHERE Nazwa=" + "'" + teamNameTextBox.Text + "'", connection);
                 SqlDataReader r = sqlcomm.ExecuteReader();
                 if (r.Read())
                 {
@@ -88,7 +95,7 @@ namespace AMTS
                 warningUpLabel.Visible = true;
             }
             else
-            if (uzytkownicy.SelectedItem != null)
+            if (uzytkownicyComboBox.SelectedItem != null)
             {
                 string player;
                 string playerName;
@@ -102,7 +109,7 @@ namespace AMTS
                     if (c.TabIndex == nazwiska[numberOfPlayers])
                         nazwisko = (TextBox)c;
                 }
-                player = uzytkownicy.Text.ToString();
+                player = uzytkownicyComboBox.Text.ToString();
                 playerName = player.Split(' ')[1];
                 playerLastName = player.Split(' ')[0];
                 SqlCommand sqlcomm = new SqlCommand("SELECT Mail AS EMAIL FROM UZYTKOWNICY WHERE Imie=" + "'" + playerName + "' AND Nazwisko='" + playerLastName + "'", connection);
@@ -142,16 +149,16 @@ namespace AMTS
             {
                 string comm;
                 SqlCommand sqlcomm;
-                comm = "exec dbo.dodajDruzyne '" + teamName.Text + "', '" + captainName + "', '" + captainLastName + "'";
+                comm = "exec dbo.dodajDruzyne '" + teamNameTextBox.Text + "', '" + captainName + "', '" + captainLastName + "'";
                 sqlcomm = new SqlCommand(comm, connection);
                 sqlcomm.ExecuteNonQuery();
                 for (int i = 0; i < numberOfPlayers; i++)
                 {
-                    comm = "exec dbo.dodajZgloszenie '" + emails[i] + "', '" + teamName.Text + "'";
+                    comm = "exec dbo.dodajZgloszenie '" + emails[i] + "', '" + teamNameTextBox.Text + "'";
                     sqlcomm = new SqlCommand(comm, connection);
                     sqlcomm.ExecuteNonQuery();
                 }
-                mainForm.successfulTeamRegistration(teamName.Text);
+                mainForm.successfulTeamRegistration(teamNameTextBox.Text);
                 this.Close();
             }
         }
