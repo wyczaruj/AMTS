@@ -32,6 +32,9 @@ namespace AMTS
                 case "PATRYKS":
                     server = "Server=DESKTOP-I5KKVD2\\SQLEXPRESSPAT;Database=AMTS;Trusted_Connection=true";
                     break;
+                case "DOROTA":
+                    server = "Data Source=ZWIERZYNIEC;Initial Catalog=AMTS;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                    break;
             }
         }
 
