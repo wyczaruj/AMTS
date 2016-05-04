@@ -152,7 +152,7 @@ namespace AMTS
         {
             if(openedWindow == false)
             {
-                Terminarz terminarz = new Terminarz(connection, AdminLogged);
+                Terminarz terminarz = new Terminarz(connection, AdminLogged, this);
                 changeOpenedWindow();
                 terminarz.Visible = true;
             }
