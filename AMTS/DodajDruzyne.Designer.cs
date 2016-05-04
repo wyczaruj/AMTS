@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uzytkownicy = new System.Windows.Forms.ComboBox();
+            this.uzytkownicyComboBox = new System.Windows.Forms.ComboBox();
             this.nazwisko1 = new System.Windows.Forms.TextBox();
             this.n1 = new System.Windows.Forms.Label();
             this.i1 = new System.Windows.Forms.Label();
@@ -72,22 +72,26 @@
             this.i9 = new System.Windows.Forms.Label();
             this.imie9 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.teamName = new System.Windows.Forms.TextBox();
+            this.teamNameTextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.imie2 = new System.Windows.Forms.TextBox();
             this.warningDownLabel = new System.Windows.Forms.Label();
             this.warningUpLabel = new System.Windows.Forms.Label();
+            this.TeamNameTakenLabel = new System.Windows.Forms.Label();
+            this.alreadyAddedLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // uzytkownicy
+            // uzytkownicyComboBox
             // 
-            this.uzytkownicy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.uzytkownicy.FormattingEnabled = true;
-            this.uzytkownicy.Location = new System.Drawing.Point(117, 44);
-            this.uzytkownicy.Margin = new System.Windows.Forms.Padding(4);
-            this.uzytkownicy.Name = "uzytkownicy";
-            this.uzytkownicy.Size = new System.Drawing.Size(278, 24);
-            this.uzytkownicy.TabIndex = 1;
+            this.uzytkownicyComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.uzytkownicyComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.uzytkownicyComboBox.FormattingEnabled = true;
+            this.uzytkownicyComboBox.Location = new System.Drawing.Point(117, 43);
+            this.uzytkownicyComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.uzytkownicyComboBox.Name = "uzytkownicyComboBox";
+            this.uzytkownicyComboBox.Size = new System.Drawing.Size(281, 24);
+            this.uzytkownicyComboBox.Sorted = true;
+            this.uzytkownicyComboBox.TabIndex = 1;
             // 
             // nazwisko1
             // 
@@ -101,7 +105,7 @@
             // n1
             // 
             this.n1.AutoSize = true;
-            this.n1.Location = new System.Drawing.Point(80, 89);
+            this.n1.Location = new System.Drawing.Point(80, 95);
             this.n1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.n1.Name = "n1";
             this.n1.Size = new System.Drawing.Size(67, 17);
@@ -111,7 +115,7 @@
             // i1
             // 
             this.i1.AutoSize = true;
-            this.i1.Location = new System.Drawing.Point(314, 89);
+            this.i1.Location = new System.Drawing.Point(314, 95);
             this.i1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.i1.Name = "i1";
             this.i1.Size = new System.Drawing.Size(33, 17);
@@ -129,10 +133,10 @@
             // 
             // addPerson
             // 
-            this.addPerson.Location = new System.Drawing.Point(402, 42);
+            this.addPerson.Location = new System.Drawing.Point(402, 38);
             this.addPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addPerson.Name = "addPerson";
-            this.addPerson.Size = new System.Drawing.Size(71, 27);
+            this.addPerson.Size = new System.Drawing.Size(71, 29);
             this.addPerson.TabIndex = 10;
             this.addPerson.Text = "Dodaj";
             this.addPerson.UseVisualStyleBackColor = true;
@@ -538,19 +542,19 @@
             this.label18.TabIndex = 58;
             this.label18.Text = "Nazwa drużyny";
             // 
-            // teamName
+            // teamNameTextBox
             // 
-            this.teamName.Location = new System.Drawing.Point(117, 14);
-            this.teamName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.teamName.Name = "teamName";
-            this.teamName.Size = new System.Drawing.Size(281, 22);
-            this.teamName.TabIndex = 57;
-            this.teamName.TextChanged += new System.EventHandler(this.teamName_TextChanged);
+            this.teamNameTextBox.Location = new System.Drawing.Point(116, 14);
+            this.teamNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.teamNameTextBox.Name = "teamNameTextBox";
+            this.teamNameTextBox.Size = new System.Drawing.Size(282, 22);
+            this.teamNameTextBox.TabIndex = 57;
+            this.teamNameTextBox.TextChanged += new System.EventHandler(this.teamName_TextChanged);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(5, 72);
+            this.label19.Location = new System.Drawing.Point(5, 78);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(82, 17);
@@ -578,28 +582,52 @@
             this.warningDownLabel.Text = "Masz mniej niż trzech zawodników.";
             this.warningDownLabel.Visible = false;
             // 
-            // warningUpLabeb
+            // warningUpLabel
             // 
             this.warningUpLabel.AutoSize = true;
             this.warningUpLabel.ForeColor = System.Drawing.Color.Red;
             this.warningUpLabel.Location = new System.Drawing.Point(12, 555);
-            this.warningUpLabel.Name = "warningUpLabeb";
+            this.warningUpLabel.Name = "warningUpLabel";
             this.warningUpLabel.Size = new System.Drawing.Size(249, 17);
             this.warningUpLabel.TabIndex = 64;
             this.warningUpLabel.Text = "Nie możesz dodać więcej zawodników.";
             this.warningUpLabel.Visible = false;
             // 
+            // TeamNameTakenLabel
+            // 
+            this.TeamNameTakenLabel.AutoSize = true;
+            this.TeamNameTakenLabel.ForeColor = System.Drawing.Color.Red;
+            this.TeamNameTakenLabel.Location = new System.Drawing.Point(404, 19);
+            this.TeamNameTakenLabel.Name = "TeamNameTakenLabel";
+            this.TeamNameTakenLabel.Size = new System.Drawing.Size(92, 17);
+            this.TeamNameTakenLabel.TabIndex = 65;
+            this.TeamNameTakenLabel.Text = "Nazwa zajęta";
+            this.TeamNameTakenLabel.Visible = false;
+            // 
+            // alreadyAddedLabel
+            // 
+            this.alreadyAddedLabel.AutoSize = true;
+            this.alreadyAddedLabel.ForeColor = System.Drawing.Color.Red;
+            this.alreadyAddedLabel.Location = new System.Drawing.Point(12, 521);
+            this.alreadyAddedLabel.Name = "alreadyAddedLabel";
+            this.alreadyAddedLabel.Size = new System.Drawing.Size(190, 17);
+            this.alreadyAddedLabel.TabIndex = 66;
+            this.alreadyAddedLabel.Text = "Już dodałeś tego zawodnika.";
+            this.alreadyAddedLabel.Visible = false;
+            // 
             // DodajDruzyne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 629);
+            this.ClientSize = new System.Drawing.Size(493, 629);
+            this.Controls.Add(this.alreadyAddedLabel);
+            this.Controls.Add(this.TeamNameTakenLabel);
             this.Controls.Add(this.warningUpLabel);
             this.Controls.Add(this.warningDownLabel);
             this.Controls.Add(this.imie2);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.teamName);
+            this.Controls.Add(this.teamNameTextBox);
             this.Controls.Add(this.nazwisko10);
             this.Controls.Add(this.n10);
             this.Controls.Add(this.i10);
@@ -642,7 +670,7 @@
             this.Controls.Add(this.i1);
             this.Controls.Add(this.imie1);
             this.Controls.Add(this.addPerson);
-            this.Controls.Add(this.uzytkownicy);
+            this.Controls.Add(this.uzytkownicyComboBox);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DodajDruzyne";
             this.Text = "Zgłoś drużynę";
@@ -654,7 +682,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox uzytkownicy;
+        private System.Windows.Forms.ComboBox uzytkownicyComboBox;
         private System.Windows.Forms.TextBox nazwisko1;
         private System.Windows.Forms.Label n1;
         private System.Windows.Forms.TextBox imie1;
@@ -697,11 +725,13 @@
         private System.Windows.Forms.Label i9;
         private System.Windows.Forms.TextBox imie9;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox teamName;
+        private System.Windows.Forms.TextBox teamNameTextBox;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label i1;
         private System.Windows.Forms.TextBox imie2;
         private System.Windows.Forms.Label warningDownLabel;
         private System.Windows.Forms.Label warningUpLabel;
+        private System.Windows.Forms.Label TeamNameTakenLabel;
+        private System.Windows.Forms.Label alreadyAddedLabel;
     }
 }

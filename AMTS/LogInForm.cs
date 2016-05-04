@@ -42,7 +42,15 @@ namespace AMTS
                 }
                 else
                 {
-                    mainForm.successfulLogIn(email);
+                    sqlcomm = new SqlCommand("SELECT Administrator AS ADMIN FROM UZYTKOWNICY WHERE Mail=" + "'" + email + "'", connection);
+                    r = sqlcomm.ExecuteReader();
+                    r.Read();
+                    bool admin = (bool)r["ADMIN"];
+                    r.Close();
+                    if (admin)
+                        mainForm.successfulAdminLogin(email);
+                    else                    
+                        mainForm.successfulLogIn(email);
                     this.Close();
                 }
             }
@@ -53,17 +61,6 @@ namespace AMTS
             this.Close();
         }
 
-        private void showPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (showPasswordCheckBox.Checked == true)
-            {
-                passwordTextBox.PasswordChar = '\0';
-            }
-            else
-            {
-                passwordTextBox.PasswordChar = '*';
-            }
-        }
 
         private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -76,20 +73,15 @@ namespace AMTS
             }
         }
 
-        private void LogInForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                logInButton.PerformClick();
-                // these last two lines will stop the beep sound
-                e.SuppressKeyPress = true;
-                e.Handled = true;
-            }
-        }
 
         private void LogInForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.changeOpenedWindow();
+        }
+
+        private void emailTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            passwordTextBox_KeyDown(sender, e);
         }
     }
 }

@@ -68,6 +68,25 @@
     <Compile Include="ChooseServer.Designer.cs">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeamRegistrations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamRegistrations.Designer.cs">
+      <DependentUpon>TeamRegistrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Terminarz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terminarz.Designer.cs">
+      <DependentUpon>Terminarz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TerminNowy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerminNowy.Designer.cs">
+      <DependentUpon>TerminNowy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="DodajDruzyne.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +146,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Regulamin.resx">
       <DependentUpon>Regulamin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamRegistrations.resx">
+      <DependentUpon>TeamRegistrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terminarz.resx">
+      <DependentUpon>Terminarz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerminNowy.resx">
+      <DependentUpon>TerminNowy.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
