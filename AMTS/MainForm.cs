@@ -14,14 +14,8 @@ namespace AMTS
 
         public MainForm()
         {
-            //     connectionString = "Server=PATRYK\\SQLEXPRESSAWPAT;Database=AMTS;Trusted_Connection=true";
-            //connectionString = "Server = KLAUDIA_PC\\SQLEXPRESS; Database=AMTS; Trusted_Connection = true";
-            // connection = new SqlConnection(connectionString);
-            //   connection.Open();
             InitializeComponent();
         }
-
-        private System.Windows.Forms.DataGridView terminarzDataGridView = new DataGridView();
 
         public MainForm(string server)
         {
