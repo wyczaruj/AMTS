@@ -8,6 +8,7 @@ namespace AMTS
     {
         SqlConnection connection;
         bool LoggedIn = false;
+        bool AdminLogged = false; //bo sam LoggedIn to za mało by rozróżniać co może użytkownik, a co gość, a co admin
         User LoggedInUser;
         string connectionString;
         bool openedWindow = false; //obejscie zapobiegające wyświetleniu kilku okienek
@@ -44,6 +45,7 @@ namespace AMTS
             numberOfTeamRegistrationsLabel.Visible = false;
             registerTeam.Visible = true;
             LoggedIn = false;
+            AdminLogged = false;
             LoggedInUser = null;
             LoggedInAsLabel.Text = "Gość";
             logInButton.Visible = true;
@@ -135,6 +137,7 @@ namespace AMTS
         public void successfulAdminLogin(string mail)
         {
             LoggedIn = true;
+            AdminLogged = true;
             logInButton.Visible = false;
             logOutButton.Visible = true;
             registerButton.Visible = false;
@@ -149,7 +152,7 @@ namespace AMTS
         {
             if(openedWindow == false)
             {
-                Terminarz terminarz = new Terminarz(connection, LoggedIn);
+                Terminarz terminarz = new Terminarz(connection, AdminLogged);
                 changeOpenedWindow();
                 terminarz.Visible = true;
             }
