@@ -42,9 +42,9 @@
             // 
             // acceptButton
             // 
-            this.acceptButton.Location = new System.Drawing.Point(461, 478);
+            this.acceptButton.Location = new System.Drawing.Point(500, 478);
             this.acceptButton.Name = "acceptButton";
-            this.acceptButton.Size = new System.Drawing.Size(168, 39);
+            this.acceptButton.Size = new System.Drawing.Size(186, 39);
             this.acceptButton.TabIndex = 3;
             this.acceptButton.Text = "Zatwierdź zaznaczone";
             this.acceptButton.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             this.playersListView.Location = new System.Drawing.Point(279, 22);
             this.playersListView.MultiSelect = false;
             this.playersListView.Name = "playersListView";
-            this.playersListView.Size = new System.Drawing.Size(547, 445);
+            this.playersListView.Size = new System.Drawing.Size(615, 445);
             this.playersListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.playersListView.TabIndex = 6;
             this.playersListView.UseCompatibleStateImageBehavior = false;
@@ -109,12 +109,13 @@
             // captainColumnHeader
             // 
             this.captainColumnHeader.Text = "Kapitan";
+            this.captainColumnHeader.Width = 81;
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(635, 478);
+            this.closeButton.Location = new System.Drawing.Point(692, 478);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(191, 39);
+            this.closeButton.Size = new System.Drawing.Size(202, 39);
             this.closeButton.TabIndex = 7;
             this.closeButton.Text = "Zamknij";
             this.closeButton.UseVisualStyleBackColor = true;
@@ -124,7 +125,7 @@
             // 
             this.rejectButton.Location = new System.Drawing.Point(279, 478);
             this.rejectButton.Name = "rejectButton";
-            this.rejectButton.Size = new System.Drawing.Size(176, 39);
+            this.rejectButton.Size = new System.Drawing.Size(215, 39);
             this.rejectButton.TabIndex = 8;
             this.rejectButton.Text = "Odrzuć zaznaczone";
             this.rejectButton.UseVisualStyleBackColor = true;
@@ -134,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 529);
+            this.ClientSize = new System.Drawing.Size(930, 529);
             this.Controls.Add(this.rejectButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.playersListView);

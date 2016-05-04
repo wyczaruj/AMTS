@@ -157,5 +157,12 @@ namespace AMTS
                 terminarz.Visible = true;
             }
         }
+
+        private void myRegistrationButton_Click(object sender, EventArgs e)
+        {
+            //changeopeend dodać
+            MyTeamRegistration MTR = new MyTeamRegistration("te", connection, this);
+            MTR.Visible = true;
+        }
     }
 }

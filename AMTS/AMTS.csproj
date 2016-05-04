@@ -68,6 +68,12 @@
     <Compile Include="ChooseServer.Designer.cs">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyTeamRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyTeamRegistration.Designer.cs">
+      <DependentUpon>MyTeamRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeamRegistrations.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTeamRegistration.resx">
+      <DependentUpon>MyTeamRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
