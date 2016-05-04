@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -20,6 +20,8 @@ namespace AMTS
             //   connection.Open();
             InitializeComponent();
         }
+
+        private System.Windows.Forms.DataGridView terminarzDataGridView = new DataGridView();
 
         public MainForm(string server)
         {
@@ -147,6 +149,16 @@ namespace AMTS
             teamRegistrationsButton.Visible = true;
 
             LoggedInAsLabel.Text = mail + " [ADMIN]";
+        }
+
+        private void terminarz_Click(object sender, EventArgs e)
+        {
+            if(openedWindow == false)
+            {
+                Terminarz terminarz = new Terminarz(connection, LoggedIn);
+                changeOpenedWindow();
+                terminarz.Visible = true;
+            }
         }
     }
 }
