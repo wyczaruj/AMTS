@@ -55,8 +55,9 @@ namespace AMTS
 
         private void saveEdit_Click(object sender, EventArgs e)
         {
-            
             terminarzDataGridView.ReadOnly = true;
+            saveEdit.Visible = false;
+            discardEdit.Visible = false;
         }
 
         private void discardEdit_Click(object sender, EventArgs e)
