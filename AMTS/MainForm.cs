@@ -143,9 +143,9 @@ namespace AMTS
             LoggedInAsLabel.Text = mail + " [ADMIN]";
         }
 
-        private void terminarzButton_Click(object sender, EventArgs e)
+        private void terminarz_Click(object sender, EventArgs e)
         {
-            if (openedWindow == false)
+            if(openedWindow == false)
             {
                 Terminarz terminarz = new Terminarz(connection, AdminLogged, this);
                 changeOpenedWindow();
@@ -153,9 +153,9 @@ namespace AMTS
             }
         }
 
-        private void regulaminButton_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            if (openedWindow == false)
+            if(openedWindow == false)
             {
                 Regulamin regulamin = new Regulamin(AdminLogged, this);
                 changeOpenedWindow();
