@@ -13,6 +13,7 @@ namespace AMTS
 {
     public partial class TerminNowy:Form
     {
+        Terminarz terminarz;
         private System.Data.SqlClient.SqlConnection conn;
         void HandleSqlException(SqlException e)
         {
@@ -20,10 +21,11 @@ namespace AMTS
             int num1 = (int)MessageBox.Show("Formularz został błędnie wypełniony.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 
         }
-        public TerminNowy(System.Data.SqlClient.SqlConnection conn)
+        public TerminNowy(System.Data.SqlClient.SqlConnection conn, Terminarz terminarz)
         {
             InitializeComponent();
             this.conn = conn;
+            this.terminarz = terminarz;
 
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT Nazwa FROM DRUZYNY", conn);
             DataTable dataTable = new DataTable();
@@ -69,6 +71,11 @@ namespace AMTS
         private void discard_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TerminNowy_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            terminarz.changeOpenedWindow();
         }
     }
 }

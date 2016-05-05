@@ -11,7 +11,13 @@ namespace AMTS
         MainForm mainForm;
         SqlConnection connection;
         bool accept = false;
+        bool openedWindow = false;
 
+        public void changeOpenedWindow()
+        {
+            openedWindow = !openedWindow;
+        }
+        public RegisterForm() { }
         public RegisterForm(SqlConnection conn, MainForm f1)
         {
             mainForm = f1;
@@ -33,7 +39,7 @@ namespace AMTS
 
         private void regulaminLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Regulamin regulamin = new Regulamin();
+            Regulamin regulamin = new Regulamin(false, this);
             regulamin.Visible = true;
         }
 

@@ -16,7 +16,10 @@ namespace AMTS
         bool openedWindow = false;
         SqlConnection conn;
         MainForm mainForm;
-
+        public void changeOpenedWindow()
+        {
+            openedWindow = !openedWindow;
+        }
         public Terminarz(SqlConnection connection, bool admin, MainForm MF)
         {
             mainForm = MF;
@@ -40,7 +43,7 @@ namespace AMTS
         {
             if(openedWindow == false)
             {
-                TerminNowy nowy = new TerminNowy(conn);
+                TerminNowy nowy = new TerminNowy(conn, this);
                 openedWindow = true;
                 nowy.Visible = true;
             }     
