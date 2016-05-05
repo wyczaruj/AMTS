@@ -36,10 +36,10 @@ namespace AMTS
             this.registerButton = new System.Windows.Forms.Button();
             this.druzynaLabel = new System.Windows.Forms.Label();
             this.teamLabel = new System.Windows.Forms.Label();
-            this.terminarz = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.terminarzButton = new System.Windows.Forms.Button();
+            this.klasyfikacjaButton = new System.Windows.Forms.Button();
+            this.wynikiButton = new System.Windows.Forms.Button();
+            this.regulaminButton = new System.Windows.Forms.Button();
             this.registerTeam = new System.Windows.Forms.Button();
             this.niezalogowany = new System.Windows.Forms.Label();
             this.teamRegistrationsButton = new System.Windows.Forms.Button();
@@ -116,47 +116,47 @@ namespace AMTS
             this.teamLabel.TabIndex = 6;
             this.teamLabel.Text = "druzyna [NIEZATWIERDZONA]";
             // 
-            // terminarz
+            // terminarzButton
             // 
-            this.terminarz.Location = new System.Drawing.Point(16, 6);
-            this.terminarz.Margin = new System.Windows.Forms.Padding(4);
-            this.terminarz.Name = "terminarz";
-            this.terminarz.Size = new System.Drawing.Size(100, 28);
-            this.terminarz.TabIndex = 7;
-            this.terminarz.Text = "Terminarz";
-            this.terminarz.UseVisualStyleBackColor = true;
-            this.terminarz.Click += new System.EventHandler(this.terminarz_Click);
+            this.terminarzButton.Location = new System.Drawing.Point(16, 6);
+            this.terminarzButton.Margin = new System.Windows.Forms.Padding(4);
+            this.terminarzButton.Name = "terminarzButton";
+            this.terminarzButton.Size = new System.Drawing.Size(100, 28);
+            this.terminarzButton.TabIndex = 7;
+            this.terminarzButton.Text = "Terminarz";
+            this.terminarzButton.UseVisualStyleBackColor = true;
+            this.terminarzButton.Click += new System.EventHandler(this.terminarzButton_Click);
             // 
-            // button2
+            // klasyfikacjaButton
             // 
-            this.button2.Location = new System.Drawing.Point(143, 6);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Klasyfikacja";
-            this.button2.UseVisualStyleBackColor = true;
+            this.klasyfikacjaButton.Location = new System.Drawing.Point(143, 6);
+            this.klasyfikacjaButton.Margin = new System.Windows.Forms.Padding(4);
+            this.klasyfikacjaButton.Name = "klasyfikacjaButton";
+            this.klasyfikacjaButton.Size = new System.Drawing.Size(100, 28);
+            this.klasyfikacjaButton.TabIndex = 8;
+            this.klasyfikacjaButton.Text = "Klasyfikacja";
+            this.klasyfikacjaButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // wynikiButton
             // 
-            this.button3.Location = new System.Drawing.Point(265, 6);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Wyniki";
-            this.button3.UseVisualStyleBackColor = true;
+            this.wynikiButton.Location = new System.Drawing.Point(265, 6);
+            this.wynikiButton.Margin = new System.Windows.Forms.Padding(4);
+            this.wynikiButton.Name = "wynikiButton";
+            this.wynikiButton.Size = new System.Drawing.Size(100, 28);
+            this.wynikiButton.TabIndex = 9;
+            this.wynikiButton.Text = "Wyniki";
+            this.wynikiButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // regulaminButton
             // 
-            this.button4.Location = new System.Drawing.Point(385, 6);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 28);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Regulamin";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.regulaminButton.Location = new System.Drawing.Point(385, 6);
+            this.regulaminButton.Margin = new System.Windows.Forms.Padding(4);
+            this.regulaminButton.Name = "regulaminButton";
+            this.regulaminButton.Size = new System.Drawing.Size(100, 28);
+            this.regulaminButton.TabIndex = 10;
+            this.regulaminButton.Text = "Regulamin";
+            this.regulaminButton.UseVisualStyleBackColor = true;
+            this.regulaminButton.Click += new System.EventHandler(this.regulaminButton_Click);
             // 
             // registerTeam
             // 
@@ -212,10 +212,10 @@ namespace AMTS
             this.Controls.Add(this.teamRegistrationsButton);
             this.Controls.Add(this.niezalogowany);
             this.Controls.Add(this.registerTeam);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.terminarz);
+            this.Controls.Add(this.regulaminButton);
+            this.Controls.Add(this.wynikiButton);
+            this.Controls.Add(this.klasyfikacjaButton);
+            this.Controls.Add(this.terminarzButton);
             this.Controls.Add(this.teamLabel);
             this.Controls.Add(this.druzynaLabel);
             this.Controls.Add(this.registerButton);
@@ -242,10 +242,10 @@ namespace AMTS
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label druzynaLabel;
         private System.Windows.Forms.Label teamLabel;
-        private System.Windows.Forms.Button terminarz;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button terminarzButton;
+        private System.Windows.Forms.Button klasyfikacjaButton;
+        private System.Windows.Forms.Button wynikiButton;
+        private System.Windows.Forms.Button regulaminButton;
         private System.Windows.Forms.Button registerTeam;
         private System.Windows.Forms.Label niezalogowany;
         private System.Windows.Forms.Button teamRegistrationsButton;
