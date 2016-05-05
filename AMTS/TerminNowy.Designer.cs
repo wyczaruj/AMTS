@@ -248,6 +248,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TerminNowy";
             this.Text = "TerminNowy";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TerminNowy_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numericRunda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDuzeDruzyny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDuzePrzeciwnika)).EndInit();

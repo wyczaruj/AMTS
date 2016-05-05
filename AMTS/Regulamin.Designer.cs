@@ -28,34 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Zamknij = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // textBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(126, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(771, 135);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "REGULAMIN";
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.MaxLength = 327670;
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(672, 426);
+            this.textBox1.TabIndex = 1;
+            // 
+            // Zamknij
+            // 
+            this.Zamknij.Location = new System.Drawing.Point(298, 444);
+            this.Zamknij.Name = "Zamknij";
+            this.Zamknij.Size = new System.Drawing.Size(103, 32);
+            this.Zamknij.TabIndex = 2;
+            this.Zamknij.Text = "Zamknij";
+            this.Zamknij.UseVisualStyleBackColor = true;
+            this.Zamknij.Click += new System.EventHandler(this.Zamknij_Click);
             // 
             // Regulamin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 488);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(696, 488);
+            this.Controls.Add(this.Zamknij);
+            this.Controls.Add(this.textBox1);
             this.Name = "Regulamin";
             this.Text = "Regulamin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Regulamin_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button Zamknij;
     }
 }

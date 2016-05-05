@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class MainForm : Form
+    public partial class MainForm : RegisterForm
     {
         SqlConnection connection;
         bool LoggedIn = false;
@@ -155,6 +155,16 @@ namespace AMTS
                 Terminarz terminarz = new Terminarz(connection, AdminLogged, this);
                 changeOpenedWindow();
                 terminarz.Visible = true;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(openedWindow == false)
+            {
+                Regulamin regulamin = new Regulamin(AdminLogged, this);
+                changeOpenedWindow();
+                regulamin.Visible = true;
             }
         }
     }
