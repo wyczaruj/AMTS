@@ -15,9 +15,11 @@ namespace AMTS
     {
         bool openedWindow = false;
         SqlConnection conn;
+        MainForm mainForm;
 
-        public Terminarz(SqlConnection connection, bool admin)
+        public Terminarz(SqlConnection connection, bool admin, MainForm MF)
         {
+            mainForm = MF;
             InitializeComponent();
             conn = connection;
             if(admin)
@@ -64,6 +66,9 @@ namespace AMTS
             terminarzDataGridView.ReadOnly = true;
         }
 
-        
+        private void Terminarz_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.changeOpenedWindow();
+        }
     }
 }

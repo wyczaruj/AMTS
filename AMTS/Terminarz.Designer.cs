@@ -74,7 +74,7 @@
             // termOpt
             // 
             this.termOpt.AutoSize = true;
-            this.termOpt.Location = new System.Drawing.Point(1041, 129);
+            this.termOpt.Location = new System.Drawing.Point(1042, 129);
             this.termOpt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.termOpt.Name = "termOpt";
             this.termOpt.Size = new System.Drawing.Size(41, 13);
@@ -117,6 +117,7 @@
             this.Controls.Add(this.terminarzDataGridView);
             this.Name = "Terminarz";
             this.Text = "Terminarz";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Terminarz_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.terminarzDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
