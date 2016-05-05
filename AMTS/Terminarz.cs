@@ -11,16 +11,11 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class Terminarz:Form
+    public partial class Terminarz:AbstractForm
     {
-        bool openedWindow = false;
         SqlConnection conn;
-        MainForm mainForm;
-        public void changeOpenedWindow()
-        {
-            openedWindow = !openedWindow;
-        }
-        public Terminarz(SqlConnection connection, bool admin, MainForm MF)
+        AbstractForm mainForm;
+        public Terminarz(SqlConnection connection, bool admin, AbstractForm MF)
         {
             mainForm = MF;
             InitializeComponent();

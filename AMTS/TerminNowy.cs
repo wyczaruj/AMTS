@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class TerminNowy:Form
+    public partial class TerminNowy:AbstractForm
     {
-        Terminarz terminarz;
+        AbstractForm terminarz;
         private System.Data.SqlClient.SqlConnection conn;
         void HandleSqlException(SqlException e)
         {
@@ -21,7 +21,7 @@ namespace AMTS
             int num1 = (int)MessageBox.Show("Formularz został błędnie wypełniony.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 
         }
-        public TerminNowy(System.Data.SqlClient.SqlConnection conn, Terminarz terminarz)
+        public TerminNowy(System.Data.SqlClient.SqlConnection conn, AbstractForm terminarz)
         {
             InitializeComponent();
             this.conn = conn;

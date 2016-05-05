@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class ChooseServer : Form
+    public partial class ChooseServer : AbstractForm
     {
         string server;
         public ChooseServer()

@@ -119,7 +119,7 @@ namespace AMTS
             // terminarz
             // 
             this.terminarz.Location = new System.Drawing.Point(16, 6);
-            this.terminarz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.terminarz.Margin = new System.Windows.Forms.Padding(4);
             this.terminarz.Name = "terminarz";
             this.terminarz.Size = new System.Drawing.Size(100, 28);
             this.terminarz.TabIndex = 7;
@@ -130,7 +130,7 @@ namespace AMTS
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(143, 6);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 8;
@@ -140,17 +140,17 @@ namespace AMTS
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(265, 6);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 9;
-            this.button3.Text = "Użytkownicy";
+            this.button3.Text = "Wyniki";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(385, 6);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 10;
@@ -161,7 +161,7 @@ namespace AMTS
             // registerTeam
             // 
             this.registerTeam.Location = new System.Drawing.Point(1091, 263);
-            this.registerTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.registerTeam.Margin = new System.Windows.Forms.Padding(4);
             this.registerTeam.Name = "registerTeam";
             this.registerTeam.Size = new System.Drawing.Size(140, 31);
             this.registerTeam.TabIndex = 11;

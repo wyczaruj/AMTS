@@ -4,15 +4,14 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class MainForm : RegisterForm
+    public partial class MainForm : AbstractForm
     {
         SqlConnection connection;
         bool LoggedIn = false;
         bool AdminLogged = false; //bo sam LoggedIn to za mało by rozróżniać co może użytkownik, a co gość, a co admin
         User LoggedInUser;
         string connectionString;
-        bool openedWindow = false; //obejscie zapobiegające wyświetleniu kilku okienek
-
+      
         public MainForm()
         {
             InitializeComponent();
@@ -65,10 +64,6 @@ namespace AMTS
             }
         }
 
-        public void changeOpenedWindow()
-        {
-            openedWindow = !openedWindow;
-        }
 
         public void successfulLogIn(string mail)
         {
