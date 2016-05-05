@@ -94,6 +94,10 @@ namespace AMTS
             {
                 registerTeam.Visible = false;
                 DBteam = LoggedInUser.getTeamName();
+                if (LoggedInUser.getCaptain())
+                {
+                    DBteam += "\n[KAPITAN]";
+                }
             }
             if (LoggedInUser.getPending())
             {
@@ -101,6 +105,10 @@ namespace AMTS
                 registerTeam.Visible = false;
                 confirmConfirmationButton.Visible = false;
                 DBteam = LoggedInUser.getTeamName() + " [NIEZATWIERDZONA]";
+                if (LoggedInUser.getCaptain())
+                {
+                    DBteam += "\n[KAPITAN]";
+                }
             }
             teamLabel.Text = DBteam;
             druzynaLabel.Visible = true;
@@ -109,7 +117,7 @@ namespace AMTS
 
         public void successfulTeamRegistration(string teamName)
         {
-            teamLabel.Text = teamName + " [NIEZATWIERDZONA]";
+            teamLabel.Text = teamName + " [NIEZATWIERDZONA]\n[KAPITAN]";
         }
 
         private void registerTeam_Click(object sender, EventArgs e)
