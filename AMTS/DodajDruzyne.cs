@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class DodajDruzyne : Form
+    public partial class DodajDruzyne : AbstractForm
     {
         MainForm mainForm;
         SqlConnection connection;

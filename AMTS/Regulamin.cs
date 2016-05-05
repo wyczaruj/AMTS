@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class Regulamin : Form
+    public partial class Regulamin : AbstractForm
     {
-        RegisterForm form;
-        public Regulamin(bool AdminLogged, RegisterForm form)
+        AbstractForm form;
+        public Regulamin(bool AdminLogged, AbstractForm form)
         {
             InitializeComponent();
             this.form = form;

@@ -6,17 +6,12 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterForm : AbstractForm
     {
         MainForm mainForm;
         SqlConnection connection;
         bool accept = false;
-        bool openedWindow = false;
-
-        public void changeOpenedWindow()
-        {
-            openedWindow = !openedWindow;
-        }
+        
         public RegisterForm() { }
         public RegisterForm(SqlConnection conn, MainForm f1)
         {

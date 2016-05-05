@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class TeamRegistrations : Form
+    public partial class TeamRegistrations : AbstractForm
     {
         SqlConnection connection;
-        MainForm mainForm;
-        public TeamRegistrations(SqlConnection conn, MainForm MF)
+        AbstractForm mainForm;
+        public TeamRegistrations(SqlConnection conn, AbstractForm MF)
         {
             connection = conn;
             mainForm = MF;

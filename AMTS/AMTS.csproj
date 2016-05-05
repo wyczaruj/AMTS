@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbstractForm.Designer.cs">
+      <DependentUpon>AbstractForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChooseServer.cs">
       <SubType>Form</SubType>
     </Compile>
