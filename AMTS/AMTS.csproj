@@ -68,6 +68,12 @@
     <Compile Include="ChooseServer.Designer.cs">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Confirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Confirmation.Designer.cs">
+      <DependentUpon>Confirmation.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyTeamRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="ChooseServer.resx">
       <DependentUpon>ChooseServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Confirmation.resx">
+      <DependentUpon>Confirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DodajDruzyne.resx">
       <DependentUpon>DodajDruzyne.cs</DependentUpon>

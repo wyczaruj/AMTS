@@ -45,6 +45,7 @@ namespace AMTS
             this.teamRegistrationsButton = new System.Windows.Forms.Button();
             this.numberOfTeamRegistrationsLabel = new System.Windows.Forms.Label();
             this.myRegistrationButton = new System.Windows.Forms.Button();
+            this.confirmConfirmationButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelZJ
@@ -120,7 +121,7 @@ namespace AMTS
             // terminarz
             // 
             this.terminarz.Location = new System.Drawing.Point(16, 6);
-            this.terminarz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.terminarz.Margin = new System.Windows.Forms.Padding(4);
             this.terminarz.Name = "terminarz";
             this.terminarz.Size = new System.Drawing.Size(100, 28);
             this.terminarz.TabIndex = 7;
@@ -131,7 +132,7 @@ namespace AMTS
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(143, 6);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 8;
@@ -141,7 +142,7 @@ namespace AMTS
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(265, 6);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 9;
@@ -151,7 +152,7 @@ namespace AMTS
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(385, 6);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 10;
@@ -161,7 +162,7 @@ namespace AMTS
             // registerTeam
             // 
             this.registerTeam.Location = new System.Drawing.Point(1091, 263);
-            this.registerTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.registerTeam.Margin = new System.Windows.Forms.Padding(4);
             this.registerTeam.Name = "registerTeam";
             this.registerTeam.Size = new System.Drawing.Size(140, 31);
             this.registerTeam.TabIndex = 11;
@@ -205,19 +206,30 @@ namespace AMTS
             // 
             // myRegistrationButton
             // 
-            this.myRegistrationButton.Location = new System.Drawing.Point(350, 216);
+            this.myRegistrationButton.Location = new System.Drawing.Point(509, 350);
             this.myRegistrationButton.Name = "myRegistrationButton";
-            this.myRegistrationButton.Size = new System.Drawing.Size(589, 203);
+            this.myRegistrationButton.Size = new System.Drawing.Size(430, 69);
             this.myRegistrationButton.TabIndex = 15;
             this.myRegistrationButton.Text = "Moje zgłoszenie";
             this.myRegistrationButton.UseVisualStyleBackColor = true;
             this.myRegistrationButton.Click += new System.EventHandler(this.myRegistrationButton_Click);
+            // 
+            // confirmConfirmationButton
+            // 
+            this.confirmConfirmationButton.Location = new System.Drawing.Point(486, 146);
+            this.confirmConfirmationButton.Name = "confirmConfirmationButton";
+            this.confirmConfirmationButton.Size = new System.Drawing.Size(337, 129);
+            this.confirmConfirmationButton.TabIndex = 16;
+            this.confirmConfirmationButton.Text = "Potwierdź swój udział";
+            this.confirmConfirmationButton.UseVisualStyleBackColor = true;
+            this.confirmConfirmationButton.Click += new System.EventHandler(this.confirmConfirmationButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 482);
+            this.Controls.Add(this.confirmConfirmationButton);
             this.Controls.Add(this.myRegistrationButton);
             this.Controls.Add(this.numberOfTeamRegistrationsLabel);
             this.Controls.Add(this.teamRegistrationsButton);
@@ -262,6 +274,7 @@ namespace AMTS
         private System.Windows.Forms.Button teamRegistrationsButton;
         private System.Windows.Forms.Label numberOfTeamRegistrationsLabel;
         private System.Windows.Forms.Button myRegistrationButton;
+        private System.Windows.Forms.Button confirmConfirmationButton;
     }
 }
 

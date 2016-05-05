@@ -1,6 +1,6 @@
 ﻿namespace AMTS
 {
-    partial class MyTeamRegistration
+    partial class Confirmation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
+            this.teamsListView = new System.Windows.Forms.ListView();
             this.playersListView = new System.Windows.Forms.ListView();
             this.nameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lastNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.emailColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.captainColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.confirmationColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.teamNameLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label3
+            // teamsListView
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(27, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Skład:";
+            this.teamsListView.CheckBoxes = true;
+            this.teamsListView.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamsListView.Location = new System.Drawing.Point(12, 21);
+            this.teamsListView.MultiSelect = false;
+            this.teamsListView.Name = "teamsListView";
+            this.teamsListView.Size = new System.Drawing.Size(238, 454);
+            this.teamsListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.teamsListView.TabIndex = 11;
+            this.teamsListView.UseCompatibleStateImageBehavior = false;
+            this.teamsListView.View = System.Windows.Forms.View.SmallIcon;
+            this.teamsListView.SelectedIndexChanged += new System.EventHandler(this.teamsListView_SelectedIndexChanged);
             // 
             // playersListView
             // 
@@ -58,12 +61,12 @@
             this.captainColumnHeader,
             this.confirmationColumnHeader});
             this.playersListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.playersListView.Location = new System.Drawing.Point(137, 69);
+            this.playersListView.Location = new System.Drawing.Point(256, 21);
             this.playersListView.MultiSelect = false;
             this.playersListView.Name = "playersListView";
-            this.playersListView.Size = new System.Drawing.Size(647, 371);
+            this.playersListView.Size = new System.Drawing.Size(664, 393);
             this.playersListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.playersListView.TabIndex = 7;
+            this.playersListView.TabIndex = 10;
             this.playersListView.UseCompatibleStateImageBehavior = false;
             this.playersListView.View = System.Windows.Forms.View.Details;
             // 
@@ -92,51 +95,38 @@
             this.confirmationColumnHeader.Text = "Potwierdzenie";
             this.confirmationColumnHeader.Width = 140;
             // 
-            // teamNameLabel
+            // button1
             // 
-            this.teamNameLabel.AutoSize = true;
-            this.teamNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.teamNameLabel.Location = new System.Drawing.Point(259, 20);
-            this.teamNameLabel.Name = "teamNameLabel";
-            this.teamNameLabel.Size = new System.Drawing.Size(525, 32);
-            this.teamNameLabel.TabIndex = 1;
-            this.teamNameLabel.Text = "Przykładowa długa nazwa mojej drużyny";
+            this.button1.Location = new System.Drawing.Point(256, 420);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(664, 55);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(24, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nazwa drużyny:";
-            // 
-            // MyTeamRegistration
+            // Confirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 452);
+            this.ClientSize = new System.Drawing.Size(938, 487);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.teamsListView);
             this.Controls.Add(this.playersListView);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.teamNameLabel);
-            this.Controls.Add(this.label1);
-            this.Name = "MyTeamRegistration";
-            this.Text = "Moja drużyna";
+            this.Name = "Confirmation";
+            this.Text = "Confirmation";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
+
+        private System.Windows.Forms.ListView teamsListView;
         private System.Windows.Forms.ListView playersListView;
         private System.Windows.Forms.ColumnHeader nameColumnHeader;
         private System.Windows.Forms.ColumnHeader lastNameColumnHeader;
         private System.Windows.Forms.ColumnHeader emailColumnHeader;
         private System.Windows.Forms.ColumnHeader captainColumnHeader;
         private System.Windows.Forms.ColumnHeader confirmationColumnHeader;
-        private System.Windows.Forms.Label teamNameLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

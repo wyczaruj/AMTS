@@ -164,5 +164,12 @@ namespace AMTS
             MyTeamRegistration MTR = new MyTeamRegistration("te", connection, this);
             MTR.Visible = true;
         }
+
+        private void confirmConfirmationButton_Click(object sender, EventArgs e)
+        {
+            //cow
+            Confirmation conf = new Confirmation(connection, this, LoggedInUser);
+            conf.Visible = true;
+        }
     }
 }
