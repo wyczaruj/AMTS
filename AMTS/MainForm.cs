@@ -27,6 +27,9 @@ namespace AMTS
             druzynaLabel.Visible = false;
             teamLabel.Visible = false;
             logOutButton.Visible = false;
+            ////////////
+            successfulLogIn("pat@van.op");
+            ///////////
         }
 
         private void logInButton_Click(object sender, EventArgs e)
@@ -53,6 +56,8 @@ namespace AMTS
             registerButton.Visible = true;
             druzynaLabel.Visible = false;
             teamLabel.Visible = false;
+            confirmConfirmationButton.Visible = false;
+            myRegistrationButton.Visible = false;
         }
 
         private void registerButton_Click(object sender, EventArgs e)
@@ -78,6 +83,7 @@ namespace AMTS
             registerButton.Visible = false;
             niezalogowany.Visible = false;
             registerTeam.Visible = true;
+            confirmConfirmationButton.Visible = true;
 
             LoggedInUser = new User(connection, mail);
 
@@ -91,7 +97,9 @@ namespace AMTS
             }
             if (LoggedInUser.getPending())
             {
+                myRegistrationButton.Visible = true;
                 registerTeam.Visible = false;
+                confirmConfirmationButton.Visible = false;
                 DBteam = LoggedInUser.getTeamName() + " [NIEZATWIERDZONA]";
             }
             teamLabel.Text = DBteam;
@@ -161,7 +169,7 @@ namespace AMTS
         private void myRegistrationButton_Click(object sender, EventArgs e)
         {
             //changeopeend dodać
-            MyTeamRegistration MTR = new MyTeamRegistration("te", connection, this);
+            MyTeamRegistration MTR = new MyTeamRegistration("Qwerty", connection, this);
             MTR.Visible = true;
         }
 

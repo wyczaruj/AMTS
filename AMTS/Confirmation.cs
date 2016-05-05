@@ -15,6 +15,7 @@ namespace AMTS
     {
         SqlConnection connection;
         MainForm mainForm;
+        string mail;
 
         public Confirmation(SqlConnection conn, MainForm MF, User user)
         {
@@ -22,6 +23,8 @@ namespace AMTS
             mainForm = MF;
             InitializeComponent();
 
+            mail = user.getEmail();
+            confirmButton.Enabled = false;
             string comm = "SELECT DRUZYNA AS TEAM FROM ZGLOSZENIA WHERE Mail ='"
                 + user.getEmail() + "'";
             SqlCommand sqlcomm = new SqlCommand(comm , connection);
@@ -35,6 +38,7 @@ namespace AMTS
 
         private void teamsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            confirmButton.Enabled = true;
             playersListView.Items.Clear();
             if (teamsListView.SelectedIndices.Count <= 0)
             {
@@ -67,14 +71,35 @@ namespace AMTS
                     captain = "     X";
                 else
                     captain = "";
-                if ((bool)r["AGREE"])
+                string conf = r["AGREE"].ToString();
+                if (conf.Equals("1"))
                     confirmation = "TAK";
-                else
+                else if (conf.Equals("0"))
                     confirmation = "BRAK";
+                else
+                    confirmation = "ODRZUCENIE";
                 LVitem = new ListViewItem(new[] { name, lastname, mail, captain, confirmation });
                 playersListView.Items.Add(LVitem);
             }
             r.Close();
+
+        }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Jesteś pewien?", "Potwierdzenie", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Potwierdziłeś swój udział w drużynie.");
+                string teamName = teamsListView.SelectedItems[0].Text;
+                string command = "exec dbo.potwierdzUdzial '" + teamName + "', '" + mail + "'";
+                SqlCommand sqlcomm = new SqlCommand(command, connection);
+                sqlcomm.ExecuteNonQuery();
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+            }
 
         }
     }

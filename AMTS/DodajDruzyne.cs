@@ -153,6 +153,9 @@ namespace AMTS
                     sqlcomm = new SqlCommand(comm, connection);
                     sqlcomm.ExecuteNonQuery();
                 }
+                comm = "exec dbo.potwierdzUdzial '" + teamNameTextBox.Text + "', '" + emails[0] + "'";
+                sqlcomm = new SqlCommand(comm, connection);
+                sqlcomm.ExecuteNonQuery();
                 mainForm.successfulTeamRegistration(teamNameTextBox.Text);
                 this.Close();
             }

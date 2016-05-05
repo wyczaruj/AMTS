@@ -30,7 +30,8 @@ namespace AMTS
             {
                 pesel = r["PSL"].ToString();
                 r.Close();
-                SqlCommand sqlcomm2 = new SqlCommand("SELECT Nazwa AS TEAMNAME FROM DRUZYNY WHERE Kapitan = '" + pesel + "'", connection);
+                SqlCommand sqlcomm2 = new SqlCommand("SELECT Druzyna AS TEAMNAME FROM ZGLOSZENIA WHERE Mail= '" + email 
+                    + "' AND Potwierdzenie = 1", connection);
                 SqlDataReader r2 = sqlcomm2.ExecuteReader();
                 if (r2.Read())
                 {

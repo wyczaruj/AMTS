@@ -22,8 +22,9 @@ namespace AMTS
             teamName = team;
             mainForm = MF;
             teamNameLabel.Text = team;
-            SqlCommand sqlcomm = new SqlCommand("SELECT U.Mail AS EMAIL FROM UZYTKOWNICY U join DRUZYNY D" +
-                " ON U.PESEL = D.Kapitan WHERE D.Nazwa='" + teamName + "'", connection);
+            string comm = "SELECT U.Mail AS EMAIL FROM UZYTKOWNICY U join DRUZYNY D" +
+                " ON U.PESEL = D.Kapitan WHERE D.Nazwa='" + teamName + "'";
+            SqlCommand sqlcomm = new SqlCommand(comm, connection);
             SqlDataReader r = sqlcomm.ExecuteReader();
             r.Read();
             captnEmail = r["EMAIL"].ToString();
@@ -41,10 +42,13 @@ namespace AMTS
                     captain = "     X";
                 else
                     captain = "";
-                if ((bool)r["AGREE"])
+                string conf = r["AGREE"].ToString();
+                if (conf.Equals("1"))
                     confirmation = "TAK";
-                else
+                else if (conf.Equals("0"))
                     confirmation = "BRAK";
+                else
+                    confirmation = "ODRZUCENIE";
                 LVitem = new ListViewItem(new[] { name, lastname, mail, captain, confirmation });
                 playersListView.Items.Add(LVitem);
             }

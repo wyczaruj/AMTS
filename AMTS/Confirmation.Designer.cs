@@ -35,7 +35,7 @@
             this.emailColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.captainColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.confirmationColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.confirmButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // teamsListView
@@ -95,21 +95,22 @@
             this.confirmationColumnHeader.Text = "Potwierdzenie";
             this.confirmationColumnHeader.Width = 140;
             // 
-            // button1
+            // confirmButton
             // 
-            this.button1.Location = new System.Drawing.Point(256, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(664, 55);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.confirmButton.Location = new System.Drawing.Point(256, 420);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(664, 55);
+            this.confirmButton.TabIndex = 12;
+            this.confirmButton.Text = "Potwierdź swój udział w drużynie ";
+            this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // Confirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 487);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.teamsListView);
             this.Controls.Add(this.playersListView);
             this.Name = "Confirmation";
@@ -127,6 +128,6 @@
         private System.Windows.Forms.ColumnHeader emailColumnHeader;
         private System.Windows.Forms.ColumnHeader captainColumnHeader;
         private System.Windows.Forms.ColumnHeader confirmationColumnHeader;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button confirmButton;
     }
 }
