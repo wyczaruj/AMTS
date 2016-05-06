@@ -42,7 +42,7 @@ namespace AMTS
         {
             teamRegistrationsButton.Visible = false;
             numberOfTeamRegistrationsLabel.Visible = false;
-            registerTeam.Visible = true;
+            registerTeamButton.Visible = true;
             LoggedIn = false;
             AdminLogged = false;
             LoggedInUser = null;
@@ -52,6 +52,8 @@ namespace AMTS
             registerButton.Visible = true;
             druzynaLabel.Visible = false;
             teamLabel.Visible = false;
+            confirmConfirmationButton.Visible = false;
+            myRegistrationButton.Visible = false;
         }
 
         private void registerButton_Click(object sender, EventArgs e)
@@ -70,24 +72,37 @@ namespace AMTS
             LoggedIn = true;
             logInButton.Visible = false;
             logOutButton.Visible = true;
+            myRegistrationButton.Visible = false;
             registerButton.Visible = false;
             niezalogowany.Visible = false;
-            registerTeam.Visible = true;
-
+            registerTeamButton.Visible = true;
             LoggedInUser = new User(connection, mail);
+
+            if(LoggedInUser.getPendingConfirmation())
+                confirmConfirmationButton.Visible = true;
 
             LoggedInAsLabel.Text = mail;
 
             string DBteam = "BRAK";
             if (LoggedInUser.getHasTeam())
             {
-                registerTeam.Visible = false;
+                registerTeamButton.Visible = false;
                 DBteam = LoggedInUser.getTeamName();
+                if (LoggedInUser.isCaptain())
+                {
+                    DBteam += "\n[KAPITAN]";
+                }
             }
             if (LoggedInUser.getPending())
             {
-                registerTeam.Visible = false;
+                myRegistrationButton.Visible = true;
+                registerTeamButton.Visible = false;
+                confirmConfirmationButton.Visible = false;
                 DBteam = LoggedInUser.getTeamName() + " [NIEZATWIERDZONA]";
+                if (LoggedInUser.isCaptain())
+                {
+                    DBteam += "\n[KAPITAN]";
+                }
             }
             teamLabel.Text = DBteam;
             druzynaLabel.Visible = true;
@@ -96,7 +111,8 @@ namespace AMTS
 
         public void successfulTeamRegistration(string teamName)
         {
-            teamLabel.Text = teamName + " [NIEZATWIERDZONA]";
+            teamLabel.Text = teamName + " [NIEZATWIERDZONA]\n[KAPITAN]";
+            successfulLogIn(LoggedInUser.getEmail());
         }
 
         private void registerTeam_Click(object sender, EventArgs e)
@@ -137,7 +153,7 @@ namespace AMTS
             logOutButton.Visible = true;
             registerButton.Visible = false;
             niezalogowany.Visible = false;
-            registerTeam.Visible = false;
+            registerTeamButton.Visible = false;
             teamRegistrationsButton.Visible = true;
 
             LoggedInAsLabel.Text = mail + " [ADMIN]";
@@ -161,6 +177,34 @@ namespace AMTS
                 changeOpenedWindow();
                 regulamin.Visible = true;
             }
+        }
+		
+        private void myRegistrationButton_Click(object sender, EventArgs e)
+        {
+            if (openedWindow == false)
+            {
+                changeOpenedWindow();
+                MyTeamRegistration MTR = new MyTeamRegistration(LoggedInUser, connection, this);
+                MTR.Visible = true;
+            }
+        }
+
+        private void confirmConfirmationButton_Click(object sender, EventArgs e)
+        {
+            if (openedWindow == false)
+            {
+                changeOpenedWindow();
+                Confirmation conf = new Confirmation(connection, this, LoggedInUser);
+                conf.Visible = true;
+            }
+        }
+
+        public void successfulConfirmation()
+        {
+            LoggedInUser.refreshData(connection);
+            registerTeamButton.Visible = false;
+            confirmConfirmationButton.Visible = false;
+            myRegistrationButton.Visible = true;
         }
     }
 }
