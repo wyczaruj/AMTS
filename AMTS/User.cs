@@ -9,21 +9,29 @@ namespace AMTS
         private string teamName;
         private string email;
         private bool pendingTeamRequest;
-        private bool isCaptain;
+        private bool pendingConfirmation;
+        private bool Captain;
 
         public User(SqlConnection connection, string email)
         {
-            isCaptain = false;
+            Captain = false;
             hasTeam = false;
+            pendingConfirmation = false;
             pendingTeamRequest = false;
             this.email = email;
             teamName = "";
+            refreshData(connection);
+        }
+
+        public void refreshData(SqlConnection connection)
+        {
             SqlCommand sqlcomm = new SqlCommand("SELECT Druzyna AS TEAM, PESEL AS PSL FROM UZYTKOWNICY WHERE Mail=" + "'" + email + "'", connection);
             string pesel;
             SqlDataReader r = sqlcomm.ExecuteReader();
             r.Read();
             Object team = r["TEAM"];
             pesel = r["PSL"].ToString();
+            r.Close();
             if (DBNull.Value != team)
             {
                 teamName = team.ToString();
@@ -31,10 +39,17 @@ namespace AMTS
             }
             else
             {
-                r.Close();
-                SqlCommand sqlcomm2 = new SqlCommand("SELECT Druzyna AS TEAMNAME FROM ZGLOSZENIA WHERE Mail= '" + email 
-                    + "' AND Potwierdzenie = 1", connection);
+                SqlCommand sqlcomm2 = new SqlCommand("SELECT * FROM ZGLOSZENIA WHERE Mail= '" + email
+                    + "' AND Potwierdzenie = 0", connection);
                 SqlDataReader r2 = sqlcomm2.ExecuteReader();
+                if (r2.Read())
+                {
+                    pendingConfirmation = true;
+                }
+                r2.Close();
+                sqlcomm2 = new SqlCommand("SELECT Druzyna AS TEAMNAME FROM ZGLOSZENIA WHERE Mail= '" + email
+                    + "' AND Potwierdzenie = 1", connection);
+                r2 = sqlcomm2.ExecuteReader();
                 if (r2.Read())
                 {
                     pendingTeamRequest = true;
@@ -42,15 +57,14 @@ namespace AMTS
                 }
                 r2.Close();
             }
-            r.Close();
-            if(pendingTeamRequest || hasTeam)
+            if (pendingTeamRequest || hasTeam)
             {
                 sqlcomm = new SqlCommand("SELECT Kapitan AS CAP FROM DRUZYNY WHERE Nazwa=" + "'" + teamName + "'", connection);
                 r = sqlcomm.ExecuteReader();
                 r.Read();
                 if (r["CAP"].ToString().Equals(pesel))
                 {
-                    isCaptain = true;
+                    Captain = true;
                 }
                 r.Close();
             }
@@ -76,9 +90,14 @@ namespace AMTS
             return pendingTeamRequest;
         }
 
-        public bool getCaptain()
+        public bool isCaptain()
         {
-            return isCaptain;
+            return Captain;
+        }
+
+        public bool getPendingConfirmation()
+        {
+            return pendingConfirmation;
         }
 
     }

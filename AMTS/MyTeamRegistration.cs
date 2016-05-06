@@ -7,21 +7,25 @@ namespace AMTS
     {
         SqlConnection connection;
         MainForm mainForm;
-        public MyTeamRegistration(string team, SqlConnection conn, MainForm MF)
+        private string captnEmail;
+        private string teamName;
+        public MyTeamRegistration(User user, SqlConnection conn, MainForm MF)
         {
             InitializeComponent();
             connection = conn;
-            string teamName;
-            string captnEmail;
             string name;
             string lastname;
             string captain;
             string mail;
             string confirmation;
             ListViewItem LVitem;
-            teamName = team;
+            teamName = user.getTeamName();
+            if (user.isCaptain())
+            {
+                cancelRegistrationButton.Visible = true;
+            }
             mainForm = MF;
-            teamNameLabel.Text = team;
+            teamNameLabel.Text = teamName;
             string comm = "SELECT U.Mail AS EMAIL FROM UZYTKOWNICY U join DRUZYNY D" +
                 " ON U.PESEL = D.Kapitan WHERE D.Nazwa='" + teamName + "'";
             SqlCommand sqlcomm = new SqlCommand(comm, connection);
@@ -53,6 +57,23 @@ namespace AMTS
                 playersListView.Items.Add(LVitem);
             }
             r.Close();
+        }
+
+        private void cancelRegistrationButton_Click(object sender, System.EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz anulować zgłoszenie?", "Anulowanie zgłoszenia", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Twoje zgłoszenie zostało anulowane.");
+                string command = "exec dbo.anulujZgloszenie '" + teamName + "'";
+                SqlCommand sqlcomm = new SqlCommand(command, connection);
+                sqlcomm.ExecuteNonQuery();
+                mainForm.successfulLogIn(captnEmail);
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+            }
         }
     }
 }

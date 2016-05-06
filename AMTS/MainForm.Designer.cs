@@ -40,7 +40,7 @@ namespace AMTS
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.registerTeam = new System.Windows.Forms.Button();
+            this.registerTeamButton = new System.Windows.Forms.Button();
             this.niezalogowany = new System.Windows.Forms.Label();
             this.teamRegistrationsButton = new System.Windows.Forms.Button();
             this.numberOfTeamRegistrationsLabel = new System.Windows.Forms.Label();
@@ -159,16 +159,16 @@ namespace AMTS
             this.button4.Text = "Regulamin";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // registerTeam
+            // registerTeamButton
             // 
-            this.registerTeam.Location = new System.Drawing.Point(869, 262);
-            this.registerTeam.Margin = new System.Windows.Forms.Padding(4);
-            this.registerTeam.Name = "registerTeam";
-            this.registerTeam.Size = new System.Drawing.Size(140, 31);
-            this.registerTeam.TabIndex = 11;
-            this.registerTeam.Text = "Zgłoś drużynę";
-            this.registerTeam.UseVisualStyleBackColor = true;
-            this.registerTeam.Click += new System.EventHandler(this.registerTeam_Click);
+            this.registerTeamButton.Location = new System.Drawing.Point(869, 262);
+            this.registerTeamButton.Margin = new System.Windows.Forms.Padding(4);
+            this.registerTeamButton.Name = "registerTeamButton";
+            this.registerTeamButton.Size = new System.Drawing.Size(140, 31);
+            this.registerTeamButton.TabIndex = 11;
+            this.registerTeamButton.Text = "Zgłoś drużynę";
+            this.registerTeamButton.UseVisualStyleBackColor = true;
+            this.registerTeamButton.Click += new System.EventHandler(this.registerTeam_Click);
             // 
             // niezalogowany
             // 
@@ -236,7 +236,7 @@ namespace AMTS
             this.Controls.Add(this.numberOfTeamRegistrationsLabel);
             this.Controls.Add(this.teamRegistrationsButton);
             this.Controls.Add(this.niezalogowany);
-            this.Controls.Add(this.registerTeam);
+            this.Controls.Add(this.registerTeamButton);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -271,7 +271,7 @@ namespace AMTS
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button registerTeam;
+        private System.Windows.Forms.Button registerTeamButton;
         private System.Windows.Forms.Label niezalogowany;
         private System.Windows.Forms.Button teamRegistrationsButton;
         private System.Windows.Forms.Label numberOfTeamRegistrationsLabel;

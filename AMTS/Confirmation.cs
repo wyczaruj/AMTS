@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AMTS
@@ -95,6 +88,7 @@ namespace AMTS
                 string command = "exec dbo.potwierdzUdzial '" + teamName + "', '" + mail + "'";
                 SqlCommand sqlcomm = new SqlCommand(command, connection);
                 sqlcomm.ExecuteNonQuery();
+                mainForm.successfulConfirmation();
                 this.Close();
             }
             else if (dialogResult == DialogResult.No)

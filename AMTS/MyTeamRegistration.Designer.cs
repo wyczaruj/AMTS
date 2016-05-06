@@ -37,6 +37,7 @@
             this.confirmationColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.teamNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cancelRegistrationButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -112,11 +113,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nazwa drużyny:";
             // 
+            // cancelRegistrationButton
+            // 
+            this.cancelRegistrationButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cancelRegistrationButton.Location = new System.Drawing.Point(137, 446);
+            this.cancelRegistrationButton.Name = "cancelRegistrationButton";
+            this.cancelRegistrationButton.Size = new System.Drawing.Size(647, 39);
+            this.cancelRegistrationButton.TabIndex = 8;
+            this.cancelRegistrationButton.Text = "Anuluj zgłoszenie";
+            this.cancelRegistrationButton.UseVisualStyleBackColor = true;
+            this.cancelRegistrationButton.Visible = false;
+            this.cancelRegistrationButton.Click += new System.EventHandler(this.cancelRegistrationButton_Click);
+            // 
             // MyTeamRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 453);
+            this.ClientSize = new System.Drawing.Size(878, 494);
+            this.Controls.Add(this.cancelRegistrationButton);
             this.Controls.Add(this.playersListView);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.teamNameLabel);
@@ -138,5 +152,6 @@
         private System.Windows.Forms.ColumnHeader confirmationColumnHeader;
         private System.Windows.Forms.Label teamNameLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button cancelRegistrationButton;
     }
 }
