@@ -40,16 +40,18 @@ namespace AMTS
             this.klasyfikacjaButton = new System.Windows.Forms.Button();
             this.wynikiButton = new System.Windows.Forms.Button();
             this.regulaminButton = new System.Windows.Forms.Button();
-            this.registerTeam = new System.Windows.Forms.Button();
+            this.registerTeamButton = new System.Windows.Forms.Button();
             this.niezalogowany = new System.Windows.Forms.Label();
             this.teamRegistrationsButton = new System.Windows.Forms.Button();
             this.numberOfTeamRegistrationsLabel = new System.Windows.Forms.Label();
+            this.myRegistrationButton = new System.Windows.Forms.Button();
+            this.confirmConfirmationButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelZJ
             // 
             this.LabelZJ.AutoSize = true;
-            this.LabelZJ.Location = new System.Drawing.Point(927, 18);
+            this.LabelZJ.Location = new System.Drawing.Point(705, 17);
             this.LabelZJ.Name = "LabelZJ";
             this.LabelZJ.Size = new System.Drawing.Size(118, 17);
             this.LabelZJ.TabIndex = 0;
@@ -58,7 +60,7 @@ namespace AMTS
             // LoggedInAsLabel
             // 
             this.LoggedInAsLabel.AutoSize = true;
-            this.LoggedInAsLabel.Location = new System.Drawing.Point(1051, 18);
+            this.LoggedInAsLabel.Location = new System.Drawing.Point(829, 17);
             this.LoggedInAsLabel.Name = "LoggedInAsLabel";
             this.LoggedInAsLabel.Size = new System.Drawing.Size(41, 17);
             this.LoggedInAsLabel.TabIndex = 1;
@@ -67,7 +69,7 @@ namespace AMTS
             // 
             // logInButton
             // 
-            this.logInButton.Location = new System.Drawing.Point(1125, 47);
+            this.logInButton.Location = new System.Drawing.Point(903, 46);
             this.logInButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(104, 33);
@@ -78,7 +80,7 @@ namespace AMTS
             // 
             // logOutButton
             // 
-            this.logOutButton.Location = new System.Drawing.Point(1156, 47);
+            this.logOutButton.Location = new System.Drawing.Point(934, 46);
             this.logOutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(75, 33);
@@ -86,10 +88,7 @@ namespace AMTS
             this.logOutButton.Text = "Wyloguj";
             this.logOutButton.UseVisualStyleBackColor = true;
             this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
-            // 
-            // registerButton
-            // 
-            this.registerButton.Location = new System.Drawing.Point(1125, 95);
+            this.registerButton.Location = new System.Drawing.Point(903, 94);
             this.registerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(104, 33);
@@ -101,7 +100,7 @@ namespace AMTS
             // druzynaLabel
             // 
             this.druzynaLabel.AutoSize = true;
-            this.druzynaLabel.Location = new System.Drawing.Point(927, 95);
+            this.druzynaLabel.Location = new System.Drawing.Point(705, 94);
             this.druzynaLabel.Name = "druzynaLabel";
             this.druzynaLabel.Size = new System.Drawing.Size(65, 17);
             this.druzynaLabel.TabIndex = 5;
@@ -110,7 +109,7 @@ namespace AMTS
             // teamLabel
             // 
             this.teamLabel.AutoSize = true;
-            this.teamLabel.Location = new System.Drawing.Point(1000, 95);
+            this.teamLabel.Location = new System.Drawing.Point(778, 94);
             this.teamLabel.Name = "teamLabel";
             this.teamLabel.Size = new System.Drawing.Size(204, 17);
             this.teamLabel.TabIndex = 6;
@@ -158,23 +157,23 @@ namespace AMTS
             this.regulaminButton.UseVisualStyleBackColor = true;
             this.regulaminButton.Click += new System.EventHandler(this.regulaminButton_Click);
             // 
-            // registerTeam
+            // registerTeamButton
             // 
-            this.registerTeam.Location = new System.Drawing.Point(1091, 263);
-            this.registerTeam.Margin = new System.Windows.Forms.Padding(4);
-            this.registerTeam.Name = "registerTeam";
-            this.registerTeam.Size = new System.Drawing.Size(140, 31);
-            this.registerTeam.TabIndex = 11;
-            this.registerTeam.Text = "Zgłoś drużynę";
-            this.registerTeam.UseVisualStyleBackColor = true;
-            this.registerTeam.Click += new System.EventHandler(this.registerTeam_Click);
+            this.registerTeamButton.Location = new System.Drawing.Point(869, 262);
+            this.registerTeamButton.Margin = new System.Windows.Forms.Padding(4);
+            this.registerTeamButton.Name = "registerTeamButton";
+            this.registerTeamButton.Size = new System.Drawing.Size(140, 31);
+            this.registerTeamButton.TabIndex = 11;
+            this.registerTeamButton.Text = "Zgłoś drużynę";
+            this.registerTeamButton.UseVisualStyleBackColor = true;
+            this.registerTeamButton.Click += new System.EventHandler(this.registerTeam_Click);
             // 
             // niezalogowany
             // 
             this.niezalogowany.AutoSize = true;
             this.niezalogowany.ForeColor = System.Drawing.Color.Red;
             this.niezalogowany.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.niezalogowany.Location = new System.Drawing.Point(1123, 298);
+            this.niezalogowany.Location = new System.Drawing.Point(901, 297);
             this.niezalogowany.Name = "niezalogowany";
             this.niezalogowany.Size = new System.Drawing.Size(81, 17);
             this.niezalogowany.TabIndex = 12;
@@ -183,7 +182,7 @@ namespace AMTS
             // 
             // teamRegistrationsButton
             // 
-            this.teamRegistrationsButton.Location = new System.Drawing.Point(1089, 436);
+            this.teamRegistrationsButton.Location = new System.Drawing.Point(867, 435);
             this.teamRegistrationsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.teamRegistrationsButton.Name = "teamRegistrationsButton";
             this.teamRegistrationsButton.Size = new System.Drawing.Size(141, 34);
@@ -196,22 +195,46 @@ namespace AMTS
             // numberOfTeamRegistrationsLabel
             // 
             this.numberOfTeamRegistrationsLabel.AutoSize = true;
-            this.numberOfTeamRegistrationsLabel.Location = new System.Drawing.Point(1049, 446);
+            this.numberOfTeamRegistrationsLabel.Location = new System.Drawing.Point(827, 445);
             this.numberOfTeamRegistrationsLabel.Name = "numberOfTeamRegistrationsLabel";
             this.numberOfTeamRegistrationsLabel.Size = new System.Drawing.Size(34, 17);
             this.numberOfTeamRegistrationsLabel.TabIndex = 14;
             this.numberOfTeamRegistrationsLabel.Text = "(14)";
             this.numberOfTeamRegistrationsLabel.Visible = false;
             // 
+            // myRegistrationButton
+            // 
+            this.myRegistrationButton.Location = new System.Drawing.Point(419, 408);
+            this.myRegistrationButton.Name = "myRegistrationButton";
+            this.myRegistrationButton.Size = new System.Drawing.Size(382, 62);
+            this.myRegistrationButton.TabIndex = 15;
+            this.myRegistrationButton.Text = "Moje zgłoszenie";
+            this.myRegistrationButton.UseVisualStyleBackColor = true;
+            this.myRegistrationButton.Visible = false;
+            this.myRegistrationButton.Click += new System.EventHandler(this.myRegistrationButton_Click);
+            // 
+            // confirmConfirmationButton
+            // 
+            this.confirmConfirmationButton.Location = new System.Drawing.Point(12, 408);
+            this.confirmConfirmationButton.Name = "confirmConfirmationButton";
+            this.confirmConfirmationButton.Size = new System.Drawing.Size(401, 62);
+            this.confirmConfirmationButton.TabIndex = 16;
+            this.confirmConfirmationButton.Text = "Potwierdź swój udział";
+            this.confirmConfirmationButton.UseVisualStyleBackColor = true;
+            this.confirmConfirmationButton.Visible = false;
+            this.confirmConfirmationButton.Click += new System.EventHandler(this.confirmConfirmationButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 482);
+            this.ClientSize = new System.Drawing.Size(1027, 482);	
+            this.Controls.Add(this.confirmConfirmationButton);
+            this.Controls.Add(this.myRegistrationButton);
             this.Controls.Add(this.numberOfTeamRegistrationsLabel);
             this.Controls.Add(this.teamRegistrationsButton);
             this.Controls.Add(this.niezalogowany);
-            this.Controls.Add(this.registerTeam);
+            this.Controls.Add(this.registerTeamButton);
             this.Controls.Add(this.regulaminButton);
             this.Controls.Add(this.wynikiButton);
             this.Controls.Add(this.klasyfikacjaButton);
@@ -246,10 +269,12 @@ namespace AMTS
         private System.Windows.Forms.Button klasyfikacjaButton;
         private System.Windows.Forms.Button wynikiButton;
         private System.Windows.Forms.Button regulaminButton;
-        private System.Windows.Forms.Button registerTeam;
+        private System.Windows.Forms.Button registerTeamButton;
         private System.Windows.Forms.Label niezalogowany;
         private System.Windows.Forms.Button teamRegistrationsButton;
         private System.Windows.Forms.Label numberOfTeamRegistrationsLabel;
+        private System.Windows.Forms.Button myRegistrationButton;
+        private System.Windows.Forms.Button confirmConfirmationButton;
     }
 }
 
