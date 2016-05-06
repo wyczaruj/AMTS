@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class Confirmation : Form
+    public partial class Confirmation : AbstractForm
     {
         SqlConnection connection;
         MainForm mainForm;
         string mail;
 
-        public Confirmation(SqlConnection conn, MainForm MF, User user)
+        public Confirmation(SqlConnection conn, AbstractForm MF, User user)
         {
             connection = conn;
             mainForm = MF;

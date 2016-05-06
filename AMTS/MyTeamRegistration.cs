@@ -3,13 +3,13 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class MyTeamRegistration : Form
+    public partial class MyTeamRegistration : AbstractForm
     {
         SqlConnection connection;
         MainForm mainForm;
         private string captnEmail;
         private string teamName;
-        public MyTeamRegistration(User user, SqlConnection conn, MainForm MF)
+        public MyTeamRegistration(User user, SqlConnection conn, AbstractForm MF)
         {
             InitializeComponent();
             connection = conn;
