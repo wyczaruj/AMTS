@@ -15,6 +15,7 @@ namespace AMTS
     {
         SqlConnection conn;
         AbstractForm mainForm;
+        DataSet dataSet;
         public Terminarz(SqlConnection connection, bool admin, AbstractForm MF)
         {
             mainForm = MF;
@@ -26,7 +27,7 @@ namespace AMTS
                 termAdd.Visible = true;
                 termEdit.Visible = true;
             }
-            DataSet dataSet = new DataSet();
+            dataSet = new DataSet();
             SqlDataAdapter dataAd = new SqlDataAdapter("SELECT * FROM TERMINARZ ORDER BY Data", connection);
             SqlCommandBuilder command = new SqlCommandBuilder(dataAd);
             dataAd.Fill(dataSet, "TERMINARZ");
@@ -63,6 +64,10 @@ namespace AMTS
             saveEdit.Visible = false;
             discardEdit.Visible = false;
             terminarzDataGridView.ReadOnly = true;
+            SqlDataAdapter dataAd = new SqlDataAdapter("SELECT * FROM TERMINARZ ORDER BY Data", conn);
+            dataSet.Clear();
+            dataAd.Fill(dataSet, "TERMINARZ");
+            terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
         }
 
         private void Terminarz_FormClosed(object sender, FormClosedEventArgs e)
