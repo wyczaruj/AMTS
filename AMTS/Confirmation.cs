@@ -10,7 +10,7 @@ namespace AMTS
         MainForm mainForm;
         string mail;
 
-        public Confirmation(SqlConnection conn, AbstractForm MF, User user)
+        public Confirmation(SqlConnection conn, MainForm MF, User user)
         {
             connection = conn;
             mainForm = MF;

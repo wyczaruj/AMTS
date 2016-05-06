@@ -9,7 +9,7 @@ namespace AMTS
         MainForm mainForm;
         private string captnEmail;
         private string teamName;
-        public MyTeamRegistration(User user, SqlConnection conn, AbstractForm MF)
+        public MyTeamRegistration(User user, SqlConnection conn, MainForm MF)
         {
             InitializeComponent();
             connection = conn;
