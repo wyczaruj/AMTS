@@ -35,8 +35,6 @@
             this.druzyna2 = new System.Windows.Forms.Label();
             this.druzyna1 = new System.Windows.Forms.Label();
             this.malePunkty1 = new System.Windows.Forms.Label();
-            this.duzePunkty2 = new System.Windows.Forms.Label();
-            this.malePunkty2 = new System.Windows.Forms.Label();
             this.duzePunkty1 = new System.Windows.Forms.Label();
             this.comboBoxDruzyna = new System.Windows.Forms.ComboBox();
             this.comboBoxPrzeciwnik = new System.Windows.Forms.ComboBox();
@@ -46,6 +44,10 @@
             this.numericDuzePrzeciwnika = new System.Windows.Forms.NumericUpDown();
             this.numericMaleDruzyny = new System.Windows.Forms.NumericUpDown();
             this.numericMalePrzeciwnika = new System.Windows.Forms.NumericUpDown();
+            this.NoDruzyna = new System.Windows.Forms.Label();
+            this.DwieTakieSameDruzyny = new System.Windows.Forms.Label();
+            this.SumaDuzych = new System.Windows.Forms.Label();
+            this.SumaMalych = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericRunda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDuzeDruzyny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDuzePrzeciwnika)).BeginInit();
@@ -55,7 +57,7 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(224, 273);
+            this.save.Location = new System.Drawing.Point(179, 232);
             this.save.Margin = new System.Windows.Forms.Padding(4);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(100, 28);
@@ -66,7 +68,7 @@
             // 
             // discard
             // 
-            this.discard.Location = new System.Drawing.Point(7, 273);
+            this.discard.Location = new System.Drawing.Point(41, 232);
             this.discard.Margin = new System.Windows.Forms.Padding(4);
             this.discard.Name = "discard";
             this.discard.Size = new System.Drawing.Size(100, 28);
@@ -78,7 +80,7 @@
             // data
             // 
             this.data.AutoSize = true;
-            this.data.Location = new System.Drawing.Point(128, 9);
+            this.data.Location = new System.Drawing.Point(49, 12);
             this.data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.data.Name = "data";
             this.data.Size = new System.Drawing.Size(38, 17);
@@ -88,7 +90,7 @@
             // runda
             // 
             this.runda.AutoSize = true;
-            this.runda.Location = new System.Drawing.Point(119, 43);
+            this.runda.Location = new System.Drawing.Point(37, 37);
             this.runda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.runda.Name = "runda";
             this.runda.Size = new System.Drawing.Size(50, 17);
@@ -98,7 +100,7 @@
             // druzyna2
             // 
             this.druzyna2.AutoSize = true;
-            this.druzyna2.Location = new System.Drawing.Point(93, 107);
+            this.druzyna2.Location = new System.Drawing.Point(13, 96);
             this.druzyna2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.druzyna2.Name = "druzyna2";
             this.druzyna2.Size = new System.Drawing.Size(74, 17);
@@ -108,7 +110,7 @@
             // druzyna1
             // 
             this.druzyna1.AutoSize = true;
-            this.druzyna1.Location = new System.Drawing.Point(109, 79);
+            this.druzyna1.Location = new System.Drawing.Point(26, 65);
             this.druzyna1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.druzyna1.Name = "druzyna1";
             this.druzyna1.Size = new System.Drawing.Size(61, 17);
@@ -118,47 +120,27 @@
             // malePunkty1
             // 
             this.malePunkty1.AutoSize = true;
-            this.malePunkty1.Location = new System.Drawing.Point(32, 201);
+            this.malePunkty1.Location = new System.Drawing.Point(9, 165);
             this.malePunkty1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.malePunkty1.Name = "malePunkty1";
-            this.malePunkty1.Size = new System.Drawing.Size(138, 17);
+            this.malePunkty1.Size = new System.Drawing.Size(223, 17);
             this.malePunkty1.TabIndex = 9;
-            this.malePunkty1.Text = "Male punkty druzyny";
-            // 
-            // duzePunkty2
-            // 
-            this.duzePunkty2.AutoSize = true;
-            this.duzePunkty2.Location = new System.Drawing.Point(3, 171);
-            this.duzePunkty2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.duzePunkty2.Name = "duzePunkty2";
-            this.duzePunkty2.Size = new System.Drawing.Size(164, 17);
-            this.duzePunkty2.TabIndex = 8;
-            this.duzePunkty2.Text = "Duze punkty przecwinika";
-            // 
-            // malePunkty2
-            // 
-            this.malePunkty2.AutoSize = true;
-            this.malePunkty2.Location = new System.Drawing.Point(5, 233);
-            this.malePunkty2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.malePunkty2.Name = "malePunkty2";
-            this.malePunkty2.Size = new System.Drawing.Size(161, 17);
-            this.malePunkty2.TabIndex = 7;
-            this.malePunkty2.Text = "Male punkty przeciwnika";
+            this.malePunkty1.Text = "Male punkty druzyny : przeciwnika";
             // 
             // duzePunkty1
             // 
             this.duzePunkty1.AutoSize = true;
-            this.duzePunkty1.Location = new System.Drawing.Point(29, 139);
+            this.duzePunkty1.Location = new System.Drawing.Point(13, 120);
             this.duzePunkty1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.duzePunkty1.Name = "duzePunkty1";
-            this.duzePunkty1.Size = new System.Drawing.Size(141, 17);
+            this.duzePunkty1.Size = new System.Drawing.Size(226, 17);
             this.duzePunkty1.TabIndex = 6;
-            this.duzePunkty1.Text = "Duże punkty drużyny";
+            this.duzePunkty1.Text = "Duże punkty drużyny : przeciwnika";
             // 
             // comboBoxDruzyna
             // 
             this.comboBoxDruzyna.FormattingEnabled = true;
-            this.comboBoxDruzyna.Location = new System.Drawing.Point(179, 72);
+            this.comboBoxDruzyna.Location = new System.Drawing.Point(88, 63);
             this.comboBoxDruzyna.Name = "comboBoxDruzyna";
             this.comboBoxDruzyna.Size = new System.Drawing.Size(144, 24);
             this.comboBoxDruzyna.TabIndex = 18;
@@ -166,25 +148,26 @@
             // comboBoxPrzeciwnik
             // 
             this.comboBoxPrzeciwnik.FormattingEnabled = true;
-            this.comboBoxPrzeciwnik.Location = new System.Drawing.Point(179, 107);
+            this.comboBoxPrzeciwnik.Location = new System.Drawing.Point(88, 93);
             this.comboBoxPrzeciwnik.Name = "comboBoxPrzeciwnik";
             this.comboBoxPrzeciwnik.Size = new System.Drawing.Size(144, 24);
             this.comboBoxPrzeciwnik.TabIndex = 19;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(179, 11);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(88, 7);
             this.dateTimePicker1.MaxDate = new System.DateTime(2100, 5, 4, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateTimePicker1.Size = new System.Drawing.Size(144, 22);
             this.dateTimePicker1.TabIndex = 20;
             this.dateTimePicker1.Value = new System.DateTime(2016, 5, 4, 0, 0, 0, 0);
             // 
             // numericRunda
             // 
-            this.numericRunda.Location = new System.Drawing.Point(179, 43);
+            this.numericRunda.Location = new System.Drawing.Point(88, 35);
             this.numericRunda.Name = "numericRunda";
             this.numericRunda.Size = new System.Drawing.Size(53, 22);
             this.numericRunda.TabIndex = 21;
@@ -196,37 +179,81 @@
             // 
             // numericDuzeDruzyny
             // 
-            this.numericDuzeDruzyny.Location = new System.Drawing.Point(179, 139);
+            this.numericDuzeDruzyny.Location = new System.Drawing.Point(88, 140);
             this.numericDuzeDruzyny.Name = "numericDuzeDruzyny";
             this.numericDuzeDruzyny.Size = new System.Drawing.Size(53, 22);
             this.numericDuzeDruzyny.TabIndex = 22;
             // 
             // numericDuzePrzeciwnika
             // 
-            this.numericDuzePrzeciwnika.Location = new System.Drawing.Point(179, 171);
+            this.numericDuzePrzeciwnika.Location = new System.Drawing.Point(179, 140);
             this.numericDuzePrzeciwnika.Name = "numericDuzePrzeciwnika";
             this.numericDuzePrzeciwnika.Size = new System.Drawing.Size(53, 22);
             this.numericDuzePrzeciwnika.TabIndex = 23;
             // 
             // numericMaleDruzyny
             // 
-            this.numericMaleDruzyny.Location = new System.Drawing.Point(179, 205);
+            this.numericMaleDruzyny.Location = new System.Drawing.Point(88, 185);
             this.numericMaleDruzyny.Name = "numericMaleDruzyny";
             this.numericMaleDruzyny.Size = new System.Drawing.Size(53, 22);
             this.numericMaleDruzyny.TabIndex = 24;
             // 
             // numericMalePrzeciwnika
             // 
-            this.numericMalePrzeciwnika.Location = new System.Drawing.Point(179, 233);
+            this.numericMalePrzeciwnika.Location = new System.Drawing.Point(179, 185);
             this.numericMalePrzeciwnika.Name = "numericMalePrzeciwnika";
             this.numericMalePrzeciwnika.Size = new System.Drawing.Size(53, 22);
             this.numericMalePrzeciwnika.TabIndex = 25;
+            // 
+            // NoDruzyna
+            // 
+            this.NoDruzyna.AutoSize = true;
+            this.NoDruzyna.ForeColor = System.Drawing.Color.Red;
+            this.NoDruzyna.Location = new System.Drawing.Point(238, 66);
+            this.NoDruzyna.Name = "NoDruzyna";
+            this.NoDruzyna.Size = new System.Drawing.Size(136, 17);
+            this.NoDruzyna.TabIndex = 26;
+            this.NoDruzyna.Text = "Niewybrano drużyny";
+            // 
+            // DwieTakieSameDruzyny
+            // 
+            this.DwieTakieSameDruzyny.AutoSize = true;
+            this.DwieTakieSameDruzyny.ForeColor = System.Drawing.Color.Red;
+            this.DwieTakieSameDruzyny.Location = new System.Drawing.Point(238, 96);
+            this.DwieTakieSameDruzyny.Name = "DwieTakieSameDruzyny";
+            this.DwieTakieSameDruzyny.Size = new System.Drawing.Size(145, 17);
+            this.DwieTakieSameDruzyny.TabIndex = 27;
+            this.DwieTakieSameDruzyny.Text = "Wybierz inną drużynę";
+            // 
+            // SumaDuzych
+            // 
+            this.SumaDuzych.AutoSize = true;
+            this.SumaDuzych.ForeColor = System.Drawing.Color.Red;
+            this.SumaDuzych.Location = new System.Drawing.Point(238, 142);
+            this.SumaDuzych.Name = "SumaDuzych";
+            this.SumaDuzych.Size = new System.Drawing.Size(122, 17);
+            this.SumaDuzych.TabIndex = 28;
+            this.SumaDuzych.Text = "Zła suma punktów";
+            // 
+            // SumaMalych
+            // 
+            this.SumaMalych.AutoSize = true;
+            this.SumaMalych.ForeColor = System.Drawing.Color.Red;
+            this.SumaMalych.Location = new System.Drawing.Point(238, 187);
+            this.SumaMalych.Name = "SumaMalych";
+            this.SumaMalych.Size = new System.Drawing.Size(122, 17);
+            this.SumaMalych.TabIndex = 29;
+            this.SumaMalych.Text = "Zła suma punktów";
             // 
             // TerminNowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 313);
+            this.ClientSize = new System.Drawing.Size(393, 282);
+            this.Controls.Add(this.SumaMalych);
+            this.Controls.Add(this.SumaDuzych);
+            this.Controls.Add(this.DwieTakieSameDruzyny);
+            this.Controls.Add(this.NoDruzyna);
             this.Controls.Add(this.numericMalePrzeciwnika);
             this.Controls.Add(this.numericMaleDruzyny);
             this.Controls.Add(this.numericDuzePrzeciwnika);
@@ -236,8 +263,6 @@
             this.Controls.Add(this.comboBoxPrzeciwnik);
             this.Controls.Add(this.comboBoxDruzyna);
             this.Controls.Add(this.malePunkty1);
-            this.Controls.Add(this.duzePunkty2);
-            this.Controls.Add(this.malePunkty2);
             this.Controls.Add(this.duzePunkty1);
             this.Controls.Add(this.druzyna2);
             this.Controls.Add(this.druzyna1);
@@ -248,6 +273,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TerminNowy";
             this.Text = "TerminNowy";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TerminNowy_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numericRunda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDuzeDruzyny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDuzePrzeciwnika)).EndInit();
@@ -267,8 +293,6 @@
         private System.Windows.Forms.Label druzyna2;
         private System.Windows.Forms.Label druzyna1;
         private System.Windows.Forms.Label malePunkty1;
-        private System.Windows.Forms.Label duzePunkty2;
-        private System.Windows.Forms.Label malePunkty2;
         private System.Windows.Forms.Label duzePunkty1;
         private System.Windows.Forms.ComboBox comboBoxDruzyna;
         private System.Windows.Forms.ComboBox comboBoxPrzeciwnik;
@@ -278,5 +302,9 @@
         private System.Windows.Forms.NumericUpDown numericDuzePrzeciwnika;
         private System.Windows.Forms.NumericUpDown numericMaleDruzyny;
         private System.Windows.Forms.NumericUpDown numericMalePrzeciwnika;
+        private System.Windows.Forms.Label NoDruzyna;
+        private System.Windows.Forms.Label DwieTakieSameDruzyny;
+        private System.Windows.Forms.Label SumaDuzych;
+        private System.Windows.Forms.Label SumaMalych;
     }
 }

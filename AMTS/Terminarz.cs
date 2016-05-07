@@ -11,13 +11,11 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class Terminarz:Form
+    public partial class Terminarz:AbstractForm
     {
-        bool openedWindow = false;
         SqlConnection conn;
-        MainForm mainForm;
-
-        public Terminarz(SqlConnection connection, bool admin, MainForm MF)
+        AbstractForm mainForm;
+        public Terminarz(SqlConnection connection, bool admin, AbstractForm MF)
         {
             mainForm = MF;
             InitializeComponent();
@@ -40,7 +38,7 @@ namespace AMTS
         {
             if(openedWindow == false)
             {
-                TerminNowy nowy = new TerminNowy(conn);
+                TerminNowy nowy = new TerminNowy(conn, this);
                 openedWindow = true;
                 nowy.Visible = true;
             }     

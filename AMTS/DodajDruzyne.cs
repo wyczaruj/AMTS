@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class DodajDruzyne : Form
+    public partial class DodajDruzyne : AbstractForm
     {
         MainForm mainForm;
         SqlConnection connection;
@@ -153,6 +153,9 @@ namespace AMTS
                     sqlcomm = new SqlCommand(comm, connection);
                     sqlcomm.ExecuteNonQuery();
                 }
+                comm = "exec dbo.potwierdzUdzial '" + teamNameTextBox.Text + "', '" + emails[0] + "'";
+                sqlcomm = new SqlCommand(comm, connection);
+                sqlcomm.ExecuteNonQuery();
                 mainForm.successfulTeamRegistration(teamNameTextBox.Text);
                 this.Close();
             }

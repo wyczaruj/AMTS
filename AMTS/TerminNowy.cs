@@ -11,19 +11,18 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class TerminNowy:Form
+    public partial class TerminNowy:AbstractForm
     {
+        AbstractForm terminarz;
         private System.Data.SqlClient.SqlConnection conn;
-        void HandleSqlException(SqlException e)
-        {
-
-            int num1 = (int)MessageBox.Show("Formularz został błędnie wypełniony.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-
-        }
-        public TerminNowy(System.Data.SqlClient.SqlConnection conn)
+       
+        public TerminNowy(System.Data.SqlClient.SqlConnection conn, AbstractForm terminarz)
         {
             InitializeComponent();
             this.conn = conn;
+            this.terminarz = terminarz;
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "dd-MM-yyyy";
 
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT Nazwa FROM DRUZYNY", conn);
             DataTable dataTable = new DataTable();
@@ -33,13 +32,21 @@ namespace AMTS
                 comboBoxDruzyna.Items.Add(r["Nazwa"].ToString());
                 comboBoxPrzeciwnik.Items.Add(r["Nazwa"].ToString());
             }
+            NoDruzyna.Visible = false;
+            DwieTakieSameDruzyny.Visible = false;
+            SumaDuzych.Visible = false;
+            SumaMalych.Visible = false;
+
         }
 
         private void save_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string data = dateTimePicker1.Text;
+            NoDruzyna.Visible = false;
+            DwieTakieSameDruzyny.Visible = false;
+            SumaDuzych.Visible = false;
+            SumaMalych.Visible = false;
+
+  
                 string runda = numericRunda.Text;
                 string druzyna1 = comboBoxDruzyna.Text;
                 string druzyna2 = comboBoxPrzeciwnik.Text;
@@ -55,20 +62,65 @@ namespace AMTS
                 if (malePunkty1.Equals("")) malePunkty1 = "null";
                 if (malePunkty2.Equals("")) malePunkty2 = "null";
 
-                string command = "exec dbo.dodajSpotkanie '" + data + "' ,'" + Int32.Parse(runda) + "', '" + druzyna1 + "', '" + druzyna2 + "', '" + Int32.Parse(duzePunkty1) + "', '" + Int32.Parse(duzePunkty2) + "', '" + Int32.Parse(malePunkty1) + "', '" + Int32.Parse(malePunkty2) + "'";
-                SqlCommand sqlcomm = new SqlCommand(command, conn);
+            bool noError = true;
+            if (comboBoxDruzyna.SelectedItem == null || comboBoxPrzeciwnik.SelectedItem == null)
+            {
+                noError = false;
+                NoDruzyna.Visible = true;
+            }
+            if (druzyna1.Equals(druzyna2))
+            {
+                noError = false;
+                DwieTakieSameDruzyny.Visible = true;
+            }
+            if (numericDuzeDruzyny.Value + numericDuzePrzeciwnika.Value != 3 && (numericDuzeDruzyny.Value != 0 || numericDuzePrzeciwnika.Value != 0) )
+            {
+                noError = false;
+                SumaDuzych.Visible = true;
+            }
+            if(numericDuzeDruzyny.Value > numericDuzePrzeciwnika.Value)
+            {
+                if (numericMaleDruzyny.Value <= numericMalePrzeciwnika.Value)
+                {
+                    noError = false;
+                    SumaMalych.Visible = true;
+                }
+            }else
+            {
+                if (numericMaleDruzyny.Value >= numericMalePrzeciwnika.Value)
+                {
+                    noError = false;
+                    SumaMalych.Visible = true;
+                }
+
+            }
+            if (noError)
+            {
+                SqlCommand sqlcomm = new SqlCommand();
+                sqlcomm.CommandText = "exec dbo.dodajSpotkanie @data, @druzyna1, @druzyna2, @pkt1, @pkt2, @pkt3, @pkt4, @runda";
+                sqlcomm.Parameters.Add("@data", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
+                sqlcomm.Parameters.Add("@runda", SqlDbType.Int).Value = runda;
+                sqlcomm.Parameters.Add("@druzyna1", SqlDbType.VarChar).Value = druzyna1;
+                sqlcomm.Parameters.Add("@druzyna2", SqlDbType.VarChar).Value = druzyna2;
+                sqlcomm.Parameters.Add("@pkt1", SqlDbType.Int).Value = duzePunkty1;
+                sqlcomm.Parameters.Add("@pkt2", SqlDbType.Int).Value = duzePunkty2;
+                sqlcomm.Parameters.Add("@pkt3", SqlDbType.Int).Value = malePunkty1;
+                sqlcomm.Parameters.Add("@pkt4", SqlDbType.Int).Value = malePunkty2;
+                sqlcomm.Connection = conn;
                 sqlcomm.ExecuteNonQuery();
                 this.Close();
             }
-            catch (SqlException ex)
-            {
-                HandleSqlException(ex);
-            }
+
         }
 
         private void discard_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TerminNowy_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            terminarz.changeOpenedWindow();
         }
     }
 }

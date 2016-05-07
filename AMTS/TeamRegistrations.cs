@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class TeamRegistrations : Form
+    public partial class TeamRegistrations : AbstractForm
     {
         SqlConnection connection;
-        MainForm mainForm;
-        public TeamRegistrations(SqlConnection conn, MainForm MF)
+        AbstractForm mainForm;
+        public TeamRegistrations(SqlConnection conn, AbstractForm MF)
         {
             connection = conn;
             mainForm = MF;
@@ -19,7 +19,8 @@ namespace AMTS
 
         private void LoadForm()
         {
-            SqlCommand sqlcomm = new SqlCommand("SELECT DISTINCT DRUZYNA AS TEAM FROM ZGLOSZENIA", connection);
+            SqlCommand sqlcomm = new SqlCommand("SELECT Distinct Z.Druzyna AS TEAM FROM ZGLOSZENIA Z JOIN DRUZYNY D "
+                + "ON Z.Druzyna = D.NAZWA WHERE D.Gotowosc = 1", connection);
             SqlDataReader r = sqlcomm.ExecuteReader();
             while (r.Read())
             {

@@ -6,12 +6,13 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterForm : AbstractForm
     {
         MainForm mainForm;
         SqlConnection connection;
         bool accept = false;
-
+        
+        public RegisterForm() { }
         public RegisterForm(SqlConnection conn, MainForm f1)
         {
             mainForm = f1;
@@ -33,7 +34,7 @@ namespace AMTS
 
         private void regulaminLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Regulamin regulamin = new Regulamin();
+            Regulamin regulamin = new Regulamin(false, this);
             regulamin.Visible = true;
         }
 

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class LogInForm : Form
+    public partial class LogInForm : AbstractForm
     {
         MainForm mainForm;
         SqlConnection connection;
