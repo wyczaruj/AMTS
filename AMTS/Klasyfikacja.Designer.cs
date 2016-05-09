@@ -30,20 +30,23 @@
             // klasyfikacjaDataGridView
             // 
             this.klasyfikacjaDataGridView.AllowUserToResizeRows = false;
-            this.klasyfikacjaDataGridView.Location = new System.Drawing.Point(1, 2);
-            this.klasyfikacjaDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.klasyfikacjaDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.klasyfikacjaDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.klasyfikacjaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.klasyfikacjaDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.klasyfikacjaDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.klasyfikacjaDataGridView.Name = "klasyfikacjaDataGridView";
             this.klasyfikacjaDataGridView.ReadOnly = true;
-            this.klasyfikacjaDataGridView.Size = new System.Drawing.Size(1055, 316);
+            this.klasyfikacjaDataGridView.Size = new System.Drawing.Size(1258, 488);
             this.klasyfikacjaDataGridView.TabIndex = 0;
             // 
             // Klasyfikacja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 321);
+            this.ClientSize = new System.Drawing.Size(1258, 488);
             this.Controls.Add(this.klasyfikacjaDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Klasyfikacja";
             this.Text = "Klasyfikacja";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Klasyfikacja_FormClosed);
