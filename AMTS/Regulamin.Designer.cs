@@ -49,8 +49,8 @@
             // 
             // wczytaj
             // 
-            this.wczytaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.wczytaj.Location = new System.Drawing.Point(13, 668);
+            this.wczytaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.wczytaj.Location = new System.Drawing.Point(1167, 13);
             this.wczytaj.Margin = new System.Windows.Forms.Padding(4);
             this.wczytaj.Name = "wczytaj";
             this.wczytaj.Size = new System.Drawing.Size(100, 28);
