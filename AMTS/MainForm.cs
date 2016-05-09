@@ -1,3 +1,4 @@
+using AMTS.Data;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -205,6 +206,16 @@ namespace AMTS
             registerTeamButton.Visible = false;
             confirmConfirmationButton.Visible = false;
             myRegistrationButton.Visible = true;
+        }
+
+        private void klasyfikacjaButton_Click(object sender, EventArgs e)
+        {
+            if(openedWindow == false)
+            {
+                Klasyfikacja klasyfikacja = new Klasyfikacja(connection, this);
+                changeOpenedWindow();
+                klasyfikacja.Visible = true;
+            }
         }
     }
 }

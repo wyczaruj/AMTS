@@ -23,7 +23,10 @@ namespace AMTS
             {
                 wczytaj.Visible = true;
             }
-            PdfReader file = new PdfReader("C:\\Users\\Klaudia\\Desktop\\AMTS-master\\Regulamin.pdf");
+            string fileName = "Regulamin.pdf";
+            string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"", fileName);
+            string newPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(path, @"..\..\..\Data\" + fileName));
+            PdfReader file = new PdfReader(newPath);
             for(int i = 1; i <= file.NumberOfPages; i++)
                 tresc.Text += PdfTextExtractor.GetTextFromPage(file, i, new SimpleTextExtractionStrategy());
         }
