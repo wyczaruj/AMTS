@@ -87,6 +87,12 @@
     <Compile Include="Confirmation.Designer.cs">
       <DependentUpon>Confirmation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klasyfikacja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klasyfikacja.Designer.cs">
+      <DependentUpon>Klasyfikacja.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyTeamRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DodajDruzyne.resx">
       <DependentUpon>DodajDruzyne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klasyfikacja.resx">
+      <DependentUpon>Klasyfikacja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
