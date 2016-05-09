@@ -29,9 +29,10 @@
             // 
             // klasyfikacjaDataGridView
             // 
-            this.klasyfikacjaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.klasyfikacjaDataGridView.AllowUserToResizeRows = false;
             this.klasyfikacjaDataGridView.Location = new System.Drawing.Point(1, 2);
             this.klasyfikacjaDataGridView.Name = "klasyfikacjaDataGridView";
+            this.klasyfikacjaDataGridView.ReadOnly = true;
             this.klasyfikacjaDataGridView.Size = new System.Drawing.Size(791, 257);
             this.klasyfikacjaDataGridView.TabIndex = 0;
             // 

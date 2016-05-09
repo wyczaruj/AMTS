@@ -22,7 +22,7 @@ namespace AMTS.Data
             InitializeComponent();
             conn = connection;
             DataSet dataSet = new DataSet();
-            SqlDataAdapter dataAd = new SqlDataAdapter("SELECT * FROM KLASYFIKACJA ORDER BY Duze_punkty", connection);
+            SqlDataAdapter dataAd = new SqlDataAdapter("SELECT * FROM KLASYFIKACJA ORDER BY Duze_punkty DESC", connection);
             SqlCommandBuilder command = new SqlCommandBuilder(dataAd);
             dataAd.Fill(dataSet, "KLASYFIKACJA");
             klasyfikacjaDataGridView.DataSource = dataSet.Tables["KLASYFIKACJA"];
