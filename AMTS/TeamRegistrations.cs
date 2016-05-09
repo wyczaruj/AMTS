@@ -19,7 +19,8 @@ namespace AMTS
 
         private void LoadForm()
         {
-            SqlCommand sqlcomm = new SqlCommand("SELECT DISTINCT DRUZYNA AS TEAM FROM ZGLOSZENIA", connection);
+            SqlCommand sqlcomm = new SqlCommand("SELECT Distinct Z.Druzyna AS TEAM FROM ZGLOSZENIA Z JOIN DRUZYNY D "
+                + "ON Z.Druzyna = D.NAZWA WHERE D.Gotowosc = 1", connection);
             SqlDataReader r = sqlcomm.ExecuteReader();
             while (r.Read())
             {

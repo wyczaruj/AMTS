@@ -49,6 +49,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\AMTS-master\itextsharp.pdfa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,6 +80,24 @@
     </Compile>
     <Compile Include="ChooseServer.Designer.cs">
       <DependentUpon>ChooseServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Confirmation.Designer.cs">
+      <DependentUpon>Confirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klasyfikacja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klasyfikacja.Designer.cs">
+      <DependentUpon>Klasyfikacja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTeamRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyTeamRegistration.Designer.cs">
+      <DependentUpon>MyTeamRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="TeamRegistrations.cs">
       <SubType>Form</SubType>
@@ -128,14 +153,23 @@
     <EmbeddedResource Include="ChooseServer.resx">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Confirmation.resx">
+      <DependentUpon>Confirmation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DodajDruzyne.resx">
       <DependentUpon>DodajDruzyne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klasyfikacja.resx">
+      <DependentUpon>Klasyfikacja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTeamRegistration.resx">
+      <DependentUpon>MyTeamRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -162,6 +196,7 @@
     <EmbeddedResource Include="TerminNowy.resx">
       <DependentUpon>TerminNowy.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -186,6 +221,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -40,37 +40,41 @@ namespace AMTS
             this.klasyfikacjaButton = new System.Windows.Forms.Button();
             this.wynikiButton = new System.Windows.Forms.Button();
             this.regulaminButton = new System.Windows.Forms.Button();
-            this.registerTeam = new System.Windows.Forms.Button();
+            this.registerTeamButton = new System.Windows.Forms.Button();
             this.niezalogowany = new System.Windows.Forms.Label();
             this.teamRegistrationsButton = new System.Windows.Forms.Button();
             this.numberOfTeamRegistrationsLabel = new System.Windows.Forms.Label();
+            this.myRegistrationButton = new System.Windows.Forms.Button();
+            this.confirmConfirmationButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelZJ
             // 
             this.LabelZJ.AutoSize = true;
-            this.LabelZJ.Location = new System.Drawing.Point(927, 18);
+            this.LabelZJ.Location = new System.Drawing.Point(529, 14);
+            this.LabelZJ.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelZJ.Name = "LabelZJ";
-            this.LabelZJ.Size = new System.Drawing.Size(118, 17);
+            this.LabelZJ.Size = new System.Drawing.Size(91, 13);
             this.LabelZJ.TabIndex = 0;
             this.LabelZJ.Text = "Zalogowany jako:";
             // 
             // LoggedInAsLabel
             // 
             this.LoggedInAsLabel.AutoSize = true;
-            this.LoggedInAsLabel.Location = new System.Drawing.Point(1051, 18);
+            this.LoggedInAsLabel.Location = new System.Drawing.Point(622, 14);
+            this.LoggedInAsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LoggedInAsLabel.Name = "LoggedInAsLabel";
-            this.LoggedInAsLabel.Size = new System.Drawing.Size(41, 17);
+            this.LoggedInAsLabel.Size = new System.Drawing.Size(32, 13);
             this.LoggedInAsLabel.TabIndex = 1;
             this.LoggedInAsLabel.Text = "Gość";
             this.LoggedInAsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // logInButton
             // 
-            this.logInButton.Location = new System.Drawing.Point(1125, 47);
-            this.logInButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logInButton.Location = new System.Drawing.Point(677, 37);
+            this.logInButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logInButton.Name = "logInButton";
-            this.logInButton.Size = new System.Drawing.Size(104, 33);
+            this.logInButton.Size = new System.Drawing.Size(78, 27);
             this.logInButton.TabIndex = 2;
             this.logInButton.Text = "Zaloguj się";
             this.logInButton.UseVisualStyleBackColor = true;
@@ -78,10 +82,10 @@ namespace AMTS
             // 
             // logOutButton
             // 
-            this.logOutButton.Location = new System.Drawing.Point(1156, 47);
-            this.logOutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logOutButton.Location = new System.Drawing.Point(700, 37);
+            this.logOutButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(75, 33);
+            this.logOutButton.Size = new System.Drawing.Size(56, 27);
             this.logOutButton.TabIndex = 3;
             this.logOutButton.Text = "Wyloguj";
             this.logOutButton.UseVisualStyleBackColor = true;
@@ -89,10 +93,10 @@ namespace AMTS
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(1125, 95);
-            this.registerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.registerButton.Location = new System.Drawing.Point(677, 76);
+            this.registerButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(104, 33);
+            this.registerButton.Size = new System.Drawing.Size(78, 27);
             this.registerButton.TabIndex = 4;
             this.registerButton.Text = "Rejestracja";
             this.registerButton.UseVisualStyleBackColor = true;
@@ -101,27 +105,28 @@ namespace AMTS
             // druzynaLabel
             // 
             this.druzynaLabel.AutoSize = true;
-            this.druzynaLabel.Location = new System.Drawing.Point(927, 95);
+            this.druzynaLabel.Location = new System.Drawing.Point(529, 76);
+            this.druzynaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.druzynaLabel.Name = "druzynaLabel";
-            this.druzynaLabel.Size = new System.Drawing.Size(65, 17);
+            this.druzynaLabel.Size = new System.Drawing.Size(49, 13);
             this.druzynaLabel.TabIndex = 5;
             this.druzynaLabel.Text = "Drużyna:";
             // 
             // teamLabel
             // 
             this.teamLabel.AutoSize = true;
-            this.teamLabel.Location = new System.Drawing.Point(1000, 95);
+            this.teamLabel.Location = new System.Drawing.Point(584, 76);
+            this.teamLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.teamLabel.Name = "teamLabel";
-            this.teamLabel.Size = new System.Drawing.Size(204, 17);
+            this.teamLabel.Size = new System.Drawing.Size(159, 13);
             this.teamLabel.TabIndex = 6;
             this.teamLabel.Text = "druzyna [NIEZATWIERDZONA]";
             // 
             // terminarzButton
             // 
-            this.terminarzButton.Location = new System.Drawing.Point(16, 6);
-            this.terminarzButton.Margin = new System.Windows.Forms.Padding(4);
+            this.terminarzButton.Location = new System.Drawing.Point(12, 5);
             this.terminarzButton.Name = "terminarzButton";
-            this.terminarzButton.Size = new System.Drawing.Size(100, 28);
+            this.terminarzButton.Size = new System.Drawing.Size(75, 23);
             this.terminarzButton.TabIndex = 7;
             this.terminarzButton.Text = "Terminarz";
             this.terminarzButton.UseVisualStyleBackColor = true;
@@ -129,64 +134,62 @@ namespace AMTS
             // 
             // klasyfikacjaButton
             // 
-            this.klasyfikacjaButton.Location = new System.Drawing.Point(143, 6);
-            this.klasyfikacjaButton.Margin = new System.Windows.Forms.Padding(4);
+            this.klasyfikacjaButton.Location = new System.Drawing.Point(107, 5);
             this.klasyfikacjaButton.Name = "klasyfikacjaButton";
-            this.klasyfikacjaButton.Size = new System.Drawing.Size(100, 28);
+            this.klasyfikacjaButton.Size = new System.Drawing.Size(75, 23);
             this.klasyfikacjaButton.TabIndex = 8;
             this.klasyfikacjaButton.Text = "Klasyfikacja";
             this.klasyfikacjaButton.UseVisualStyleBackColor = true;
+            this.klasyfikacjaButton.Click += new System.EventHandler(this.klasyfikacjaButton_Click);
             // 
             // wynikiButton
             // 
-            this.wynikiButton.Location = new System.Drawing.Point(265, 6);
-            this.wynikiButton.Margin = new System.Windows.Forms.Padding(4);
+            this.wynikiButton.Location = new System.Drawing.Point(199, 5);
             this.wynikiButton.Name = "wynikiButton";
-            this.wynikiButton.Size = new System.Drawing.Size(100, 28);
+            this.wynikiButton.Size = new System.Drawing.Size(75, 23);
             this.wynikiButton.TabIndex = 9;
             this.wynikiButton.Text = "Wyniki";
             this.wynikiButton.UseVisualStyleBackColor = true;
             // 
             // regulaminButton
             // 
-            this.regulaminButton.Location = new System.Drawing.Point(385, 6);
-            this.regulaminButton.Margin = new System.Windows.Forms.Padding(4);
+            this.regulaminButton.Location = new System.Drawing.Point(289, 5);
             this.regulaminButton.Name = "regulaminButton";
-            this.regulaminButton.Size = new System.Drawing.Size(100, 28);
+            this.regulaminButton.Size = new System.Drawing.Size(75, 23);
             this.regulaminButton.TabIndex = 10;
             this.regulaminButton.Text = "Regulamin";
             this.regulaminButton.UseVisualStyleBackColor = true;
             this.regulaminButton.Click += new System.EventHandler(this.regulaminButton_Click);
             // 
-            // registerTeam
+            // registerTeamButton
             // 
-            this.registerTeam.Location = new System.Drawing.Point(1091, 263);
-            this.registerTeam.Margin = new System.Windows.Forms.Padding(4);
-            this.registerTeam.Name = "registerTeam";
-            this.registerTeam.Size = new System.Drawing.Size(140, 31);
-            this.registerTeam.TabIndex = 11;
-            this.registerTeam.Text = "Zgłoś drużynę";
-            this.registerTeam.UseVisualStyleBackColor = true;
-            this.registerTeam.Click += new System.EventHandler(this.registerTeam_Click);
+            this.registerTeamButton.Location = new System.Drawing.Point(652, 213);
+            this.registerTeamButton.Name = "registerTeamButton";
+            this.registerTeamButton.Size = new System.Drawing.Size(105, 25);
+            this.registerTeamButton.TabIndex = 11;
+            this.registerTeamButton.Text = "Zgłoś drużynę";
+            this.registerTeamButton.UseVisualStyleBackColor = true;
+            this.registerTeamButton.Click += new System.EventHandler(this.registerTeam_Click);
             // 
             // niezalogowany
             // 
             this.niezalogowany.AutoSize = true;
             this.niezalogowany.ForeColor = System.Drawing.Color.Red;
             this.niezalogowany.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.niezalogowany.Location = new System.Drawing.Point(1123, 298);
+            this.niezalogowany.Location = new System.Drawing.Point(676, 241);
+            this.niezalogowany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.niezalogowany.Name = "niezalogowany";
-            this.niezalogowany.Size = new System.Drawing.Size(81, 17);
+            this.niezalogowany.Size = new System.Drawing.Size(61, 13);
             this.niezalogowany.TabIndex = 12;
             this.niezalogowany.Text = "Zaloguj się.";
             this.niezalogowany.Visible = false;
             // 
             // teamRegistrationsButton
             // 
-            this.teamRegistrationsButton.Location = new System.Drawing.Point(1089, 436);
-            this.teamRegistrationsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.teamRegistrationsButton.Location = new System.Drawing.Point(650, 353);
+            this.teamRegistrationsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.teamRegistrationsButton.Name = "teamRegistrationsButton";
-            this.teamRegistrationsButton.Size = new System.Drawing.Size(141, 34);
+            this.teamRegistrationsButton.Size = new System.Drawing.Size(106, 28);
             this.teamRegistrationsButton.TabIndex = 13;
             this.teamRegistrationsButton.Text = "Zgłoszenia drużyn";
             this.teamRegistrationsButton.UseVisualStyleBackColor = true;
@@ -196,22 +199,49 @@ namespace AMTS
             // numberOfTeamRegistrationsLabel
             // 
             this.numberOfTeamRegistrationsLabel.AutoSize = true;
-            this.numberOfTeamRegistrationsLabel.Location = new System.Drawing.Point(1049, 446);
+            this.numberOfTeamRegistrationsLabel.Location = new System.Drawing.Point(620, 362);
+            this.numberOfTeamRegistrationsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.numberOfTeamRegistrationsLabel.Name = "numberOfTeamRegistrationsLabel";
-            this.numberOfTeamRegistrationsLabel.Size = new System.Drawing.Size(34, 17);
+            this.numberOfTeamRegistrationsLabel.Size = new System.Drawing.Size(25, 13);
             this.numberOfTeamRegistrationsLabel.TabIndex = 14;
             this.numberOfTeamRegistrationsLabel.Text = "(14)";
             this.numberOfTeamRegistrationsLabel.Visible = false;
             // 
+            // myRegistrationButton
+            // 
+            this.myRegistrationButton.Location = new System.Drawing.Point(314, 332);
+            this.myRegistrationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.myRegistrationButton.Name = "myRegistrationButton";
+            this.myRegistrationButton.Size = new System.Drawing.Size(286, 50);
+            this.myRegistrationButton.TabIndex = 15;
+            this.myRegistrationButton.Text = "Moje zgłoszenie";
+            this.myRegistrationButton.UseVisualStyleBackColor = true;
+            this.myRegistrationButton.Visible = false;
+            this.myRegistrationButton.Click += new System.EventHandler(this.myRegistrationButton_Click);
+            // 
+            // confirmConfirmationButton
+            // 
+            this.confirmConfirmationButton.Location = new System.Drawing.Point(9, 332);
+            this.confirmConfirmationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confirmConfirmationButton.Name = "confirmConfirmationButton";
+            this.confirmConfirmationButton.Size = new System.Drawing.Size(301, 50);
+            this.confirmConfirmationButton.TabIndex = 16;
+            this.confirmConfirmationButton.Text = "Potwierdź swój udział";
+            this.confirmConfirmationButton.UseVisualStyleBackColor = true;
+            this.confirmConfirmationButton.Visible = false;
+            this.confirmConfirmationButton.Click += new System.EventHandler(this.confirmConfirmationButton_Click);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 482);
+            this.ClientSize = new System.Drawing.Size(770, 392);
+            this.Controls.Add(this.confirmConfirmationButton);
+            this.Controls.Add(this.myRegistrationButton);
             this.Controls.Add(this.numberOfTeamRegistrationsLabel);
             this.Controls.Add(this.teamRegistrationsButton);
             this.Controls.Add(this.niezalogowany);
-            this.Controls.Add(this.registerTeam);
+            this.Controls.Add(this.registerTeamButton);
             this.Controls.Add(this.regulaminButton);
             this.Controls.Add(this.wynikiButton);
             this.Controls.Add(this.klasyfikacjaButton);
@@ -224,7 +254,7 @@ namespace AMTS
             this.Controls.Add(this.LoggedInAsLabel);
             this.Controls.Add(this.LabelZJ);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "Amatorska Liga Tenisa Stołowego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
@@ -246,10 +276,12 @@ namespace AMTS
         private System.Windows.Forms.Button klasyfikacjaButton;
         private System.Windows.Forms.Button wynikiButton;
         private System.Windows.Forms.Button regulaminButton;
-        private System.Windows.Forms.Button registerTeam;
+        private System.Windows.Forms.Button registerTeamButton;
         private System.Windows.Forms.Label niezalogowany;
         private System.Windows.Forms.Button teamRegistrationsButton;
         private System.Windows.Forms.Label numberOfTeamRegistrationsLabel;
+        private System.Windows.Forms.Button myRegistrationButton;
+        private System.Windows.Forms.Button confirmConfirmationButton;
     }
 }
 
