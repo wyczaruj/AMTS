@@ -26,11 +26,12 @@ namespace AMTS
             string fileName = "Regulamin.pdf";
             string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"", fileName);
             string newPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(path, @"..\..\..\Data\" + fileName));
-        //    PdfReader file = new PdfReader(newPath);
-       //     for(int i = 1; i <= file.NumberOfPages; i++)
-        //        tresc.Text += PdfTextExtractor.GetTextFromPage(file, i, new SimpleTextExtractionStrategy());
+            //    PdfReader file = new PdfReader(newPath);
+            //     for(int i = 1; i <= file.NumberOfPages; i++)
+            //        tresc.Text += PdfTextExtractor.GetTextFromPage(file, i, new SimpleTextExtractionStrategy());
             //RegulaminAxAcroPDF.LoadFile(newPath);
-            RegulaminAxAcroPDF.src = newPath;
+            var acro = (AcroPDFLib.IAcroAXDocShim)RegulaminAxAcroPDF.GetOcx();
+            acro.src = newPath;
         }
 
         private void Zamknij_Click(object sender, EventArgs e)
