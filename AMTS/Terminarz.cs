@@ -16,6 +16,7 @@ namespace AMTS
         SqlConnection conn;
         AbstractForm mainForm;
         DataSet dataSet;
+        SqlDataAdapter dataAd;
         public Terminarz(SqlConnection connection, bool admin, AbstractForm MF)
         {
             mainForm = MF;
@@ -28,7 +29,7 @@ namespace AMTS
                 termEdit.Visible = true;
             }
             dataSet = new DataSet();
-            SqlDataAdapter dataAd = new SqlDataAdapter("SELECT * FROM TERMINARZ ORDER BY Data", connection);
+            dataAd = new SqlDataAdapter("SELECT * FROM TERMINARZ ORDER BY Data", connection);
             SqlCommandBuilder command = new SqlCommandBuilder(dataAd);
             dataAd.Fill(dataSet, "TERMINARZ");
             terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
@@ -54,6 +55,11 @@ namespace AMTS
 
         private void saveEdit_Click(object sender, EventArgs e)
         {
+            SqlCommandBuilder local_SqlCommandBuilder = new SqlCommandBuilder(dataAd);
+            local_SqlCommandBuilder.ConflictOption = System.Data.ConflictOption.OverwriteChanges;
+            dataAd.UpdateCommand = local_SqlCommandBuilder.GetUpdateCommand();
+            dataAd.Update(((System.Data.DataTable)this.terminarzDataGridView.DataSource));
+         //   ((System.Data.DataTable)this.terminarzDataGridView.DataSource).AcceptChanges();
             terminarzDataGridView.ReadOnly = true;
             saveEdit.Visible = false;
             discardEdit.Visible = false;
@@ -64,7 +70,6 @@ namespace AMTS
             saveEdit.Visible = false;
             discardEdit.Visible = false;
             terminarzDataGridView.ReadOnly = true;
-            SqlDataAdapter dataAd = new SqlDataAdapter("SELECT * FROM TERMINARZ ORDER BY Data", conn);
             dataSet.Clear();
             dataAd.Fill(dataSet, "TERMINARZ");
             terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];

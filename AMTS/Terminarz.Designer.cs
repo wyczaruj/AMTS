@@ -45,16 +45,18 @@
             this.terminarzDataGridView.AllowUserToResizeColumns = false;
             this.terminarzDataGridView.AllowUserToResizeRows = false;
             this.terminarzDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.terminarzDataGridView.Location = new System.Drawing.Point(8, 11);
-            this.terminarzDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.terminarzDataGridView.Location = new System.Drawing.Point(13, 13);
+            this.terminarzDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.terminarzDataGridView.MultiSelect = false;
             this.terminarzDataGridView.Name = "terminarzDataGridView";
-            this.terminarzDataGridView.Size = new System.Drawing.Size(1271, 458);
+            this.terminarzDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.terminarzDataGridView.Size = new System.Drawing.Size(1081, 458);
             this.terminarzDataGridView.TabIndex = 1;
             // 
             // termEdit
             // 
-            this.termEdit.Location = new System.Drawing.Point(1287, 214);
-            this.termEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.termEdit.Location = new System.Drawing.Point(1102, 214);
+            this.termEdit.Margin = new System.Windows.Forms.Padding(4);
             this.termEdit.Name = "termEdit";
             this.termEdit.Size = new System.Drawing.Size(259, 28);
             this.termEdit.TabIndex = 2;
@@ -65,8 +67,8 @@
             // 
             // termAdd
             // 
-            this.termAdd.Location = new System.Drawing.Point(1287, 178);
-            this.termAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.termAdd.Location = new System.Drawing.Point(1102, 178);
+            this.termAdd.Margin = new System.Windows.Forms.Padding(4);
             this.termAdd.Name = "termAdd";
             this.termAdd.Size = new System.Drawing.Size(259, 28);
             this.termAdd.TabIndex = 3;
@@ -78,7 +80,7 @@
             // termOpt
             // 
             this.termOpt.AutoSize = true;
-            this.termOpt.Location = new System.Drawing.Point(1389, 159);
+            this.termOpt.Location = new System.Drawing.Point(1202, 157);
             this.termOpt.Name = "termOpt";
             this.termOpt.Size = new System.Drawing.Size(53, 17);
             this.termOpt.TabIndex = 6;
@@ -87,8 +89,8 @@
             // 
             // discardEdit
             // 
-            this.discardEdit.Location = new System.Drawing.Point(1287, 250);
-            this.discardEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.discardEdit.Location = new System.Drawing.Point(1102, 250);
+            this.discardEdit.Margin = new System.Windows.Forms.Padding(4);
             this.discardEdit.Name = "discardEdit";
             this.discardEdit.Size = new System.Drawing.Size(100, 28);
             this.discardEdit.TabIndex = 7;
@@ -99,8 +101,8 @@
             // 
             // saveEdit
             // 
-            this.saveEdit.Location = new System.Drawing.Point(1445, 250);
-            this.saveEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveEdit.Location = new System.Drawing.Point(1261, 250);
+            this.saveEdit.Margin = new System.Windows.Forms.Padding(4);
             this.saveEdit.Name = "saveEdit";
             this.saveEdit.Size = new System.Drawing.Size(100, 28);
             this.saveEdit.TabIndex = 8;
@@ -113,7 +115,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(1303, 282);
+            this.label1.Location = new System.Drawing.Point(1113, 282);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 17);
             this.label1.TabIndex = 9;
@@ -124,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1551, 502);
+            this.ClientSize = new System.Drawing.Size(1371, 502);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.saveEdit);
             this.Controls.Add(this.discardEdit);
@@ -132,7 +134,7 @@
             this.Controls.Add(this.termAdd);
             this.Controls.Add(this.termEdit);
             this.Controls.Add(this.terminarzDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Terminarz";
             this.Text = "Terminarz";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Terminarz_FormClosed);
