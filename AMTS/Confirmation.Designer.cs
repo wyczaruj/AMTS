@@ -108,10 +108,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 487);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(940, 494);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.teamsListView);
             this.Controls.Add(this.playersListView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Confirmation";
             this.Text = "Confirmation";
             this.ResumeLayout(false);
