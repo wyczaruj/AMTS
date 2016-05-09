@@ -24,6 +24,7 @@ namespace AMTS
             conn = connection;
             label1.Visible=false;
             label2.Visible = false;
+            label3.Visible = false;
             if(admin)
             {
                 termOpt.Visible = true;
@@ -68,6 +69,10 @@ namespace AMTS
         private void saveEdit_Click_1(object sender, EventArgs e)
         {
             DateTime something;
+            int first;
+            int second;
+            int third;
+            int fourth;
             bool noChanges = false;
             foreach (DataGridViewRow row in terminarzDataGridView.Rows)
             {
@@ -76,6 +81,21 @@ namespace AMTS
                     noChanges = true;
                     label1.Visible = true;
                 }
+                if(!int.TryParse(row.Cells[1].Value.ToString(), out first))
+                {
+                    noChanges = true;
+                    label3.Visible = true;
+
+                }
+                else
+                {
+                    if (first < 1)
+                    {
+                        noChanges = true;
+                        label3.Visible = true;
+                    }
+                }
+                
 
             }
             if (noChanges)
