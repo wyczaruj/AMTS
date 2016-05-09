@@ -32,13 +32,13 @@
             this.Zamknij = new System.Windows.Forms.Button();
             this.wczytaj = new System.Windows.Forms.Button();
             this.RegulaminAxAcroPDF = new AxAcroPDFLib.AxAcroPDF();
-            this.tresc = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.RegulaminAxAcroPDF)).BeginInit();
             this.SuspendLayout();
             // 
             // Zamknij
             // 
-            this.Zamknij.Location = new System.Drawing.Point(588, 442);
+            this.Zamknij.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Zamknij.Location = new System.Drawing.Point(1167, 664);
             this.Zamknij.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Zamknij.Name = "Zamknij";
             this.Zamknij.Size = new System.Drawing.Size(103, 32);
@@ -49,7 +49,8 @@
             // 
             // wczytaj
             // 
-            this.wczytaj.Location = new System.Drawing.Point(4, 446);
+            this.wczytaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.wczytaj.Location = new System.Drawing.Point(13, 668);
             this.wczytaj.Margin = new System.Windows.Forms.Padding(4);
             this.wczytaj.Name = "wczytaj";
             this.wczytaj.Size = new System.Drawing.Size(100, 28);
@@ -64,27 +65,17 @@
             this.RegulaminAxAcroPDF.Location = new System.Drawing.Point(0, 0);
             this.RegulaminAxAcroPDF.Name = "RegulaminAxAcroPDF";
             this.RegulaminAxAcroPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("RegulaminAxAcroPDF.OcxState")));
-            this.RegulaminAxAcroPDF.Size = new System.Drawing.Size(696, 487);
+            this.RegulaminAxAcroPDF.Size = new System.Drawing.Size(1294, 709);
             this.RegulaminAxAcroPDF.TabIndex = 5;
-            // 
-            // tresc
-            // 
-            this.tresc.Location = new System.Drawing.Point(4, 4);
-            this.tresc.Margin = new System.Windows.Forms.Padding(4);
-            this.tresc.Name = "tresc";
-            this.tresc.Size = new System.Drawing.Size(685, 420);
-            this.tresc.TabIndex = 3;
-            this.tresc.Text = "";
             // 
             // Regulamin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 487);
-            this.Controls.Add(this.RegulaminAxAcroPDF);
+            this.ClientSize = new System.Drawing.Size(1294, 709);
             this.Controls.Add(this.wczytaj);
-            this.Controls.Add(this.tresc);
             this.Controls.Add(this.Zamknij);
+            this.Controls.Add(this.RegulaminAxAcroPDF);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Regulamin";
             this.Text = "Regulamin";
@@ -99,6 +90,5 @@
         private System.Windows.Forms.Button Zamknij;
         private System.Windows.Forms.Button wczytaj;
         private AxAcroPDFLib.AxAcroPDF RegulaminAxAcroPDF;
-        private System.Windows.Forms.RichTextBox tresc;
     }
 }

@@ -1,19 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTextSharp.text.pdf;
-using iTextSharp.text.pdf.parser;
 
 namespace AMTS
 {
     public partial class Regulamin:AbstractForm
     {
+
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        }
+
         AbstractForm form;
         public Regulamin(bool AdminLogged, AbstractForm form)
         {
@@ -26,10 +29,6 @@ namespace AMTS
             string fileName = "Regulamin.pdf";
             string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"", fileName);
             string newPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(path, @"..\..\..\Data\" + fileName));
-            //    PdfReader file = new PdfReader(newPath);
-            //     for(int i = 1; i <= file.NumberOfPages; i++)
-            //        tresc.Text += PdfTextExtractor.GetTextFromPage(file, i, new SimpleTextExtractionStrategy());
-            //RegulaminAxAcroPDF.LoadFile(newPath);
             var acro = (AcroPDFLib.IAcroAXDocShim)RegulaminAxAcroPDF.GetOcx();
             acro.src = newPath;
         }
