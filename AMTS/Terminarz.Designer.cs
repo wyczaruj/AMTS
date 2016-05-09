@@ -28,48 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.terminarzDataGridView = new System.Windows.Forms.DataGridView();
-            this.termEdit = new System.Windows.Forms.Button();
-            this.termAdd = new System.Windows.Forms.Button();
-            this.termOpt = new System.Windows.Forms.Label();
-            this.discardEdit = new System.Windows.Forms.Button();
-            this.saveEdit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.saveEdit = new System.Windows.Forms.Button();
+            this.discardEdit = new System.Windows.Forms.Button();
+            this.termOpt = new System.Windows.Forms.Label();
+            this.termAdd = new System.Windows.Forms.Button();
+            this.termEdit = new System.Windows.Forms.Button();
+            this.terminarzDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.terminarzDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // terminarzDataGridView
+            // label3
             // 
-            this.terminarzDataGridView.AllowUserToAddRows = false;
-            this.terminarzDataGridView.AllowUserToDeleteRows = false;
-            this.terminarzDataGridView.AllowUserToResizeColumns = false;
-            this.terminarzDataGridView.AllowUserToResizeRows = false;
-            this.terminarzDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.terminarzDataGridView.Location = new System.Drawing.Point(13, 13);
-            this.terminarzDataGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.terminarzDataGridView.MultiSelect = false;
-            this.terminarzDataGridView.Name = "terminarzDataGridView";
-            this.terminarzDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.terminarzDataGridView.Size = new System.Drawing.Size(1081, 458);
-            this.terminarzDataGridView.TabIndex = 1;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(1243, 314);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(190, 17);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Nieprawidłowa wartość rundy";
             // 
-            // termEdit
+            // label2
             // 
-            this.termEdit.Location = new System.Drawing.Point(1102, 214);
-            this.termEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.termEdit.Name = "termEdit";
-            this.termEdit.Size = new System.Drawing.Size(259, 28);
-            this.termEdit.TabIndex = 2;
-            this.termEdit.Text = "Edytuj";
-            this.termEdit.UseVisualStyleBackColor = true;
-            this.termEdit.Visible = false;
-            this.termEdit.Click += new System.EventHandler(this.termEdit_Click);
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(1243, 280);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(215, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Zmiany nie zostały wprowadzone";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(1243, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Nieprawidłowa data";
+            // 
+            // saveEdit
+            // 
+            this.saveEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveEdit.Location = new System.Drawing.Point(1399, 249);
+            this.saveEdit.Name = "saveEdit";
+            this.saveEdit.Size = new System.Drawing.Size(104, 28);
+            this.saveEdit.TabIndex = 8;
+            this.saveEdit.Text = "Zapisz";
+            this.saveEdit.UseVisualStyleBackColor = true;
+            this.saveEdit.Visible = false;
+            this.saveEdit.Click += new System.EventHandler(this.saveEdit_Click_1);
+            // 
+            // discardEdit
+            // 
+            this.discardEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.discardEdit.Location = new System.Drawing.Point(1244, 249);
+            this.discardEdit.Name = "discardEdit";
+            this.discardEdit.Size = new System.Drawing.Size(104, 28);
+            this.discardEdit.TabIndex = 7;
+            this.discardEdit.Text = "Anuluj";
+            this.discardEdit.UseVisualStyleBackColor = true;
+            this.discardEdit.Visible = false;
+            this.discardEdit.Click += new System.EventHandler(this.discardEdit_Click_1);
+            // 
+            // termOpt
+            // 
+            this.termOpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.termOpt.AutoSize = true;
+            this.termOpt.Location = new System.Drawing.Point(1344, 157);
+            this.termOpt.Name = "termOpt";
+            this.termOpt.Size = new System.Drawing.Size(53, 17);
+            this.termOpt.TabIndex = 6;
+            this.termOpt.Text = "OPCJE";
+            this.termOpt.Visible = false;
             // 
             // termAdd
             // 
-            this.termAdd.Location = new System.Drawing.Point(1102, 178);
+            this.termAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.termAdd.Location = new System.Drawing.Point(1244, 178);
             this.termAdd.Margin = new System.Windows.Forms.Padding(4);
             this.termAdd.Name = "termAdd";
             this.termAdd.Size = new System.Drawing.Size(259, 28);
@@ -79,71 +121,40 @@
             this.termAdd.Visible = false;
             this.termAdd.Click += new System.EventHandler(this.termAdd_Click);
             // 
-            // termOpt
+            // termEdit
             // 
-            this.termOpt.AutoSize = true;
-            this.termOpt.Location = new System.Drawing.Point(1202, 157);
-            this.termOpt.Name = "termOpt";
-            this.termOpt.Size = new System.Drawing.Size(53, 17);
-            this.termOpt.TabIndex = 6;
-            this.termOpt.Text = "OPCJE";
-            this.termOpt.Visible = false;
+            this.termEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.termEdit.Location = new System.Drawing.Point(1244, 214);
+            this.termEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.termEdit.Name = "termEdit";
+            this.termEdit.Size = new System.Drawing.Size(259, 28);
+            this.termEdit.TabIndex = 2;
+            this.termEdit.Text = "Edytuj";
+            this.termEdit.UseVisualStyleBackColor = true;
+            this.termEdit.Visible = false;
+            this.termEdit.Click += new System.EventHandler(this.termEdit_Click);
             // 
-            // discardEdit
+            // terminarzDataGridView
             // 
-            this.discardEdit.Location = new System.Drawing.Point(1102, 249);
-            this.discardEdit.Name = "discardEdit";
-            this.discardEdit.Size = new System.Drawing.Size(104, 28);
-            this.discardEdit.TabIndex = 7;
-            this.discardEdit.Text = "Anuluj";
-            this.discardEdit.UseVisualStyleBackColor = true;
-            this.discardEdit.Click += new System.EventHandler(this.discardEdit_Click_1);
-            // 
-            // saveEdit
-            // 
-            this.saveEdit.Location = new System.Drawing.Point(1257, 249);
-            this.saveEdit.Name = "saveEdit";
-            this.saveEdit.Size = new System.Drawing.Size(104, 28);
-            this.saveEdit.TabIndex = 8;
-            this.saveEdit.Text = "Zapisz";
-            this.saveEdit.UseVisualStyleBackColor = true;
-            this.saveEdit.Click += new System.EventHandler(this.saveEdit_Click_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(1101, 297);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 17);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Nieprawidłowa data";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(1101, 280);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(215, 17);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Zmiany nie zostały wprowadzone";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(1101, 314);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 17);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Nieprawidłowa wartość rundy";
+            this.terminarzDataGridView.AllowUserToAddRows = false;
+            this.terminarzDataGridView.AllowUserToDeleteRows = false;
+            this.terminarzDataGridView.AllowUserToResizeColumns = false;
+            this.terminarzDataGridView.AllowUserToResizeRows = false;
+            this.terminarzDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.terminarzDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.terminarzDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.terminarzDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.terminarzDataGridView.MultiSelect = false;
+            this.terminarzDataGridView.Name = "terminarzDataGridView";
+            this.terminarzDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.terminarzDataGridView.Size = new System.Drawing.Size(1233, 502);
+            this.terminarzDataGridView.TabIndex = 1;
             // 
             // Terminarz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 502);
+            this.ClientSize = new System.Drawing.Size(1514, 502);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
