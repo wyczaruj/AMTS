@@ -35,6 +35,8 @@
             this.discardEdit = new System.Windows.Forms.Button();
             this.saveEdit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.terminarzDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             this.terminarzDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.terminarzDataGridView.MultiSelect = false;
             this.terminarzDataGridView.Name = "terminarzDataGridView";
-            this.terminarzDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.terminarzDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.terminarzDataGridView.Size = new System.Drawing.Size(1081, 458);
             this.terminarzDataGridView.TabIndex = 1;
             // 
@@ -89,44 +91,61 @@
             // 
             // discardEdit
             // 
-            this.discardEdit.Location = new System.Drawing.Point(1102, 250);
-            this.discardEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.discardEdit.Location = new System.Drawing.Point(1102, 249);
             this.discardEdit.Name = "discardEdit";
-            this.discardEdit.Size = new System.Drawing.Size(100, 28);
+            this.discardEdit.Size = new System.Drawing.Size(104, 28);
             this.discardEdit.TabIndex = 7;
             this.discardEdit.Text = "Anuluj";
             this.discardEdit.UseVisualStyleBackColor = true;
-            this.discardEdit.Visible = false;
-            this.discardEdit.Click += new System.EventHandler(this.discardEdit_Click);
+            this.discardEdit.Click += new System.EventHandler(this.discardEdit_Click_1);
             // 
             // saveEdit
             // 
-            this.saveEdit.Location = new System.Drawing.Point(1261, 250);
-            this.saveEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.saveEdit.Location = new System.Drawing.Point(1257, 249);
             this.saveEdit.Name = "saveEdit";
-            this.saveEdit.Size = new System.Drawing.Size(100, 28);
+            this.saveEdit.Size = new System.Drawing.Size(104, 28);
             this.saveEdit.TabIndex = 8;
             this.saveEdit.Text = "Zapisz";
             this.saveEdit.UseVisualStyleBackColor = true;
-            this.saveEdit.Visible = false;
-            this.saveEdit.Click += new System.EventHandler(this.saveEdit_Click);
+            this.saveEdit.Click += new System.EventHandler(this.saveEdit_Click_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(1113, 282);
+            this.label1.Location = new System.Drawing.Point(1101, 297);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 17);
+            this.label1.Size = new System.Drawing.Size(130, 17);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Niepoprawnie wprowadzono zmiany";
-            this.label1.Visible = false;
+            this.label1.Text = "Nieprawidłowa data";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(1101, 280);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(215, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Zmiany nie zostały wprowadzone";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(1101, 314);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(190, 17);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Nieprawidłowa wartość rundy";
             // 
             // Terminarz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 502);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.saveEdit);
             this.Controls.Add(this.discardEdit);
@@ -153,5 +172,7 @@
         private System.Windows.Forms.Button discardEdit;
         private System.Windows.Forms.Button saveEdit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
