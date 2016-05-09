@@ -75,5 +75,10 @@ namespace AMTS
             {
             }
         }
+
+        private void MyTeamRegistration_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.changeOpenedWindow();
+        }
     }
 }

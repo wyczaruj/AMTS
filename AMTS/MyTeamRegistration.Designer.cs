@@ -138,6 +138,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MyTeamRegistration";
             this.Text = "Moja drużyna";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MyTeamRegistration_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
