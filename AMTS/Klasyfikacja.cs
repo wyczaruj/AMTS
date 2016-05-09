@@ -28,5 +28,10 @@ namespace AMTS.Data
             klasyfikacjaDataGridView.DataSource = dataSet.Tables["KLASYFIKACJA"];
             klasyfikacjaDataGridView.ReadOnly = true;
         }
+
+        private void Klasyfikacja_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.changeOpenedWindow();
+        }
     }
 }

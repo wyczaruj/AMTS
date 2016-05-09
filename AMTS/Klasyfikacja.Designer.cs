@@ -31,19 +31,22 @@
             // 
             this.klasyfikacjaDataGridView.AllowUserToResizeRows = false;
             this.klasyfikacjaDataGridView.Location = new System.Drawing.Point(1, 2);
+            this.klasyfikacjaDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.klasyfikacjaDataGridView.Name = "klasyfikacjaDataGridView";
             this.klasyfikacjaDataGridView.ReadOnly = true;
-            this.klasyfikacjaDataGridView.Size = new System.Drawing.Size(791, 257);
+            this.klasyfikacjaDataGridView.Size = new System.Drawing.Size(1055, 316);
             this.klasyfikacjaDataGridView.TabIndex = 0;
             // 
             // Klasyfikacja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 261);
+            this.ClientSize = new System.Drawing.Size(1056, 321);
             this.Controls.Add(this.klasyfikacjaDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Klasyfikacja";
             this.Text = "Klasyfikacja";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Klasyfikacja_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.klasyfikacjaDataGridView)).EndInit();
             this.ResumeLayout(false);
 
