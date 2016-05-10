@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AMTS.Data
@@ -27,6 +20,11 @@ namespace AMTS.Data
             dataAd.Fill(dataSet, "KLASYFIKACJA");
             klasyfikacjaDataGridView.DataSource = dataSet.Tables["KLASYFIKACJA"];
             klasyfikacjaDataGridView.ReadOnly = true;
+        }
+
+        private void Klasyfikacja_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.changeOpenedWindow();
         }
     }
 }

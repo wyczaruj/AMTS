@@ -129,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(878, 494);
             this.Controls.Add(this.cancelRegistrationButton);
             this.Controls.Add(this.playersListView);
@@ -137,6 +138,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MyTeamRegistration";
             this.Text = "Moja drużyna";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MyTeamRegistration_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

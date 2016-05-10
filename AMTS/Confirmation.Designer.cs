@@ -41,10 +41,11 @@
             // teamsListView
             // 
             this.teamsListView.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamsListView.Location = new System.Drawing.Point(12, 21);
+            this.teamsListView.Location = new System.Drawing.Point(14, 26);
+            this.teamsListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.teamsListView.MultiSelect = false;
             this.teamsListView.Name = "teamsListView";
-            this.teamsListView.Size = new System.Drawing.Size(238, 454);
+            this.teamsListView.Size = new System.Drawing.Size(267, 566);
             this.teamsListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.teamsListView.TabIndex = 11;
             this.teamsListView.UseCompatibleStateImageBehavior = false;
@@ -60,10 +61,11 @@
             this.captainColumnHeader,
             this.confirmationColumnHeader});
             this.playersListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.playersListView.Location = new System.Drawing.Point(256, 21);
+            this.playersListView.Location = new System.Drawing.Point(288, 26);
+            this.playersListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.playersListView.MultiSelect = false;
             this.playersListView.Name = "playersListView";
-            this.playersListView.Size = new System.Drawing.Size(664, 393);
+            this.playersListView.Size = new System.Drawing.Size(746, 490);
             this.playersListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.playersListView.TabIndex = 10;
             this.playersListView.UseCompatibleStateImageBehavior = false;
@@ -96,9 +98,10 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(256, 420);
+            this.confirmButton.Location = new System.Drawing.Point(288, 525);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(664, 55);
+            this.confirmButton.Size = new System.Drawing.Size(747, 69);
             this.confirmButton.TabIndex = 12;
             this.confirmButton.Text = "Potwierdź swój udział w drużynie ";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -106,14 +109,18 @@
             // 
             // Confirmation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 487);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1058, 618);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.teamsListView);
             this.Controls.Add(this.playersListView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Confirmation";
             this.Text = "Confirmation";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Confirmation_FormClosed);
             this.ResumeLayout(false);
 
         }

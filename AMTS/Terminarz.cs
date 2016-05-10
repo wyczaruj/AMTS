@@ -15,19 +15,26 @@ namespace AMTS
     {
         SqlConnection conn;
         AbstractForm mainForm;
+        DataSet dataSet;
+        SqlDataAdapter dataAd;
         public Terminarz(SqlConnection connection, bool admin, AbstractForm MF)
         {
             mainForm = MF;
             InitializeComponent();
             conn = connection;
+            label1.Visible=false;
+            label2.Visible = false;
+            label3.Visible = false;
             if(admin)
             {
                 termOpt.Visible = true;
                 termAdd.Visible = true;
                 termEdit.Visible = true;
+                saveEdit.Visible = false;
+                discardEdit.Visible = false;
             }
-            DataSet dataSet = new DataSet();
-            SqlDataAdapter dataAd = new SqlDataAdapter("SELECT * FROM TERMINARZ ORDER BY Data", connection);
+            dataSet = new DataSet();
+            dataAd = new SqlDataAdapter("SELECT * FROM TERMINARZ ORDER BY Data", connection);
             SqlCommandBuilder command = new SqlCommandBuilder(dataAd);
             dataAd.Fill(dataSet, "TERMINARZ");
             terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
@@ -49,25 +56,76 @@ namespace AMTS
             saveEdit.Visible = true;
             discardEdit.Visible = true;
             terminarzDataGridView.ReadOnly = false;
-        }
 
-        private void saveEdit_Click(object sender, EventArgs e)
-        {
-            terminarzDataGridView.ReadOnly = true;
-            saveEdit.Visible = false;
-            discardEdit.Visible = false;
-        }
 
-        private void discardEdit_Click(object sender, EventArgs e)
-        {
-            saveEdit.Visible = false;
-            discardEdit.Visible = false;
-            terminarzDataGridView.ReadOnly = true;
+
         }
 
         private void Terminarz_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.changeOpenedWindow();
+        }
+
+        private void saveEdit_Click_1(object sender, EventArgs e)
+        {
+            DateTime something;
+            int first;
+            int second;
+            int third;
+            int fourth;
+            bool noChanges = false;
+            foreach (DataGridViewRow row in terminarzDataGridView.Rows)
+            {
+                if (!DateTime.TryParse(row.Cells[0].Value.ToString(), out something))
+                {
+                    noChanges = true;
+                    label1.Visible = true;
+                }
+                if(!int.TryParse(row.Cells[1].Value.ToString(), out first))
+                {
+                    noChanges = true;
+                    label3.Visible = true;
+
+                }
+                else
+                {
+                    if (first < 1)
+                    {
+                        noChanges = true;
+                        label3.Visible = true;
+                    }
+                }
+                
+
+            }
+            if (noChanges)
+            {
+                label2.Visible = true;
+                dataSet.Clear();
+                dataAd.Fill(dataSet, "TERMINARZ");
+                terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
+
+            }else
+            {
+                SqlCommandBuilder local_SqlCommandBuilder = new SqlCommandBuilder(dataAd);
+                local_SqlCommandBuilder.ConflictOption = System.Data.ConflictOption.OverwriteChanges;
+                dataAd.UpdateCommand = local_SqlCommandBuilder.GetUpdateCommand();
+                dataAd.Update(((System.Data.DataTable)this.terminarzDataGridView.DataSource));
+            }
+            terminarzDataGridView.ReadOnly = true;
+            saveEdit.Visible = false;
+            discardEdit.Visible = false;
+        }
+
+        private void discardEdit_Click_1(object sender, EventArgs e)
+        {
+            saveEdit.Visible = false;
+            discardEdit.Visible = false;
+            terminarzDataGridView.ReadOnly = true;
+            dataSet.Clear();
+            dataAd.Fill(dataSet, "TERMINARZ");
+            terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
+
         }
     }
 }

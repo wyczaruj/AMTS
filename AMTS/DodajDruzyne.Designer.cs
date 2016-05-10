@@ -37,39 +37,21 @@
             this.cancelTeam = new System.Windows.Forms.Button();
             this.registerTeam = new System.Windows.Forms.Button();
             this.nazwisko2 = new System.Windows.Forms.TextBox();
-            this.n2 = new System.Windows.Forms.Label();
-            this.i2 = new System.Windows.Forms.Label();
             this.nazwisko4 = new System.Windows.Forms.TextBox();
-            this.n4 = new System.Windows.Forms.Label();
-            this.i4 = new System.Windows.Forms.Label();
             this.imie4 = new System.Windows.Forms.TextBox();
             this.nazwisko3 = new System.Windows.Forms.TextBox();
-            this.n3 = new System.Windows.Forms.Label();
-            this.i3 = new System.Windows.Forms.Label();
             this.imie3 = new System.Windows.Forms.TextBox();
             this.nazwisko8 = new System.Windows.Forms.TextBox();
-            this.n8 = new System.Windows.Forms.Label();
-            this.i8 = new System.Windows.Forms.Label();
             this.imie8 = new System.Windows.Forms.TextBox();
             this.nazwisko7 = new System.Windows.Forms.TextBox();
-            this.n7 = new System.Windows.Forms.Label();
-            this.i7 = new System.Windows.Forms.Label();
             this.imie7 = new System.Windows.Forms.TextBox();
             this.nazwisko6 = new System.Windows.Forms.TextBox();
-            this.n6 = new System.Windows.Forms.Label();
-            this.i6 = new System.Windows.Forms.Label();
             this.imie6 = new System.Windows.Forms.TextBox();
             this.nazwisko5 = new System.Windows.Forms.TextBox();
-            this.n5 = new System.Windows.Forms.Label();
-            this.i5 = new System.Windows.Forms.Label();
             this.imie5 = new System.Windows.Forms.TextBox();
             this.nazwisko10 = new System.Windows.Forms.TextBox();
-            this.n10 = new System.Windows.Forms.Label();
-            this.i10 = new System.Windows.Forms.Label();
             this.imie10 = new System.Windows.Forms.TextBox();
             this.nazwisko9 = new System.Windows.Forms.TextBox();
-            this.n9 = new System.Windows.Forms.Label();
-            this.i9 = new System.Windows.Forms.Label();
             this.imie9 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.teamNameTextBox = new System.Windows.Forms.TextBox();
@@ -174,28 +156,6 @@
             this.nazwisko2.TabIndex = 22;
             this.nazwisko2.Visible = false;
             // 
-            // n2
-            // 
-            this.n2.AutoSize = true;
-            this.n2.Location = new System.Drawing.Point(5, 167);
-            this.n2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.n2.Name = "n2";
-            this.n2.Size = new System.Drawing.Size(67, 17);
-            this.n2.TabIndex = 21;
-            this.n2.Text = "Nazwisko";
-            this.n2.Visible = false;
-            // 
-            // i2
-            // 
-            this.i2.AutoSize = true;
-            this.i2.Location = new System.Drawing.Point(277, 167);
-            this.i2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i2.Name = "i2";
-            this.i2.Size = new System.Drawing.Size(33, 17);
-            this.i2.TabIndex = 20;
-            this.i2.Text = "Imię";
-            this.i2.Visible = false;
-            // 
             // nazwisko4
             // 
             this.nazwisko4.Location = new System.Drawing.Point(83, 246);
@@ -205,28 +165,6 @@
             this.nazwisko4.Size = new System.Drawing.Size(149, 22);
             this.nazwisko4.TabIndex = 30;
             this.nazwisko4.Visible = false;
-            // 
-            // n4
-            // 
-            this.n4.AutoSize = true;
-            this.n4.Location = new System.Drawing.Point(5, 250);
-            this.n4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.n4.Name = "n4";
-            this.n4.Size = new System.Drawing.Size(67, 17);
-            this.n4.TabIndex = 29;
-            this.n4.Text = "Nazwisko";
-            this.n4.Visible = false;
-            // 
-            // i4
-            // 
-            this.i4.AutoSize = true;
-            this.i4.Location = new System.Drawing.Point(277, 250);
-            this.i4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i4.Name = "i4";
-            this.i4.Size = new System.Drawing.Size(33, 17);
-            this.i4.TabIndex = 28;
-            this.i4.Text = "Imię";
-            this.i4.Visible = false;
             // 
             // imie4
             // 
@@ -248,28 +186,6 @@
             this.nazwisko3.TabIndex = 26;
             this.nazwisko3.Visible = false;
             // 
-            // n3
-            // 
-            this.n3.AutoSize = true;
-            this.n3.Location = new System.Drawing.Point(5, 208);
-            this.n3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.n3.Name = "n3";
-            this.n3.Size = new System.Drawing.Size(67, 17);
-            this.n3.TabIndex = 25;
-            this.n3.Text = "Nazwisko";
-            this.n3.Visible = false;
-            // 
-            // i3
-            // 
-            this.i3.AutoSize = true;
-            this.i3.Location = new System.Drawing.Point(277, 208);
-            this.i3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i3.Name = "i3";
-            this.i3.Size = new System.Drawing.Size(33, 17);
-            this.i3.TabIndex = 24;
-            this.i3.Text = "Imię";
-            this.i3.Visible = false;
-            // 
             // imie3
             // 
             this.imie3.Location = new System.Drawing.Point(319, 204);
@@ -289,28 +205,6 @@
             this.nazwisko8.Size = new System.Drawing.Size(149, 22);
             this.nazwisko8.TabIndex = 46;
             this.nazwisko8.Visible = false;
-            // 
-            // n8
-            // 
-            this.n8.AutoSize = true;
-            this.n8.Location = new System.Drawing.Point(5, 415);
-            this.n8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.n8.Name = "n8";
-            this.n8.Size = new System.Drawing.Size(67, 17);
-            this.n8.TabIndex = 45;
-            this.n8.Text = "Nazwisko";
-            this.n8.Visible = false;
-            // 
-            // i8
-            // 
-            this.i8.AutoSize = true;
-            this.i8.Location = new System.Drawing.Point(277, 415);
-            this.i8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i8.Name = "i8";
-            this.i8.Size = new System.Drawing.Size(33, 17);
-            this.i8.TabIndex = 44;
-            this.i8.Text = "Imię";
-            this.i8.Visible = false;
             // 
             // imie8
             // 
@@ -332,28 +226,6 @@
             this.nazwisko7.TabIndex = 42;
             this.nazwisko7.Visible = false;
             // 
-            // n7
-            // 
-            this.n7.AutoSize = true;
-            this.n7.Location = new System.Drawing.Point(5, 373);
-            this.n7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.n7.Name = "n7";
-            this.n7.Size = new System.Drawing.Size(67, 17);
-            this.n7.TabIndex = 41;
-            this.n7.Text = "Nazwisko";
-            this.n7.Visible = false;
-            // 
-            // i7
-            // 
-            this.i7.AutoSize = true;
-            this.i7.Location = new System.Drawing.Point(277, 373);
-            this.i7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i7.Name = "i7";
-            this.i7.Size = new System.Drawing.Size(33, 17);
-            this.i7.TabIndex = 40;
-            this.i7.Text = "Imię";
-            this.i7.Visible = false;
-            // 
             // imie7
             // 
             this.imie7.Location = new System.Drawing.Point(319, 369);
@@ -373,28 +245,6 @@
             this.nazwisko6.Size = new System.Drawing.Size(149, 22);
             this.nazwisko6.TabIndex = 38;
             this.nazwisko6.Visible = false;
-            // 
-            // n6
-            // 
-            this.n6.AutoSize = true;
-            this.n6.Location = new System.Drawing.Point(5, 332);
-            this.n6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.n6.Name = "n6";
-            this.n6.Size = new System.Drawing.Size(67, 17);
-            this.n6.TabIndex = 37;
-            this.n6.Text = "Nazwisko";
-            this.n6.Visible = false;
-            // 
-            // i6
-            // 
-            this.i6.AutoSize = true;
-            this.i6.Location = new System.Drawing.Point(277, 332);
-            this.i6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i6.Name = "i6";
-            this.i6.Size = new System.Drawing.Size(33, 17);
-            this.i6.TabIndex = 36;
-            this.i6.Text = "Imię";
-            this.i6.Visible = false;
             // 
             // imie6
             // 
@@ -416,28 +266,6 @@
             this.nazwisko5.TabIndex = 34;
             this.nazwisko5.Visible = false;
             // 
-            // n5
-            // 
-            this.n5.AutoSize = true;
-            this.n5.Location = new System.Drawing.Point(5, 290);
-            this.n5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.n5.Name = "n5";
-            this.n5.Size = new System.Drawing.Size(67, 17);
-            this.n5.TabIndex = 33;
-            this.n5.Text = "Nazwisko";
-            this.n5.Visible = false;
-            // 
-            // i5
-            // 
-            this.i5.AutoSize = true;
-            this.i5.Location = new System.Drawing.Point(277, 290);
-            this.i5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i5.Name = "i5";
-            this.i5.Size = new System.Drawing.Size(33, 17);
-            this.i5.TabIndex = 32;
-            this.i5.Text = "Imię";
-            this.i5.Visible = false;
-            // 
             // imie5
             // 
             this.imie5.Location = new System.Drawing.Point(319, 287);
@@ -458,28 +286,6 @@
             this.nazwisko10.TabIndex = 54;
             this.nazwisko10.Visible = false;
             // 
-            // n10
-            // 
-            this.n10.AutoSize = true;
-            this.n10.Location = new System.Drawing.Point(5, 497);
-            this.n10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.n10.Name = "n10";
-            this.n10.Size = new System.Drawing.Size(67, 17);
-            this.n10.TabIndex = 53;
-            this.n10.Text = "Nazwisko";
-            this.n10.Visible = false;
-            // 
-            // i10
-            // 
-            this.i10.AutoSize = true;
-            this.i10.Location = new System.Drawing.Point(277, 497);
-            this.i10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i10.Name = "i10";
-            this.i10.Size = new System.Drawing.Size(33, 17);
-            this.i10.TabIndex = 52;
-            this.i10.Text = "Imię";
-            this.i10.Visible = false;
-            // 
             // imie10
             // 
             this.imie10.Location = new System.Drawing.Point(317, 494);
@@ -499,28 +305,6 @@
             this.nazwisko9.Size = new System.Drawing.Size(149, 22);
             this.nazwisko9.TabIndex = 50;
             this.nazwisko9.Visible = false;
-            // 
-            // n9
-            // 
-            this.n9.AutoSize = true;
-            this.n9.Location = new System.Drawing.Point(5, 455);
-            this.n9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.n9.Name = "n9";
-            this.n9.Size = new System.Drawing.Size(67, 17);
-            this.n9.TabIndex = 49;
-            this.n9.Text = "Nazwisko";
-            this.n9.Visible = false;
-            // 
-            // i9
-            // 
-            this.i9.AutoSize = true;
-            this.i9.Location = new System.Drawing.Point(277, 455);
-            this.i9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.i9.Name = "i9";
-            this.i9.Size = new System.Drawing.Size(33, 17);
-            this.i9.TabIndex = 48;
-            this.i9.Text = "Imię";
-            this.i9.Visible = false;
             // 
             // imie9
             // 
@@ -619,6 +403,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(493, 629);
             this.Controls.Add(this.alreadyAddedLabel);
             this.Controls.Add(this.TeamNameTakenLabel);
@@ -629,40 +414,22 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.teamNameTextBox);
             this.Controls.Add(this.nazwisko10);
-            this.Controls.Add(this.n10);
-            this.Controls.Add(this.i10);
             this.Controls.Add(this.imie10);
             this.Controls.Add(this.nazwisko9);
-            this.Controls.Add(this.n9);
-            this.Controls.Add(this.i9);
             this.Controls.Add(this.imie9);
             this.Controls.Add(this.nazwisko8);
-            this.Controls.Add(this.n8);
-            this.Controls.Add(this.i8);
             this.Controls.Add(this.imie8);
             this.Controls.Add(this.nazwisko7);
-            this.Controls.Add(this.n7);
-            this.Controls.Add(this.i7);
             this.Controls.Add(this.imie7);
             this.Controls.Add(this.nazwisko6);
-            this.Controls.Add(this.n6);
-            this.Controls.Add(this.i6);
             this.Controls.Add(this.imie6);
             this.Controls.Add(this.nazwisko5);
-            this.Controls.Add(this.n5);
-            this.Controls.Add(this.i5);
             this.Controls.Add(this.imie5);
             this.Controls.Add(this.nazwisko4);
-            this.Controls.Add(this.n4);
-            this.Controls.Add(this.i4);
             this.Controls.Add(this.imie4);
             this.Controls.Add(this.nazwisko3);
-            this.Controls.Add(this.n3);
-            this.Controls.Add(this.i3);
             this.Controls.Add(this.imie3);
             this.Controls.Add(this.nazwisko2);
-            this.Controls.Add(this.n2);
-            this.Controls.Add(this.i2);
             this.Controls.Add(this.registerTeam);
             this.Controls.Add(this.cancelTeam);
             this.Controls.Add(this.nazwisko1);
@@ -671,6 +438,7 @@
             this.Controls.Add(this.imie1);
             this.Controls.Add(this.addPerson);
             this.Controls.Add(this.uzytkownicyComboBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DodajDruzyne";
             this.Text = "Zgłoś drużynę";
@@ -690,39 +458,21 @@
         private System.Windows.Forms.Button cancelTeam;
         private System.Windows.Forms.Button registerTeam;
         private System.Windows.Forms.TextBox nazwisko2;
-        private System.Windows.Forms.Label n2;
-        private System.Windows.Forms.Label i2;
         private System.Windows.Forms.TextBox nazwisko4;
-        private System.Windows.Forms.Label n4;
-        private System.Windows.Forms.Label i4;
         private System.Windows.Forms.TextBox imie4;
         private System.Windows.Forms.TextBox nazwisko3;
-        private System.Windows.Forms.Label n3;
-        private System.Windows.Forms.Label i3;
         private System.Windows.Forms.TextBox imie3;
         private System.Windows.Forms.TextBox nazwisko8;
-        private System.Windows.Forms.Label n8;
-        private System.Windows.Forms.Label i8;
         private System.Windows.Forms.TextBox imie8;
         private System.Windows.Forms.TextBox nazwisko7;
-        private System.Windows.Forms.Label n7;
-        private System.Windows.Forms.Label i7;
         private System.Windows.Forms.TextBox imie7;
         private System.Windows.Forms.TextBox nazwisko6;
-        private System.Windows.Forms.Label n6;
-        private System.Windows.Forms.Label i6;
         private System.Windows.Forms.TextBox imie6;
         private System.Windows.Forms.TextBox nazwisko5;
-        private System.Windows.Forms.Label n5;
-        private System.Windows.Forms.Label i5;
         private System.Windows.Forms.TextBox imie5;
         private System.Windows.Forms.TextBox nazwisko10;
-        private System.Windows.Forms.Label n10;
-        private System.Windows.Forms.Label i10;
         private System.Windows.Forms.TextBox imie10;
         private System.Windows.Forms.TextBox nazwisko9;
-        private System.Windows.Forms.Label n9;
-        private System.Windows.Forms.Label i9;
         private System.Windows.Forms.TextBox imie9;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox teamNameTextBox;
