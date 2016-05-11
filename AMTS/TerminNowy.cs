@@ -13,10 +13,10 @@ namespace AMTS
 {
     public partial class TerminNowy:AbstractForm
     {
-        AbstractForm terminarz;
+        Terminarz terminarz;
         private System.Data.SqlClient.SqlConnection conn;
        
-        public TerminNowy(System.Data.SqlClient.SqlConnection conn, AbstractForm terminarz)
+        public TerminNowy(System.Data.SqlClient.SqlConnection conn, Terminarz terminarz)
         {
             InitializeComponent();
             this.conn = conn;
@@ -85,7 +85,8 @@ namespace AMTS
                     noError = false;
                     SumaMalych.Visible = true;
                 }
-            }else
+            }
+            if (numericDuzeDruzyny.Value < numericDuzePrzeciwnika.Value)
             {
                 if (numericMaleDruzyny.Value >= numericMalePrzeciwnika.Value)
                 {
@@ -108,6 +109,7 @@ namespace AMTS
                 sqlcomm.Parameters.Add("@pkt4", SqlDbType.Int).Value = malePunkty2;
                 sqlcomm.Connection = conn;
                 sqlcomm.ExecuteNonQuery();
+                terminarz.actualize();
                 this.Close();
             }
 
