@@ -95,7 +95,7 @@ namespace AMTS
                         label3.Visible = true;
                     }
                 }
-                
+                //sprawdzanie tych uj od punktów oraz walidowanie drużyn(gdzieś zbiór tych poprawnych
 
             }
             if (noChanges)
@@ -122,10 +122,14 @@ namespace AMTS
             saveEdit.Visible = false;
             discardEdit.Visible = false;
             terminarzDataGridView.ReadOnly = true;
+            this.actualize();
+
+        }
+        public void actualize()
+        {
             dataSet.Clear();
             dataAd.Fill(dataSet, "TERMINARZ");
             terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
-
         }
     }
 }
