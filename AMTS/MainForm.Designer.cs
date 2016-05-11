@@ -273,7 +273,6 @@ namespace AMTS
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

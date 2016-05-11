@@ -171,7 +171,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.terminarzDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
