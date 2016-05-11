@@ -17,14 +17,18 @@ namespace AMTS
         AbstractForm mainForm;
         DataSet dataSet;
         SqlDataAdapter dataAd;
+        List<string> druzyny;
         public Terminarz(SqlConnection connection, bool admin, AbstractForm MF)
         {
+            druzyny = new List<string>();
             mainForm = MF;
             InitializeComponent();
             conn = connection;
             label1.Visible=false;
             label2.Visible = false;
             label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
             if(admin)
             {
                 termOpt.Visible = true;
@@ -39,6 +43,20 @@ namespace AMTS
             dataAd.Fill(dataSet, "TERMINARZ");
             terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
             terminarzDataGridView.ReadOnly = true;
+            SqlCommand com = new SqlCommand("SELECT * FROM TERMINARZ ORDER BY Data", connection);
+
+            SqlDataReader reader = com.ExecuteReader();
+                    
+            if (reader.HasRows)
+            {
+                           while (reader.Read())
+                            {
+                                druzyny.Add(reader.GetString(0));
+                            }
+                        }
+            reader.Close();
+               
+
         }
 
         private void termAdd_Click(object sender, EventArgs e)
@@ -57,7 +75,11 @@ namespace AMTS
             discardEdit.Visible = true;
             terminarzDataGridView.ReadOnly = false;
 
-
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
 
         }
 
@@ -95,7 +117,37 @@ namespace AMTS
                         label3.Visible = true;
                     }
                 }
-                //sprawdzanie tych uj od punktów oraz walidowanie drużyn(gdzieś zbiór tych poprawnych
+                int.TryParse(row.Cells[4].Value.ToString(), out first);
+                int.TryParse(row.Cells[5].Value.ToString(), out second);
+                int.TryParse(row.Cells[6].Value.ToString(), out third);
+                int.TryParse(row.Cells[7].Value.ToString(), out fourth);
+                
+                if((first+second)!=3 && (first!=0 || second != 0))
+                {
+                    label4.Visible = true;
+                    noChanges = true;
+                }
+                if (first > second)
+                {
+                    if(third <= fourth)
+                    {
+                        label4.Visible = true;
+                        noChanges = true;
+                    }
+                }
+                if (first < second)
+                {
+                    if (third >= fourth)
+                    {
+                        label4.Visible = true;
+                        noChanges = true;
+                    }
+                }
+                if(row.Cells[2].Value.Equals(row.Cells[3].Value) || !druzyny.Contains(row.Cells[2].Value) || !druzyny.Contains(row.Cells[3].Value))
+                {
+                    label5.Visible = true;
+                    noChanges = true;
+                }
 
             }
             if (noChanges)
@@ -105,7 +157,9 @@ namespace AMTS
                 dataAd.Fill(dataSet, "TERMINARZ");
                 terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
 
-            }else
+
+            }
+            else
             {
                 SqlCommandBuilder local_SqlCommandBuilder = new SqlCommandBuilder(dataAd);
                 local_SqlCommandBuilder.ConflictOption = System.Data.ConflictOption.OverwriteChanges;
@@ -122,7 +176,10 @@ namespace AMTS
             saveEdit.Visible = false;
             discardEdit.Visible = false;
             terminarzDataGridView.ReadOnly = true;
-            this.actualize();
+            dataSet.Clear();
+            dataAd.Fill(dataSet, "TERMINARZ");
+            terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
+
 
         }
         public void actualize()
@@ -130,6 +187,12 @@ namespace AMTS
             dataSet.Clear();
             dataAd.Fill(dataSet, "TERMINARZ");
             terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
+        }
+
+        private void terminarzDataGridView_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Nieprawidłowe dane");
+            
         }
     }
 }

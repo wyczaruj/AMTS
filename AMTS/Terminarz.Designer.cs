@@ -37,6 +37,8 @@
             this.termAdd = new System.Windows.Forms.Button();
             this.termEdit = new System.Windows.Forms.Button();
             this.terminarzDataGridView = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.terminarzDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,12 +151,35 @@
             this.terminarzDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.terminarzDataGridView.Size = new System.Drawing.Size(1233, 502);
             this.terminarzDataGridView.TabIndex = 1;
+            this.terminarzDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.terminarzDataGridView_DataError_1);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(1243, 331);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(206, 17);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Nieprawidłowa wartość punktów";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(1243, 348);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Nieprawidłowa drużyna";
             // 
             // Terminarz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1514, 502);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -171,6 +196,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.terminarzDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -184,5 +210,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
