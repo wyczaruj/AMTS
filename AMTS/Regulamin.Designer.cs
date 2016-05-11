@@ -57,6 +57,7 @@
             this.wczytaj.TabIndex = 4;
             this.wczytaj.Text = "Wczytaj plik";
             this.wczytaj.UseVisualStyleBackColor = true;
+            this.wczytaj.Visible = false;
             // 
             // RegulaminAxAcroPDF
             // 

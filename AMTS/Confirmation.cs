@@ -96,5 +96,10 @@ namespace AMTS
             }
 
         }
+
+        private void Confirmation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.changeOpenedWindow();
+        }
     }
 }

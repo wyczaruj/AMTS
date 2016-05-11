@@ -124,7 +124,7 @@ namespace AMTS
             // 
             // regulaminButton
             // 
-            this.regulaminButton.Location = new System.Drawing.Point(143, 42);
+            this.regulaminButton.Location = new System.Drawing.Point(16, 42);
             this.regulaminButton.Margin = new System.Windows.Forms.Padding(4);
             this.regulaminButton.Name = "regulaminButton";
             this.regulaminButton.Size = new System.Drawing.Size(100, 28);
@@ -135,13 +135,14 @@ namespace AMTS
             // 
             // wynikiButton
             // 
-            this.wynikiButton.Location = new System.Drawing.Point(16, 42);
+            this.wynikiButton.Location = new System.Drawing.Point(143, 42);
             this.wynikiButton.Margin = new System.Windows.Forms.Padding(4);
             this.wynikiButton.Name = "wynikiButton";
             this.wynikiButton.Size = new System.Drawing.Size(100, 28);
             this.wynikiButton.TabIndex = 9;
             this.wynikiButton.Text = "Wyniki";
             this.wynikiButton.UseVisualStyleBackColor = true;
+            this.wynikiButton.Visible = false;
             // 
             // klasyfikacjaButton
             // 
@@ -272,7 +273,6 @@ namespace AMTS
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
