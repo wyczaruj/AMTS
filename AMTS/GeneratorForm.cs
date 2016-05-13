@@ -45,8 +45,8 @@ namespace AMTS
             save.Visible = true;
             discard.Visible = true;
             label1.Visible = true;
-
-            for(int i=1; i<=druzyny.Count; i++)
+            label2.Visible = false;
+            for (int i=1; i<=druzyny.Count; i++)
             {
                 dataGridView1.Rows.Add(i, "RRRR-MM-DD");
             }
@@ -54,13 +54,33 @@ namespace AMTS
 
         private void save_Click(object sender, EventArgs e)
         {
+            label2.Visible = false;
             save.Visible = false;
             discard.Visible = false;
             label1.Visible = false;
+            bool noErrors = true;
+            DateTime some;
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!DateTime.TryParse(row.Cells[1].Value.ToString(), out some))
+                {
+                    noErrors = false;
+                    label2.Visible = true;
+                }
+            }
+            if (noErrors)
+            {
+                if (checkBox1.Checked)
+                {
+                    //czyszczenie bazy
+                }
+                //dodawanie nowych
+            }
         }
 
         private void discard_Click(object sender, EventArgs e)
         {
+            label2.Visible = false;
             save.Visible = false;
             discard.Visible = false;
             label1.Visible = false;

@@ -146,7 +146,6 @@
             this.Name = "WynikiForm";
             this.Text = "WynikiForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WynikiForm_FormClosed);
-            this.Load += new System.EventHandler(this.WynikiForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.aMTSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wynikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
