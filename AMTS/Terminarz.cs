@@ -35,6 +35,7 @@ namespace AMTS
                 termEdit.Visible = true;
                 saveEdit.Visible = false;
                 discardEdit.Visible = false;
+                button1.Visible = true;
             }
             dataSet = new DataSet();
             dataAd = new SqlDataAdapter("SELECT * FROM termin ORDER BY Runda, Data", connection);
@@ -42,7 +43,7 @@ namespace AMTS
             dataAd.Fill(dataSet, "TERMINARZ");
             terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
             terminarzDataGridView.ReadOnly = true;
-            SqlCommand com = new SqlCommand("SELECT * FROM DRUZYNY", connection);
+            SqlCommand com = new SqlCommand("select * from DRUZYNY where Zatwierdzenie =1", connection);
 
             SqlDataReader reader = com.ExecuteReader();
 
@@ -72,6 +73,7 @@ namespace AMTS
         {
             saveEdit.Visible = true;
             discardEdit.Visible = true;
+            button1.Visible = false;
             terminarzDataGridView.ReadOnly = false;
 
             label1.Visible = false;
@@ -139,12 +141,14 @@ namespace AMTS
             terminarzDataGridView.ReadOnly = true;
             saveEdit.Visible = false;
             discardEdit.Visible = false;
+            button1.Visible = true;
         }
 
         private void discardEdit_Click_1(object sender, EventArgs e)
         {
             saveEdit.Visible = false;
             discardEdit.Visible = false;
+            button1.Visible = true;
             terminarzDataGridView.ReadOnly = true;
             dataSet.Clear();
             dataAd.Fill(dataSet, "TERMINARZ");
@@ -163,6 +167,16 @@ namespace AMTS
         {
             MessageBox.Show("Nieprawidłowe dane");
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(openedWindow == false)
+            {
+                GeneratorForm gen = new GeneratorForm(this, druzyny, conn);
+                openedWindow = true;
+                gen.Visible = true;
+            }
         }
     }
 }
