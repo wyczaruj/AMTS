@@ -68,6 +68,11 @@
     <Compile Include="AbstractForm.Designer.cs">
       <DependentUpon>AbstractForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AMTSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMTSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ChooseServer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +148,12 @@
     <Compile Include="Regulamin.Designer.cs">
       <DependentUpon>Regulamin.cs</DependentUpon>
     </Compile>
+    <Compile Include="WynikiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WynikiForm.Designer.cs">
+      <DependentUpon>WynikiForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChooseServer.resx">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +200,20 @@
     <EmbeddedResource Include="TerminNowy.resx">
       <DependentUpon>TerminNowy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WynikiForm.resx">
+      <DependentUpon>WynikiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AMTSDataSet.xsc">
+      <DependentUpon>AMTSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AMTSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMTSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AMTSDataSet.xss">
+      <DependentUpon>AMTSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

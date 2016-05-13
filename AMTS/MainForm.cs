@@ -217,5 +217,15 @@ namespace AMTS
                 klasyfikacja.Visible = true;
             }
         }
+
+        private void wynikiButton_Click(object sender, EventArgs e)
+        {
+            if(openedWindow == false)
+            {
+                WynikiForm wyniki = new WynikiForm(connection, this);
+                changeOpenedWindow();
+                wyniki.Visible = true;
+            }
+        }
     }
 }

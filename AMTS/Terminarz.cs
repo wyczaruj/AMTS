@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class Terminarz:AbstractForm
+    public partial class Terminarz : AbstractForm
     {
         SqlConnection conn;
         AbstractForm mainForm;
@@ -24,12 +24,11 @@ namespace AMTS
             mainForm = MF;
             InitializeComponent();
             conn = connection;
-            label1.Visible=false;
+            label1.Visible = false;
             label2.Visible = false;
             label3.Visible = false;
-            label4.Visible = false;
             label5.Visible = false;
-            if(admin)
+            if (admin)
             {
                 termOpt.Visible = true;
                 termAdd.Visible = true;
@@ -38,35 +37,35 @@ namespace AMTS
                 discardEdit.Visible = false;
             }
             dataSet = new DataSet();
-            dataAd = new SqlDataAdapter("SELECT * FROM TERMINARZ ORDER BY Data", connection);
+            dataAd = new SqlDataAdapter("SELECT * FROM termin ORDER BY Runda, Data", connection);
             SqlCommandBuilder command = new SqlCommandBuilder(dataAd);
             dataAd.Fill(dataSet, "TERMINARZ");
             terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
             terminarzDataGridView.ReadOnly = true;
-            SqlCommand com = new SqlCommand("SELECT * FROM TERMINARZ ORDER BY Data", connection);
+            SqlCommand com = new SqlCommand("SELECT * FROM DRUZYNY", connection);
 
             SqlDataReader reader = com.ExecuteReader();
-                    
+
             if (reader.HasRows)
             {
-                           while (reader.Read())
-                            {
-                                druzyny.Add(reader.GetString(0));
-                            }
-                        }
+                while (reader.Read())
+                {
+                    druzyny.Add(reader.GetString(0));
+                }
+            }
             reader.Close();
-               
+
 
         }
 
         private void termAdd_Click(object sender, EventArgs e)
         {
-            if(openedWindow == false)
+            if (openedWindow == false)
             {
                 TerminNowy nowy = new TerminNowy(conn, this);
                 openedWindow = true;
                 nowy.Visible = true;
-            }     
+            }
         }
 
         private void termEdit_Click(object sender, EventArgs e)
@@ -78,7 +77,6 @@ namespace AMTS
             label1.Visible = false;
             label2.Visible = false;
             label3.Visible = false;
-            label4.Visible = false;
             label5.Visible = false;
 
         }
@@ -92,18 +90,15 @@ namespace AMTS
         {
             DateTime something;
             int first;
-            int second;
-            int third;
-            int fourth;
             bool noChanges = false;
             foreach (DataGridViewRow row in terminarzDataGridView.Rows)
             {
-                if (!DateTime.TryParse(row.Cells[0].Value.ToString(), out something))
+                if (!DateTime.TryParse(row.Cells[1].Value.ToString(), out something))
                 {
                     noChanges = true;
                     label1.Visible = true;
                 }
-                if(!int.TryParse(row.Cells[1].Value.ToString(), out first))
+                if (!int.TryParse(row.Cells[0].Value.ToString(), out first))
                 {
                     noChanges = true;
                     label3.Visible = true;
@@ -117,33 +112,8 @@ namespace AMTS
                         label3.Visible = true;
                     }
                 }
-                int.TryParse(row.Cells[4].Value.ToString(), out first);
-                int.TryParse(row.Cells[5].Value.ToString(), out second);
-                int.TryParse(row.Cells[6].Value.ToString(), out third);
-                int.TryParse(row.Cells[7].Value.ToString(), out fourth);
                 
-                if((first+second)!=3 && (first!=0 || second != 0))
-                {
-                    label4.Visible = true;
-                    noChanges = true;
-                }
-                if (first > second)
-                {
-                    if(third <= fourth)
-                    {
-                        label4.Visible = true;
-                        noChanges = true;
-                    }
-                }
-                if (first < second)
-                {
-                    if (third >= fourth)
-                    {
-                        label4.Visible = true;
-                        noChanges = true;
-                    }
-                }
-                if(row.Cells[2].Value.Equals(row.Cells[3].Value) || !druzyny.Contains(row.Cells[2].Value) || !druzyny.Contains(row.Cells[3].Value))
+                if (row.Cells[2].Value.Equals(row.Cells[3].Value) || !druzyny.Contains(row.Cells[2].Value) || !druzyny.Contains(row.Cells[3].Value))
                 {
                     label5.Visible = true;
                     noChanges = true;
@@ -192,7 +162,7 @@ namespace AMTS
         private void terminarzDataGridView_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show("Nieprawidłowe dane");
-            
+
         }
     }
 }

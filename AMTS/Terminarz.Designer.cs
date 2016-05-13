@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,17 +38,25 @@
             this.termAdd = new System.Windows.Forms.Button();
             this.termEdit = new System.Windows.Forms.Button();
             this.terminarzDataGridView = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.terminarzDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(448, 280);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Nieprawidłowa drużyna";
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(1243, 314);
+            this.label3.Location = new System.Drawing.Point(448, 263);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(190, 17);
             this.label3.TabIndex = 11;
@@ -58,7 +67,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(1243, 280);
+            this.label2.Location = new System.Drawing.Point(448, 246);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(215, 17);
             this.label2.TabIndex = 10;
@@ -69,7 +78,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(1243, 297);
+            this.label1.Location = new System.Drawing.Point(448, 297);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 17);
             this.label1.TabIndex = 9;
@@ -78,7 +87,7 @@
             // saveEdit
             // 
             this.saveEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveEdit.Location = new System.Drawing.Point(1399, 249);
+            this.saveEdit.Location = new System.Drawing.Point(603, 249);
             this.saveEdit.Name = "saveEdit";
             this.saveEdit.Size = new System.Drawing.Size(104, 28);
             this.saveEdit.TabIndex = 8;
@@ -90,7 +99,7 @@
             // discardEdit
             // 
             this.discardEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.discardEdit.Location = new System.Drawing.Point(1244, 249);
+            this.discardEdit.Location = new System.Drawing.Point(448, 249);
             this.discardEdit.Name = "discardEdit";
             this.discardEdit.Size = new System.Drawing.Size(104, 28);
             this.discardEdit.TabIndex = 7;
@@ -103,7 +112,7 @@
             // 
             this.termOpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.termOpt.AutoSize = true;
-            this.termOpt.Location = new System.Drawing.Point(1344, 157);
+            this.termOpt.Location = new System.Drawing.Point(548, 157);
             this.termOpt.Name = "termOpt";
             this.termOpt.Size = new System.Drawing.Size(53, 17);
             this.termOpt.TabIndex = 6;
@@ -113,7 +122,7 @@
             // termAdd
             // 
             this.termAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.termAdd.Location = new System.Drawing.Point(1244, 178);
+            this.termAdd.Location = new System.Drawing.Point(448, 178);
             this.termAdd.Margin = new System.Windows.Forms.Padding(4);
             this.termAdd.Name = "termAdd";
             this.termAdd.Size = new System.Drawing.Size(259, 28);
@@ -126,7 +135,7 @@
             // termEdit
             // 
             this.termEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.termEdit.Location = new System.Drawing.Point(1244, 214);
+            this.termEdit.Location = new System.Drawing.Point(448, 214);
             this.termEdit.Margin = new System.Windows.Forms.Padding(4);
             this.termEdit.Name = "termEdit";
             this.termEdit.Size = new System.Drawing.Size(259, 28);
@@ -143,43 +152,25 @@
             this.terminarzDataGridView.AllowUserToResizeColumns = false;
             this.terminarzDataGridView.AllowUserToResizeRows = false;
             this.terminarzDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.terminarzDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.terminarzDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.terminarzDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
             this.terminarzDataGridView.Location = new System.Drawing.Point(0, 0);
             this.terminarzDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.terminarzDataGridView.MultiSelect = false;
             this.terminarzDataGridView.Name = "terminarzDataGridView";
             this.terminarzDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.terminarzDataGridView.Size = new System.Drawing.Size(1233, 502);
+            this.terminarzDataGridView.Size = new System.Drawing.Size(440, 412);
             this.terminarzDataGridView.TabIndex = 1;
             this.terminarzDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.terminarzDataGridView_DataError_1);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(1243, 331);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 17);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Nieprawidłowa wartość punktów";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(1243, 348);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 17);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Nieprawidłowa drużyna";
             // 
             // Terminarz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1514, 502);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(718, 412);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -210,7 +201,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
     }
 }
