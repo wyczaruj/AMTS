@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,9 +38,18 @@
             this.termAdd = new System.Windows.Forms.Button();
             this.termEdit = new System.Windows.Forms.Button();
             this.terminarzDataGridView = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.terminarzDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(448, 280);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Nieprawidłowa drużyna";
             // 
             // label3
             // 
@@ -142,30 +152,23 @@
             this.terminarzDataGridView.AllowUserToResizeColumns = false;
             this.terminarzDataGridView.AllowUserToResizeRows = false;
             this.terminarzDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.terminarzDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.terminarzDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.terminarzDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
             this.terminarzDataGridView.Location = new System.Drawing.Point(0, 0);
             this.terminarzDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.terminarzDataGridView.MultiSelect = false;
             this.terminarzDataGridView.Name = "terminarzDataGridView";
             this.terminarzDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.terminarzDataGridView.Size = new System.Drawing.Size(439, 412);
+            this.terminarzDataGridView.Size = new System.Drawing.Size(440, 412);
             this.terminarzDataGridView.TabIndex = 1;
             this.terminarzDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.terminarzDataGridView_DataError_1);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(448, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 17);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Nieprawidłowa drużyna";
             // 
             // Terminarz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(718, 412);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);

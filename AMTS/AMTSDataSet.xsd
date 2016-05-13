@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AMTSDataSet" targetNamespace="http://tempuri.org/AMTSDataSet.xsd" xmlns:mstns="http://tempuri.org/AMTSDataSet.xsd" xmlns="http://tempuri.org/AMTSDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=ZWIERZYNIEC;Initial Catalog=AMTS;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="zwierzyniec.AMTS.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="wynikTableAdapter" GeneratorDataComponentClassName="wynikTableAdapter" Name="wynik" UserDataComponentName="wynikTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="zwierzyniec.AMTS.dbo" DbObjectName="AMTS.dbo.wynik" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT R, Druzyna, Przeciwnik, D1, D2, M1, M2 FROM dbo.wynik</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="R" DataSetColumn="R" />
+              <Mapping SourceColumn="Druzyna" DataSetColumn="Druzyna" />
+              <Mapping SourceColumn="Przeciwnik" DataSetColumn="Przeciwnik" />
+              <Mapping SourceColumn="D1" DataSetColumn="D1" />
+              <Mapping SourceColumn="D2" DataSetColumn="D2" />
+              <Mapping SourceColumn="M1" DataSetColumn="M1" />
+              <Mapping SourceColumn="M2" DataSetColumn="M2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AMTSDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AMTSDataSet" msprop:Generator_UserDSName="AMTSDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="wynik" msprop:Generator_TableClassName="wynikDataTable" msprop:Generator_TableVarName="tablewynik" msprop:Generator_TablePropName="wynik" msprop:Generator_RowDeletingName="wynikRowDeleting" msprop:Generator_RowChangingName="wynikRowChanging" msprop:Generator_RowEvHandlerName="wynikRowChangeEventHandler" msprop:Generator_RowDeletedName="wynikRowDeleted" msprop:Generator_UserTableName="wynik" msprop:Generator_RowChangedName="wynikRowChanged" msprop:Generator_RowEvArgName="wynikRowChangeEvent" msprop:Generator_RowClassName="wynikRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="R" msprop:Generator_ColumnVarNameInTable="columnR" msprop:Generator_ColumnPropNameInRow="R" msprop:Generator_ColumnPropNameInTable="RColumn" msprop:Generator_UserColumnName="R" type="xs:int" />
+              <xs:element name="Druzyna" msprop:Generator_ColumnVarNameInTable="columnDruzyna" msprop:Generator_ColumnPropNameInRow="Druzyna" msprop:Generator_ColumnPropNameInTable="DruzynaColumn" msprop:Generator_UserColumnName="Druzyna" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Przeciwnik" msprop:Generator_ColumnVarNameInTable="columnPrzeciwnik" msprop:Generator_ColumnPropNameInRow="Przeciwnik" msprop:Generator_ColumnPropNameInTable="PrzeciwnikColumn" msprop:Generator_UserColumnName="Przeciwnik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="D1" msprop:Generator_ColumnVarNameInTable="columnD1" msprop:Generator_ColumnPropNameInRow="D1" msprop:Generator_ColumnPropNameInTable="D1Column" msprop:Generator_UserColumnName="D1" type="xs:int" minOccurs="0" />
+              <xs:element name="D2" msprop:Generator_ColumnVarNameInTable="columnD2" msprop:Generator_ColumnPropNameInRow="D2" msprop:Generator_ColumnPropNameInTable="D2Column" msprop:Generator_UserColumnName="D2" type="xs:int" minOccurs="0" />
+              <xs:element name="M1" msprop:Generator_ColumnVarNameInTable="columnM1" msprop:Generator_ColumnPropNameInRow="M1" msprop:Generator_ColumnPropNameInTable="M1Column" msprop:Generator_UserColumnName="M1" type="xs:int" minOccurs="0" />
+              <xs:element name="M2" msprop:Generator_ColumnVarNameInTable="columnM2" msprop:Generator_ColumnPropNameInRow="M2" msprop:Generator_ColumnPropNameInTable="M2Column" msprop:Generator_UserColumnName="M2" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

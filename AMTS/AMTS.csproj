@@ -68,6 +68,11 @@
     <Compile Include="AbstractForm.Designer.cs">
       <DependentUpon>AbstractForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AMTSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMTSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ChooseServer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +203,17 @@
     <EmbeddedResource Include="WynikiForm.resx">
       <DependentUpon>WynikiForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AMTSDataSet.xsc">
+      <DependentUpon>AMTSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AMTSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMTSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AMTSDataSet.xss">
+      <DependentUpon>AMTSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

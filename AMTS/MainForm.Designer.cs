@@ -142,6 +142,7 @@ namespace AMTS
             this.wynikiButton.TabIndex = 9;
             this.wynikiButton.Text = "Wyniki";
             this.wynikiButton.UseVisualStyleBackColor = true;
+            this.wynikiButton.Click += new System.EventHandler(this.wynikiButton_Click);
             // 
             // klasyfikacjaButton
             // 
