@@ -222,7 +222,7 @@ namespace AMTS
         {
             if(openedWindow == false)
             {
-                WynikiForm wyniki = new WynikiForm(connection, this);
+                WynikiForm wyniki = new WynikiForm(connection, this, AdminLogged);
                 changeOpenedWindow();
                 wyniki.Visible = true;
             }
