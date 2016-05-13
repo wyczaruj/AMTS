@@ -18,8 +18,6 @@ namespace AMTS
             string fileName = "Regulamin.pdf";
             string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"", fileName);
             string newPath = System.IO.Path.GetFullPath(System.IO.Path.Combine(path, @"..\..\..\Data\" + fileName));
-            var acro = (AcroPDFLib.IAcroAXDocShim)RegulaminAxAcroPDF.GetOcx();
-            acro.src = newPath;
         }
 
         private void Zamknij_Click(object sender, EventArgs e)
