@@ -1,0 +1,126 @@
+﻿namespace AMTS
+{
+    partial class SendMessage
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.messageTextBox = new System.Windows.Forms.TextBox();
+            this.subjectTextBox = new System.Windows.Forms.TextBox();
+            this.TematLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sendMessageButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(12, 28);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(222, 284);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // messageTextBox
+            // 
+            this.messageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.messageTextBox.Enabled = false;
+            this.messageTextBox.Location = new System.Drawing.Point(241, 76);
+            this.messageTextBox.Multiline = true;
+            this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.Size = new System.Drawing.Size(404, 236);
+            this.messageTextBox.TabIndex = 1;
+            // 
+            // subjectTextBox
+            // 
+            this.subjectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.subjectTextBox.Enabled = false;
+            this.subjectTextBox.Location = new System.Drawing.Point(241, 28);
+            this.subjectTextBox.Name = "subjectTextBox";
+            this.subjectTextBox.Size = new System.Drawing.Size(404, 22);
+            this.subjectTextBox.TabIndex = 2;
+            // 
+            // TematLabel
+            // 
+            this.TematLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TematLabel.AutoSize = true;
+            this.TematLabel.Location = new System.Drawing.Point(238, 9);
+            this.TematLabel.Name = "TematLabel";
+            this.TematLabel.Size = new System.Drawing.Size(48, 17);
+            this.TematLabel.TabIndex = 3;
+            this.TematLabel.Text = "Temat";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(240, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Wiadomość";
+            // 
+            // sendMessageButton
+            // 
+            this.sendMessageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sendMessageButton.Enabled = false;
+            this.sendMessageButton.Location = new System.Drawing.Point(241, 318);
+            this.sendMessageButton.Name = "sendMessageButton";
+            this.sendMessageButton.Size = new System.Drawing.Size(404, 42);
+            this.sendMessageButton.TabIndex = 5;
+            this.sendMessageButton.Text = "Wyślij";
+            this.sendMessageButton.UseVisualStyleBackColor = true;
+            this.sendMessageButton.Click += new System.EventHandler(this.sendMessageButton_Click);
+            // 
+            // SendMessage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(681, 383);
+            this.Controls.Add(this.sendMessageButton);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TematLabel);
+            this.Controls.Add(this.subjectTextBox);
+            this.Controls.Add(this.messageTextBox);
+            this.Controls.Add(this.listView1);
+            this.Name = "SendMessage";
+            this.Text = "SendMessage";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SendMessage_FormClosed);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox messageTextBox;
+        private System.Windows.Forms.TextBox subjectTextBox;
+        private System.Windows.Forms.Label TematLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button sendMessageButton;
+    }
+}
