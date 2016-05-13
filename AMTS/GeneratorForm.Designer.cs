@@ -54,7 +54,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(244, 425);
+            this.dataGridView1.Size = new System.Drawing.Size(244, 230);
             this.dataGridView1.TabIndex = 0;
             // 
             // Runda
@@ -73,7 +73,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(255, 190);
+            this.checkBox1.Location = new System.Drawing.Point(255, 104);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(199, 21);
             this.checkBox1.TabIndex = 1;
@@ -82,7 +82,7 @@
             // 
             // generator
             // 
-            this.generator.Location = new System.Drawing.Point(264, 160);
+            this.generator.Location = new System.Drawing.Point(264, 74);
             this.generator.Name = "generator";
             this.generator.Size = new System.Drawing.Size(175, 24);
             this.generator.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             // discard
             // 
-            this.discard.Location = new System.Drawing.Point(255, 217);
+            this.discard.Location = new System.Drawing.Point(255, 131);
             this.discard.Name = "discard";
             this.discard.Size = new System.Drawing.Size(75, 23);
             this.discard.TabIndex = 3;
@@ -102,7 +102,7 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(379, 217);
+            this.save.Location = new System.Drawing.Point(379, 131);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 4;
@@ -113,7 +113,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 243);
+            this.label1.Location = new System.Drawing.Point(252, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(233, 17);
             this.label1.TabIndex = 5;
@@ -123,7 +123,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(252, 260);
+            this.label2.Location = new System.Drawing.Point(252, 174);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 17);
             this.label2.TabIndex = 6;
@@ -134,7 +134,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(502, 427);
+            this.ClientSize = new System.Drawing.Size(502, 235);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.save);

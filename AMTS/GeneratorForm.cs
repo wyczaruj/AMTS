@@ -37,6 +37,7 @@ namespace AMTS
         private void GeneratorForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             terminarz.changeOpenedWindow();
+            terminarz.actualize();
         }
 
         private void generator_Click(object sender, EventArgs e)
@@ -72,9 +73,23 @@ namespace AMTS
             {
                 if (checkBox1.Checked)
                 {
-                    //czyszczenie bazy
+                    SqlCommand com = new SqlCommand("delete from TERMINARZ update Klasyfikacja set Duze_punkty = 0, Male_punkty = 0, Male_przegrane_punkty = 0", conn);
+                    com.ExecuteNonQuery();
                 }
-                //dodawanie nowych
+                string[] druz= druzyny.ToArray();
+                SqlCommand sqlcom = new SqlCommand();
+                sqlcom.CommandText = "exec dbo.dodajSpotkanie @data,@druz,@przeci,0,0,0,0,@r ";
+
+                sqlcom.Connection = conn;
+                foreach(DataGridViewRow row in dataGridView1.Rows)
+                {
+                    sqlcom.Parameters.Clear();
+                    sqlcom.Parameters.Add("@r", SqlDbType.Int).Value = row.Cells[0].Value;
+                    sqlcom.Parameters.Add("@data", SqlDbType.Date).Value = row.Cells[1].Value.ToString(); ;
+                    sqlcom.Parameters.Add("@druz", SqlDbType.VarChar).Value = "Seniorzy";
+                    sqlcom.Parameters.Add("@przeci", SqlDbType.VarChar).Value = "Juniorzy";
+                    sqlcom.ExecuteNonQuery();
+                }
             }
         }
 
