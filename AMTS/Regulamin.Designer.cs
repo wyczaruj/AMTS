@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Regulamin));
             this.Zamknij = new System.Windows.Forms.Button();
             this.wczytaj = new System.Windows.Forms.Button();
-            this.RegulaminAxAcroPDF = new AxAcroPDFLib.AxAcroPDF();
-            ((System.ComponentModel.ISupportInitialize)(this.RegulaminAxAcroPDF)).BeginInit();
             this.SuspendLayout();
             // 
             // Zamknij
@@ -59,16 +56,6 @@
             this.wczytaj.UseVisualStyleBackColor = true;
             this.wczytaj.Visible = false;
             // 
-            // RegulaminAxAcroPDF
-            // 
-            this.RegulaminAxAcroPDF.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RegulaminAxAcroPDF.Enabled = true;
-            this.RegulaminAxAcroPDF.Location = new System.Drawing.Point(0, 0);
-            this.RegulaminAxAcroPDF.Name = "RegulaminAxAcroPDF";
-            this.RegulaminAxAcroPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("RegulaminAxAcroPDF.OcxState")));
-            this.RegulaminAxAcroPDF.Size = new System.Drawing.Size(1294, 709);
-            this.RegulaminAxAcroPDF.TabIndex = 5;
-            // 
             // Regulamin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -76,12 +63,10 @@
             this.ClientSize = new System.Drawing.Size(1294, 709);
             this.Controls.Add(this.wczytaj);
             this.Controls.Add(this.Zamknij);
-            this.Controls.Add(this.RegulaminAxAcroPDF);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Regulamin";
             this.Text = "Regulamin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Regulamin_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.RegulaminAxAcroPDF)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,6 +75,5 @@
 
         private System.Windows.Forms.Button Zamknij;
         private System.Windows.Forms.Button wczytaj;
-        private AxAcroPDFLib.AxAcroPDF RegulaminAxAcroPDF;
     }
 }
