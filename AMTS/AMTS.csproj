@@ -143,6 +143,12 @@
     <Compile Include="Regulamin.Designer.cs">
       <DependentUpon>Regulamin.cs</DependentUpon>
     </Compile>
+    <Compile Include="WynikiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WynikiForm.Designer.cs">
+      <DependentUpon>WynikiForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChooseServer.resx">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TerminNowy.resx">
       <DependentUpon>TerminNowy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WynikiForm.resx">
+      <DependentUpon>WynikiForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

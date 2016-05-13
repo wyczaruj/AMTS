@@ -142,7 +142,6 @@ namespace AMTS
             this.wynikiButton.TabIndex = 9;
             this.wynikiButton.Text = "Wyniki";
             this.wynikiButton.UseVisualStyleBackColor = true;
-            this.wynikiButton.Visible = false;
             // 
             // klasyfikacjaButton
             // 
@@ -273,6 +272,7 @@ namespace AMTS
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
