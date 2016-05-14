@@ -46,6 +46,8 @@ namespace AMTS
             this.logInButton = new System.Windows.Forms.Button();
             this.LoggedInAsLabel = new System.Windows.Forms.Label();
             this.LabelZJ = new System.Windows.Forms.Label();
+            this.messagesButton = new System.Windows.Forms.Button();
+            this.messageBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // confirmConfirmationButton
@@ -243,12 +245,34 @@ namespace AMTS
             this.LabelZJ.TabIndex = 0;
             this.LabelZJ.Text = "Zalogowany jako:";
             // 
+            // messagesButton
+            // 
+            this.messagesButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.messagesButton.FlatAppearance.BorderSize = 0;
+            this.messagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.messagesButton.Image = global::AMTS.Properties.Resources.greyMailImage;
+            this.messagesButton.Location = new System.Drawing.Point(16, 151);
+            this.messagesButton.Name = "messagesButton";
+            this.messagesButton.Size = new System.Drawing.Size(66, 68);
+            this.messagesButton.TabIndex = 17;
+            this.messagesButton.UseVisualStyleBackColor = false;
+            this.messagesButton.Visible = false;
+            this.messagesButton.Click += new System.EventHandler(this.messagesButton_Click);
+            // 
+            // messageBackgroundWorker
+            // 
+            this.messageBackgroundWorker.WorkerReportsProgress = true;
+            this.messageBackgroundWorker.WorkerSupportsCancellation = true;
+            this.messageBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.messageBackgroundWorker_DoWork);
+            this.messageBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.messageBackgroundWorker_ProgressChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(570, 279);
+            this.Controls.Add(this.messagesButton);
             this.Controls.Add(this.confirmConfirmationButton);
             this.Controls.Add(this.myRegistrationButton);
             this.Controls.Add(this.numberOfTeamRegistrationsLabel);
@@ -295,6 +319,8 @@ namespace AMTS
         private System.Windows.Forms.Label numberOfTeamRegistrationsLabel;
         private System.Windows.Forms.Button myRegistrationButton;
         private System.Windows.Forms.Button confirmConfirmationButton;
+        private System.Windows.Forms.Button messagesButton;
+        private System.ComponentModel.BackgroundWorker messageBackgroundWorker;
     }
 }
 
