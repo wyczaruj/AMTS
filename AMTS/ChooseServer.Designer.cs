@@ -40,7 +40,8 @@ namespace AMTS
             "KLAUDIA_LAPTOP",
             "PATRYK",
             "PATRYKS",
-            "DOROTA"});
+            "DOROTA",
+            "ALTS"});
             this.serverComboBox.Location = new System.Drawing.Point(79, 86);
             this.serverComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.serverComboBox.Name = "serverComboBox";

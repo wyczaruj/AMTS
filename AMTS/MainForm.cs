@@ -1,6 +1,8 @@
 using AMTS.Data;
+using AMTS.Properties;
 using System;
 using System.Data.SqlClient;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace AMTS
@@ -55,6 +57,13 @@ namespace AMTS
             teamLabel.Visible = false;
             confirmConfirmationButton.Visible = false;
             myRegistrationButton.Visible = false;
+            messagesButton.Visible = false;
+            messagesButton.Image = Resources.greyMailImage;
+
+            if (messageBackgroundWorker.IsBusy)
+            {
+                messageBackgroundWorker.CancelAsync();
+            }
         }
 
         private void registerButton_Click(object sender, EventArgs e)
@@ -108,6 +117,11 @@ namespace AMTS
             teamLabel.Text = DBteam;
             druzynaLabel.Visible = true;
             teamLabel.Visible = true;
+            messagesButton.Visible = true;
+            if (!messageBackgroundWorker.IsBusy)
+            {
+                messageBackgroundWorker.RunWorkerAsync();
+            }
         }
 
         public void successfulTeamRegistration(string teamName)
@@ -156,8 +170,12 @@ namespace AMTS
             niezalogowany.Visible = false;
             registerTeamButton.Visible = false;
             teamRegistrationsButton.Visible = true;
-
-            LoggedInAsLabel.Text = mail + " [ADMIN]";
+            messagesButton.Visible = true;
+            LoggedInAsLabel.Text = mail + "\n[ADMIN]";
+            if (!messageBackgroundWorker.IsBusy)
+            {
+                messageBackgroundWorker.RunWorkerAsync();
+            }
         }
 
         private void terminarzButton_Click(object sender, EventArgs e)
@@ -232,12 +250,48 @@ namespace AMTS
         {
             if (openedWindow == false)
             {
-                LoggedInUser = new User(connection, "z@z.z");
+                LoggedInUser = new User(connection, LoggedInUser.getEmail());
                 Messages messages = new Messages(connection, this, LoggedInUser,  AdminLogged);
                 changeOpenedWindow();
+                changeMessageStatus();
                 messages.Visible = true;
-
+                
             }
+        }
+
+        private void changeMessageStatus()
+        {
+            messagesButton.Image = Resources.greyMailImage;
+            string command = "exec dbo.wiadomoscPrzeczytana '" + LoggedInUser.getEmail() + "'";
+            SqlCommand sqlcomm = new SqlCommand(command, connection);
+            sqlcomm.ExecuteNonQuery();
+        }
+
+        private void messageBackgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            string command = "Select Wiadomosc from UZYTKOWNICY WHERE Wiadomosc = 1 AND Mail ='" + LoggedInUser.getEmail() + "'";
+            SqlCommand sqlcomm;
+            SqlDataReader r;
+            while (true)
+            {
+                Thread.Sleep(5000);
+                sqlcomm = new SqlCommand(command, connection);
+                r = sqlcomm.ExecuteReader();
+                if (r.Read())
+                    messageBackgroundWorker.ReportProgress(1);
+                r.Close();
+                
+                if (messageBackgroundWorker.CancellationPending)
+                {
+                    e.Cancel = true;                    
+                    return;
+                }
+            }
+        }
+
+        private void messageBackgroundWorker_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            messagesButton.Image = Resources.newMailImage;
         }
     }
 }

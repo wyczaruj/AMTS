@@ -47,6 +47,7 @@ namespace AMTS
             this.LoggedInAsLabel = new System.Windows.Forms.Label();
             this.LabelZJ = new System.Windows.Forms.Label();
             this.messagesButton = new System.Windows.Forms.Button();
+            this.messageBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // confirmConfirmationButton
@@ -255,7 +256,15 @@ namespace AMTS
             this.messagesButton.Size = new System.Drawing.Size(66, 68);
             this.messagesButton.TabIndex = 17;
             this.messagesButton.UseVisualStyleBackColor = false;
+            this.messagesButton.Visible = false;
             this.messagesButton.Click += new System.EventHandler(this.messagesButton_Click);
+            // 
+            // messageBackgroundWorker
+            // 
+            this.messageBackgroundWorker.WorkerReportsProgress = true;
+            this.messageBackgroundWorker.WorkerSupportsCancellation = true;
+            this.messageBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.messageBackgroundWorker_DoWork);
+            this.messageBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.messageBackgroundWorker_ProgressChanged);
             // 
             // MainForm
             // 
@@ -311,6 +320,7 @@ namespace AMTS
         private System.Windows.Forms.Button myRegistrationButton;
         private System.Windows.Forms.Button confirmConfirmationButton;
         private System.Windows.Forms.Button messagesButton;
+        private System.ComponentModel.BackgroundWorker messageBackgroundWorker;
     }
 }
 

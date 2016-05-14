@@ -9,7 +9,7 @@ namespace AMTS
         public ChooseServer()
         {
             InitializeComponent();
-            server = "";
+            server = "Server=tcp:alts.database.windows.net,1433;Data Source=alts.database.windows.net;Initial Catalog=ALTS;Persist Security Info=False;User ID=patrykvan;Password=mojaALTS1;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         }
 
         private void serverComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -31,8 +31,8 @@ namespace AMTS
                 case "DOROTA":
                     server = "Data Source=ZWIERZYNIEC;Initial Catalog=AMTS;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=True";
                     break;
-                case "AMTS":
-                    server = "";
+                case "ALTS":
+                    server = "Server=tcp:alts.database.windows.net,1433;Data Source=alts.database.windows.net;Initial Catalog=ALTS;Persist Security Info=False;User ID=patrykvan;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
                     break;
             }
         }
