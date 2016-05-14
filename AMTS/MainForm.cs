@@ -171,6 +171,7 @@ namespace AMTS
             registerTeamButton.Visible = false;
             teamRegistrationsButton.Visible = true;
             messagesButton.Visible = true;
+            LoggedInUser = new User(connection, mail);
             LoggedInAsLabel.Text = mail + "\n[ADMIN]";
             if (!messageBackgroundWorker.IsBusy)
             {
