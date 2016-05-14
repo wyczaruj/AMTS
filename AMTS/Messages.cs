@@ -11,7 +11,7 @@ namespace AMTS
         SqlConnection connection;
         bool admin;
         List<string> sendersMails;
-        List<int> subjects;
+        List<int> subjectIds;
         public Messages()
         {
             InitializeComponent();
@@ -82,17 +82,17 @@ namespace AMTS
                 return;
             }
             subjectListView.Items.Clear();
+            subjectIds = new List<int>();
+            string senderMail = sendersMails[sendersListView.SelectedIndices[0]];
 
-            var item = sendersListView.FindItemWithText(sendersListView.SelectedItems[0].Text);
-            string senderMail = sendersMails[sendersListView.Items.IndexOf(item)];
 
-
-            string command = "SELECT Temat AS SUBJECT FROM TEMATY WHERE Nadawca ='" + senderMail
+            string command = "SELECT Id AS ID, Temat AS SUBJECT FROM TEMATY WHERE Nadawca ='" + senderMail
                 + "' AND Adresat = '" + user.getEmail() + "'";
             SqlCommand sqlcomm = new SqlCommand(command, connection);
             SqlDataReader r = sqlcomm.ExecuteReader();
             while (r.Read())
             {
+                subjectIds.Add(Int32.Parse(r["ID"].ToString()));
                 subjectListView.Items.Add(r["SUBJECT"].ToString());
             }
 
@@ -105,7 +105,9 @@ namespace AMTS
             {
                 return;
             }
-            string command = "SELECT Wiadomosc AS MESSAGE FROM WIADOMOSCI WHERE Tem ='" + subjectListView.SelectedItems[0].Text + "'";
+            int i = subjectListView.SelectedIndices[0];
+            int ID =  subjectIds[i];
+            string command = "SELECT Wiadomosc AS MESSAGE FROM WIADOMOSCI WHERE Tem ='" + subjectListView.SelectedItems[0].Text + "' AND id_tem =" + ID.ToString();
             SqlCommand sqlcomm = new SqlCommand(command, connection);
             SqlDataReader r = sqlcomm.ExecuteReader();
             if (r.Read())

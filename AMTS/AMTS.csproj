@@ -275,6 +275,8 @@
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\newMailImage.png" />
+    <None Include="Resources\greyMailImage.png" />
     <Content Include="x64\pdfium.dll" />
     <Content Include="x86\pdfium.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

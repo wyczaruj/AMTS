@@ -47,8 +47,6 @@ namespace AMTS
             this.LoggedInAsLabel = new System.Windows.Forms.Label();
             this.LabelZJ = new System.Windows.Forms.Label();
             this.messagesButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // confirmConfirmationButton
@@ -248,21 +246,16 @@ namespace AMTS
             // 
             // messagesButton
             // 
-            this.messagesButton.Location = new System.Drawing.Point(50, 183);
+            this.messagesButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.messagesButton.FlatAppearance.BorderSize = 0;
+            this.messagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.messagesButton.Image = global::AMTS.Properties.Resources.greyMailImage;
+            this.messagesButton.Location = new System.Drawing.Point(16, 151);
             this.messagesButton.Name = "messagesButton";
-            this.messagesButton.Size = new System.Drawing.Size(113, 36);
+            this.messagesButton.Size = new System.Drawing.Size(66, 68);
             this.messagesButton.TabIndex = 17;
-            this.messagesButton.Text = "Wiadomości";
-            this.messagesButton.UseVisualStyleBackColor = true;
+            this.messagesButton.UseVisualStyleBackColor = false;
             this.messagesButton.Click += new System.EventHandler(this.messagesButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(169, 183);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 36);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -270,7 +263,6 @@ namespace AMTS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(570, 279);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.messagesButton);
             this.Controls.Add(this.confirmConfirmationButton);
             this.Controls.Add(this.myRegistrationButton);
@@ -294,7 +286,6 @@ namespace AMTS
             this.Name = "MainForm";
             this.Text = "Amatorska Liga Tenisa Stołowego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,7 +311,6 @@ namespace AMTS
         private System.Windows.Forms.Button myRegistrationButton;
         private System.Windows.Forms.Button confirmConfirmationButton;
         private System.Windows.Forms.Button messagesButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
