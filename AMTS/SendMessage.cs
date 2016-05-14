@@ -27,10 +27,14 @@ namespace AMTS
             string command = "";
             if (admin)
             {
+                //////////
+                command = "SELECT Imie AS NAME, Nazwisko AS LASTNAME, Mail AS EMAIL FROM UZYTKOWNICY WHERE Mail != '" + user.getEmail() + "'";
 
             }
             else if (user.isCaptain())
             {
+                //////////
+                command = "SELECT Imie AS NAME, Nazwisko AS LASTNAME, Mail AS EMAIL FROM UZYTKOWNICY WHERE Mail != '" + user.getEmail() + "'";
 
             }
             else
