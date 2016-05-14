@@ -9,7 +9,7 @@ namespace AMTS
         public ChooseServer()
         {
             InitializeComponent();
-            server = "Server=tcp:alts.database.windows.net,1433;Data Source=alts.database.windows.net;Initial Catalog=ALTS;Persist Security Info=False;User ID=patrykvan;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Password=";
+            server = "Server=tcp:alts.database.windows.net,1433;Data Source=alts.database.windows.net;Initial Catalog=ALTS;Persist Security Info=False;User ID=patrykvan;Pooling=False;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Password=";
         }
 
         private void serverComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace AMTS
                     startPWButton.Visible = true;
                     startButton.Visible = false;
                     passwordTextBox.Enabled = true;
-                    server = "Server=tcp:alts.database.windows.net,1433;Data Source=alts.database.windows.net;Initial Catalog=ALTS;Persist Security Info=False;User ID=patrykvan;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Password=";
+                    server = "Server=tcp:alts.database.windows.net,1433;Data Source=alts.database.windows.net;Initial Catalog=ALTS;Persist Security Info=False;User ID=patrykvan;Pooling=False;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Password=";
                     server += passwordTextBox.Text;
                     break;
             }
