@@ -80,6 +80,7 @@ namespace AMTS
             this.passwordTextBox.PasswordChar = '$';
             this.passwordTextBox.Size = new System.Drawing.Size(212, 22);
             this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // startPWButton
             // 
