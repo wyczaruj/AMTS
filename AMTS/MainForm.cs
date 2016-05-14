@@ -227,5 +227,17 @@ namespace AMTS
                 wyniki.Visible = true;
             }
         }
+
+        private void messagesButton_Click(object sender, EventArgs e)
+        {
+            if (openedWindow == false)
+            {
+                LoggedInUser = new User(connection, "z@z.z");
+                Messages messages = new Messages(connection, this, LoggedInUser,  AdminLogged);
+                changeOpenedWindow();
+                messages.Visible = true;
+
+            }
+        }
     }
 }

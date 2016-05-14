@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.usersListView = new System.Windows.Forms.ListView();
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.subjectTextBox = new System.Windows.Forms.TextBox();
             this.TematLabel = new System.Windows.Forms.Label();
@@ -36,13 +36,16 @@
             this.sendMessageButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listView1
+            // usersListView
             // 
-            this.listView1.Location = new System.Drawing.Point(12, 28);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(222, 284);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.usersListView.Location = new System.Drawing.Point(12, 28);
+            this.usersListView.MultiSelect = false;
+            this.usersListView.Name = "usersListView";
+            this.usersListView.Size = new System.Drawing.Size(222, 284);
+            this.usersListView.TabIndex = 0;
+            this.usersListView.UseCompatibleStateImageBehavior = false;
+            this.usersListView.View = System.Windows.Forms.View.SmallIcon;
+            this.usersListView.SelectedIndexChanged += new System.EventHandler(this.usersListView_SelectedIndexChanged);
             // 
             // messageTextBox
             // 
@@ -52,7 +55,7 @@
             this.messageTextBox.Multiline = true;
             this.messageTextBox.Name = "messageTextBox";
             this.messageTextBox.Size = new System.Drawing.Size(404, 236);
-            this.messageTextBox.TabIndex = 1;
+            this.messageTextBox.TabIndex = 11;
             // 
             // subjectTextBox
             // 
@@ -61,7 +64,7 @@
             this.subjectTextBox.Location = new System.Drawing.Point(241, 28);
             this.subjectTextBox.Name = "subjectTextBox";
             this.subjectTextBox.Size = new System.Drawing.Size(404, 22);
-            this.subjectTextBox.TabIndex = 2;
+            this.subjectTextBox.TabIndex = 10;
             // 
             // TematLabel
             // 
@@ -90,7 +93,7 @@
             this.sendMessageButton.Location = new System.Drawing.Point(241, 318);
             this.sendMessageButton.Name = "sendMessageButton";
             this.sendMessageButton.Size = new System.Drawing.Size(404, 42);
-            this.sendMessageButton.TabIndex = 5;
+            this.sendMessageButton.TabIndex = 12;
             this.sendMessageButton.Text = "Wyślij";
             this.sendMessageButton.UseVisualStyleBackColor = true;
             this.sendMessageButton.Click += new System.EventHandler(this.sendMessageButton_Click);
@@ -105,7 +108,7 @@
             this.Controls.Add(this.TematLabel);
             this.Controls.Add(this.subjectTextBox);
             this.Controls.Add(this.messageTextBox);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.usersListView);
             this.Name = "SendMessage";
             this.Text = "SendMessage";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SendMessage_FormClosed);
@@ -116,7 +119,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView usersListView;
         private System.Windows.Forms.TextBox messageTextBox;
         private System.Windows.Forms.TextBox subjectTextBox;
         private System.Windows.Forms.Label TematLabel;
