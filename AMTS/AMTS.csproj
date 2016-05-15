@@ -101,11 +101,23 @@
     <Compile Include="Klasyfikacja.Designer.cs">
       <DependentUpon>Klasyfikacja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages.Designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyTeamRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyTeamRegistration.Designer.cs">
       <DependentUpon>MyTeamRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendMessage.Designer.cs">
+      <DependentUpon>SendMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="TeamRegistrations.cs">
       <SubType>Form</SubType>
@@ -185,6 +197,9 @@
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Messages.resx">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyTeamRegistration.resx">
       <DependentUpon>MyTeamRegistration.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Regulamin.resx">
       <DependentUpon>Regulamin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMessage.resx">
+      <DependentUpon>SendMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeamRegistrations.resx">
       <DependentUpon>TeamRegistrations.cs</DependentUpon>
@@ -257,6 +275,8 @@
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\newMailImage.png" />
+    <None Include="Resources\greyMailImage.png" />
     <Content Include="x64\pdfium.dll" />
     <Content Include="x86\pdfium.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
