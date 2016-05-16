@@ -62,12 +62,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbstractForm.Designer.cs">
+      <DependentUpon>AbstractForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChooseServer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChooseServer.Designer.cs">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Confirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Confirmation.Designer.cs">
+      <DependentUpon>Confirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klasyfikacja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klasyfikacja.Designer.cs">
+      <DependentUpon>Klasyfikacja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTeamRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyTeamRegistration.Designer.cs">
+      <DependentUpon>MyTeamRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamRegistrations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamRegistrations.Designer.cs">
+      <DependentUpon>TeamRegistrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Terminarz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terminarz.Designer.cs">
+      <DependentUpon>Terminarz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TerminNowy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerminNowy.Designer.cs">
+      <DependentUpon>TerminNowy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="DodajDruzyne.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,14 +146,23 @@
     <EmbeddedResource Include="ChooseServer.resx">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Confirmation.resx">
+      <DependentUpon>Confirmation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DodajDruzyne.resx">
       <DependentUpon>DodajDruzyne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klasyfikacja.resx">
+      <DependentUpon>Klasyfikacja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTeamRegistration.resx">
+      <DependentUpon>MyTeamRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,6 +180,16 @@
     <EmbeddedResource Include="Regulamin.resx">
       <DependentUpon>Regulamin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeamRegistrations.resx">
+      <DependentUpon>TeamRegistrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terminarz.resx">
+      <DependentUpon>Terminarz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerminNowy.resx">
+      <DependentUpon>TerminNowy.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -152,6 +214,28 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

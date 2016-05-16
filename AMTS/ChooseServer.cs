@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using System.Windows.Forms;
 
 namespace AMTS
@@ -26,11 +19,17 @@ namespace AMTS
                 case "KLAUDIA_PC":
                     server = "Server = KLAUDIA_PC\\SQLEXPRESS; Database = AMTS; Trusted_Connection = true";
                     break;
+                case "KLAUDIA_LAPTOP":
+                    server = "Server = KOMPUTER\\SQLEXPRESSS; Database = AMTS; Trusted_Connection = true";
+                    break;
                 case "PATRYK":
                     server = "Server=PATRYK\\SQLEXPRESSAWPAT;Database=AMTS;Trusted_Connection=true";
                     break;
                 case "PATRYKS":
                     server = "Server=DESKTOP-I5KKVD2\\SQLEXPRESSPAT;Database=AMTS;Trusted_Connection=true";
+                    break;
+                case "DOROTA":
+                    server = "Data Source=ZWIERZYNIEC;Initial Catalog=AMTS;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                     break;
             }
         }

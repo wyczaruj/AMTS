@@ -28,34 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Regulamin));
+            this.Zamknij = new System.Windows.Forms.Button();
+            this.wczytaj = new System.Windows.Forms.Button();
+            this.RegulaminAxAcroPDF = new AxAcroPDFLib.AxAcroPDF();
+            ((System.ComponentModel.ISupportInitialize)(this.RegulaminAxAcroPDF)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // Zamknij
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(126, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(771, 135);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "REGULAMIN";
+            this.Zamknij.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Zamknij.Location = new System.Drawing.Point(1167, 664);
+            this.Zamknij.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Zamknij.Name = "Zamknij";
+            this.Zamknij.Size = new System.Drawing.Size(103, 32);
+            this.Zamknij.TabIndex = 2;
+            this.Zamknij.Text = "Zamknij";
+            this.Zamknij.UseVisualStyleBackColor = true;
+            this.Zamknij.Click += new System.EventHandler(this.Zamknij_Click);
+            // 
+            // wczytaj
+            // 
+            this.wczytaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.wczytaj.Location = new System.Drawing.Point(1167, 13);
+            this.wczytaj.Margin = new System.Windows.Forms.Padding(4);
+            this.wczytaj.Name = "wczytaj";
+            this.wczytaj.Size = new System.Drawing.Size(100, 28);
+            this.wczytaj.TabIndex = 4;
+            this.wczytaj.Text = "Wczytaj plik";
+            this.wczytaj.UseVisualStyleBackColor = true;
+            this.wczytaj.Visible = false;
+            // 
+            // RegulaminAxAcroPDF
+            // 
+            this.RegulaminAxAcroPDF.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RegulaminAxAcroPDF.Enabled = true;
+            this.RegulaminAxAcroPDF.Location = new System.Drawing.Point(0, 0);
+            this.RegulaminAxAcroPDF.Name = "RegulaminAxAcroPDF";
+            this.RegulaminAxAcroPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("RegulaminAxAcroPDF.OcxState")));
+            this.RegulaminAxAcroPDF.Size = new System.Drawing.Size(1294, 709);
+            this.RegulaminAxAcroPDF.TabIndex = 5;
             // 
             // Regulamin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 488);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1294, 709);
+            this.Controls.Add(this.wczytaj);
+            this.Controls.Add(this.Zamknij);
+            this.Controls.Add(this.RegulaminAxAcroPDF);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Regulamin";
             this.Text = "Regulamin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Regulamin_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.RegulaminAxAcroPDF)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Zamknij;
+        private System.Windows.Forms.Button wczytaj;
+        private AxAcroPDFLib.AxAcroPDF RegulaminAxAcroPDF;
     }
 }

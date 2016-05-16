@@ -35,7 +35,6 @@
             this.incorrectLabel = new System.Windows.Forms.Label();
             this.logInButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.showPasswordCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -53,6 +52,7 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(163, 22);
             this.emailTextBox.TabIndex = 1;
+            this.emailTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.emailTextBox_KeyDown);
             // 
             // label2
             // 
@@ -103,23 +103,11 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // showPasswordCheckBox
-            // 
-            this.showPasswordCheckBox.AutoSize = true;
-            this.showPasswordCheckBox.Location = new System.Drawing.Point(263, 65);
-            this.showPasswordCheckBox.Name = "showPasswordCheckBox";
-            this.showPasswordCheckBox.Size = new System.Drawing.Size(107, 21);
-            this.showPasswordCheckBox.TabIndex = 7;
-            this.showPasswordCheckBox.Text = "Pokaż hasło";
-            this.showPasswordCheckBox.UseVisualStyleBackColor = true;
-            this.showPasswordCheckBox.CheckedChanged += new System.EventHandler(this.showPasswordCheckBox_CheckedChanged);
-            // 
             // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 200);
-            this.Controls.Add(this.showPasswordCheckBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.logInButton);
             this.Controls.Add(this.incorrectLabel);
@@ -127,10 +115,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LogInForm";
             this.Text = "LogInForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LogInForm_FormClosed);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LogInForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,6 +133,5 @@
         private System.Windows.Forms.Label incorrectLabel;
         private System.Windows.Forms.Button logInButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.CheckBox showPasswordCheckBox;
     }
 }
