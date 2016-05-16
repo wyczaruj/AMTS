@@ -39,20 +39,20 @@
             "KLAUDIA_PC",
             "PATRYK",
             "PATRYKS"});
-            this.serverComboBox.Location = new System.Drawing.Point(89, 108);
-            this.serverComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.serverComboBox.Location = new System.Drawing.Point(59, 70);
+            this.serverComboBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.serverComboBox.Name = "serverComboBox";
-            this.serverComboBox.Size = new System.Drawing.Size(383, 28);
+            this.serverComboBox.Size = new System.Drawing.Size(257, 21);
             this.serverComboBox.TabIndex = 0;
             this.serverComboBox.SelectedIndexChanged += new System.EventHandler(this.serverComboBox_SelectedIndexChanged);
             // 
             // startButton
             // 
             this.startButton.Enabled = false;
-            this.startButton.Location = new System.Drawing.Point(207, 191);
-            this.startButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.startButton.Location = new System.Drawing.Point(123, 123);
+            this.startButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(148, 64);
+            this.startButton.Size = new System.Drawing.Size(99, 42);
             this.startButton.TabIndex = 1;
             this.startButton.Text = "START";
             this.startButton.UseVisualStyleBackColor = true;
@@ -60,12 +60,12 @@
             // 
             // ChooseServer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 354);
+            this.ClientSize = new System.Drawing.Size(383, 230);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.serverComboBox);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "ChooseServer";
             this.Text = "ChooseServer";
             this.ResumeLayout(false);
