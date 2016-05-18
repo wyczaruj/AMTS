@@ -10,6 +10,8 @@ namespace AMTS
         Messages messagesForm;
         SqlConnection connection;
         private string messageSender;
+        bool admin;
+        bool captain;
         List<string> recipientsMails;
 
         public SendMessage()
@@ -17,8 +19,11 @@ namespace AMTS
             InitializeComponent();
         }
 
-        public SendMessage(SqlConnection conn, Messages mess, User user, bool admin)
+        public SendMessage(SqlConnection conn, Messages mess, User user, bool adm)
         {
+            admin = adm;
+            if(!admin)
+                captain = user.isCaptain();
             recipientsMails = new List<string>();
             connection = conn;
             messagesForm = mess;
@@ -27,11 +32,15 @@ namespace AMTS
             string command = "";
             if (admin)
             {
-                //////////
+                usersListView.CheckBoxes = true;
+                selectAllButton.Visible = true;
+                sendMessageButton.Enabled = true;
+                messageTextBox.Enabled = true;
+                subjectTextBox.Enabled = true;
                 command = "SELECT Imie AS NAME, Nazwisko AS LASTNAME, Mail AS EMAIL FROM UZYTKOWNICY WHERE Mail != '" + user.getEmail() + "'";
 
             }
-            else if (user.isCaptain())
+            else if (captain)
             {
                 //////////
                 command = "SELECT Imie AS NAME, Nazwisko AS LASTNAME, Mail AS EMAIL FROM UZYTKOWNICY WHERE Mail != '" + user.getEmail() + "'";
@@ -71,9 +80,29 @@ namespace AMTS
             }
             else
             {
-                var item = usersListView.FindItemWithText(usersListView.SelectedItems[0].Text);
-                recipient = recipientsMails[usersListView.Items.IndexOf(item)];
-                sendOneMessage(recipient, subject, message);
+                if (admin)
+                {
+                    foreach (ListViewItem item in usersListView.Items)
+                    {
+                        if (item.Checked)
+                        {
+                            recipient = recipientsMails[item.Index];
+                            sendOneMessage(recipient, subject, message);
+                        }
+                    }
+                    this.Close();
+                }
+                else if (captain)
+                {
+
+                }
+                else
+                {
+                    var item = usersListView.FindItemWithText(usersListView.SelectedItems[0].Text);
+                    recipient = recipientsMails[usersListView.Items.IndexOf(item)];
+                    sendOneMessage(recipient, subject, message);
+                    this.Close();
+                }
             }
         }
 
@@ -83,7 +112,6 @@ namespace AMTS
                 "', '" + subject + "', '" + message + "'";
             SqlCommand sqlcomm = new SqlCommand(command, connection);
             sqlcomm.ExecuteNonQuery();
-            this.Close();
         }
 
         private void SendMessage_FormClosed(object sender, FormClosedEventArgs e)
@@ -96,6 +124,27 @@ namespace AMTS
             subjectTextBox.Enabled = true;
             messageTextBox.Enabled = true;
             sendMessageButton.Enabled = true;
+        }
+
+        private void selectAllButton_Click(object sender, EventArgs e)
+        {
+            int countChecked = 0;
+            int countall = 0;
+            foreach (ListViewItem item in usersListView.Items)
+            {
+                countall++;
+                if (item.Checked)
+                    countChecked++;
+                else
+                    item.Checked = true;
+            }
+            if (countall == countChecked)
+            {
+                foreach (ListViewItem item in usersListView.Items)
+                {
+                    item.Checked = false;
+                }
+            }
         }
     }
 }

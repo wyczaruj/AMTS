@@ -34,6 +34,7 @@
             this.TematLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.sendMessageButton = new System.Windows.Forms.Button();
+            this.selectAllButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usersListView
@@ -98,11 +99,23 @@
             this.sendMessageButton.UseVisualStyleBackColor = true;
             this.sendMessageButton.Click += new System.EventHandler(this.sendMessageButton_Click);
             // 
+            // selectAllButton
+            // 
+            this.selectAllButton.Location = new System.Drawing.Point(13, 319);
+            this.selectAllButton.Name = "selectAllButton";
+            this.selectAllButton.Size = new System.Drawing.Size(221, 41);
+            this.selectAllButton.TabIndex = 13;
+            this.selectAllButton.Text = "Zaznacz wszystkich";
+            this.selectAllButton.UseVisualStyleBackColor = true;
+            this.selectAllButton.Visible = false;
+            this.selectAllButton.Click += new System.EventHandler(this.selectAllButton_Click);
+            // 
             // SendMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 383);
+            this.Controls.Add(this.selectAllButton);
             this.Controls.Add(this.sendMessageButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TematLabel);
@@ -125,5 +138,6 @@
         private System.Windows.Forms.Label TematLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button sendMessageButton;
+        private System.Windows.Forms.Button selectAllButton;
     }
 }
