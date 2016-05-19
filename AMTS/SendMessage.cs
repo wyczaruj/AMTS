@@ -12,7 +12,9 @@ namespace AMTS
         private string messageSender;
         bool admin;
         bool captain;
+        string team;
         List<string> recipientsMails;
+        List<string> teamEmails;
 
         public SendMessage()
         {
@@ -22,8 +24,13 @@ namespace AMTS
         public SendMessage(SqlConnection conn, Messages mess, User user, bool adm)
         {
             admin = adm;
-            if(!admin)
+            if (!admin)
+            {
                 captain = user.isCaptain();
+                if (user.getPendingTeamRequest())
+                    captain = false;
+                team = user.getTeamName();
+            }
             recipientsMails = new List<string>();
             connection = conn;
             messagesForm = mess;
@@ -42,7 +49,7 @@ namespace AMTS
             }
             else if (captain)
             {
-                //////////
+                teamMessageCheckBox.Visible = true;
                 command = "SELECT Imie AS NAME, Nazwisko AS LASTNAME, Mail AS EMAIL FROM UZYTKOWNICY WHERE Mail != '" + user.getEmail() + "'";
 
             }
@@ -94,7 +101,23 @@ namespace AMTS
                 }
                 else if (captain)
                 {
-
+                    if (teamMessageCheckBox.Checked)
+                    {
+                        getTeam(team);
+                        foreach(string mail in teamEmails)
+                        {
+                            recipient = mail;
+                            sendOneMessage(recipient, subject, message);
+                        }
+                        this.Close();
+                    }
+                    else
+                    {
+                        var item = usersListView.FindItemWithText(usersListView.SelectedItems[0].Text);
+                        recipient = recipientsMails[usersListView.Items.IndexOf(item)];
+                        sendOneMessage(recipient, subject, message);
+                        this.Close();
+                    }
                 }
                 else
                 {
@@ -145,6 +168,37 @@ namespace AMTS
                     item.Checked = false;
                 }
             }
+        }
+
+        private void teamMessageCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (teamMessageCheckBox.Checked)
+            {
+                usersListView.Enabled = false;
+                subjectTextBox.Enabled = true;
+                messageTextBox.Enabled = true;
+                sendMessageButton.Enabled = true;
+            }
+            else
+            {
+                usersListView.Enabled = true;
+                subjectTextBox.Enabled = false;
+                messageTextBox.Enabled = false;
+                sendMessageButton.Enabled = false;
+            }
+        }
+
+        private void getTeam(string team)
+        {
+            teamEmails = new List<string>();
+            string command = "SELECT Mail AS EMAIL FROM UZYTKOWNICY WHERE Druzyna ='" + team + "' AND Mail != '" + messageSender + "'";
+            SqlCommand sqlcomm = new SqlCommand(command, connection);
+            SqlDataReader r = sqlcomm.ExecuteReader();
+            while (r.Read())
+            {
+                teamEmails.Add(r["EMAIL"].ToString());
+            }
+            r.Close();
         }
     }
 }

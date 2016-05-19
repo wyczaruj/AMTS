@@ -103,7 +103,7 @@ namespace AMTS
                     DBteam += "\n[KAPITAN]";
                 }
             }
-            if (LoggedInUser.getPending())
+            if (LoggedInUser.getPendingTeamRequest())
             {
                 myRegistrationButton.Visible = true;
                 registerTeamButton.Visible = false;
