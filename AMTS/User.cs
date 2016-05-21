@@ -85,7 +85,7 @@ namespace AMTS
             return hasTeam;
         }
 
-        public bool getPending()
+        public bool getPendingTeamRequest()
         {
             return pendingTeamRequest;
         }

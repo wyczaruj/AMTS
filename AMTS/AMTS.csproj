@@ -49,6 +49,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PdfiumViewer, Version=2.9.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfiumViewer.2.9.0.0\lib\net20\PdfiumViewer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,6 +72,11 @@
     <Compile Include="AbstractForm.Designer.cs">
       <DependentUpon>AbstractForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AMTSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMTSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ChooseServer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,17 +89,35 @@
     <Compile Include="Confirmation.Designer.cs">
       <DependentUpon>Confirmation.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratorForm.Designer.cs">
+      <DependentUpon>GeneratorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klasyfikacja.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Klasyfikacja.Designer.cs">
       <DependentUpon>Klasyfikacja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages.Designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyTeamRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyTeamRegistration.Designer.cs">
       <DependentUpon>MyTeamRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendMessage.Designer.cs">
+      <DependentUpon>SendMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="TeamRegistrations.cs">
       <SubType>Form</SubType>
@@ -143,6 +170,12 @@
     <Compile Include="Regulamin.Designer.cs">
       <DependentUpon>Regulamin.cs</DependentUpon>
     </Compile>
+    <Compile Include="WynikiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WynikiForm.Designer.cs">
+      <DependentUpon>WynikiForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChooseServer.resx">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +185,9 @@
     <EmbeddedResource Include="DodajDruzyne.resx">
       <DependentUpon>DodajDruzyne.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorForm.resx">
+      <DependentUpon>GeneratorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Klasyfikacja.resx">
       <DependentUpon>Klasyfikacja.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.resx">
+      <DependentUpon>Messages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyTeamRegistration.resx">
       <DependentUpon>MyTeamRegistration.cs</DependentUpon>
@@ -180,6 +219,9 @@
     <EmbeddedResource Include="Regulamin.resx">
       <DependentUpon>Regulamin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SendMessage.resx">
+      <DependentUpon>SendMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeamRegistrations.resx">
       <DependentUpon>TeamRegistrations.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +231,20 @@
     <EmbeddedResource Include="TerminNowy.resx">
       <DependentUpon>TerminNowy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WynikiForm.resx">
+      <DependentUpon>WynikiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AMTSDataSet.xsc">
+      <DependentUpon>AMTSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AMTSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMTSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AMTSDataSet.xss">
+      <DependentUpon>AMTSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -219,23 +275,16 @@
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="AcroPDFLib">
-      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="AxAcroPDFLib">
-      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
+    <None Include="Resources\newMailImage.png" />
+    <None Include="Resources\greyMailImage.png" />
+    <Content Include="x64\pdfium.dll" />
+    <Content Include="x86\pdfium.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="x64\pdfium.dll" />
+    <Content Include="x86\pdfium.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
