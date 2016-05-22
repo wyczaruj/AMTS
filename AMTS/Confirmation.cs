@@ -80,10 +80,10 @@ namespace AMTS
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Jesteś pewien?", "Potwierdzenie", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Na pewno?", "Potwierdzenie", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show("Potwierdziłeś swój udział w drużynie.");
+                MessageBox.Show("Twój udział w drużynie został potwierdzony.");
                 string teamName = teamsListView.SelectedItems[0].Text;
                 string command = "exec dbo.potwierdzUdzial '" + teamName + "', '" + mail + "'";
                 SqlCommand sqlcomm = new SqlCommand(command, connection);

@@ -177,6 +177,9 @@ namespace AMTS
             {
                 messageBackgroundWorker.RunWorkerAsync();
             }
+            usun.Visible = true;
+            usunUzyt.Visible = true;
+            usunDruz.Visible = true;
         }
 
         private void terminarzButton_Click(object sender, EventArgs e)
@@ -293,6 +296,20 @@ namespace AMTS
         private void messageBackgroundWorker_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
             messagesButton.Image = Resources.newMailImage;
+        }
+
+        private void usunUzyt_Click(object sender, EventArgs e)
+        {
+            UsunOsobe usunOs = new UsunOsobe(connection, this);
+            changeOpenedWindow();
+            usunOs.Visible = true;
+        }
+
+        private void usunDruz_Click(object sender, EventArgs e)
+        {
+            UsunDruzyne usunDruz = new UsunDruzyne(connection, this);
+            changeOpenedWindow();
+            usunDruz.Visible = true;
         }
     }
 }

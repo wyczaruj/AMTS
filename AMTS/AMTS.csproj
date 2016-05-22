@@ -170,6 +170,18 @@
     <Compile Include="Regulamin.Designer.cs">
       <DependentUpon>Regulamin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsunDruzyne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsunDruzyne.Designer.cs">
+      <DependentUpon>UsunDruzyne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsunOsobe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsunOsobe.Designer.cs">
+      <DependentUpon>UsunOsobe.cs</DependentUpon>
+    </Compile>
     <Compile Include="WynikiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +242,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TerminNowy.resx">
       <DependentUpon>TerminNowy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsunDruzyne.resx">
+      <DependentUpon>UsunDruzyne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsunOsobe.resx">
+      <DependentUpon>UsunOsobe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WynikiForm.resx">
       <DependentUpon>WynikiForm.cs</DependentUpon>
