@@ -48,6 +48,9 @@ namespace AMTS
             this.logInButton = new System.Windows.Forms.Button();
             this.LoggedInAsLabel = new System.Windows.Forms.Label();
             this.LabelZJ = new System.Windows.Forms.Label();
+            this.usunDruz = new System.Windows.Forms.Button();
+            this.usunUzyt = new System.Windows.Forms.Button();
+            this.usun = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // messageBackgroundWorker
@@ -268,12 +271,47 @@ namespace AMTS
             this.LabelZJ.TabIndex = 0;
             this.LabelZJ.Text = "Zalogowany jako:";
             // 
+            // usunDruz
+            // 
+            this.usunDruz.Location = new System.Drawing.Point(151, 139);
+            this.usunDruz.Name = "usunDruz";
+            this.usunDruz.Size = new System.Drawing.Size(78, 23);
+            this.usunDruz.TabIndex = 18;
+            this.usunDruz.Text = "Drużynę";
+            this.usunDruz.UseVisualStyleBackColor = true;
+            this.usunDruz.Visible = false;
+            this.usunDruz.Click += new System.EventHandler(this.usunDruz_Click);
+            // 
+            // usunUzyt
+            // 
+            this.usunUzyt.Location = new System.Drawing.Point(67, 139);
+            this.usunUzyt.Name = "usunUzyt";
+            this.usunUzyt.Size = new System.Drawing.Size(78, 23);
+            this.usunUzyt.TabIndex = 19;
+            this.usunUzyt.Text = "Użytkownika";
+            this.usunUzyt.UseVisualStyleBackColor = true;
+            this.usunUzyt.Visible = false;
+            this.usunUzyt.Click += new System.EventHandler(this.usunUzyt_Click);
+            // 
+            // usun
+            // 
+            this.usun.AutoSize = true;
+            this.usun.Location = new System.Drawing.Point(126, 123);
+            this.usun.Name = "usun";
+            this.usun.Size = new System.Drawing.Size(35, 13);
+            this.usun.TabIndex = 20;
+            this.usun.Text = "Usuń:";
+            this.usun.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(428, 227);
+            this.Controls.Add(this.usun);
+            this.Controls.Add(this.usunUzyt);
+            this.Controls.Add(this.usunDruz);
             this.Controls.Add(this.messagesButton);
             this.Controls.Add(this.confirmConfirmationButton);
             this.Controls.Add(this.myRegistrationButton);
@@ -293,7 +331,7 @@ namespace AMTS
             this.Controls.Add(this.LoggedInAsLabel);
             this.Controls.Add(this.LabelZJ);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Amatorska Liga Tenisa Stołowego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
@@ -323,6 +361,9 @@ namespace AMTS
         private System.Windows.Forms.Button confirmConfirmationButton;
         private System.Windows.Forms.Button messagesButton;
         private System.ComponentModel.BackgroundWorker messageBackgroundWorker;
+        private System.Windows.Forms.Button usunDruz;
+        private System.Windows.Forms.Button usunUzyt;
+        private System.Windows.Forms.Label usun;
     }
 }
 
