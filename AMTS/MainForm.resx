@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox9.Text" xml:space="preserve">
+    <value>PANEL UŻYTKOWNIKA/ADMINISTRATORA
+Przyciski prawdopodobnie będą tutaj na sobie, żeby wyświetlały się na zmianę na zasadzie:
+- zalogował się admin: widać tylko to, co jest z lewej strony
+- zalogował się user: widać tylko to, co jest po prawej stronie</value>
+  </data>
   <metadata name="messageBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
