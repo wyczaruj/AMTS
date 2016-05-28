@@ -118,10 +118,124 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="greyMailImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\greyMailImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="KAPITAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel logowania\KAPITAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="instagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wtyczki\instagram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Drużyna" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel logowania\Drużyna.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wtyczki\facebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WYLOGUJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel logowania\WYLOGUJ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="artykul 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\artykuly\artykul 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="obserwuj ALTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wtyczki\obserwuj ALTS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BRAK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel logowania\BRAK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zglos druzyne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttons\zglos druzyne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Terminarz1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttons\Terminarz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="artykul2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\artykuly\artykul2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usun druzyne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel admina\usun druzyne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="youtube" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wtyczki\youtube.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zarzadzaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel druzyny\zarzadzaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REJESTARCJA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel logowania\REJESTARCJA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="newMailImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\newMailImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wtyczki\twitter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="panel druzyny" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel druzyny\panel druzyny.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZALOGUJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel logowania\ZALOGUJ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="panel admina" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel admina\panel admina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Terminarz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttons\Terminarz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="potwierdz udzial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel druzyny\potwierdz udzial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moje zgloszenia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel druzyny\moje zgloszenia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="greyMailImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\greyMailImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="googleplus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wtyczki\googleplus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zalogowany jako" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel logowania\zalogowany jako.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ADMIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel logowania\ADMIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zatwierdz druzyne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel admina\zatwierdz druzyne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usun zawodnika" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel admina\usun zawodnika.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wyniki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttons\wyniki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zawies zawodnika" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel admina\zawies zawodnika.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Niezalogowany GOSC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panel logowania\Niezalogowany GOSC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="klasyfikacja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttons\klasyfikacja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="regulamin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttons\regulamin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="napis na gore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\napis na gore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reklama" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reklama.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RSS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RSS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
