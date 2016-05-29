@@ -2,6 +2,7 @@ using AMTS.Data;
 using AMTS.Properties;
 using System;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -11,7 +12,7 @@ namespace AMTS
     {
         SqlConnection connection;
         bool LoggedIn = false;
-        bool AdminLogged = false; //bo sam LoggedIn to za mało by rozróżniać co może użytkownik, a co gość, a co admin
+        bool AdminLogged = false;
         User LoggedInUser;
         string connectionString;
       
@@ -49,7 +50,7 @@ namespace AMTS
             LoggedIn = false;
             AdminLogged = false;
             LoggedInUser = null;
-            LoggedInAsLabel.Text = "Gość";
+            loggedInAsLabel.Text = "Gość";
             logInButton.Visible = true;
             logOutButton.Visible = false;
             registerButton.Visible = true;
@@ -58,6 +59,19 @@ namespace AMTS
             confirmConfirmationButton.Visible = false;
             myRegistrationButton.Visible = false;
             messagesButton.Visible = false;
+            panelAdmina.Visible = false;
+            usunUzyt.Visible = false;
+            usunDruz.Visible = false;
+            zbanuj.Visible = false;
+            panelDruzyny.Visible = false;
+            zarzadzajDruzyna.Visible = false;
+            loggedInAs.Visible = false;
+            loggedInAsLabel.Visible = false;
+            admin.Visible = false;
+            kapitan.Visible = false;
+            gosc.Visible = true;
+            brakDruzyny.Visible = false;
+
             messagesButton.Image = Resources.greyMailImage;
 
             if (messageBackgroundWorker.IsBusy)
@@ -87,31 +101,39 @@ namespace AMTS
             niezalogowany.Visible = false;
             registerTeamButton.Visible = true;
             LoggedInUser = new User(connection, mail);
+            panelDruzyny.Visible = true;
+            loggedInAs.Visible = true;
+            loggedInAsLabel.Visible = true;
+            gosc.Visible = false;
 
             if(LoggedInUser.getPendingConfirmation())
                 confirmConfirmationButton.Visible = true;
 
-            LoggedInAsLabel.Text = mail;
+            loggedInAsLabel.Text = mail;
 
-            string DBteam = "BRAK";
+            string DBteam = "";
+            brakDruzyny.Visible = true;
             if (LoggedInUser.getHasTeam())
             {
                 registerTeamButton.Visible = false;
                 DBteam = LoggedInUser.getTeamName();
+                brakDruzyny.Visible = false;
                 if (LoggedInUser.isCaptain())
                 {
-                    DBteam += "\n[KAPITAN]";
+                    kapitan.Visible = true;
+                    zarzadzajDruzyna.Visible = true;
                 }
             }
-            if (LoggedInUser.getPending())
+            if (LoggedInUser.getPendingTeamRequest())
             {
                 myRegistrationButton.Visible = true;
                 registerTeamButton.Visible = false;
                 confirmConfirmationButton.Visible = false;
+                brakDruzyny.Visible = false;
                 DBteam = LoggedInUser.getTeamName() + " [NIEZATWIERDZONA]";
                 if (LoggedInUser.isCaptain())
                 {
-                    DBteam += "\n[KAPITAN]";
+                    kapitan.Visible = true;
                 }
             }
             teamLabel.Text = DBteam;
@@ -172,11 +194,19 @@ namespace AMTS
             teamRegistrationsButton.Visible = true;
             messagesButton.Visible = true;
             LoggedInUser = new User(connection, mail);
-            LoggedInAsLabel.Text = mail + "\n[ADMIN]";
+            loggedInAs.Visible = true;
+            loggedInAsLabel.Visible = true;
+            gosc.Visible = false;
+            loggedInAsLabel.Text = mail;
+            admin.Visible = true;
             if (!messageBackgroundWorker.IsBusy)
             {
                 messageBackgroundWorker.RunWorkerAsync();
             }
+            usunUzyt.Visible = true;
+            usunDruz.Visible = true;
+            zbanuj.Visible = true;
+            panelAdmina.Visible = true;
         }
 
         private void terminarzButton_Click(object sender, EventArgs e)
@@ -293,6 +323,50 @@ namespace AMTS
         private void messageBackgroundWorker_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
             messagesButton.Image = Resources.newMailImage;
+        }
+
+        private void usunUzyt_Click(object sender, EventArgs e)
+        {
+            UsunOsobe usunOs = new UsunOsobe(connection, this);
+            changeOpenedWindow();
+            usunOs.Visible = true;
+        }
+
+        private void usunDruz_Click(object sender, EventArgs e)
+        {
+            UsunDruzyne usunDruz = new UsunDruzyne(connection, this);
+            changeOpenedWindow();
+            usunDruz.Visible = true;
+        }
+
+        private void facebook_LinkClicked(object sender, EventArgs e)
+        {
+            ProcessStartInfo link = new ProcessStartInfo("https://www.facebook.com/pages/Miejski-O%C5%9Brodek-Sportu-i-Rekreacji-w-O%C5%9Bwi%C4%99cimiu/104461466356564?ref=hl");
+            Process.Start(link);
+        }
+
+        private void twitter_LinkClicked(object sender, EventArgs e)
+        {
+            ProcessStartInfo link = new ProcessStartInfo("https://twitter.com/");
+            Process.Start(link);
+        }
+
+        private void instagram_LinkClicked(object sender, EventArgs e)
+        {
+            ProcessStartInfo link = new ProcessStartInfo("https://www.instagram.com/");
+            Process.Start(link);
+        }
+
+        private void youtube_LinkClicked(object sender, EventArgs e)
+        {
+            ProcessStartInfo link = new ProcessStartInfo("https://www.youtube.com/");
+            Process.Start(link);
+        }
+
+        private void googleplus_LinkClicked(object sender, EventArgs e)
+        {
+            ProcessStartInfo link = new ProcessStartInfo("https://plus.google.com/");
+            Process.Start(link);
         }
     }
 }

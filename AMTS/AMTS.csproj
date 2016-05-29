@@ -113,6 +113,11 @@
     <Compile Include="MyTeamRegistration.Designer.cs">
       <DependentUpon>MyTeamRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SendMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +175,18 @@
     <Compile Include="Regulamin.Designer.cs">
       <DependentUpon>Regulamin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsunDruzyne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsunDruzyne.Designer.cs">
+      <DependentUpon>UsunDruzyne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsunOsobe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsunOsobe.Designer.cs">
+      <DependentUpon>UsunOsobe.cs</DependentUpon>
+    </Compile>
     <Compile Include="WynikiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,14 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +242,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TerminNowy.resx">
       <DependentUpon>TerminNowy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsunDruzyne.resx">
+      <DependentUpon>UsunDruzyne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsunOsobe.resx">
+      <DependentUpon>UsunOsobe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WynikiForm.resx">
       <DependentUpon>WynikiForm.cs</DependentUpon>
@@ -277,6 +295,42 @@
   <ItemGroup>
     <None Include="Resources\newMailImage.png" />
     <None Include="Resources\greyMailImage.png" />
+    <None Include="Resources\background.png" />
+    <None Include="Resources\buttons\klasyfikacja.png" />
+    <None Include="Resources\buttons\Terminarz.png" />
+    <None Include="Resources\buttons\regulamin.png" />
+    <None Include="Resources\buttons\wyniki.png" />
+    <None Include="Resources\buttons\zglos druzyne.png" />
+    <None Include="Resources\artykuly\artykul 1.png" />
+    <None Include="Resources\artykuly\artykul2.png" />
+    <None Include="Resources\panel admina\panel admina.png" />
+    <None Include="Resources\panel admina\usun druzyne.png" />
+    <None Include="Resources\panel admina\usun zawodnika.png" />
+    <None Include="Resources\panel admina\zatwierdz druzyne.png" />
+    <None Include="Resources\panel admina\zawies zawodnika.png" />
+    <None Include="Resources\panel druzyny\moje zgloszenia.png" />
+    <None Include="Resources\panel druzyny\panel druzyny.png" />
+    <None Include="Resources\panel druzyny\potwierdz udzial.png" />
+    <None Include="Resources\panel druzyny\zarzadzaj.png" />
+    <None Include="Resources\panel logowania\ADMIN.png" />
+    <None Include="Resources\panel logowania\BRAK.png" />
+    <None Include="Resources\panel logowania\Drużyna.png" />
+    <None Include="Resources\panel logowania\KAPITAN.png" />
+    <None Include="Resources\panel logowania\Niezalogowany GOSC.png" />
+    <None Include="Resources\panel logowania\REJESTARCJA.png" />
+    <None Include="Resources\panel logowania\WYLOGUJ.png" />
+    <None Include="Resources\panel logowania\zalogowany jako.png" />
+    <None Include="Resources\panel logowania\ZALOGUJ.png" />
+    <None Include="Resources\wtyczki\facebook.png" />
+    <None Include="Resources\wtyczki\googleplus.png" />
+    <None Include="Resources\wtyczki\instagram.png" />
+    <None Include="Resources\wtyczki\obserwuj ALTS.png" />
+    <None Include="Resources\wtyczki\twitter.png" />
+    <None Include="Resources\wtyczki\youtube.png" />
+    <None Include="Resources\LOGO.png" />
+    <None Include="Resources\napis na gore.png" />
+    <None Include="Resources\reklama.png" />
+    <None Include="Resources\RSS.png" />
     <Content Include="x64\pdfium.dll" />
     <Content Include="x86\pdfium.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
