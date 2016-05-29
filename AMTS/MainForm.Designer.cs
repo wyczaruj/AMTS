@@ -30,27 +30,46 @@ namespace AMTS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.messageBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.numberOfTeamRegistrationsLabel = new System.Windows.Forms.Label();
+            this.niezalogowany = new System.Windows.Forms.Label();
+            this.teamLabel = new System.Windows.Forms.Label();
+            this.loggedInAsLabel = new System.Windows.Forms.Label();
+            this.rss = new System.Windows.Forms.Label();
+            this.googleplus = new System.Windows.Forms.LinkLabel();
+            this.youtube = new System.Windows.Forms.LinkLabel();
+            this.instagram = new System.Windows.Forms.LinkLabel();
+            this.twitter = new System.Windows.Forms.LinkLabel();
+            this.facebook = new System.Windows.Forms.LinkLabel();
+            this.spolecznosciowki = new System.Windows.Forms.Label();
+            this.brakDruzyny = new System.Windows.Forms.Label();
+            this.admin = new System.Windows.Forms.Label();
+            this.zbanuj = new System.Windows.Forms.Button();
+            this.zarzadzajDruzyna = new System.Windows.Forms.Button();
+            this.usunUzyt = new System.Windows.Forms.Button();
+            this.usunDruz = new System.Windows.Forms.Button();
             this.messagesButton = new System.Windows.Forms.Button();
             this.confirmConfirmationButton = new System.Windows.Forms.Button();
             this.myRegistrationButton = new System.Windows.Forms.Button();
-            this.numberOfTeamRegistrationsLabel = new System.Windows.Forms.Label();
             this.teamRegistrationsButton = new System.Windows.Forms.Button();
-            this.niezalogowany = new System.Windows.Forms.Label();
             this.registerTeamButton = new System.Windows.Forms.Button();
             this.regulaminButton = new System.Windows.Forms.Button();
             this.wynikiButton = new System.Windows.Forms.Button();
             this.klasyfikacjaButton = new System.Windows.Forms.Button();
             this.terminarzButton = new System.Windows.Forms.Button();
-            this.teamLabel = new System.Windows.Forms.Label();
             this.druzynaLabel = new System.Windows.Forms.Label();
             this.registerButton = new System.Windows.Forms.Button();
             this.logOutButton = new System.Windows.Forms.Button();
             this.logInButton = new System.Windows.Forms.Button();
-            this.LoggedInAsLabel = new System.Windows.Forms.Label();
-            this.LabelZJ = new System.Windows.Forms.Label();
-            this.usunDruz = new System.Windows.Forms.Button();
-            this.usunUzyt = new System.Windows.Forms.Button();
-            this.usun = new System.Windows.Forms.Label();
+            this.panelAdmina = new System.Windows.Forms.Label();
+            this.panelDruzyny = new System.Windows.Forms.Label();
+            this.gosc = new System.Windows.Forms.Label();
+            this.loggedInAs = new System.Windows.Forms.Label();
+            this.kapitan = new System.Windows.Forms.Label();
+            this.artykul2 = new System.Windows.Forms.Label();
+            this.artykul1 = new System.Windows.Forms.Label();
+            this.reklama = new System.Windows.Forms.Label();
+            this.nazwa = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // messageBackgroundWorker
@@ -60,13 +79,224 @@ namespace AMTS
             this.messageBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.messageBackgroundWorker_DoWork);
             this.messageBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.messageBackgroundWorker_ProgressChanged);
             // 
+            // numberOfTeamRegistrationsLabel
+            // 
+            this.numberOfTeamRegistrationsLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.numberOfTeamRegistrationsLabel.AutoSize = true;
+            this.numberOfTeamRegistrationsLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.numberOfTeamRegistrationsLabel.Location = new System.Drawing.Point(828, 291);
+            this.numberOfTeamRegistrationsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.numberOfTeamRegistrationsLabel.Name = "numberOfTeamRegistrationsLabel";
+            this.numberOfTeamRegistrationsLabel.Size = new System.Drawing.Size(25, 13);
+            this.numberOfTeamRegistrationsLabel.TabIndex = 14;
+            this.numberOfTeamRegistrationsLabel.Text = "(14)";
+            this.numberOfTeamRegistrationsLabel.Visible = false;
+            // 
+            // niezalogowany
+            // 
+            this.niezalogowany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.niezalogowany.AutoSize = true;
+            this.niezalogowany.BackColor = System.Drawing.Color.Transparent;
+            this.niezalogowany.ForeColor = System.Drawing.Color.Red;
+            this.niezalogowany.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.niezalogowany.Location = new System.Drawing.Point(790, 222);
+            this.niezalogowany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.niezalogowany.Name = "niezalogowany";
+            this.niezalogowany.Size = new System.Drawing.Size(61, 13);
+            this.niezalogowany.TabIndex = 12;
+            this.niezalogowany.Text = "Zaloguj się.";
+            this.niezalogowany.Visible = false;
+            // 
+            // teamLabel
+            // 
+            this.teamLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.teamLabel.AutoSize = true;
+            this.teamLabel.BackColor = System.Drawing.Color.Transparent;
+            this.teamLabel.Location = new System.Drawing.Point(741, 57);
+            this.teamLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.teamLabel.Name = "teamLabel";
+            this.teamLabel.Size = new System.Drawing.Size(159, 13);
+            this.teamLabel.TabIndex = 6;
+            this.teamLabel.Text = "druzyna [NIEZATWIERDZONA]";
+            // 
+            // loggedInAsLabel
+            // 
+            this.loggedInAsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loggedInAsLabel.AutoSize = true;
+            this.loggedInAsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.loggedInAsLabel.Location = new System.Drawing.Point(829, 12);
+            this.loggedInAsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.loggedInAsLabel.Name = "loggedInAsLabel";
+            this.loggedInAsLabel.Size = new System.Drawing.Size(32, 13);
+            this.loggedInAsLabel.TabIndex = 1;
+            this.loggedInAsLabel.Text = "Gość";
+            this.loggedInAsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.loggedInAsLabel.Visible = false;
+            // 
+            // rss
+            // 
+            this.rss.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rss.BackColor = System.Drawing.Color.Transparent;
+            this.rss.Image = global::AMTS.Properties.Resources.RSS;
+            this.rss.Location = new System.Drawing.Point(864, 108);
+            this.rss.Name = "rss";
+            this.rss.Size = new System.Drawing.Size(36, 46);
+            this.rss.TabIndex = 37;
+            // 
+            // googleplus
+            // 
+            this.googleplus.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.googleplus.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.googleplus.Image = global::AMTS.Properties.Resources.googleplus;
+            this.googleplus.Location = new System.Drawing.Point(831, 486);
+            this.googleplus.Name = "googleplus";
+            this.googleplus.Size = new System.Drawing.Size(50, 49);
+            this.googleplus.TabIndex = 36;
+            this.googleplus.Click += new System.EventHandler(this.googleplus_LinkClicked);
+            // 
+            // youtube
+            // 
+            this.youtube.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.youtube.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.youtube.Image = global::AMTS.Properties.Resources.youtube;
+            this.youtube.Location = new System.Drawing.Point(777, 486);
+            this.youtube.Name = "youtube";
+            this.youtube.Size = new System.Drawing.Size(50, 49);
+            this.youtube.TabIndex = 35;
+            this.youtube.Click += new System.EventHandler(this.youtube_LinkClicked);
+            // 
+            // instagram
+            // 
+            this.instagram.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.instagram.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.instagram.Image = global::AMTS.Properties.Resources.instagram;
+            this.instagram.Location = new System.Drawing.Point(723, 486);
+            this.instagram.Name = "instagram";
+            this.instagram.Size = new System.Drawing.Size(50, 49);
+            this.instagram.TabIndex = 34;
+            this.instagram.Click += new System.EventHandler(this.instagram_LinkClicked);
+            // 
+            // twitter
+            // 
+            this.twitter.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.twitter.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.twitter.Image = global::AMTS.Properties.Resources.twitter;
+            this.twitter.Location = new System.Drawing.Point(668, 486);
+            this.twitter.Name = "twitter";
+            this.twitter.Size = new System.Drawing.Size(53, 49);
+            this.twitter.TabIndex = 33;
+            this.twitter.Click += new System.EventHandler(this.twitter_LinkClicked);
+            // 
+            // facebook
+            // 
+            this.facebook.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.facebook.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.facebook.Image = global::AMTS.Properties.Resources.facebook;
+            this.facebook.Location = new System.Drawing.Point(618, 486);
+            this.facebook.Name = "facebook";
+            this.facebook.Size = new System.Drawing.Size(53, 49);
+            this.facebook.TabIndex = 32;
+            this.facebook.Click += new System.EventHandler(this.facebook_LinkClicked);
+            // 
+            // spolecznosciowki
+            // 
+            this.spolecznosciowki.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.spolecznosciowki.BackColor = System.Drawing.Color.Transparent;
+            this.spolecznosciowki.Image = global::AMTS.Properties.Resources.obserwuj_ALTS;
+            this.spolecznosciowki.Location = new System.Drawing.Point(590, 442);
+            this.spolecznosciowki.Name = "spolecznosciowki";
+            this.spolecznosciowki.Size = new System.Drawing.Size(322, 139);
+            this.spolecznosciowki.TabIndex = 31;
+            // 
+            // brakDruzyny
+            // 
+            this.brakDruzyny.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.brakDruzyny.BackColor = System.Drawing.Color.Transparent;
+            this.brakDruzyny.Image = global::AMTS.Properties.Resources.BRAK;
+            this.brakDruzyny.Location = new System.Drawing.Point(740, 47);
+            this.brakDruzyny.Name = "brakDruzyny";
+            this.brakDruzyny.Size = new System.Drawing.Size(53, 28);
+            this.brakDruzyny.TabIndex = 30;
+            this.brakDruzyny.Visible = false;
+            // 
+            // admin
+            // 
+            this.admin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.admin.BackColor = System.Drawing.Color.Transparent;
+            this.admin.Image = global::AMTS.Properties.Resources.ADMIN;
+            this.admin.Location = new System.Drawing.Point(756, 32);
+            this.admin.Name = "admin";
+            this.admin.Size = new System.Drawing.Size(69, 15);
+            this.admin.TabIndex = 27;
+            this.admin.Visible = false;
+            // 
+            // zbanuj
+            // 
+            this.zbanuj.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.zbanuj.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.zbanuj.FlatAppearance.BorderSize = 0;
+            this.zbanuj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.zbanuj.Image = global::AMTS.Properties.Resources.zawies_zawodnika;
+            this.zbanuj.Location = new System.Drawing.Point(629, 343);
+            this.zbanuj.Name = "zbanuj";
+            this.zbanuj.Size = new System.Drawing.Size(187, 22);
+            this.zbanuj.TabIndex = 24;
+            this.zbanuj.UseVisualStyleBackColor = false;
+            this.zbanuj.Visible = false;
+            // 
+            // zarzadzajDruzyna
+            // 
+            this.zarzadzajDruzyna.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.zarzadzajDruzyna.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.zarzadzajDruzyna.Enabled = false;
+            this.zarzadzajDruzyna.FlatAppearance.BorderSize = 0;
+            this.zarzadzajDruzyna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.zarzadzajDruzyna.Image = global::AMTS.Properties.Resources.zarzadzaj;
+            this.zarzadzajDruzyna.Location = new System.Drawing.Point(629, 313);
+            this.zarzadzajDruzyna.Name = "zarzadzajDruzyna";
+            this.zarzadzajDruzyna.Size = new System.Drawing.Size(110, 29);
+            this.zarzadzajDruzyna.TabIndex = 23;
+            this.zarzadzajDruzyna.UseVisualStyleBackColor = false;
+            this.zarzadzajDruzyna.Visible = false;
+            // 
+            // usunUzyt
+            // 
+            this.usunUzyt.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.usunUzyt.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.usunUzyt.FlatAppearance.BorderSize = 0;
+            this.usunUzyt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usunUzyt.Image = global::AMTS.Properties.Resources.usun_zawodnika;
+            this.usunUzyt.Location = new System.Drawing.Point(629, 371);
+            this.usunUzyt.Name = "usunUzyt";
+            this.usunUzyt.Size = new System.Drawing.Size(173, 23);
+            this.usunUzyt.TabIndex = 19;
+            this.usunUzyt.UseVisualStyleBackColor = false;
+            this.usunUzyt.Visible = false;
+            this.usunUzyt.Click += new System.EventHandler(this.usunUzyt_Click);
+            // 
+            // usunDruz
+            // 
+            this.usunDruz.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.usunDruz.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.usunDruz.FlatAppearance.BorderSize = 0;
+            this.usunDruz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usunDruz.Image = global::AMTS.Properties.Resources.usun_druzyne;
+            this.usunDruz.Location = new System.Drawing.Point(629, 315);
+            this.usunDruz.Name = "usunDruz";
+            this.usunDruz.Size = new System.Drawing.Size(141, 22);
+            this.usunDruz.TabIndex = 18;
+            this.usunDruz.UseVisualStyleBackColor = false;
+            this.usunDruz.Visible = false;
+            this.usunDruz.Click += new System.EventHandler(this.usunDruz_Click);
+            // 
             // messagesButton
             // 
-            this.messagesButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.messagesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.messagesButton.BackColor = System.Drawing.Color.Transparent;
             this.messagesButton.FlatAppearance.BorderSize = 0;
             this.messagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.messagesButton.Image = global::AMTS.Properties.Resources.greyMailImage;
-            this.messagesButton.Location = new System.Drawing.Point(12, 123);
+            this.messagesButton.Location = new System.Drawing.Point(618, 0);
             this.messagesButton.Margin = new System.Windows.Forms.Padding(2);
             this.messagesButton.Name = "messagesButton";
             this.messagesButton.Size = new System.Drawing.Size(50, 55);
@@ -77,248 +307,307 @@ namespace AMTS
             // 
             // confirmConfirmationButton
             // 
-            this.confirmConfirmationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.confirmConfirmationButton.Location = new System.Drawing.Point(9, 182);
+            this.confirmConfirmationButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.confirmConfirmationButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.confirmConfirmationButton.FlatAppearance.BorderSize = 0;
+            this.confirmConfirmationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmConfirmationButton.Image = global::AMTS.Properties.Resources.potwierdz_udzial;
+            this.confirmConfirmationButton.Location = new System.Drawing.Point(629, 338);
             this.confirmConfirmationButton.Margin = new System.Windows.Forms.Padding(2);
             this.confirmConfirmationButton.Name = "confirmConfirmationButton";
-            this.confirmConfirmationButton.Size = new System.Drawing.Size(113, 36);
+            this.confirmConfirmationButton.Size = new System.Drawing.Size(179, 21);
             this.confirmConfirmationButton.TabIndex = 16;
-            this.confirmConfirmationButton.Text = "Potwierdź swój udział";
-            this.confirmConfirmationButton.UseVisualStyleBackColor = true;
+            this.confirmConfirmationButton.UseVisualStyleBackColor = false;
             this.confirmConfirmationButton.Visible = false;
             this.confirmConfirmationButton.Click += new System.EventHandler(this.confirmConfirmationButton_Click);
             // 
             // myRegistrationButton
             // 
-            this.myRegistrationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.myRegistrationButton.Location = new System.Drawing.Point(140, 182);
+            this.myRegistrationButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.myRegistrationButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.myRegistrationButton.FlatAppearance.BorderSize = 0;
+            this.myRegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myRegistrationButton.Image = global::AMTS.Properties.Resources.moje_zgloszenia;
+            this.myRegistrationButton.Location = new System.Drawing.Point(629, 288);
             this.myRegistrationButton.Margin = new System.Windows.Forms.Padding(2);
             this.myRegistrationButton.Name = "myRegistrationButton";
-            this.myRegistrationButton.Size = new System.Drawing.Size(103, 36);
+            this.myRegistrationButton.Size = new System.Drawing.Size(168, 20);
             this.myRegistrationButton.TabIndex = 15;
-            this.myRegistrationButton.Text = "Moje zgłoszenie";
-            this.myRegistrationButton.UseVisualStyleBackColor = true;
+            this.myRegistrationButton.UseVisualStyleBackColor = false;
             this.myRegistrationButton.Visible = false;
             this.myRegistrationButton.Click += new System.EventHandler(this.myRegistrationButton_Click);
             // 
-            // numberOfTeamRegistrationsLabel
-            // 
-            this.numberOfTeamRegistrationsLabel.AutoSize = true;
-            this.numberOfTeamRegistrationsLabel.Location = new System.Drawing.Point(620, 362);
-            this.numberOfTeamRegistrationsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.numberOfTeamRegistrationsLabel.Name = "numberOfTeamRegistrationsLabel";
-            this.numberOfTeamRegistrationsLabel.Size = new System.Drawing.Size(25, 13);
-            this.numberOfTeamRegistrationsLabel.TabIndex = 14;
-            this.numberOfTeamRegistrationsLabel.Text = "(14)";
-            this.numberOfTeamRegistrationsLabel.Visible = false;
-            // 
             // teamRegistrationsButton
             // 
-            this.teamRegistrationsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.teamRegistrationsButton.Location = new System.Drawing.Point(313, 182);
+            this.teamRegistrationsButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.teamRegistrationsButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.teamRegistrationsButton.FlatAppearance.BorderSize = 0;
+            this.teamRegistrationsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.teamRegistrationsButton.Image = global::AMTS.Properties.Resources.zatwierdz_druzyne;
+            this.teamRegistrationsButton.Location = new System.Drawing.Point(629, 286);
             this.teamRegistrationsButton.Margin = new System.Windows.Forms.Padding(2);
             this.teamRegistrationsButton.Name = "teamRegistrationsButton";
-            this.teamRegistrationsButton.Size = new System.Drawing.Size(106, 36);
+            this.teamRegistrationsButton.Size = new System.Drawing.Size(195, 23);
             this.teamRegistrationsButton.TabIndex = 13;
-            this.teamRegistrationsButton.Text = "Zgłoszenia drużyn";
-            this.teamRegistrationsButton.UseVisualStyleBackColor = true;
+            this.teamRegistrationsButton.UseVisualStyleBackColor = false;
             this.teamRegistrationsButton.Visible = false;
             this.teamRegistrationsButton.Click += new System.EventHandler(this.teamRegistrationsButton_Click);
-            // 
-            // niezalogowany
-            // 
-            this.niezalogowany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.niezalogowany.AutoSize = true;
-            this.niezalogowany.ForeColor = System.Drawing.Color.Red;
-            this.niezalogowany.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.niezalogowany.Location = new System.Drawing.Point(338, 154);
-            this.niezalogowany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.niezalogowany.Name = "niezalogowany";
-            this.niezalogowany.Size = new System.Drawing.Size(61, 13);
-            this.niezalogowany.TabIndex = 12;
-            this.niezalogowany.Text = "Zaloguj się.";
-            this.niezalogowany.Visible = false;
             // 
             // registerTeamButton
             // 
             this.registerTeamButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.registerTeamButton.Location = new System.Drawing.Point(314, 125);
+            this.registerTeamButton.BackColor = System.Drawing.Color.Transparent;
+            this.registerTeamButton.FlatAppearance.BorderSize = 0;
+            this.registerTeamButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerTeamButton.Image = global::AMTS.Properties.Resources.zglos_druzyne;
+            this.registerTeamButton.Location = new System.Drawing.Point(726, 160);
             this.registerTeamButton.Name = "registerTeamButton";
-            this.registerTeamButton.Size = new System.Drawing.Size(105, 25);
+            this.registerTeamButton.Size = new System.Drawing.Size(189, 75);
             this.registerTeamButton.TabIndex = 11;
-            this.registerTeamButton.Text = "Zgłoś drużynę";
-            this.registerTeamButton.UseVisualStyleBackColor = true;
+            this.registerTeamButton.UseVisualStyleBackColor = false;
             this.registerTeamButton.Click += new System.EventHandler(this.registerTeam_Click);
             // 
             // regulaminButton
             // 
-            this.regulaminButton.Location = new System.Drawing.Point(12, 34);
+            this.regulaminButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.regulaminButton.BackColor = System.Drawing.Color.Transparent;
+            this.regulaminButton.FlatAppearance.BorderSize = 0;
+            this.regulaminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.regulaminButton.Image = global::AMTS.Properties.Resources.regulamin;
+            this.regulaminButton.Location = new System.Drawing.Point(682, 94);
             this.regulaminButton.Name = "regulaminButton";
-            this.regulaminButton.Size = new System.Drawing.Size(75, 23);
+            this.regulaminButton.Size = new System.Drawing.Size(136, 60);
             this.regulaminButton.TabIndex = 10;
-            this.regulaminButton.Text = "Regulamin";
-            this.regulaminButton.UseVisualStyleBackColor = true;
+            this.regulaminButton.UseVisualStyleBackColor = false;
             this.regulaminButton.Click += new System.EventHandler(this.regulaminButton_Click);
             // 
             // wynikiButton
             // 
-            this.wynikiButton.Location = new System.Drawing.Point(107, 34);
+            this.wynikiButton.BackColor = System.Drawing.Color.Transparent;
+            this.wynikiButton.FlatAppearance.BorderSize = 0;
+            this.wynikiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wynikiButton.Image = global::AMTS.Properties.Resources.wyniki;
+            this.wynikiButton.Location = new System.Drawing.Point(172, 94);
             this.wynikiButton.Name = "wynikiButton";
-            this.wynikiButton.Size = new System.Drawing.Size(75, 23);
+            this.wynikiButton.Size = new System.Drawing.Size(136, 60);
             this.wynikiButton.TabIndex = 9;
-            this.wynikiButton.Text = "Wyniki";
-            this.wynikiButton.UseVisualStyleBackColor = true;
+            this.wynikiButton.UseVisualStyleBackColor = false;
             this.wynikiButton.Click += new System.EventHandler(this.wynikiButton_Click);
             // 
             // klasyfikacjaButton
             // 
-            this.klasyfikacjaButton.Location = new System.Drawing.Point(107, 5);
+            this.klasyfikacjaButton.BackColor = System.Drawing.Color.Transparent;
+            this.klasyfikacjaButton.FlatAppearance.BorderSize = 0;
+            this.klasyfikacjaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.klasyfikacjaButton.Image = global::AMTS.Properties.Resources.klasyfikacja;
+            this.klasyfikacjaButton.Location = new System.Drawing.Point(12, 94);
             this.klasyfikacjaButton.Name = "klasyfikacjaButton";
-            this.klasyfikacjaButton.Size = new System.Drawing.Size(75, 23);
+            this.klasyfikacjaButton.Size = new System.Drawing.Size(136, 60);
             this.klasyfikacjaButton.TabIndex = 8;
-            this.klasyfikacjaButton.Text = "Klasyfikacja";
-            this.klasyfikacjaButton.UseVisualStyleBackColor = true;
+            this.klasyfikacjaButton.UseVisualStyleBackColor = false;
             this.klasyfikacjaButton.Click += new System.EventHandler(this.klasyfikacjaButton_Click);
             // 
             // terminarzButton
             // 
-            this.terminarzButton.Location = new System.Drawing.Point(12, 5);
+            this.terminarzButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.terminarzButton.BackColor = System.Drawing.Color.Transparent;
+            this.terminarzButton.FlatAppearance.BorderSize = 0;
+            this.terminarzButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.terminarzButton.Image = global::AMTS.Properties.Resources.Terminarz;
+            this.terminarzButton.Location = new System.Drawing.Point(532, 94);
             this.terminarzButton.Name = "terminarzButton";
-            this.terminarzButton.Size = new System.Drawing.Size(75, 23);
+            this.terminarzButton.Size = new System.Drawing.Size(136, 60);
             this.terminarzButton.TabIndex = 7;
-            this.terminarzButton.Text = "Terminarz";
-            this.terminarzButton.UseVisualStyleBackColor = true;
+            this.terminarzButton.UseVisualStyleBackColor = false;
             this.terminarzButton.Click += new System.EventHandler(this.terminarzButton_Click);
-            // 
-            // teamLabel
-            // 
-            this.teamLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.teamLabel.AutoSize = true;
-            this.teamLabel.Location = new System.Drawing.Point(244, 76);
-            this.teamLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.teamLabel.Name = "teamLabel";
-            this.teamLabel.Size = new System.Drawing.Size(159, 13);
-            this.teamLabel.TabIndex = 6;
-            this.teamLabel.Text = "druzyna [NIEZATWIERDZONA]";
             // 
             // druzynaLabel
             // 
             this.druzynaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.druzynaLabel.AutoSize = true;
-            this.druzynaLabel.Location = new System.Drawing.Point(198, 76);
+            this.druzynaLabel.BackColor = System.Drawing.Color.Transparent;
+            this.druzynaLabel.Image = global::AMTS.Properties.Resources.Drużyna;
+            this.druzynaLabel.Location = new System.Drawing.Point(660, 57);
             this.druzynaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.druzynaLabel.Name = "druzynaLabel";
-            this.druzynaLabel.Size = new System.Drawing.Size(49, 13);
+            this.druzynaLabel.Size = new System.Drawing.Size(84, 13);
             this.druzynaLabel.TabIndex = 5;
-            this.druzynaLabel.Text = "Drużyna:";
             // 
             // registerButton
             // 
             this.registerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.registerButton.Location = new System.Drawing.Point(337, 76);
+            this.registerButton.BackColor = System.Drawing.Color.Transparent;
+            this.registerButton.FlatAppearance.BorderSize = 0;
+            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerButton.Image = global::AMTS.Properties.Resources.REJESTARCJA;
+            this.registerButton.Location = new System.Drawing.Point(661, 77);
             this.registerButton.Margin = new System.Windows.Forms.Padding(2);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(78, 27);
+            this.registerButton.Size = new System.Drawing.Size(104, 20);
             this.registerButton.TabIndex = 4;
-            this.registerButton.Text = "Rejestracja";
-            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.UseVisualStyleBackColor = false;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // logOutButton
             // 
             this.logOutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.logOutButton.Location = new System.Drawing.Point(359, 30);
+            this.logOutButton.BackColor = System.Drawing.Color.Transparent;
+            this.logOutButton.FlatAppearance.BorderSize = 0;
+            this.logOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOutButton.Image = global::AMTS.Properties.Resources.WYLOGUJ;
+            this.logOutButton.Location = new System.Drawing.Point(777, 77);
             this.logOutButton.Margin = new System.Windows.Forms.Padding(2);
             this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(56, 27);
+            this.logOutButton.Size = new System.Drawing.Size(79, 16);
             this.logOutButton.TabIndex = 3;
-            this.logOutButton.Text = "Wyloguj";
-            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.UseVisualStyleBackColor = false;
             this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // logInButton
             // 
             this.logInButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.logInButton.Location = new System.Drawing.Point(337, 30);
+            this.logInButton.BackColor = System.Drawing.Color.Transparent;
+            this.logInButton.FlatAppearance.BorderSize = 0;
+            this.logInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logInButton.Image = global::AMTS.Properties.Resources.ZALOGUJ;
+            this.logInButton.Location = new System.Drawing.Point(777, 77);
             this.logInButton.Margin = new System.Windows.Forms.Padding(2);
             this.logInButton.Name = "logInButton";
-            this.logInButton.Size = new System.Drawing.Size(78, 27);
+            this.logInButton.Size = new System.Drawing.Size(78, 16);
             this.logInButton.TabIndex = 2;
-            this.logInButton.Text = "Zaloguj się";
-            this.logInButton.UseVisualStyleBackColor = true;
+            this.logInButton.UseVisualStyleBackColor = false;
             this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
             // 
-            // LoggedInAsLabel
+            // panelAdmina
             // 
-            this.LoggedInAsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoggedInAsLabel.AutoSize = true;
-            this.LoggedInAsLabel.Location = new System.Drawing.Point(315, 5);
-            this.LoggedInAsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LoggedInAsLabel.Name = "LoggedInAsLabel";
-            this.LoggedInAsLabel.Size = new System.Drawing.Size(32, 13);
-            this.LoggedInAsLabel.TabIndex = 1;
-            this.LoggedInAsLabel.Text = "Gość";
-            this.LoggedInAsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.panelAdmina.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panelAdmina.BackColor = System.Drawing.Color.Transparent;
+            this.panelAdmina.Image = global::AMTS.Properties.Resources.panel_admina;
+            this.panelAdmina.Location = new System.Drawing.Point(595, 250);
+            this.panelAdmina.Name = "panelAdmina";
+            this.panelAdmina.Size = new System.Drawing.Size(325, 192);
+            this.panelAdmina.TabIndex = 25;
+            this.panelAdmina.Visible = false;
             // 
-            // LabelZJ
+            // panelDruzyny
             // 
-            this.LabelZJ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelZJ.AutoSize = true;
-            this.LabelZJ.Location = new System.Drawing.Point(220, 5);
-            this.LabelZJ.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LabelZJ.Name = "LabelZJ";
-            this.LabelZJ.Size = new System.Drawing.Size(91, 13);
-            this.LabelZJ.TabIndex = 0;
-            this.LabelZJ.Text = "Zalogowany jako:";
+            this.panelDruzyny.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panelDruzyny.BackColor = System.Drawing.Color.Transparent;
+            this.panelDruzyny.Image = global::AMTS.Properties.Resources.panel_druzyny;
+            this.panelDruzyny.Location = new System.Drawing.Point(590, 250);
+            this.panelDruzyny.Name = "panelDruzyny";
+            this.panelDruzyny.Size = new System.Drawing.Size(336, 158);
+            this.panelDruzyny.TabIndex = 26;
+            this.panelDruzyny.Visible = false;
             // 
-            // usunDruz
+            // gosc
             // 
-            this.usunDruz.Location = new System.Drawing.Point(151, 139);
-            this.usunDruz.Name = "usunDruz";
-            this.usunDruz.Size = new System.Drawing.Size(78, 23);
-            this.usunDruz.TabIndex = 18;
-            this.usunDruz.Text = "Drużynę";
-            this.usunDruz.UseVisualStyleBackColor = true;
-            this.usunDruz.Visible = false;
-            this.usunDruz.Click += new System.EventHandler(this.usunDruz_Click);
+            this.gosc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gosc.BackColor = System.Drawing.Color.Transparent;
+            this.gosc.Image = global::AMTS.Properties.Resources.Niezalogowany_GOSC;
+            this.gosc.Location = new System.Drawing.Point(677, -11);
+            this.gosc.Name = "gosc";
+            this.gosc.Size = new System.Drawing.Size(184, 55);
+            this.gosc.TabIndex = 29;
             // 
-            // usunUzyt
+            // loggedInAs
             // 
-            this.usunUzyt.Location = new System.Drawing.Point(67, 139);
-            this.usunUzyt.Name = "usunUzyt";
-            this.usunUzyt.Size = new System.Drawing.Size(78, 23);
-            this.usunUzyt.TabIndex = 19;
-            this.usunUzyt.Text = "Użytkownika";
-            this.usunUzyt.UseVisualStyleBackColor = true;
-            this.usunUzyt.Visible = false;
-            this.usunUzyt.Click += new System.EventHandler(this.usunUzyt_Click);
+            this.loggedInAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loggedInAs.BackColor = System.Drawing.Color.Transparent;
+            this.loggedInAs.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.loggedInAs.Image = global::AMTS.Properties.Resources.zalogowany_jako;
+            this.loggedInAs.Location = new System.Drawing.Point(672, 2);
+            this.loggedInAs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.loggedInAs.Name = "loggedInAs";
+            this.loggedInAs.Size = new System.Drawing.Size(156, 34);
+            this.loggedInAs.TabIndex = 0;
+            this.loggedInAs.Visible = false;
             // 
-            // usun
+            // kapitan
             // 
-            this.usun.AutoSize = true;
-            this.usun.Location = new System.Drawing.Point(126, 123);
-            this.usun.Name = "usun";
-            this.usun.Size = new System.Drawing.Size(35, 13);
-            this.usun.TabIndex = 20;
-            this.usun.Text = "Usuń:";
-            this.usun.Visible = false;
+            this.kapitan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.kapitan.BackColor = System.Drawing.Color.Transparent;
+            this.kapitan.Image = global::AMTS.Properties.Resources.KAPITAN;
+            this.kapitan.Location = new System.Drawing.Point(746, 31);
+            this.kapitan.Name = "kapitan";
+            this.kapitan.Size = new System.Drawing.Size(82, 18);
+            this.kapitan.TabIndex = 28;
+            this.kapitan.Visible = false;
+            // 
+            // artykul2
+            // 
+            this.artykul2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.artykul2.BackColor = System.Drawing.Color.Transparent;
+            this.artykul2.Image = global::AMTS.Properties.Resources.artykul2;
+            this.artykul2.Location = new System.Drawing.Point(9, 486);
+            this.artykul2.Name = "artykul2";
+            this.artykul2.Size = new System.Drawing.Size(419, 275);
+            this.artykul2.TabIndex = 38;
+            // 
+            // artykul1
+            // 
+            this.artykul1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.artykul1.BackColor = System.Drawing.Color.Transparent;
+            this.artykul1.Image = global::AMTS.Properties.Resources.artykul_1;
+            this.artykul1.Location = new System.Drawing.Point(9, 210);
+            this.artykul1.Name = "artykul1";
+            this.artykul1.Size = new System.Drawing.Size(419, 283);
+            this.artykul1.TabIndex = 39;
+            // 
+            // reklama
+            // 
+            this.reklama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.reklama.BackColor = System.Drawing.Color.Transparent;
+            this.reklama.Image = global::AMTS.Properties.Resources.reklama;
+            this.reklama.Location = new System.Drawing.Point(590, 564);
+            this.reklama.Name = "reklama";
+            this.reklama.Size = new System.Drawing.Size(322, 181);
+            this.reklama.TabIndex = 40;
+            // 
+            // nazwa
+            // 
+            this.nazwa.BackColor = System.Drawing.Color.Transparent;
+            this.nazwa.Image = global::AMTS.Properties.Resources.napis_na_gore;
+            this.nazwa.Location = new System.Drawing.Point(16, 9);
+            this.nazwa.Name = "nazwa";
+            this.nazwa.Size = new System.Drawing.Size(277, 66);
+            this.nazwa.TabIndex = 41;
+            // 
+            // logo
+            // 
+            this.logo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.logo.BackColor = System.Drawing.Color.Transparent;
+            this.logo.Image = global::AMTS.Properties.Resources.LOGO;
+            this.logo.Location = new System.Drawing.Point(299, 2);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(242, 222);
+            this.logo.TabIndex = 42;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(428, 227);
-            this.Controls.Add(this.usun);
-            this.Controls.Add(this.usunUzyt);
-            this.Controls.Add(this.usunDruz);
+            this.BackgroundImage = global::AMTS.Properties.Resources.background;
+            this.ClientSize = new System.Drawing.Size(927, 743);
+            this.Controls.Add(this.artykul2);
+            this.Controls.Add(this.admin);
+            this.Controls.Add(this.kapitan);
+            this.Controls.Add(this.nazwa);
+            this.Controls.Add(this.reklama);
+            this.Controls.Add(this.artykul1);
+            this.Controls.Add(this.rss);
+            this.Controls.Add(this.googleplus);
+            this.Controls.Add(this.youtube);
+            this.Controls.Add(this.instagram);
+            this.Controls.Add(this.twitter);
+            this.Controls.Add(this.facebook);
+            this.Controls.Add(this.spolecznosciowki);
+            this.Controls.Add(this.brakDruzyny);
+            this.Controls.Add(this.zarzadzajDruzyna);
             this.Controls.Add(this.messagesButton);
             this.Controls.Add(this.confirmConfirmationButton);
             this.Controls.Add(this.myRegistrationButton);
-            this.Controls.Add(this.numberOfTeamRegistrationsLabel);
-            this.Controls.Add(this.teamRegistrationsButton);
             this.Controls.Add(this.niezalogowany);
-            this.Controls.Add(this.registerTeamButton);
             this.Controls.Add(this.regulaminButton);
             this.Controls.Add(this.wynikiButton);
             this.Controls.Add(this.klasyfikacjaButton);
@@ -326,10 +615,20 @@ namespace AMTS
             this.Controls.Add(this.teamLabel);
             this.Controls.Add(this.druzynaLabel);
             this.Controls.Add(this.registerButton);
-            this.Controls.Add(this.logOutButton);
+            this.Controls.Add(this.loggedInAsLabel);
+            this.Controls.Add(this.panelDruzyny);
+            this.Controls.Add(this.logo);
             this.Controls.Add(this.logInButton);
-            this.Controls.Add(this.LoggedInAsLabel);
-            this.Controls.Add(this.LabelZJ);
+            this.Controls.Add(this.logOutButton);
+            this.Controls.Add(this.loggedInAs);
+            this.Controls.Add(this.gosc);
+            this.Controls.Add(this.zbanuj);
+            this.Controls.Add(this.usunUzyt);
+            this.Controls.Add(this.usunDruz);
+            this.Controls.Add(this.numberOfTeamRegistrationsLabel);
+            this.Controls.Add(this.teamRegistrationsButton);
+            this.Controls.Add(this.panelAdmina);
+            this.Controls.Add(this.registerTeamButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
@@ -342,8 +641,8 @@ namespace AMTS
 
         #endregion
 
-        private System.Windows.Forms.Label LabelZJ;
-        private System.Windows.Forms.Label LoggedInAsLabel;
+        private System.Windows.Forms.Label loggedInAs;
+        private System.Windows.Forms.Label loggedInAsLabel;
         private System.Windows.Forms.Button logInButton;
         private System.Windows.Forms.Button logOutButton;
         private System.Windows.Forms.Button registerButton;
@@ -363,7 +662,26 @@ namespace AMTS
         private System.ComponentModel.BackgroundWorker messageBackgroundWorker;
         private System.Windows.Forms.Button usunDruz;
         private System.Windows.Forms.Button usunUzyt;
-        private System.Windows.Forms.Label usun;
+        private System.Windows.Forms.Button zarzadzajDruzyna;
+        private System.Windows.Forms.Button zbanuj;
+        private System.Windows.Forms.Label panelAdmina;
+        private System.Windows.Forms.Label panelDruzyny;
+        private System.Windows.Forms.Label admin;
+        private System.Windows.Forms.Label kapitan;
+        private System.Windows.Forms.Label gosc;
+        private System.Windows.Forms.Label brakDruzyny;
+        private System.Windows.Forms.Label spolecznosciowki;
+        private System.Windows.Forms.LinkLabel facebook;
+        private System.Windows.Forms.LinkLabel twitter;
+        private System.Windows.Forms.LinkLabel instagram;
+        private System.Windows.Forms.LinkLabel youtube;
+        private System.Windows.Forms.LinkLabel googleplus;
+        private System.Windows.Forms.Label rss;
+        private System.Windows.Forms.Label artykul2;
+        private System.Windows.Forms.Label artykul1;
+        private System.Windows.Forms.Label reklama;
+        private System.Windows.Forms.Label nazwa;
+        private System.Windows.Forms.Label logo;
     }
 }
 
