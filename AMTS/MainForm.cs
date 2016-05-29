@@ -12,7 +12,7 @@ namespace AMTS
     {
         SqlConnection connection;
         bool LoggedIn = false;
-        bool AdminLogged = false; //bo sam LoggedIn to za mało by rozróżniać co może użytkownik, a co gość, a co admin
+        bool AdminLogged = false;
         User LoggedInUser;
         string connectionString;
       
