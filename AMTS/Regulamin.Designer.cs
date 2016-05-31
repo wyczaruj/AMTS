@@ -28,74 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pdfViewer = new PdfiumViewer.PdfViewer();
-            this.wczytaj = new System.Windows.Forms.Button();
-            this.lokalizacja = new System.Windows.Forms.TextBox();
-            this.ok = new System.Windows.Forms.Button();
             this.anuluj = new System.Windows.Forms.Button();
+            this.ok = new System.Windows.Forms.Button();
+            this.lokalizacja = new System.Windows.Forms.TextBox();
+            this.wczytaj = new System.Windows.Forms.Button();
+            this.pdfViewer = new PdfiumViewer.PdfViewer();
             this.SuspendLayout();
-            // 
-            // pdfViewer
-            // 
-            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
-            this.pdfViewer.Name = "pdfViewer";
-            this.pdfViewer.Size = new System.Drawing.Size(970, 576);
-            this.pdfViewer.TabIndex = 5;
-            this.pdfViewer.ZoomMode = PdfiumViewer.PdfViewerZoomMode.FitWidth;
-            // 
-            // wczytaj
-            // 
-            this.wczytaj.Location = new System.Drawing.Point(106, 0);
-            this.wczytaj.Name = "wczytaj";
-            this.wczytaj.Size = new System.Drawing.Size(75, 23);
-            this.wczytaj.TabIndex = 6;
-            this.wczytaj.Text = "Załaduj";
-            this.wczytaj.UseVisualStyleBackColor = true;
-            this.wczytaj.Visible = false;
-            this.wczytaj.Click += new System.EventHandler(this.wczytaj_Click);
-            // 
-            // lokalizacja
-            // 
-            this.lokalizacja.Location = new System.Drawing.Point(187, 3);
-            this.lokalizacja.Name = "lokalizacja";
-            this.lokalizacja.Size = new System.Drawing.Size(392, 20);
-            this.lokalizacja.TabIndex = 7;
-            this.lokalizacja.Visible = false;
-            // 
-            // ok
-            // 
-            this.ok.Location = new System.Drawing.Point(585, -1);
-            this.ok.Name = "ok";
-            this.ok.Size = new System.Drawing.Size(75, 23);
-            this.ok.TabIndex = 8;
-            this.ok.Text = "Zatwierdź";
-            this.ok.UseVisualStyleBackColor = true;
-            this.ok.Visible = false;
-            this.ok.Click += new System.EventHandler(this.ok_Click);
             // 
             // anuluj
             // 
-            this.anuluj.Location = new System.Drawing.Point(666, 0);
+            this.anuluj.Location = new System.Drawing.Point(888, 0);
+            this.anuluj.Margin = new System.Windows.Forms.Padding(4);
             this.anuluj.Name = "anuluj";
-            this.anuluj.Size = new System.Drawing.Size(75, 22);
+            this.anuluj.Size = new System.Drawing.Size(100, 27);
             this.anuluj.TabIndex = 10;
             this.anuluj.Text = "Anuluj";
             this.anuluj.UseVisualStyleBackColor = true;
             this.anuluj.Visible = false;
             this.anuluj.Click += new System.EventHandler(this.anuluj_Click);
             // 
+            // ok
+            // 
+            this.ok.Location = new System.Drawing.Point(780, -1);
+            this.ok.Margin = new System.Windows.Forms.Padding(4);
+            this.ok.Name = "ok";
+            this.ok.Size = new System.Drawing.Size(100, 28);
+            this.ok.TabIndex = 8;
+            this.ok.Text = "Zatwierdź";
+            this.ok.UseVisualStyleBackColor = true;
+            this.ok.Visible = false;
+            this.ok.Click += new System.EventHandler(this.ok_Click);
+            // 
+            // lokalizacja
+            // 
+            this.lokalizacja.Enabled = false;
+            this.lokalizacja.Location = new System.Drawing.Point(249, 4);
+            this.lokalizacja.Margin = new System.Windows.Forms.Padding(4);
+            this.lokalizacja.Name = "lokalizacja";
+            this.lokalizacja.Size = new System.Drawing.Size(521, 22);
+            this.lokalizacja.TabIndex = 7;
+            this.lokalizacja.Visible = false;
+            // 
+            // wczytaj
+            // 
+            this.wczytaj.Location = new System.Drawing.Point(141, 0);
+            this.wczytaj.Margin = new System.Windows.Forms.Padding(4);
+            this.wczytaj.Name = "wczytaj";
+            this.wczytaj.Size = new System.Drawing.Size(100, 28);
+            this.wczytaj.TabIndex = 6;
+            this.wczytaj.Text = "Załaduj";
+            this.wczytaj.UseVisualStyleBackColor = true;
+            this.wczytaj.Visible = false;
+            this.wczytaj.Click += new System.EventHandler(this.wczytaj_Click);
+            // 
+            // pdfViewer
+            // 
+            this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pdfViewer.Location = new System.Drawing.Point(0, 0);
+            this.pdfViewer.Margin = new System.Windows.Forms.Padding(5);
+            this.pdfViewer.Name = "pdfViewer";
+            this.pdfViewer.Size = new System.Drawing.Size(1293, 709);
+            this.pdfViewer.TabIndex = 5;
+            this.pdfViewer.ZoomMode = PdfiumViewer.PdfViewerZoomMode.FitWidth;
+            // 
             // Regulamin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 576);
+            this.ClientSize = new System.Drawing.Size(1293, 709);
             this.Controls.Add(this.anuluj);
             this.Controls.Add(this.ok);
             this.Controls.Add(this.lokalizacja);
             this.Controls.Add(this.wczytaj);
             this.Controls.Add(this.pdfViewer);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Regulamin";
             this.Text = "Regulamin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Regulamin_FormClosed);
