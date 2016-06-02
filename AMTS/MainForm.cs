@@ -72,8 +72,6 @@ namespace AMTS
             gosc.Visible = true;
             brakDruzyny.Visible = false;
 
-            messagesButton.Image = Resources.greyMailImage;
-
             if (messageBackgroundWorker.IsBusy)
             {
                 messageBackgroundWorker.CancelAsync();
@@ -140,6 +138,7 @@ namespace AMTS
             druzynaLabel.Visible = true;
             teamLabel.Visible = true;
             messagesButton.Visible = true;
+            messagesButton.Image = Resources.greyMailImage;
             if (!messageBackgroundWorker.IsBusy)
             {
                 messageBackgroundWorker.RunWorkerAsync();
@@ -192,6 +191,7 @@ namespace AMTS
             niezalogowany.Visible = false;
             registerTeamButton.Visible = false;
             teamRegistrationsButton.Visible = true;
+            messagesButton.Image = Resources.greyMailImage;
             messagesButton.Visible = true;
             LoggedInUser = new User(connection, mail);
             loggedInAs.Visible = true;
@@ -314,7 +314,7 @@ namespace AMTS
                 
                 if (messageBackgroundWorker.CancellationPending)
                 {
-                    e.Cancel = true;                    
+                    e.Cancel = true;           
                     return;
                 }
             }
@@ -367,6 +367,11 @@ namespace AMTS
         {
             ProcessStartInfo link = new ProcessStartInfo("https://plus.google.com/");
             Process.Start(link);
+        }
+
+        private void zarzadzajDruzyna_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
