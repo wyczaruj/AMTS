@@ -1,55 +1,45 @@
 ﻿using PdfiumViewer;
 using System;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class Regulamin:AbstractForm
+    public partial class Regulamin : AbstractForm
     {
         AbstractForm form;
-        bool defaultLocation = true;
+        string path;
 
         public Regulamin(bool AdminLogged, AbstractForm form)
         {
             InitializeComponent();
             this.form = form;
-            if(AdminLogged)
+            if (AdminLogged)
             {
                 wczytaj.Visible = true;
-                lokalizacja.Visible = true;
             }
-            changeLocation(defaultLocation);
-        }
-            
-        private void changeLocation(bool defLoc)
-        {
-            if(defLoc)
-            {
-                string fileName = "Regulamin.pdf";
-                string path = Path.Combine(Environment.CurrentDirectory, @"", fileName);
-                string newPath = Path.GetFullPath(Path.Combine(path, @"..\..\..\Data\" + fileName));
-                pdfViewer.Document = PdfDocument.Load(newPath);
-            }
-            else
-            {
-                string path = lokalizacja.Text;
-                string fileName = Path.GetFileName(path);
-                if(pdfViewer.Document != null)
-                    pdfViewer.Document.Dispose();
-                pdfViewer.Document = PdfDocument.Load(path);
-                lokalizacja.Clear();
-                defaultLocation = false;
-            }
+            string fileName = "Regulamin.pdf";
+            string path = Path.Combine(Environment.CurrentDirectory, @"", fileName);
+            string newPath = Path.GetFullPath(Path.Combine(path, @"..\..\..\Data\" + fileName));
+            this.path = newPath;
+            pdfViewer.Document = PdfDocument.Load(newPath);
         }
 
-        private void Zamknij_Click(object sender, EventArgs e)
+        private void changeLocation()
         {
-            this.Close();
+            string sourceFile = lokalizacja.Text;
+            string destFile = path;
+            lokalizacja.Clear();
+            if (pdfViewer.Document != null)
+                pdfViewer.Document.Dispose();
+            System.IO.File.Copy(sourceFile, destFile, true);
+            pdfViewer.Document = PdfDocument.Load(path);
         }
 
         private void Regulamin_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (pdfViewer.Document != null)
+                pdfViewer.Document.Dispose();
             form.changeOpenedWindow();
         }
 
@@ -57,9 +47,10 @@ namespace AMTS
         {
             OpenFileDialog dial = new OpenFileDialog();
             dial.Filter = "Files (pdf)|*.pdf";
-            if(dial.ShowDialog() == DialogResult.OK)
+            if (dial.ShowDialog() == DialogResult.OK)
             {
                 lokalizacja.Text = dial.FileName;
+                lokalizacja.Visible = true;
                 anuluj.Visible = true;
                 ok.Visible = true;
             }
@@ -70,17 +61,15 @@ namespace AMTS
             lokalizacja.Clear();
             anuluj.Visible = false;
             ok.Visible = false;
-            string path = Path.Combine(Environment.CurrentDirectory, @"", "Regulamin.pdf");
-            string newPath = Path.GetFullPath(Path.Combine(path, @"..\..\..\Data\" + "Regulamin.pdf"));
-            pdfViewer.Document = PdfDocument.Load(newPath);
+            lokalizacja.Visible = false;
         }
 
         private void ok_Click(object sender, EventArgs e)
         {
-            defaultLocation = false;
-            changeLocation(false);
+            changeLocation();
             anuluj.Visible = false;
             ok.Visible = false;
+            lokalizacja.Visible = false;
         }
     }
 }
