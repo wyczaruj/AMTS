@@ -35,8 +35,9 @@ namespace AMTS
             captainLastName = getLastName(captain.getEmail());
             imie1.Text = captainName;
             nazwisko1.Text = captainLastName;
-
-            dataAdapter = new SqlDataAdapter("SELECT Nazwisko, Imie, Druzyna FROM UZYTKOWNICY", conn);
+            string comant = "SELECT Nazwisko, Imie, U.Druzyna from uzytkownicy"
+                + " U left join Zgloszenia Z on U.mail = Z.mail where Z.potwierdzenie is null OR Z.potwierdzenie = 0";
+            dataAdapter = new SqlDataAdapter(comant, conn);
             commandBuilder = new SqlCommandBuilder(dataAdapter);
 
             dataSet = new DataSet();
