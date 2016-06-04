@@ -368,5 +368,12 @@ namespace AMTS
             ProcessStartInfo link = new ProcessStartInfo("https://plus.google.com/");
             Process.Start(link);
         }
+
+        private void zarzadzajDruzyna_Click(object sender, EventArgs e)
+        {
+            Menage men = new Menage(connection, this, LoggedInUser);
+            changeOpenedWindow();
+            men.Visible = true;
+        }
     }
 }
