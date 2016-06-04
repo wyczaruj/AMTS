@@ -154,6 +154,7 @@ namespace AMTS
                     }
                 }
             }
+            dataGridView1.Rows.Clear();
         }
 
         private void discard_Click(object sender, EventArgs e)

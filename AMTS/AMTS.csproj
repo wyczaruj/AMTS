@@ -101,6 +101,12 @@
     <Compile Include="Klasyfikacja.Designer.cs">
       <DependentUpon>Klasyfikacja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menage.Designer.cs">
+      <DependentUpon>Menage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Messages.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menage.resx">
+      <DependentUpon>Menage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Messages.resx">
       <DependentUpon>Messages.cs</DependentUpon>
