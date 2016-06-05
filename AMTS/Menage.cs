@@ -13,6 +13,12 @@ namespace AMTS
         DataSet dataSet;
         SqlDataAdapter dataAd;
         User captain;
+        private DataTable mecze2;
+        private DataTable mecze;
+        private DataTable table;
+        private SqlDataAdapter adadd;
+        private SqlDataAdapter adada;
+
         public Menage(SqlConnection connection, AbstractForm MF, User cpt)
         {
             this.conn = connection;
@@ -25,7 +31,7 @@ namespace AMTS
             label2.Visible = false;
             label3.Visible = false;
             dataSet = new DataSet();
-            dataAd = new SqlDataAdapter("  select Imie, Nazwisko, Mail, Telefon from dbo.UZYTKOWNICY where Druzyna like '"+captain.getTeamName()+"'", conn);
+            dataAd = new SqlDataAdapter("  select Imie, Nazwisko, Mail, Telefon from dbo.UZYTKOWNICY where Druzyna like '" + captain.getTeamName() + "'", conn);
             SqlCommandBuilder com = new SqlCommandBuilder(dataAd);
             dataAd.Fill(dataSet, "Kontakty");
 
@@ -33,28 +39,28 @@ namespace AMTS
             dataGridView1.ReadOnly = true;
 
             SqlDataAdapter ada = new SqlDataAdapter("select Imie, Nazwisko, PESEL from dbo.uzytkownicy where Druzyna like '" + captain.getTeamName() + "'", conn);
-            DataTable table = new DataTable();
+            table = new DataTable();
             ada.Fill(table);
-            foreach(DataRow r in table.Rows)
+            foreach (DataRow r in table.Rows)
             {
                 comboBox2.Items.Add(r["Imie"].ToString() + " " + r["Nazwisko"].ToString());
                 comboBox3.Items.Add(r["Imie"].ToString() + " " + r["Nazwisko"].ToString());
                 comboBox4.Items.Add(r["Imie"].ToString() + " " + r["Nazwisko"].ToString());
 
             }
-            SqlDataAdapter adada = new SqlDataAdapter("  select Data, Druzyna, z1, z2, z3, p1, p2, p3 from TERMINARZ where Przeciwnik like '"+captain.getTeamName()+"'", conn);
-            SqlDataAdapter adadd = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3, p1, p2, p3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", conn);
-            DataTable mecze = new DataTable();
-            DataTable mecze2 = new DataTable();
+            adada = new SqlDataAdapter("  select Data, Druzyna, p1, p2, p3 from TERMINARZ where Przeciwnik like '" + captain.getTeamName() + "'", conn);
+            adadd = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", conn);
+            mecze = new DataTable();
+            mecze2 = new DataTable();
             adada.Fill(mecze);
             adadd.Fill(mecze2);
-            foreach(DataRow r in mecze.Rows)
+            foreach (DataRow r in mecze.Rows)
             {
-                comboBox1.Items.Add(r["Druzyna"].ToString()+" "+r["Data"].ToString());
+                comboBox1.Items.Add(r["Druzyna"].ToString() + ":" + r["Data"].ToString());
             }
             foreach (DataRow r in mecze2.Rows)
             {
-                comboBox1.Items.Add(r["Przeciwnik"].ToString() + ": " + r["Data"].ToString());
+                comboBox1.Items.Add(r["Przeciwnik"].ToString() + ":" + r["Data"].ToString());
             }
         }
 
@@ -86,7 +92,7 @@ namespace AMTS
         {
             bool noChanges = false;
             string expr;
-            foreach(DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 expr = "\\d{9}";
                 if (!row.Cells[3].Value.ToString().Equals(""))
@@ -105,7 +111,7 @@ namespace AMTS
                     label2.Visible = true;
                 }
 
-                
+
 
             }
             if (noChanges)
@@ -167,7 +173,7 @@ namespace AMTS
 
         private bool check(string str, string expr)
         {
-            if (str.Equals(""))
+            if (str.Equals("") || str.Equals("NULL") || str == null)
             {
                 return false;
             }
@@ -183,14 +189,204 @@ namespace AMTS
                 return false;
             }
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void Menage_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.changeOpenedWindow();
+        }
+
+        private void comboBox1_DropDownClosed(object sender, EventArgs e)
+        {
+            string[] data;
+            if (!string.IsNullOrEmpty(comboBox1.SelectedItem.ToString()))
+            {
+                data = comboBox1.SelectedItem.ToString().Split(':');
+                DataRow[] row;
+                string z1, z2, z3;
+                row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
+
+                if (row.Length <= 0)
+                {
+                    row = mecze2.Select("Przeciwnik like '" + data[0] + "'and Data like'" + data[1] + "'");
+                    z1 = row[0]["z1"].ToString();
+                    z2 = row[0]["z2"].ToString();
+                    z3 = row[0]["z3"].ToString();
+                }
+                else
+                {
+                    z1 = row[0]["p1"].ToString();
+                    z2 = row[0]["p2"].ToString();
+                    z3 = row[0]["p3"].ToString();
+                }
+
+
+                if (check(z1, "\\d{11}"))
+                {
+                    row = table.Select("PESEL like'" + z1 + "'");
+                    comboBox2.SelectedIndex = comboBox2.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                }
+                else
+                {
+                    comboBox2.ResetText();
+                    comboBox2.SelectedIndex = -1;
+                }
+                if (check(z2, "\\d{11}"))
+                {
+                    row = table.Select("PESEL like'" + z2 + "'");
+                    comboBox3.SelectedIndex = comboBox3.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                }
+                else
+                {
+                    comboBox3.ResetText();
+                    comboBox3.SelectedIndex = -1;
+                }
+                if (check(z3, "\\d{11}"))
+                {
+                    row = table.Select("PESEL like'" + z3 + "'");
+                    comboBox4.SelectedIndex = comboBox4.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                }
+                else
+                {
+                    comboBox4.ResetText();
+                    comboBox4.SelectedIndex = -1;
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string[] data;
+            if (comboBox1.SelectedItem!=null &&!string.IsNullOrEmpty(comboBox1.SelectedItem.ToString()))
+            {
+                data = comboBox1.SelectedItem.ToString().Split(':');
+                DataRow[] row;
+                string[] z1, z2, z3;
+                string a1, a2, a3;
+                if(comboBox2.SelectedItem!=null&&!string.IsNullOrEmpty(comboBox2.SelectedItem.ToString()))
+                {
+                    z1 = comboBox2.SelectedItem.ToString().Split(' ');
+                    row = table.Select("Imie like '" + z1[0] + "'and Nazwisko like '" + z1[1] + "'");
+                    a1 = row[0]["PESEL"].ToString();
+                }
+                else a1 = "";
+                if (comboBox3.SelectedItem != null && !string.IsNullOrEmpty(comboBox3.SelectedItem.ToString()))
+                {
+                    z2 = comboBox3.SelectedItem.ToString().Split(' ');
+                    row = table.Select("Imie like '" + z2[0] + "'and Nazwisko like '" + z2[1] + "'");
+                    a2 = row[0]["PESEL"].ToString();
+                }
+                else a2 = "";
+                if (comboBox4.SelectedItem != null && !string.IsNullOrEmpty(comboBox4.SelectedItem.ToString()))
+                {
+                    z3 = comboBox4.SelectedItem.ToString().Split(' ');
+                    row = table.Select("Imie like '" + z3[0] + "'and Nazwisko like '" + z3[1] + "'");
+                    a3 = row[0]["PESEL"].ToString();
+                }
+                else a3 = "";
+               
+                row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
+                if (row.Length <= 0)
+                {
+                    if (!a1.Equals(""))
+                    {
+                        SqlCommand com = new SqlCommand("  update TERMINARZ set z1 = '"+a1+"' where Przeciwnik like '"+data[0]+"' and Data like '"+data[1]+"'", conn);
+                        com.ExecuteNonQuery();
+
+                    }
+                    if (!a2.Equals(""))
+                    {
+                        SqlCommand com = new SqlCommand("  update TERMINARZ set z2 = '" + a2 + "' where Przeciwnik like '" + data[0] + "' and Data like '" + data[1] + "'", conn);
+                        com.ExecuteNonQuery();
+                    }
+                    if (!a3.Equals(""))
+                    {
+                        SqlCommand com = new SqlCommand("  update TERMINARZ set z3 = '" + a3 + "' where Przeciwnik like '" + data[0] + "' and Data like '" + data[1] + "'", conn);
+                        com.ExecuteNonQuery();
+                    }
+                    mecze2.Clear();
+                    adadd.Fill(mecze2);
+                }
+                else
+                {
+                    if (!a1.Equals(""))
+                    {
+                        SqlCommand com = new SqlCommand("  update TERMINARZ set p1 = '" + a1 + "' where Druzyna like '" + data[0] + "' and Data like '" + data[1] + "'", conn);
+                        com.ExecuteNonQuery();
+                    }
+                    if (!a2.Equals(""))
+                    {
+                        SqlCommand com = new SqlCommand("  update TERMINARZ set p2 = '" + a2 + "' where Druzyna like '" + data[0] + "' and Data like '" + data[1] + "'", conn);
+                        com.ExecuteNonQuery();
+                    }
+                    if (!a3.Equals(""))
+                    {
+                        SqlCommand com = new SqlCommand("  update TERMINARZ set p3 = '" + a3 + "' where Druzyna like '" + data[0] + "' and Data like '" + data[1] + "'", conn);
+                        com.ExecuteNonQuery();
+                    }
+                    mecze.Clear();
+                    adada.Fill(mecze);
+                }
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string[] data;
+            if (!string.IsNullOrEmpty(comboBox1.SelectedItem.ToString()))
+            {
+                data = comboBox1.SelectedItem.ToString().Split(':');
+                DataRow[] row;
+                string z1, z2, z3;
+                row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
+
+                if (row.Length <= 0)
+                {
+                    row = mecze2.Select("Przeciwnik like '" + data[0] + "'and Data like'" + data[1] + "'");
+                    z1 = row[0]["z1"].ToString();
+                    z2 = row[0]["z2"].ToString();
+                    z3 = row[0]["z3"].ToString();
+                }
+                else
+                {
+                    z1 = row[0]["p1"].ToString();
+                    z2 = row[0]["p2"].ToString();
+                    z3 = row[0]["p3"].ToString();
+                }
+
+
+                if (check(z1, "\\d{11}"))
+                {
+                    row = table.Select("PESEL like'" + z1 + "'");
+                    comboBox2.SelectedIndex = comboBox2.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                }
+                else
+                {
+                    comboBox2.ResetText();
+                    comboBox2.SelectedIndex = -1;
+                }
+                if (check(z2, "\\d{11}"))
+                {
+                    row = table.Select("PESEL like'" + z2 + "'");
+                    comboBox3.SelectedIndex = comboBox3.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                }
+                else
+                {
+                    comboBox3.ResetText();
+                    comboBox3.SelectedIndex = -1;
+                }
+                if (check(z3, "\\d{11}"))
+                {
+                    row = table.Select("PESEL like'" + z3 + "'");
+                    comboBox4.SelectedIndex = comboBox4.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                }
+                else
+                {
+                    comboBox4.ResetText();
+                    comboBox4.SelectedIndex = -1;
+                }
+            }
         }
     }
 }
