@@ -14,23 +14,23 @@ namespace AMTS
     public partial class TerminNowy:AbstractForm
     {
         Terminarz terminarz;
-        private System.Data.SqlClient.SqlConnection conn;
+        private System.Data.SqlClient.SqlConnection connection;
        
         public TerminNowy(System.Data.SqlClient.SqlConnection conn, Terminarz terminarz)
         {
             InitializeComponent();
-            this.conn = conn;
+            this.connection = conn;
             this.terminarz = terminarz;
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            wybórDaty.Format = DateTimePickerFormat.Custom;
+            wybórDaty.CustomFormat = "dd-MM-yyyy";
 
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT Nazwa FROM DRUZYNY", conn);
             DataTable dataTable = new DataTable();
             dataAdapter.Fill(dataTable);
             foreach (DataRow r in dataTable.Rows)
             {
-                comboBoxDruzyna.Items.Add(r["Nazwa"].ToString());
-                comboBoxPrzeciwnik.Items.Add(r["Nazwa"].ToString());
+                Druzyna.Items.Add(r["Nazwa"].ToString());
+                Przeciwnik.Items.Add(r["Nazwa"].ToString());
             }
             NoDruzyna.Visible = false;
             DwieTakieSameDruzyny.Visible = false;
@@ -43,14 +43,14 @@ namespace AMTS
 
   
                 string runda = numericRunda.Text;
-                string druzyna1 = comboBoxDruzyna.Text;
-                string druzyna2 = comboBoxPrzeciwnik.Text;
+                string druzyna1 = Druzyna.Text;
+                string druzyna2 = Przeciwnik.Text;
 
                 if (druzyna1.Equals("")) druzyna1 = "null";
                 if (druzyna2.Equals("")) druzyna2 = "null";
 
             bool noError = true;
-            if (comboBoxDruzyna.SelectedItem == null || comboBoxPrzeciwnik.SelectedItem == null)
+            if (Druzyna.SelectedItem == null || Przeciwnik.SelectedItem == null)
             {
                 noError = false;
                 NoDruzyna.Visible = true;
@@ -65,7 +65,7 @@ namespace AMTS
             {
                 SqlCommand sqlcomm = new SqlCommand();
                 sqlcomm.CommandText = "exec dbo.dodajSpotkanie @data, @druzyna1, @druzyna2, @pkt1, @pkt2, @pkt3, @pkt4, @runda";
-                sqlcomm.Parameters.Add("@data", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
+                sqlcomm.Parameters.Add("@data", SqlDbType.Date).Value = wybórDaty.Value.Date;
                 sqlcomm.Parameters.Add("@runda", SqlDbType.Int).Value = runda;
                 sqlcomm.Parameters.Add("@druzyna1", SqlDbType.VarChar).Value = druzyna1;
                 sqlcomm.Parameters.Add("@druzyna2", SqlDbType.VarChar).Value = druzyna2;
@@ -73,7 +73,7 @@ namespace AMTS
                 sqlcomm.Parameters.Add("@pkt2", SqlDbType.Int).Value = 0;
                 sqlcomm.Parameters.Add("@pkt3", SqlDbType.Int).Value = 0;
                 sqlcomm.Parameters.Add("@pkt4", SqlDbType.Int).Value = 0;
-                sqlcomm.Connection = conn;
+                sqlcomm.Connection = connection;
                 sqlcomm.ExecuteNonQuery();
                 terminarz.actualize();
                 this.Close();

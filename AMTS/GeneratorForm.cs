@@ -32,8 +32,8 @@ namespace AMTS
             this.conn = conn;
             save.Visible = false;
             discard.Visible = false;
-            label1.Visible = false;
-            label2.Visible = false;
+            poprawny.Visible = false;
+            niepoprawny.Visible = false;
         }
 
         private void GeneratorForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -44,11 +44,11 @@ namespace AMTS
 
         private void generator_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            terminy.Rows.Clear();
             save.Visible = true;
             discard.Visible = true;
-            label1.Visible = true;
-            label2.Visible = false;
+            poprawny.Visible = true;
+            niepoprawny.Visible = false;
             ile = druzyny.Count;
             if (druzyny.Count % 2 == 0)
             {
@@ -60,29 +60,29 @@ namespace AMTS
             }
             for (int i = 1; i < ile; i++)
             {
-                dataGridView1.Rows.Add(i, "RRRR-MM-DD");
+                terminy.Rows.Add(i, "RRRR-MM-DD");
             }
         }
 
         private void save_Click(object sender, EventArgs e)
         {
-            label2.Visible = false;
+            niepoprawny.Visible = false;
             save.Visible = false;
             discard.Visible = false;
-            label1.Visible = false;
+            poprawny.Visible = false;
             bool noErrors = true;
             DateTime some;
-            foreach(DataGridViewRow row in dataGridView1.Rows)
+            foreach(DataGridViewRow row in terminy.Rows)
             {
                 if (!DateTime.TryParse(row.Cells[1].Value.ToString(), out some))
                 {
                     noErrors = false;
-                    label2.Visible = true;
+                    niepoprawny.Visible = true;
                 }
             }
             if (noErrors)
             {
-                if (checkBox1.Checked)
+                if (usuń.Checked)
                 {
                     SqlCommand com = new SqlCommand("delete from TERMINARZ update Klasyfikacja set Duze_punkty = 0, Male_punkty = 0, Male_przegrane_punkty = 0", conn);
                     com.ExecuteNonQuery();
@@ -131,7 +131,7 @@ namespace AMTS
                 }
                 //end of it
                 int iii = 0;
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                foreach (DataGridViewRow row in terminy.Rows)
                 {
                     iii++;
                     for (int j = 1; j < (ile / 2); j++)
@@ -154,16 +154,16 @@ namespace AMTS
                     }
                 }
             }
-            dataGridView1.Rows.Clear();
+            terminy.Rows.Clear();
         }
 
         private void discard_Click(object sender, EventArgs e)
         {
-            label2.Visible = false;
+            niepoprawny.Visible = false;
             save.Visible = false;
             discard.Visible = false;
-            label1.Visible = false;
-            dataGridView1.Rows.Clear();
+            poprawny.Visible = false;
+            terminy.Rows.Clear();
         }
     }
 }

@@ -32,16 +32,16 @@
             this.aMTSDataSet = new AMTS.AMTSDataSet();
             this.wynikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wynikTableAdapter = new AMTS.AMTSDataSetTableAdapters.wynikTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.wyniki = new System.Windows.Forms.DataGridView();
+            this.runda = new System.Windows.Forms.ComboBox();
+            this.wybór = new System.Windows.Forms.Label();
             this.edit = new System.Windows.Forms.Button();
             this.discard = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.zmiany = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.aMTSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wynikBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyniki)).BeginInit();
             this.SuspendLayout();
             // 
             // aMTSDataSet
@@ -58,37 +58,37 @@
             // 
             this.wynikTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // wyniki
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(488, 402);
-            this.dataGridView1.TabIndex = 0;
+            this.wyniki.AllowUserToAddRows = false;
+            this.wyniki.AllowUserToDeleteRows = false;
+            this.wyniki.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.wyniki.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.wyniki.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.wyniki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.wyniki.Location = new System.Drawing.Point(0, 0);
+            this.wyniki.Name = "wyniki";
+            this.wyniki.RowTemplate.Height = 24;
+            this.wyniki.Size = new System.Drawing.Size(488, 402);
+            this.wyniki.TabIndex = 0;
             // 
-            // comboBox1
+            // runda
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(627, 139);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(75, 24);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.runda.FormattingEnabled = true;
+            this.runda.Location = new System.Drawing.Point(627, 139);
+            this.runda.Name = "runda";
+            this.runda.Size = new System.Drawing.Size(75, 24);
+            this.runda.TabIndex = 1;
+            this.runda.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
-            // label1
+            // wybór
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(494, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Wybierz rundę";
+            this.wybór.AutoSize = true;
+            this.wybór.Location = new System.Drawing.Point(494, 142);
+            this.wybór.Name = "wybór";
+            this.wybór.Size = new System.Drawing.Size(100, 17);
+            this.wybór.TabIndex = 2;
+            this.wybór.Text = "Wybierz rundę";
             // 
             // edit
             // 
@@ -120,15 +120,15 @@
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
-            // label2
+            // zmiany
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(494, 205);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(215, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Zmiany nie zostały wprowadzone";
+            this.zmiany.AutoSize = true;
+            this.zmiany.ForeColor = System.Drawing.Color.Red;
+            this.zmiany.Location = new System.Drawing.Point(494, 205);
+            this.zmiany.Name = "zmiany";
+            this.zmiany.Size = new System.Drawing.Size(215, 17);
+            this.zmiany.TabIndex = 6;
+            this.zmiany.Text = "Zmiany nie zostały wprowadzone";
             // 
             // WynikiForm
             // 
@@ -136,19 +136,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(714, 400);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.zmiany);
             this.Controls.Add(this.save);
             this.Controls.Add(this.discard);
             this.Controls.Add(this.edit);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.wybór);
+            this.Controls.Add(this.runda);
+            this.Controls.Add(this.wyniki);
             this.Name = "WynikiForm";
             this.Text = "WynikiForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WynikiForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.aMTSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wynikBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyniki)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,12 +158,12 @@
         private AMTSDataSet aMTSDataSet;
         private System.Windows.Forms.BindingSource wynikBindingSource;
         private AMTSDataSetTableAdapters.wynikTableAdapter wynikTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView wyniki;
+        private System.Windows.Forms.ComboBox runda;
+        private System.Windows.Forms.Label wybór;
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button discard;
         private System.Windows.Forms.Button save;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label zmiany;
     }
 }

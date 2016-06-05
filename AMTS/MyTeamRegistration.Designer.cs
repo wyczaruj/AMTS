@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
+            this.skład = new System.Windows.Forms.Label();
             this.playersListView = new System.Windows.Forms.ListView();
             this.nameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lastNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -36,19 +36,19 @@
             this.captainColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.confirmationColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.teamNameLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.nazwa = new System.Windows.Forms.Label();
             this.cancelRegistrationButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label3
+            // skład
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(27, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Skład:";
+            this.skład.AutoSize = true;
+            this.skład.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.skład.Location = new System.Drawing.Point(27, 69);
+            this.skład.Name = "skład";
+            this.skład.Size = new System.Drawing.Size(95, 32);
+            this.skład.TabIndex = 2;
+            this.skład.Text = "Skład:";
             // 
             // playersListView
             // 
@@ -103,15 +103,15 @@
             this.teamNameLabel.TabIndex = 1;
             this.teamNameLabel.Text = "Przykładowa długa nazwa mojej drużyny";
             // 
-            // label1
+            // nazwa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(24, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nazwa drużyny:";
+            this.nazwa.AutoSize = true;
+            this.nazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nazwa.Location = new System.Drawing.Point(24, 20);
+            this.nazwa.Name = "nazwa";
+            this.nazwa.Size = new System.Drawing.Size(229, 32);
+            this.nazwa.TabIndex = 0;
+            this.nazwa.Text = "Nazwa drużyny:";
             // 
             // cancelRegistrationButton
             // 
@@ -133,9 +133,9 @@
             this.ClientSize = new System.Drawing.Size(878, 494);
             this.Controls.Add(this.cancelRegistrationButton);
             this.Controls.Add(this.playersListView);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.skład);
             this.Controls.Add(this.teamNameLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nazwa);
             this.Name = "MyTeamRegistration";
             this.Text = "Moja drużyna";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MyTeamRegistration_FormClosed);
@@ -145,7 +145,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label skład;
         private System.Windows.Forms.ListView playersListView;
         private System.Windows.Forms.ColumnHeader nameColumnHeader;
         private System.Windows.Forms.ColumnHeader lastNameColumnHeader;
@@ -153,7 +153,7 @@
         private System.Windows.Forms.ColumnHeader captainColumnHeader;
         private System.Windows.Forms.ColumnHeader confirmationColumnHeader;
         private System.Windows.Forms.Label teamNameLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label nazwa;
         private System.Windows.Forms.Button cancelRegistrationButton;
     }
 }
