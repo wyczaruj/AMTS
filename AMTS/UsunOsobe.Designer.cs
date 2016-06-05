@@ -35,9 +35,10 @@
             // 
             // usuwanie
             // 
-            this.usuwanie.Location = new System.Drawing.Point(208, 26);
+            this.usuwanie.Location = new System.Drawing.Point(279, 32);
+            this.usuwanie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.usuwanie.Name = "usuwanie";
-            this.usuwanie.Size = new System.Drawing.Size(75, 23);
+            this.usuwanie.Size = new System.Drawing.Size(100, 28);
             this.usuwanie.TabIndex = 2;
             this.usuwanie.Text = "Usuń";
             this.usuwanie.UseVisualStyleBackColor = true;
@@ -46,28 +47,32 @@
             // ktoraOsoba
             // 
             this.ktoraOsoba.AutoSize = true;
-            this.ktoraOsoba.Location = new System.Drawing.Point(2, 9);
+            this.ktoraOsoba.Location = new System.Drawing.Point(4, 11);
+            this.ktoraOsoba.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ktoraOsoba.Name = "ktoraOsoba";
-            this.ktoraOsoba.Size = new System.Drawing.Size(110, 13);
+            this.ktoraOsoba.Size = new System.Drawing.Size(143, 17);
             this.ktoraOsoba.TabIndex = 1;
             this.ktoraOsoba.Text = "Wybierz użytkownika:";
             // 
             // spisOsob
             // 
             this.spisOsob.FormattingEnabled = true;
-            this.spisOsob.Location = new System.Drawing.Point(5, 26);
+            this.spisOsob.Location = new System.Drawing.Point(8, 32);
+            this.spisOsob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.spisOsob.Name = "spisOsob";
-            this.spisOsob.Size = new System.Drawing.Size(197, 21);
+            this.spisOsob.Size = new System.Drawing.Size(261, 24);
             this.spisOsob.TabIndex = 0;
             // 
             // UsunOsobe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 58);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(379, 334);
             this.Controls.Add(this.usuwanie);
             this.Controls.Add(this.ktoraOsoba);
             this.Controls.Add(this.spisOsob);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UsunOsobe";
             this.Text = "Usuń użytkownika";
             this.ResumeLayout(false);

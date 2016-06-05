@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.imie = new System.Windows.Forms.Label();
+            this.nazwisko = new System.Windows.Forms.Label();
+            this.pesel = new System.Windows.Forms.Label();
+            this.email = new System.Windows.Forms.Label();
+            this.haslo = new System.Windows.Forms.Label();
+            this.telefon = new System.Windows.Forms.Label();
             this.acceptCheckBox = new System.Windows.Forms.CheckBox();
             this.regulaminLinkLabel = new System.Windows.Forms.LinkLabel();
             this.accLabel = new System.Windows.Forms.Label();
@@ -56,59 +56,59 @@
             this.PESELTaken = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // imie
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Imię*";
+            this.imie.AutoSize = true;
+            this.imie.Location = new System.Drawing.Point(44, 40);
+            this.imie.Name = "imie";
+            this.imie.Size = new System.Drawing.Size(38, 17);
+            this.imie.TabIndex = 0;
+            this.imie.Text = "Imię*";
             // 
-            // label2
+            // nazwisko
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nazwisko*";
+            this.nazwisko.AutoSize = true;
+            this.nazwisko.Location = new System.Drawing.Point(42, 68);
+            this.nazwisko.Name = "nazwisko";
+            this.nazwisko.Size = new System.Drawing.Size(72, 17);
+            this.nazwisko.TabIndex = 1;
+            this.nazwisko.Text = "Nazwisko*";
             // 
-            // label3
+            // pesel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "PESEL*";
+            this.pesel.AutoSize = true;
+            this.pesel.Location = new System.Drawing.Point(42, 96);
+            this.pesel.Name = "pesel";
+            this.pesel.Size = new System.Drawing.Size(57, 17);
+            this.pesel.TabIndex = 2;
+            this.pesel.Text = "PESEL*";
             // 
-            // label4
+            // email
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Adres e-mail*";
+            this.email.AutoSize = true;
+            this.email.Location = new System.Drawing.Point(42, 124);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(92, 17);
+            this.email.TabIndex = 3;
+            this.email.Text = "Adres e-mail*";
             // 
-            // label5
+            // haslo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Hasło*";
+            this.haslo.AutoSize = true;
+            this.haslo.Location = new System.Drawing.Point(44, 152);
+            this.haslo.Name = "haslo";
+            this.haslo.Size = new System.Drawing.Size(49, 17);
+            this.haslo.TabIndex = 4;
+            this.haslo.Text = "Hasło*";
             // 
-            // label6
+            // telefon
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(44, 180);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Telefon";
+            this.telefon.AutoSize = true;
+            this.telefon.Location = new System.Drawing.Point(44, 180);
+            this.telefon.Name = "telefon";
+            this.telefon.Size = new System.Drawing.Size(56, 17);
+            this.telefon.TabIndex = 5;
+            this.telefon.Text = "Telefon";
             // 
             // acceptCheckBox
             // 
@@ -313,7 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(496, 347);
             this.Controls.Add(this.PESELTaken);
             this.Controls.Add(this.nameTaken);
@@ -335,12 +335,12 @@
             this.Controls.Add(this.accLabel);
             this.Controls.Add(this.regulaminLinkLabel);
             this.Controls.Add(this.acceptCheckBox);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.telefon);
+            this.Controls.Add(this.haslo);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.pesel);
+            this.Controls.Add(this.nazwisko);
+            this.Controls.Add(this.imie);
             this.Name = "RegisterForm";
             this.Text = "Rejestracja";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterForm_FormClosed);
@@ -351,12 +351,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label imie;
+        private System.Windows.Forms.Label nazwisko;
+        private System.Windows.Forms.Label pesel;
+        private System.Windows.Forms.Label email;
+        private System.Windows.Forms.Label haslo;
+        private System.Windows.Forms.Label telefon;
         private System.Windows.Forms.CheckBox acceptCheckBox;
         private System.Windows.Forms.LinkLabel regulaminLinkLabel;
         private System.Windows.Forms.TextBox imieTextBox;

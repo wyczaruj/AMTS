@@ -34,9 +34,9 @@
             this.runda = new System.Windows.Forms.Label();
             this.druzyna2 = new System.Windows.Forms.Label();
             this.druzyna1 = new System.Windows.Forms.Label();
-            this.comboBoxDruzyna = new System.Windows.Forms.ComboBox();
-            this.comboBoxPrzeciwnik = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Druzyna = new System.Windows.Forms.ComboBox();
+            this.Przeciwnik = new System.Windows.Forms.ComboBox();
+            this.wybórDaty = new System.Windows.Forms.DateTimePicker();
             this.numericRunda = new System.Windows.Forms.NumericUpDown();
             this.NoDruzyna = new System.Windows.Forms.Label();
             this.DwieTakieSameDruzyny = new System.Windows.Forms.Label();
@@ -99,36 +99,33 @@
             this.druzyna1.TabIndex = 4;
             this.druzyna1.Text = "Drużyna";
             // 
-            // comboBoxDruzyna
+            // Druzyna
             // 
-            this.comboBoxDruzyna.FormattingEnabled = true;
-            this.comboBoxDruzyna.Location = new System.Drawing.Point(66, 51);
-            this.comboBoxDruzyna.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBoxDruzyna.Name = "comboBoxDruzyna";
-            this.comboBoxDruzyna.Size = new System.Drawing.Size(109, 21);
-            this.comboBoxDruzyna.TabIndex = 18;
+            this.Druzyna.FormattingEnabled = true;
+            this.Druzyna.Location = new System.Drawing.Point(88, 63);
+            this.Druzyna.Name = "Druzyna";
+            this.Druzyna.Size = new System.Drawing.Size(144, 24);
+            this.Druzyna.TabIndex = 18;
             // 
-            // comboBoxPrzeciwnik
+            // Przeciwnik
             // 
-            this.comboBoxPrzeciwnik.FormattingEnabled = true;
-            this.comboBoxPrzeciwnik.Location = new System.Drawing.Point(66, 76);
-            this.comboBoxPrzeciwnik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBoxPrzeciwnik.Name = "comboBoxPrzeciwnik";
-            this.comboBoxPrzeciwnik.Size = new System.Drawing.Size(109, 21);
-            this.comboBoxPrzeciwnik.TabIndex = 19;
+            this.Przeciwnik.FormattingEnabled = true;
+            this.Przeciwnik.Location = new System.Drawing.Point(88, 93);
+            this.Przeciwnik.Name = "Przeciwnik";
+            this.Przeciwnik.Size = new System.Drawing.Size(144, 24);
+            this.Przeciwnik.TabIndex = 19;
             // 
-            // dateTimePicker1
+            // wybórDaty
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(66, 6);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2100, 5, 4, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateTimePicker1.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker1.TabIndex = 20;
-            this.dateTimePicker1.Value = new System.DateTime(2016, 5, 4, 0, 0, 0, 0);
+            this.wybórDaty.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.wybórDaty.Location = new System.Drawing.Point(88, 7);
+            this.wybórDaty.MaxDate = new System.DateTime(2100, 5, 4, 0, 0, 0, 0);
+            this.wybórDaty.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.wybórDaty.Name = "wybórDaty";
+            this.wybórDaty.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.wybórDaty.Size = new System.Drawing.Size(144, 22);
+            this.wybórDaty.TabIndex = 20;
+            this.wybórDaty.Value = new System.DateTime(2016, 5, 4, 0, 0, 0, 0);
             // 
             // numericRunda
             // 
@@ -169,13 +166,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 140);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(393, 172);
             this.Controls.Add(this.DwieTakieSameDruzyny);
             this.Controls.Add(this.NoDruzyna);
             this.Controls.Add(this.numericRunda);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBoxPrzeciwnik);
-            this.Controls.Add(this.comboBoxDruzyna);
+            this.Controls.Add(this.wybórDaty);
+            this.Controls.Add(this.Przeciwnik);
+            this.Controls.Add(this.Druzyna);
             this.Controls.Add(this.druzyna2);
             this.Controls.Add(this.druzyna1);
             this.Controls.Add(this.runda);
@@ -199,9 +197,9 @@
         private System.Windows.Forms.Label runda;
         private System.Windows.Forms.Label druzyna2;
         private System.Windows.Forms.Label druzyna1;
-        private System.Windows.Forms.ComboBox comboBoxDruzyna;
-        private System.Windows.Forms.ComboBox comboBoxPrzeciwnik;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox Druzyna;
+        private System.Windows.Forms.ComboBox Przeciwnik;
+        private System.Windows.Forms.DateTimePicker wybórDaty;
         private System.Windows.Forms.NumericUpDown numericRunda;
         private System.Windows.Forms.Label NoDruzyna;
         private System.Windows.Forms.Label DwieTakieSameDruzyny;

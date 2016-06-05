@@ -215,6 +215,9 @@
     <Compile Include="Zbanuj.Designer.cs">
       <DependentUpon>Zbanuj.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AbstractForm.resx">
+      <DependentUpon>AbstractForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChooseServer.resx">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +297,7 @@
     <None Include="AMTSDataSet.xss">
       <DependentUpon>AMTSDataSet.xsd</DependentUpon>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

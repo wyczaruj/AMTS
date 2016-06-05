@@ -6,14 +6,14 @@ namespace AMTS.Data
 {
     public partial class Klasyfikacja: AbstractForm 
     {
-        SqlConnection conn;
+        SqlConnection connection;
         AbstractForm mainForm;
 
         public Klasyfikacja(SqlConnection connection, AbstractForm MF)
         {
             mainForm = MF;
             InitializeComponent();
-            conn = connection;
+            this.connection = connection;
             DataSet dataSet = new DataSet();
             SqlDataAdapter dataAd = new SqlDataAdapter("SELECT * FROM KLASYFIKACJA ORDER BY Duze_punkty DESC", connection);
             SqlCommandBuilder command = new SqlCommandBuilder(dataAd);

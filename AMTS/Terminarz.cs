@@ -24,10 +24,10 @@ namespace AMTS
             mainForm = MF;
             InitializeComponent();
             conn = connection;
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label5.Visible = false;
+            data.Visible = false;
+            zmiany.Visible = false;
+            runda.Visible = false;
+            złaDrużyna.Visible = false;
             if (admin)
             {
                 termOpt.Visible = true;
@@ -35,7 +35,7 @@ namespace AMTS
                 termEdit.Visible = true;
                 saveEdit.Visible = false;
                 discardEdit.Visible = false;
-                button1.Visible = true;
+                generuj.Visible = true;
             }
             dataSet = new DataSet();
             dataAd = new SqlDataAdapter("SELECT * FROM termin ORDER BY Runda, Data", connection);
@@ -73,13 +73,13 @@ namespace AMTS
         {
             saveEdit.Visible = true;
             discardEdit.Visible = true;
-            button1.Visible = false;
+            generuj.Visible = false;
             terminarzDataGridView.ReadOnly = false;
 
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label5.Visible = false;
+            data.Visible = false;
+            zmiany.Visible = false;
+            runda.Visible = false;
+            złaDrużyna.Visible = false;
 
         }
 
@@ -98,12 +98,12 @@ namespace AMTS
                 if (!DateTime.TryParse(row.Cells[1].Value.ToString(), out something))
                 {
                     noChanges = true;
-                    label1.Visible = true;
+                    data.Visible = true;
                 }
                 if (!int.TryParse(row.Cells[0].Value.ToString(), out first))
                 {
                     noChanges = true;
-                    label3.Visible = true;
+                    runda.Visible = true;
 
                 }
                 else
@@ -111,20 +111,20 @@ namespace AMTS
                     if (first < 1)
                     {
                         noChanges = true;
-                        label3.Visible = true;
+                        runda.Visible = true;
                     }
                 }
                 
                 if (row.Cells[2].Value.Equals(row.Cells[3].Value) || !druzyny.Contains(row.Cells[2].Value) || !druzyny.Contains(row.Cells[3].Value))
                 {
-                    label5.Visible = true;
+                    złaDrużyna.Visible = true;
                     noChanges = true;
                 }
 
             }
             if (noChanges)
             {
-                label2.Visible = true;
+                zmiany.Visible = true;
                 dataSet.Clear();
                 dataAd.Fill(dataSet, "TERMINARZ");
                 terminarzDataGridView.DataSource = dataSet.Tables["TERMINARZ"];
@@ -141,14 +141,14 @@ namespace AMTS
             terminarzDataGridView.ReadOnly = true;
             saveEdit.Visible = false;
             discardEdit.Visible = false;
-            button1.Visible = true;
+            generuj.Visible = true;
         }
 
         private void discardEdit_Click_1(object sender, EventArgs e)
         {
             saveEdit.Visible = false;
             discardEdit.Visible = false;
-            button1.Visible = true;
+            generuj.Visible = true;
             terminarzDataGridView.ReadOnly = true;
             dataSet.Clear();
             dataAd.Fill(dataSet, "TERMINARZ");

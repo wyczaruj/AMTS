@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.email = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.haslo = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.incorrectLabel = new System.Windows.Forms.Label();
             this.logInButton = new System.Windows.Forms.Button();
@@ -39,12 +39,12 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Adres e-mail";
+            this.email.AutoSize = true;
+            this.email.Location = new System.Drawing.Point(12, 37);
+            this.email.Name = "label1";
+            this.email.Size = new System.Drawing.Size(87, 17);
+            this.email.TabIndex = 0;
+            this.email.Text = "Adres e-mail";
             // 
             // emailTextBox
             // 
@@ -56,12 +56,12 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Hasło";
+            this.haslo.AutoSize = true;
+            this.haslo.Location = new System.Drawing.Point(13, 65);
+            this.haslo.Name = "label2";
+            this.haslo.Size = new System.Drawing.Size(44, 17);
+            this.haslo.TabIndex = 2;
+            this.haslo.Text = "Hasło";
             // 
             // passwordTextBox
             // 
@@ -113,9 +113,9 @@
             this.Controls.Add(this.logInButton);
             this.Controls.Add(this.incorrectLabel);
             this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.haslo);
             this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.email);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LogInForm";
             this.Text = "LogInForm";
@@ -127,9 +127,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label email;
         private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label haslo;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label incorrectLabel;
         private System.Windows.Forms.Button logInButton;
