@@ -1,4 +1,6 @@
-﻿namespace AMTS
+﻿using System;
+
+namespace AMTS
 {
     partial class Menage
     {
@@ -38,16 +40,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -179,64 +181,25 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pojedynki";
             // 
-            // comboBox1
+            // button5
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(192, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 24);
-            this.comboBox1.TabIndex = 0;
+            this.button5.Location = new System.Drawing.Point(529, 48);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 27);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Odśwież";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // comboBox2
+            // button4
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(192, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(209, 24);
-            this.comboBox2.TabIndex = 1;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(192, 81);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(209, 24);
-            this.comboBox3.TabIndex = 2;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(192, 111);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(209, 24);
-            this.comboBox4.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(141, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Mecz:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 114);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(170, 17);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Do pierwszego pojedynku";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 54);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 17);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Do drugiego pojedynku";
+            this.button4.Location = new System.Drawing.Point(448, 48);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 27);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Zapisz";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label7
             // 
@@ -247,23 +210,68 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Do trzeciego pojedynku";
             // 
-            // button4
+            // label6
             // 
-            this.button4.Location = new System.Drawing.Point(448, 48);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 27);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Zapisz";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(155, 17);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Do drugiego pojedynku";
             // 
-            // button5
+            // label5
             // 
-            this.button5.Location = new System.Drawing.Point(529, 48);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 27);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Odśwież";
-            this.button5.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(170, 17);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Do pierwszego pojedynku";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(141, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Mecz:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(192, 111);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(209, 24);
+            this.comboBox4.Sorted = true;
+            this.comboBox4.TabIndex = 3;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(192, 81);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(209, 24);
+            this.comboBox3.Sorted = true;
+            this.comboBox3.TabIndex = 2;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(192, 51);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(209, 24);
+            this.comboBox2.Sorted = true;
+            this.comboBox2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(192, 20);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(209, 24);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.DropDownClosed += new System.EventHandler(this.comboBox1_DropDownClosed);
             // 
             // Menage
             // 
@@ -283,6 +291,11 @@
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
