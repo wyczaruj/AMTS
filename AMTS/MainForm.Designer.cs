@@ -255,7 +255,6 @@ namespace AMTS
             // 
             this.zarzadzajDruzyna.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.zarzadzajDruzyna.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.zarzadzajDruzyna.Enabled = false;
             this.zarzadzajDruzyna.FlatAppearance.BorderSize = 0;
             this.zarzadzajDruzyna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.zarzadzajDruzyna.Image = global::AMTS.Properties.Resources.zarzadzaj;
@@ -266,6 +265,7 @@ namespace AMTS
             this.zarzadzajDruzyna.TabIndex = 23;
             this.zarzadzajDruzyna.UseVisualStyleBackColor = false;
             this.zarzadzajDruzyna.Visible = false;
+            this.zarzadzajDruzyna.Click += new System.EventHandler(this.zarzadzajDruzyna_Click);
             // 
             // usunUzyt
             // 

@@ -29,6 +29,8 @@
             // 
             // klasyfikacjaDataGridView
             // 
+            this.klasyfikacjaDataGridView.AllowUserToAddRows = false;
+            this.klasyfikacjaDataGridView.AllowUserToDeleteRows = false;
             this.klasyfikacjaDataGridView.AllowUserToResizeRows = false;
             this.klasyfikacjaDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.klasyfikacjaDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
@@ -37,14 +39,14 @@
             this.klasyfikacjaDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.klasyfikacjaDataGridView.Name = "klasyfikacjaDataGridView";
             this.klasyfikacjaDataGridView.ReadOnly = true;
-            this.klasyfikacjaDataGridView.Size = new System.Drawing.Size(1258, 488);
+            this.klasyfikacjaDataGridView.Size = new System.Drawing.Size(436, 376);
             this.klasyfikacjaDataGridView.TabIndex = 0;
             // 
             // Klasyfikacja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 488);
+            this.ClientSize = new System.Drawing.Size(436, 376);
             this.Controls.Add(this.klasyfikacjaDataGridView);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Klasyfikacja";
