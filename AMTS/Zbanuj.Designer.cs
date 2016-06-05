@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.usuwanie = new System.Windows.Forms.Button();
+            this.banowanie = new System.Windows.Forms.Button();
             this.ktoraOsoba = new System.Windows.Forms.Label();
             this.spisOsob = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // usuwanie
+            // banowanie
             // 
-            this.usuwanie.Location = new System.Drawing.Point(208, 26);
-            this.usuwanie.Name = "usuwanie";
-            this.usuwanie.Size = new System.Drawing.Size(75, 23);
-            this.usuwanie.TabIndex = 5;
-            this.usuwanie.Text = "Usuń";
-            this.usuwanie.UseVisualStyleBackColor = true;
+            this.banowanie.Location = new System.Drawing.Point(208, 26);
+            this.banowanie.Name = "banowanie";
+            this.banowanie.Size = new System.Drawing.Size(75, 23);
+            this.banowanie.TabIndex = 5;
+            this.banowanie.Text = "Zablokuj";
+            this.banowanie.UseVisualStyleBackColor = true;
+            this.banowanie.Click += new System.EventHandler(this.banowanie_Click);
             // 
             // ktoraOsoba
             // 
@@ -64,7 +65,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.usuwanie);
+            this.Controls.Add(this.banowanie);
             this.Controls.Add(this.ktoraOsoba);
             this.Controls.Add(this.spisOsob);
             this.Name = "Zbanuj";
@@ -76,7 +77,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button usuwanie;
+        private System.Windows.Forms.Button banowanie;
         private System.Windows.Forms.Label ktoraOsoba;
         private System.Windows.Forms.ComboBox spisOsob;
     }

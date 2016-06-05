@@ -27,36 +27,33 @@ namespace AMTS
             SqlCommand sqlcomm = new SqlCommand("SELECT Druzyna AS TEAM, PESEL AS PSL FROM UZYTKOWNICY WHERE Mail=" + "'" + email + "'", connection);
             string pesel;
             SqlDataReader r = sqlcomm.ExecuteReader();
-            if(r.Read())
+            Object team = r["TEAM"];
+            pesel = r["PSL"].ToString();          
+            r.Close();
+            if(DBNull.Value != team)
             {
-                Object team = r["TEAM"];
-                pesel = r["PSL"].ToString();
-                r.Close();
-                if(DBNull.Value != team)
+                teamName = team.ToString();
+                hasTeam = true;
+            }
+            else
+            {
+                SqlCommand sqlcomm2 = new SqlCommand("SELECT * FROM ZGLOSZENIA WHERE Mail= '" + email
+                    + "' AND Potwierdzenie = 0", connection);
+                SqlDataReader r2 = sqlcomm2.ExecuteReader();
+                if(r2.Read())
                 {
-                    teamName = team.ToString();
-                    hasTeam = true;
+                    pendingConfirmation = true;
                 }
-                else
+                r2.Close();
+                sqlcomm2 = new SqlCommand("SELECT Druzyna AS TEAMNAME FROM ZGLOSZENIA WHERE Mail= '" + email
+                    + "' AND Potwierdzenie = 1", connection);
+                r2 = sqlcomm2.ExecuteReader();
+                if(r2.Read())
                 {
-                    SqlCommand sqlcomm2 = new SqlCommand("SELECT * FROM ZGLOSZENIA WHERE Mail= '" + email
-                        + "' AND Potwierdzenie = 0", connection);
-                    SqlDataReader r2 = sqlcomm2.ExecuteReader();
-                    if(r2.Read())
-                    {
-                        pendingConfirmation = true;
-                    }
-                    r2.Close();
-                    sqlcomm2 = new SqlCommand("SELECT Druzyna AS TEAMNAME FROM ZGLOSZENIA WHERE Mail= '" + email
-                        + "' AND Potwierdzenie = 1", connection);
-                    r2 = sqlcomm2.ExecuteReader();
-                    if(r2.Read())
-                    {
-                        pendingTeamRequest = true;
-                        teamName = r2["TEAMNAME"].ToString();
-                    }
-                    r2.Close();
+                    pendingTeamRequest = true;
+                    teamName = r2["TEAMNAME"].ToString();
                 }
+                r2.Close();
                 if(pendingTeamRequest || hasTeam)
                 {
                     sqlcomm = new SqlCommand("SELECT Kapitan AS CAP FROM DRUZYNY WHERE Nazwa=" + "'" + teamName + "'", connection);

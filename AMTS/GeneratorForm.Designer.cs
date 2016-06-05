@@ -52,39 +52,42 @@
             this.Runda,
             this.Data});
             this.dataGridView1.Location = new System.Drawing.Point(2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(244, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(183, 187);
             this.dataGridView1.TabIndex = 0;
             // 
             // Runda
             // 
             this.Runda.HeaderText = "Runda";
             this.Runda.Name = "Runda";
-            this.Runda.Width = 79;
+            this.Runda.Width = 64;
             // 
             // Data
             // 
             this.Data.HeaderText = "Data";
             this.Data.MaxInputLength = 10;
             this.Data.Name = "Data";
-            this.Data.Width = 67;
+            this.Data.Width = 55;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(255, 104);
+            this.checkBox1.Location = new System.Drawing.Point(191, 84);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(199, 21);
+            this.checkBox1.Size = new System.Drawing.Size(152, 17);
             this.checkBox1.TabIndex = 1;
             this.checkBox1.Text = "Usunąć istniejące terminy?";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // generator
             // 
-            this.generator.Location = new System.Drawing.Point(264, 74);
+            this.generator.Location = new System.Drawing.Point(198, 60);
+            this.generator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.generator.Name = "generator";
-            this.generator.Size = new System.Drawing.Size(175, 24);
+            this.generator.Size = new System.Drawing.Size(131, 20);
             this.generator.TabIndex = 2;
             this.generator.Text = "Generuj";
             this.generator.UseVisualStyleBackColor = true;
@@ -92,9 +95,10 @@
             // 
             // discard
             // 
-            this.discard.Location = new System.Drawing.Point(255, 131);
+            this.discard.Location = new System.Drawing.Point(191, 106);
+            this.discard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.discard.Name = "discard";
-            this.discard.Size = new System.Drawing.Size(75, 23);
+            this.discard.Size = new System.Drawing.Size(56, 19);
             this.discard.TabIndex = 3;
             this.discard.Text = "Anuluj";
             this.discard.UseVisualStyleBackColor = true;
@@ -102,9 +106,10 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(379, 131);
+            this.save.Location = new System.Drawing.Point(284, 106);
+            this.save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.Size = new System.Drawing.Size(56, 19);
             this.save.TabIndex = 4;
             this.save.Text = "Zapisz";
             this.save.UseVisualStyleBackColor = true;
@@ -113,9 +118,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 157);
+            this.label1.Location = new System.Drawing.Point(189, 128);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 17);
+            this.label1.Size = new System.Drawing.Size(170, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Poprawny format daty to rrrr-mm-dd";
             // 
@@ -123,18 +129,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(252, 128);
+            this.label2.Location = new System.Drawing.Point(189, 104);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 17);
+            this.label2.Size = new System.Drawing.Size(124, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Niepoprawny format daty";
             // 
             // GeneratorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(502, 235);
+            this.ClientSize = new System.Drawing.Size(376, 191);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.save);
@@ -142,8 +149,9 @@
             this.Controls.Add(this.generator);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GeneratorForm";
-            this.Text = "GeneratorForm";
+            this.Text = "Generuj terminy";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GeneratorForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

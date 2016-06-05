@@ -62,7 +62,7 @@ namespace AMTS
                     SqlCommand sqlcomm;
                     string usunWiadomosci = "usunWiadomosci @mail";
                     sqlcomm = new SqlCommand(usunWiadomosci, conn);
-                    sqlcomm.Parameters.Add("@mail", SqlDbType.VarChar, 30).Value = mail;
+                    sqlcomm.Parameters.Add("@mail", SqlDbType.VarChar, 50).Value = mail;
                     sqlcomm.ExecuteReader();
                     string usunUzytkownika = "exec dbo.usunUzytkownika '" + nazwiskoImie[1] + "', '" + nazwiskoImie[0] + "'";
                     sqlcomm = new SqlCommand(usunUzytkownika, conn);
