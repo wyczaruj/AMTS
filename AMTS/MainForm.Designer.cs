@@ -611,11 +611,12 @@ namespace AMTS
             this.generujRaportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generujRaportButton.ForeColor = System.Drawing.Color.Coral;
             this.generujRaportButton.Image = global::AMTS.Properties.Resources.generuj;
-            this.generujRaportButton.Location = new System.Drawing.Point(665, 197);
+            this.generujRaportButton.Location = new System.Drawing.Point(986, 197);
             this.generujRaportButton.Name = "generujRaportButton";
             this.generujRaportButton.Size = new System.Drawing.Size(230, 93);
             this.generujRaportButton.TabIndex = 43;
             this.generujRaportButton.UseVisualStyleBackColor = false;
+            this.generujRaportButton.Visible = false;
             this.generujRaportButton.Click += new System.EventHandler(this.generujRaportButton_Click);
             // 
             // MainForm

@@ -12,6 +12,7 @@ namespace AMTS
     {
         MainForm mainForm;
         SqlConnection connection;
+        string rPath;
 
         public Raport(MainForm MF, SqlConnection conn)
         {
@@ -25,15 +26,23 @@ namespace AMTS
         {
             Paragraph par;
             Phrase phr;
+            Font f;
             int numberOfPlayers, numberOfUsers, numberOfTeams;
             string firstPlace = "", secondPlace = "", thirdPlace = "";
             Document raport = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 40, 35);
-            string path = Path.Combine(Environment.CurrentDirectory, @"", "");
-            string newPath = Path.GetFullPath(Path.Combine(path, @"..\..\..\"));
+            string newPath = Path.GetTempPath();
             PdfWriter writer = PdfWriter.GetInstance(raport, new FileStream(newPath + "Raport.pdf", FileMode.Create));
             raport.Open();
 
-            iTextSharp.text.Font f = FontFactory.GetFont("Calibri", 40);
+            string date = DateTime.Now.ToLongDateString();
+
+            f = FontFactory.GetFont("Calibri", 13);
+            f.SetStyle("bold");
+            par = new Paragraph(date, f);
+            par.Alignment = Element.ALIGN_RIGHT;
+            raport.Add(par);
+
+            f = FontFactory.GetFont("Calibri", 40);
             f.SetStyle("bold");
             par = new Paragraph("RAPORT", f);
             par.Alignment = Element.ALIGN_CENTER;
@@ -124,12 +133,14 @@ namespace AMTS
 
             raport.Close();
             pdfViewer.Document = PdfiumViewer.PdfDocument.Load(newPath + "Raport.pdf");
+            rPath = newPath + "Raport.pdf";
         }
 
         private void Raport_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (pdfViewer.Document != null)
                 pdfViewer.Document.Dispose();
+            File.Delete(rPath);
             mainForm.changeOpenedWindow();
         }
 
@@ -170,7 +181,6 @@ namespace AMTS
             List<int> BP = new List<int>();
             List<int> SP = new List<int>();
             List<int> SLP = new List<int>();
-            int count = 0;
             SqlCommand sqlcomm = new SqlCommand("SELECT  Druzyna as TEAM, duze_punkty AS BP,"
                 + " Male_punkty AS SP, Male_przegrane_punkty AS SLP" +
                 " FROM Klasyfikacja ORDER BY BP DESC, SP DESC, SLP ASC", connection);
