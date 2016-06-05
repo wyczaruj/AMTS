@@ -45,7 +45,6 @@ namespace AMTS
             this.admin = new System.Windows.Forms.Label();
             this.zbanuj = new System.Windows.Forms.Button();
             this.zarzadzajDruzyna = new System.Windows.Forms.Button();
-            this.usunUzyt = new System.Windows.Forms.Button();
             this.usunDruz = new System.Windows.Forms.Button();
             this.messagesButton = new System.Windows.Forms.Button();
             this.confirmConfirmationButton = new System.Windows.Forms.Button();
@@ -70,6 +69,8 @@ namespace AMTS
             this.reklama = new System.Windows.Forms.Label();
             this.nazwa = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.Label();
+            this.generujRaportButton = new System.Windows.Forms.Button();
+            this.usunUzyt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // messageBackgroundWorker
@@ -248,7 +249,6 @@ namespace AMTS
             // 
             this.zarzadzajDruzyna.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.zarzadzajDruzyna.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.zarzadzajDruzyna.Enabled = false;
             this.zarzadzajDruzyna.FlatAppearance.BorderSize = 0;
             this.zarzadzajDruzyna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.zarzadzajDruzyna.Image = global::AMTS.Properties.Resources.zarzadzaj;
@@ -258,21 +258,7 @@ namespace AMTS
             this.zarzadzajDruzyna.TabIndex = 23;
             this.zarzadzajDruzyna.UseVisualStyleBackColor = false;
             this.zarzadzajDruzyna.Visible = false;
-            // 
-            // usunUzyt
-            // 
-            this.usunUzyt.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.usunUzyt.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.usunUzyt.FlatAppearance.BorderSize = 0;
-            this.usunUzyt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.usunUzyt.Image = global::AMTS.Properties.Resources.usun_zawodnika;
-            this.usunUzyt.Location = new System.Drawing.Point(629, 371);
-            this.usunUzyt.Name = "usunUzyt";
-            this.usunUzyt.Size = new System.Drawing.Size(173, 23);
-            this.usunUzyt.TabIndex = 19;
-            this.usunUzyt.UseVisualStyleBackColor = false;
-            this.usunUzyt.Visible = false;
-            this.usunUzyt.Click += new System.EventHandler(this.usunUzyt_Click);
+            this.zarzadzajDruzyna.Click += new System.EventHandler(this.zarzadzajDruzyna_Click);
             // 
             // usunDruz
             // 
@@ -297,7 +283,7 @@ namespace AMTS
             this.messagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.messagesButton.Image = global::AMTS.Properties.Resources.greyMailImage;
             this.messagesButton.Location = new System.Drawing.Point(618, 0);
-            this.messagesButton.Margin = new System.Windows.Forms.Padding(2);
+            this.messagesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.messagesButton.Name = "messagesButton";
             this.messagesButton.Size = new System.Drawing.Size(50, 55);
             this.messagesButton.TabIndex = 17;
@@ -313,7 +299,7 @@ namespace AMTS
             this.confirmConfirmationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmConfirmationButton.Image = global::AMTS.Properties.Resources.potwierdz_udzial;
             this.confirmConfirmationButton.Location = new System.Drawing.Point(629, 338);
-            this.confirmConfirmationButton.Margin = new System.Windows.Forms.Padding(2);
+            this.confirmConfirmationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmConfirmationButton.Name = "confirmConfirmationButton";
             this.confirmConfirmationButton.Size = new System.Drawing.Size(179, 21);
             this.confirmConfirmationButton.TabIndex = 16;
@@ -329,7 +315,7 @@ namespace AMTS
             this.myRegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.myRegistrationButton.Image = global::AMTS.Properties.Resources.moje_zgloszenia;
             this.myRegistrationButton.Location = new System.Drawing.Point(629, 288);
-            this.myRegistrationButton.Margin = new System.Windows.Forms.Padding(2);
+            this.myRegistrationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.myRegistrationButton.Name = "myRegistrationButton";
             this.myRegistrationButton.Size = new System.Drawing.Size(168, 20);
             this.myRegistrationButton.TabIndex = 15;
@@ -345,7 +331,7 @@ namespace AMTS
             this.teamRegistrationsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.teamRegistrationsButton.Image = global::AMTS.Properties.Resources.zatwierdz_druzyne;
             this.teamRegistrationsButton.Location = new System.Drawing.Point(629, 286);
-            this.teamRegistrationsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.teamRegistrationsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.teamRegistrationsButton.Name = "teamRegistrationsButton";
             this.teamRegistrationsButton.Size = new System.Drawing.Size(195, 23);
             this.teamRegistrationsButton.TabIndex = 13;
@@ -440,7 +426,7 @@ namespace AMTS
             this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerButton.Image = global::AMTS.Properties.Resources.REJESTARCJA;
             this.registerButton.Location = new System.Drawing.Point(661, 77);
-            this.registerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.registerButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(104, 20);
             this.registerButton.TabIndex = 4;
@@ -455,7 +441,7 @@ namespace AMTS
             this.logOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logOutButton.Image = global::AMTS.Properties.Resources.WYLOGUJ;
             this.logOutButton.Location = new System.Drawing.Point(777, 77);
-            this.logOutButton.Margin = new System.Windows.Forms.Padding(2);
+            this.logOutButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(79, 16);
             this.logOutButton.TabIndex = 3;
@@ -470,7 +456,7 @@ namespace AMTS
             this.logInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logInButton.Image = global::AMTS.Properties.Resources.ZALOGUJ;
             this.logInButton.Location = new System.Drawing.Point(777, 77);
-            this.logInButton.Margin = new System.Windows.Forms.Padding(2);
+            this.logInButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(78, 16);
             this.logInButton.TabIndex = 2;
@@ -582,6 +568,36 @@ namespace AMTS
             this.logo.Size = new System.Drawing.Size(242, 222);
             this.logo.TabIndex = 42;
             // 
+            // generujRaportButton
+            // 
+            this.generujRaportButton.BackColor = System.Drawing.Color.Transparent;
+            this.generujRaportButton.FlatAppearance.BorderSize = 0;
+            this.generujRaportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.generujRaportButton.ForeColor = System.Drawing.Color.Coral;
+            this.generujRaportButton.Image = global::AMTS.Properties.Resources.generuj;
+            this.generujRaportButton.Location = new System.Drawing.Point(499, 160);
+            this.generujRaportButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.generujRaportButton.Name = "generujRaportButton";
+            this.generujRaportButton.Size = new System.Drawing.Size(172, 76);
+            this.generujRaportButton.TabIndex = 43;
+            this.generujRaportButton.UseVisualStyleBackColor = false;
+            this.generujRaportButton.Click += new System.EventHandler(this.generujRaportButton_Click);
+            // 
+            // usunUzyt
+            // 
+            this.usunUzyt.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.usunUzyt.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.usunUzyt.FlatAppearance.BorderSize = 0;
+            this.usunUzyt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usunUzyt.Image = global::AMTS.Properties.Resources.usun_zawodnika;
+            this.usunUzyt.Location = new System.Drawing.Point(629, 371);
+            this.usunUzyt.Name = "usunUzyt";
+            this.usunUzyt.Size = new System.Drawing.Size(173, 23);
+            this.usunUzyt.TabIndex = 19;
+            this.usunUzyt.UseVisualStyleBackColor = false;
+            this.usunUzyt.Visible = false;
+            this.usunUzyt.Click += new System.EventHandler(this.usunUzyt_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,6 +605,7 @@ namespace AMTS
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::AMTS.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(927, 743);
+            this.Controls.Add(this.generujRaportButton);
             this.Controls.Add(this.artykul2);
             this.Controls.Add(this.admin);
             this.Controls.Add(this.kapitan);
@@ -630,7 +647,7 @@ namespace AMTS
             this.Controls.Add(this.panelAdmina);
             this.Controls.Add(this.registerTeamButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "Amatorska Liga Tenisa Stołowego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
@@ -661,7 +678,6 @@ namespace AMTS
         private System.Windows.Forms.Button messagesButton;
         private System.ComponentModel.BackgroundWorker messageBackgroundWorker;
         private System.Windows.Forms.Button usunDruz;
-        private System.Windows.Forms.Button usunUzyt;
         private System.Windows.Forms.Button zarzadzajDruzyna;
         private System.Windows.Forms.Button zbanuj;
         private System.Windows.Forms.Label panelAdmina;
@@ -682,6 +698,8 @@ namespace AMTS
         private System.Windows.Forms.Label reklama;
         private System.Windows.Forms.Label nazwa;
         private System.Windows.Forms.Label logo;
+        private System.Windows.Forms.Button generujRaportButton;
+        private System.Windows.Forms.Button usunUzyt;
     }
 }
 

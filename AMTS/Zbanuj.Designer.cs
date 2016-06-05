@@ -1,6 +1,6 @@
 ﻿namespace AMTS
 {
-    partial class UsunOsobe
+    partial class Zbanuj
     {
         /// <summary>
         /// Required designer variable.
@@ -38,10 +38,9 @@
             this.usuwanie.Location = new System.Drawing.Point(208, 26);
             this.usuwanie.Name = "usuwanie";
             this.usuwanie.Size = new System.Drawing.Size(75, 23);
-            this.usuwanie.TabIndex = 2;
+            this.usuwanie.TabIndex = 5;
             this.usuwanie.Text = "Usuń";
             this.usuwanie.UseVisualStyleBackColor = true;
-            this.usuwanie.Click += new System.EventHandler(this.usuwanie_Click);
             // 
             // ktoraOsoba
             // 
@@ -49,7 +48,7 @@
             this.ktoraOsoba.Location = new System.Drawing.Point(2, 9);
             this.ktoraOsoba.Name = "ktoraOsoba";
             this.ktoraOsoba.Size = new System.Drawing.Size(110, 13);
-            this.ktoraOsoba.TabIndex = 1;
+            this.ktoraOsoba.TabIndex = 4;
             this.ktoraOsoba.Text = "Wybierz użytkownika:";
             // 
             // spisOsob
@@ -58,18 +57,18 @@
             this.spisOsob.Location = new System.Drawing.Point(5, 26);
             this.spisOsob.Name = "spisOsob";
             this.spisOsob.Size = new System.Drawing.Size(197, 21);
-            this.spisOsob.TabIndex = 0;
+            this.spisOsob.TabIndex = 3;
             // 
-            // UsunOsobe
+            // Zbanuj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 271);
+            this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.usuwanie);
             this.Controls.Add(this.ktoraOsoba);
             this.Controls.Add(this.spisOsob);
-            this.Name = "UsunOsobe";
-            this.Text = "Usuń użytkownika";
+            this.Name = "Zbanuj";
+            this.Text = "Zbanuj";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,8 +76,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox spisOsob;
-        private System.Windows.Forms.Label ktoraOsoba;
         private System.Windows.Forms.Button usuwanie;
+        private System.Windows.Forms.Label ktoraOsoba;
+        private System.Windows.Forms.ComboBox spisOsob;
     }
 }

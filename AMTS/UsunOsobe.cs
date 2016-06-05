@@ -32,9 +32,9 @@ namespace AMTS
 
             foreach(DataRow dataRow in dataSet.Tables["UZYTKOWNICY"].Rows)
             {
-                string osoba = dataRow["Nazwisko"].ToString() + " " + dataRow["Imie"].ToString();
-                spisOsob.Items.Add(osoba);
-                osoby.Add(osoba);
+                string dane = dataRow["Nazwisko"].ToString() + " " + dataRow["Imie"].ToString();
+                spisOsob.Items.Add(dane);
+                osoby.Add(dane);
                 string[] list = osoby.ToArray<string>();
                 var autoComplete = new AutoCompleteStringCollection();
                 autoComplete.AddRange(osoby.ToArray());
@@ -49,11 +49,32 @@ namespace AMTS
             if(choose == DialogResult.Yes)
             {
                 string[] nazwiskoImie = spisOsob.SelectedItem.ToString().Split(' ');
-                string command = "exec dbo.usunUzytkownika '" +nazwiskoImie[1] +"', '" +nazwiskoImie[0] +"'";
-                SqlCommand sqlcomm = new SqlCommand(command, conn);
-                sqlcomm.ExecuteNonQuery();
-                this.Close();
+                string mail = "SELECT Mail FROM UZYTKOWNICY WHERE Nazwisko LIKE '" +nazwiskoImie[0] +"' AND Imie LIKE '" +nazwiskoImie[1] +"'";
+                User osoba = new User(conn, mail);
+
+                if(osoba.isCaptain())
+                {
+                    MessageBox.Show("Kapitanów drużyn można tylko blokować.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.Close();
+                }
+                else
+                {
+                    SqlCommand sqlcomm;
+                    string usunWiadomosci = "usunWiadomosci @mail";
+                    sqlcomm = new SqlCommand(usunWiadomosci, conn);
+                    sqlcomm.Parameters.Add("@mail", SqlDbType.VarChar, 30).Value = mail;
+                    sqlcomm.ExecuteReader();
+                    string usunUzytkownika = "exec dbo.usunUzytkownika '" + nazwiskoImie[1] + "', '" + nazwiskoImie[0] + "'";
+                    sqlcomm = new SqlCommand(usunUzytkownika, conn);
+                    sqlcomm.ExecuteReader();
+                    this.Close();
+                }
             }
+        }
+
+        private void UsunOsobe_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.changeOpenedWindow();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace AMTS
     {
         SqlConnection connection;
         bool LoggedIn = false;
-        bool AdminLogged = false; //bo sam LoggedIn to za mało by rozróżniać co może użytkownik, a co gość, a co admin
+        bool AdminLogged = false;
         User LoggedInUser;
         string connectionString;
       
@@ -140,6 +140,7 @@ namespace AMTS
             druzynaLabel.Visible = true;
             teamLabel.Visible = true;
             messagesButton.Visible = true;
+            messagesButton.Image = Resources.greyMailImage;
             if (!messageBackgroundWorker.IsBusy)
             {
                 messageBackgroundWorker.RunWorkerAsync();
@@ -193,6 +194,7 @@ namespace AMTS
             registerTeamButton.Visible = false;
             teamRegistrationsButton.Visible = true;
             messagesButton.Visible = true;
+            messagesButton.Image = Resources.greyMailImage;
             LoggedInUser = new User(connection, mail);
             loggedInAs.Visible = true;
             loggedInAsLabel.Visible = true;
@@ -367,6 +369,34 @@ namespace AMTS
         {
             ProcessStartInfo link = new ProcessStartInfo("https://plus.google.com/");
             Process.Start(link);
+        }
+
+        private void generujRaportButton_Click(object sender, EventArgs e)
+        {
+            if (openedWindow == false)
+            {
+                Raport raport = new Raport(this);
+                changeOpenedWindow();
+                raport.Visible = true;
+
+            }
+        }
+
+        private void zarzadzajDruzyna_Click(object sender, EventArgs e)
+        {
+            Menage men = new Menage(connection, this, LoggedInUser);
+            changeOpenedWindow();
+            men.Visible = true;
+        }
+
+        private void zbanuj_Click(object sender, EventArgs e)
+        {
+            if(openedWindow == false)
+            {
+                Zbanuj zbanuj = new Zbanuj(connection, this);
+                changeOpenedWindow();
+                zbanuj.Visible = true;
+            }
         }
     }
 }

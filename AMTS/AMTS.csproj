@@ -49,6 +49,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PdfiumViewer, Version=2.9.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
       <HintPath>..\packages\PdfiumViewer.2.9.0.0\lib\net20\PdfiumViewer.dll</HintPath>
       <Private>True</Private>
@@ -101,6 +105,12 @@
     <Compile Include="Klasyfikacja.Designer.cs">
       <DependentUpon>Klasyfikacja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menage.Designer.cs">
+      <DependentUpon>Menage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Messages.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +127,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Raport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raport.Designer.cs">
+      <DependentUpon>Raport.cs</DependentUpon>
     </Compile>
     <Compile Include="SendMessage.cs">
       <SubType>Form</SubType>
@@ -193,6 +209,12 @@
     <Compile Include="WynikiForm.Designer.cs">
       <DependentUpon>WynikiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zbanuj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zbanuj.Designer.cs">
+      <DependentUpon>Zbanuj.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChooseServer.resx">
       <DependentUpon>ChooseServer.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +236,9 @@
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menage.resx">
+      <DependentUpon>Menage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Messages.resx">
       <DependentUpon>Messages.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +249,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raport.resx">
+      <DependentUpon>Raport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
@@ -251,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WynikiForm.resx">
       <DependentUpon>WynikiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zbanuj.resx">
+      <DependentUpon>Zbanuj.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AMTSDataSet.xsc">
       <DependentUpon>AMTSDataSet.xsd</DependentUpon>
@@ -331,6 +362,7 @@
     <None Include="Resources\napis na gore.png" />
     <None Include="Resources\reklama.png" />
     <None Include="Resources\RSS.png" />
+    <None Include="Resources\generuj.png" />
     <Content Include="x64\pdfium.dll" />
     <Content Include="x86\pdfium.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
