@@ -71,6 +71,7 @@ namespace AMTS
             kapitan.Visible = false;
             gosc.Visible = true;
             brakDruzyny.Visible = false;
+            generujRaportButton.Visible = false;
 
             messagesButton.Image = Resources.greyMailImage;
 
@@ -209,6 +210,7 @@ namespace AMTS
             usunDruz.Visible = true;
             zbanuj.Visible = true;
             panelAdmina.Visible = true;
+            generujRaportButton.Visible = true;
         }
 
         private void terminarzButton_Click(object sender, EventArgs e)
