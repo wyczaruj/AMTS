@@ -390,5 +390,15 @@ namespace AMTS
             changeOpenedWindow();
             men.Visible = true;
         }
+
+        private void zbanuj_Click(object sender, EventArgs e)
+        {
+            if(openedWindow == false)
+            {
+                Zbanuj zbanuj = new Zbanuj(connection, this);
+                changeOpenedWindow();
+                zbanuj.Visible = true;
+            }
+        }
     }
 }
