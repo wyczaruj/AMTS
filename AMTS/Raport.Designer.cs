@@ -37,7 +37,7 @@
             this.pdfViewer.Location = new System.Drawing.Point(0, 0);
             this.pdfViewer.Margin = new System.Windows.Forms.Padding(5);
             this.pdfViewer.Name = "pdfViewer";
-            this.pdfViewer.Size = new System.Drawing.Size(1145, 511);
+            this.pdfViewer.Size = new System.Drawing.Size(1145, 648);
             this.pdfViewer.TabIndex = 6;
             this.pdfViewer.ZoomMode = PdfiumViewer.PdfViewerZoomMode.FitWidth;
             // 
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 511);
+            this.ClientSize = new System.Drawing.Size(1145, 648);
             this.Controls.Add(this.pdfViewer);
             this.Name = "Raport";
             this.Text = "Raport";

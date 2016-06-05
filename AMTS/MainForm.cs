@@ -71,6 +71,7 @@ namespace AMTS
             kapitan.Visible = false;
             gosc.Visible = true;
             brakDruzyny.Visible = false;
+            generujRaportButton.Visible = false;
 
             messagesButton.Image = Resources.greyMailImage;
 
@@ -209,6 +210,7 @@ namespace AMTS
             usunDruz.Visible = true;
             zbanuj.Visible = true;
             panelAdmina.Visible = true;
+            generujRaportButton.Visible = true;
         }
 
         private void terminarzButton_Click(object sender, EventArgs e)
@@ -375,7 +377,7 @@ namespace AMTS
         {
             if (openedWindow == false)
             {
-                Raport raport = new Raport(this);
+                Raport raport = new Raport(this, connection);
                 changeOpenedWindow();
                 raport.Visible = true;
 
@@ -387,16 +389,6 @@ namespace AMTS
             Menage men = new Menage(connection, this, LoggedInUser);
             changeOpenedWindow();
             men.Visible = true;
-        }
-
-        private void zbanuj_Click(object sender, EventArgs e)
-        {
-            if(openedWindow == false)
-            {
-                Zbanuj zbanuj = new Zbanuj(connection, this);
-                changeOpenedWindow();
-                zbanuj.Visible = true;
-            }
         }
     }
 }

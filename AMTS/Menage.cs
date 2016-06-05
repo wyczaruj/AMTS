@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AMTS
@@ -37,6 +31,31 @@ namespace AMTS
 
             dataGridView1.DataSource = dataSet.Tables["Kontakty"];
             dataGridView1.ReadOnly = true;
+
+            SqlDataAdapter ada = new SqlDataAdapter("select Imie, Nazwisko, PESEL from dbo.uzytkownicy where Druzyna like '" + captain.getTeamName() + "'", conn);
+            DataTable table = new DataTable();
+            ada.Fill(table);
+            foreach(DataRow r in table.Rows)
+            {
+                comboBox2.Items.Add(r["Imie"].ToString() + " " + r["Nazwisko"].ToString());
+                comboBox3.Items.Add(r["Imie"].ToString() + " " + r["Nazwisko"].ToString());
+                comboBox4.Items.Add(r["Imie"].ToString() + " " + r["Nazwisko"].ToString());
+
+            }
+            SqlDataAdapter adada = new SqlDataAdapter("  select Data, Druzyna, z1, z2, z3, p1, p2, p3 from TERMINARZ where Przeciwnik like '"+captain.getTeamName()+"'", conn);
+            SqlDataAdapter adadd = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3, p1, p2, p3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", conn);
+            DataTable mecze = new DataTable();
+            DataTable mecze2 = new DataTable();
+            adada.Fill(mecze);
+            adadd.Fill(mecze2);
+            foreach(DataRow r in mecze.Rows)
+            {
+                comboBox1.Items.Add(r["Druzyna"].ToString()+" "+r["Data"].ToString());
+            }
+            foreach (DataRow r in mecze2.Rows)
+            {
+                comboBox1.Items.Add(r["Przeciwnik"].ToString() + ": " + r["Data"].ToString());
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
