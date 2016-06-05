@@ -35,9 +35,10 @@
             // 
             // usuwanie
             // 
-            this.usuwanie.Location = new System.Drawing.Point(206, 21);
+            this.usuwanie.Location = new System.Drawing.Point(275, 26);
+            this.usuwanie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.usuwanie.Name = "usuwanie";
-            this.usuwanie.Size = new System.Drawing.Size(75, 23);
+            this.usuwanie.Size = new System.Drawing.Size(100, 28);
             this.usuwanie.TabIndex = 5;
             this.usuwanie.Text = "Usuń";
             this.usuwanie.UseVisualStyleBackColor = true;
@@ -46,28 +47,32 @@
             // ktoraDruzna
             // 
             this.ktoraDruzna.AutoSize = true;
-            this.ktoraDruzna.Location = new System.Drawing.Point(0, 4);
+            this.ktoraDruzna.Location = new System.Drawing.Point(0, 5);
+            this.ktoraDruzna.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ktoraDruzna.Name = "ktoraDruzna";
-            this.ktoraDruzna.Size = new System.Drawing.Size(85, 13);
+            this.ktoraDruzna.Size = new System.Drawing.Size(114, 17);
             this.ktoraDruzna.TabIndex = 4;
             this.ktoraDruzna.Text = "Wybierz drużynę";
             // 
             // spisDruzyn
             // 
             this.spisDruzyn.FormattingEnabled = true;
-            this.spisDruzyn.Location = new System.Drawing.Point(3, 21);
+            this.spisDruzyn.Location = new System.Drawing.Point(4, 26);
+            this.spisDruzyn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.spisDruzyn.Name = "spisDruzyn";
-            this.spisDruzyn.Size = new System.Drawing.Size(197, 21);
+            this.spisDruzyn.Size = new System.Drawing.Size(261, 24);
             this.spisDruzyn.TabIndex = 3;
             // 
             // UsunDruzyne
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 58);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(379, 322);
             this.Controls.Add(this.usuwanie);
             this.Controls.Add(this.ktoraDruzna);
             this.Controls.Add(this.spisDruzyn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UsunDruzyne";
             this.Text = "UsunDruzyne";
             this.ResumeLayout(false);

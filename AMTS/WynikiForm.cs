@@ -29,29 +29,29 @@ namespace AMTS
         {
             InitializeComponent();
             druzyny = new List<string>();
-            label2.Visible = false;
+            zmiany.Visible = false;
             this.connection = connection;
             this.mainForm = mainForm;
             dataSet = new DataSet();
             dataAd = new SqlDataAdapter("SELECT * FROM wynik ORDER BY R", connection);
             SqlCommandBuilder command = new SqlCommandBuilder(dataAd);
             dataAd.Fill(dataSet, "WYNIKI");
-            dataGridView1.DataSource = dataSet.Tables["WYNIKI"];
-            dataGridView1.ReadOnly = true;
+            wyniki.DataSource = dataSet.Tables["WYNIKI"];
+            wyniki.ReadOnly = true;
             if (!admin)
             {
                 edit.Visible = false;
             }
             discard.Visible = false;
             save.Visible = false;
-            comboBox1.Items.Add(" ");
+            runda.Items.Add(" ");
             SqlCommand com = new SqlCommand("select distinct R from wynik", connection);
             SqlDataReader reader = com.ExecuteReader();
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
-                    comboBox1.Items.Add(reader.GetInt32(0));
+                    runda.Items.Add(reader.GetInt32(0));
                 }
             }
             reader.Close();
@@ -83,17 +83,17 @@ namespace AMTS
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             dataSet.Clear();
-            if (comboBox1.SelectedItem.ToString().Equals(" "))
+            if (runda.SelectedItem.ToString().Equals(" "))
             {
                 dataAd.Fill(dataSet, "WYNIKI");
-                dataGridView1.DataSource = dataSet.Tables["WYNIKI"];
+                wyniki.DataSource = dataSet.Tables["WYNIKI"];
             }
             else
             {
-                data = new SqlDataAdapter("select * from dbo.wynikirundy(" + comboBox1.SelectedItem + ")", connection);
+                data = new SqlDataAdapter("select * from dbo.wynikirundy(" + runda.SelectedItem + ")", connection);
                 SqlCommandBuilder com = new SqlCommandBuilder(data);
                 data.Fill(dataSet, "WYNIKI");
-                dataGridView1.DataSource = dataSet.Tables["WYNIKI"];
+                wyniki.DataSource = dataSet.Tables["WYNIKI"];
             }
         }
 
@@ -101,58 +101,58 @@ namespace AMTS
         {
             discard.Visible = true;
             save.Visible = true;
-            label2.Visible = false;
-            dataGridView1.ReadOnly = false;
-            dataGridView1.Columns[0].ReadOnly = true;
-            dataGridView1.Columns[1].ReadOnly = true;
-            dataGridView1.Columns[2].ReadOnly = true;
+            zmiany.Visible = false;
+            wyniki.ReadOnly = false;
+            wyniki.Columns[0].ReadOnly = true;
+            wyniki.Columns[1].ReadOnly = true;
+            wyniki.Columns[2].ReadOnly = true;
         }
 
         private void discard_Click(object sender, EventArgs e)
         {
             dataSet.Clear();
-            if (comboBox1.SelectedIndex > 0)
+            if (runda.SelectedIndex > 0)
             {
-                data = new SqlDataAdapter("select * from dbo.wynikirundy(" + comboBox1.SelectedItem + ")", connection);
+                data = new SqlDataAdapter("select * from dbo.wynikirundy(" + runda.SelectedItem + ")", connection);
                 SqlCommandBuilder com = new SqlCommandBuilder(data);
                 data.Fill(dataSet, "WYNIKI");
-                dataGridView1.DataSource = dataSet.Tables["WYNIKI"];
+                wyniki.DataSource = dataSet.Tables["WYNIKI"];
             }
             else
             {
                 dataAd.Fill(dataSet, "WYNIKI");
-                dataGridView1.DataSource = dataSet.Tables["WYNIKI"];
+                wyniki.DataSource = dataSet.Tables["WYNIKI"];
             }
             discard.Visible = false;
             save.Visible = false;
-            dataGridView1.ReadOnly = true;
-            label2.Visible = false;
+            wyniki.ReadOnly = true;
+            zmiany.Visible = false;
         }
 
         private void save_Click(object sender, EventArgs e)
         {
             int first, second, third, fourth;
             bool noError = true;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in wyniki.Rows)
             {
                 if (!int.TryParse(row.Cells[3].Value.ToString(), out first))
                 {
-                    label2.Visible = true;
+                    zmiany.Visible = true;
                     noError = false;
                 }
                 if (!int.TryParse(row.Cells[4].Value.ToString(), out second))
                 {
-                    label2.Visible = true;
+                    zmiany.Visible = true;
                     noError = false;
                 }
                 if (!int.TryParse(row.Cells[5].Value.ToString(), out third))
                 {
-                    label2.Visible = true;
+                    zmiany.Visible = true;
                     noError = false;
                 }
                 if (!int.TryParse(row.Cells[6].Value.ToString(), out fourth))
                 {
-                    label2.Visible = true;
+                    zmiany.Visible = true;
                     noError = false;
                 }
                 if (noError)
@@ -162,7 +162,7 @@ namespace AMTS
                         if (first + second != 3)
                         {
                             noError = false;
-                            label2.Visible = true;
+                            zmiany.Visible = true;
                         }
                         else
                         {
@@ -171,7 +171,7 @@ namespace AMTS
                                 if (third <= fourth)
                                 {
                                     noError = false;
-                                    label2.Visible = true;
+                                    zmiany.Visible = true;
                                 }
                             }
                             else
@@ -179,7 +179,7 @@ namespace AMTS
                                 if (third >= fourth)
                                 {
                                     noError = false;
-                                    label2.Visible = true;
+                                    zmiany.Visible = true;
                                 }
                             }
                         }
@@ -189,7 +189,7 @@ namespace AMTS
             if (noError)
             {
                 int r;
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                foreach (DataGridViewRow row in wyniki.Rows)
                 {
                     int.TryParse(row.Cells[3].Value.ToString(), out first);
                     int.TryParse(row.Cells[4].Value.ToString(), out second);
@@ -203,22 +203,22 @@ namespace AMTS
             else
             {
                 dataSet.Clear();
-                if (comboBox1.SelectedIndex > 0)
+                if (runda.SelectedIndex > 0)
                 {
-                    data = new SqlDataAdapter("select * from dbo.wynikirundy(" + comboBox1.SelectedItem + ")", connection);
+                    data = new SqlDataAdapter("select * from dbo.wynikirundy(" + runda.SelectedItem + ")", connection);
                     SqlCommandBuilder com = new SqlCommandBuilder(data);
                     data.Fill(dataSet, "WYNIKI");
-                    dataGridView1.DataSource = dataSet.Tables["WYNIKI"];
+                    wyniki.DataSource = dataSet.Tables["WYNIKI"];
                 }
                 else
                 {
                     dataAd.Fill(dataSet, "WYNIKI");
-                    dataGridView1.DataSource = dataSet.Tables["WYNIKI"];
+                    wyniki.DataSource = dataSet.Tables["WYNIKI"];
                 }
             }
             discard.Visible = false;
             save.Visible = false;
-            dataGridView1.ReadOnly = true;
+            wyniki.ReadOnly = true;
         }
     }
 }

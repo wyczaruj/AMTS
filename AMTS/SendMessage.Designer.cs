@@ -32,7 +32,7 @@
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.subjectTextBox = new System.Windows.Forms.TextBox();
             this.TematLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.wiadomość = new System.Windows.Forms.Label();
             this.sendMessageButton = new System.Windows.Forms.Button();
             this.selectAllButton = new System.Windows.Forms.Button();
             this.teamMessageCheckBox = new System.Windows.Forms.CheckBox();
@@ -78,15 +78,15 @@
             this.TematLabel.TabIndex = 3;
             this.TematLabel.Text = "Temat";
             // 
-            // label1
+            // wiadomość
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(240, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Wiadomość";
+            this.wiadomość.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.wiadomość.AutoSize = true;
+            this.wiadomość.Location = new System.Drawing.Point(240, 56);
+            this.wiadomość.Name = "wiadomość";
+            this.wiadomość.Size = new System.Drawing.Size(81, 17);
+            this.wiadomość.TabIndex = 4;
+            this.wiadomość.Text = "Wiadomość";
             // 
             // sendMessageButton
             // 
@@ -127,11 +127,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(681, 383);
             this.Controls.Add(this.teamMessageCheckBox);
             this.Controls.Add(this.selectAllButton);
             this.Controls.Add(this.sendMessageButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.wiadomość);
             this.Controls.Add(this.TematLabel);
             this.Controls.Add(this.subjectTextBox);
             this.Controls.Add(this.messageTextBox);
@@ -150,7 +151,7 @@
         private System.Windows.Forms.TextBox messageTextBox;
         private System.Windows.Forms.TextBox subjectTextBox;
         private System.Windows.Forms.Label TematLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label wiadomość;
         private System.Windows.Forms.Button sendMessageButton;
         private System.Windows.Forms.Button selectAllButton;
         private System.Windows.Forms.CheckBox teamMessageCheckBox;
