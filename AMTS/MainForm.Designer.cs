@@ -70,6 +70,7 @@ namespace AMTS
             this.reklama = new System.Windows.Forms.Label();
             this.nazwa = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.Label();
+            this.generujRaportButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // messageBackgroundWorker
@@ -603,6 +604,20 @@ namespace AMTS
             this.logo.Size = new System.Drawing.Size(323, 273);
             this.logo.TabIndex = 42;
             // 
+            // generujRaportButton
+            // 
+            this.generujRaportButton.BackColor = System.Drawing.Color.Transparent;
+            this.generujRaportButton.FlatAppearance.BorderSize = 0;
+            this.generujRaportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.generujRaportButton.ForeColor = System.Drawing.Color.Coral;
+            this.generujRaportButton.Image = global::AMTS.Properties.Resources.generuj;
+            this.generujRaportButton.Location = new System.Drawing.Point(665, 197);
+            this.generujRaportButton.Name = "generujRaportButton";
+            this.generujRaportButton.Size = new System.Drawing.Size(230, 93);
+            this.generujRaportButton.TabIndex = 43;
+            this.generujRaportButton.UseVisualStyleBackColor = false;
+            this.generujRaportButton.Click += new System.EventHandler(this.generujRaportButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -610,6 +625,7 @@ namespace AMTS
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::AMTS.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1236, 914);
+            this.Controls.Add(this.generujRaportButton);
             this.Controls.Add(this.artykul2);
             this.Controls.Add(this.admin);
             this.Controls.Add(this.kapitan);
@@ -703,6 +719,7 @@ namespace AMTS
         private System.Windows.Forms.Label reklama;
         private System.Windows.Forms.Label nazwa;
         private System.Windows.Forms.Label logo;
+        private System.Windows.Forms.Button generujRaportButton;
     }
 }
 

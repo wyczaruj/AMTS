@@ -140,6 +140,7 @@ namespace AMTS
             druzynaLabel.Visible = true;
             teamLabel.Visible = true;
             messagesButton.Visible = true;
+            messagesButton.Image = Resources.greyMailImage;
             if (!messageBackgroundWorker.IsBusy)
             {
                 messageBackgroundWorker.RunWorkerAsync();
@@ -193,6 +194,7 @@ namespace AMTS
             registerTeamButton.Visible = false;
             teamRegistrationsButton.Visible = true;
             messagesButton.Visible = true;
+            messagesButton.Image = Resources.greyMailImage;
             LoggedInUser = new User(connection, mail);
             loggedInAs.Visible = true;
             loggedInAsLabel.Visible = true;
@@ -367,6 +369,17 @@ namespace AMTS
         {
             ProcessStartInfo link = new ProcessStartInfo("https://plus.google.com/");
             Process.Start(link);
+        }
+
+        private void generujRaportButton_Click(object sender, EventArgs e)
+        {
+            if (openedWindow == false)
+            {
+                Raport raport = new Raport(this, connection);
+                changeOpenedWindow();
+                raport.Visible = true;
+
+            }
         }
 
         private void zarzadzajDruzyna_Click(object sender, EventArgs e)
