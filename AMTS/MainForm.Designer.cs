@@ -70,7 +70,7 @@ namespace AMTS
             this.reklama = new System.Windows.Forms.Label();
             this.nazwa = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.generujRaportButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // messageBackgroundWorker
@@ -255,7 +255,6 @@ namespace AMTS
             // 
             this.zarzadzajDruzyna.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.zarzadzajDruzyna.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.zarzadzajDruzyna.Enabled = false;
             this.zarzadzajDruzyna.FlatAppearance.BorderSize = 0;
             this.zarzadzajDruzyna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.zarzadzajDruzyna.Image = global::AMTS.Properties.Resources.zarzadzaj;
@@ -266,6 +265,7 @@ namespace AMTS
             this.zarzadzajDruzyna.TabIndex = 23;
             this.zarzadzajDruzyna.UseVisualStyleBackColor = false;
             this.zarzadzajDruzyna.Visible = false;
+            this.zarzadzajDruzyna.Click += new System.EventHandler(this.zarzadzajDruzyna_Click);
             // 
             // usunUzyt
             // 
@@ -604,18 +604,19 @@ namespace AMTS
             this.logo.Size = new System.Drawing.Size(323, 273);
             this.logo.TabIndex = 42;
             // 
-            // button1
+            // generujRaportButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Coral;
-            this.button1.Image = global::AMTS.Properties.Resources.generuj;
-            this.button1.Location = new System.Drawing.Point(640, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(230, 93);
-            this.button1.TabIndex = 43;
-            this.button1.UseVisualStyleBackColor = false;
+            this.generujRaportButton.BackColor = System.Drawing.Color.Transparent;
+            this.generujRaportButton.FlatAppearance.BorderSize = 0;
+            this.generujRaportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.generujRaportButton.ForeColor = System.Drawing.Color.Coral;
+            this.generujRaportButton.Image = global::AMTS.Properties.Resources.generuj;
+            this.generujRaportButton.Location = new System.Drawing.Point(665, 197);
+            this.generujRaportButton.Name = "generujRaportButton";
+            this.generujRaportButton.Size = new System.Drawing.Size(230, 93);
+            this.generujRaportButton.TabIndex = 43;
+            this.generujRaportButton.UseVisualStyleBackColor = false;
+            this.generujRaportButton.Click += new System.EventHandler(this.generujRaportButton_Click);
             // 
             // MainForm
             // 
@@ -624,7 +625,7 @@ namespace AMTS
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::AMTS.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1236, 914);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.generujRaportButton);
             this.Controls.Add(this.artykul2);
             this.Controls.Add(this.admin);
             this.Controls.Add(this.kapitan);
@@ -718,7 +719,7 @@ namespace AMTS
         private System.Windows.Forms.Label reklama;
         private System.Windows.Forms.Label nazwa;
         private System.Windows.Forms.Label logo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button generujRaportButton;
     }
 }
 
