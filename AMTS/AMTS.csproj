@@ -363,6 +363,7 @@
     <None Include="Resources\reklama.png" />
     <None Include="Resources\RSS.png" />
     <None Include="Resources\generuj.png" />
+    <None Include="Resources\ban.png" />
     <Content Include="x64\pdfium.dll" />
     <Content Include="x86\pdfium.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

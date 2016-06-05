@@ -71,6 +71,7 @@ namespace AMTS
             this.nazwa = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.Label();
             this.generujRaportButton = new System.Windows.Forms.Button();
+            this.ban = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // messageBackgroundWorker
@@ -600,6 +601,17 @@ namespace AMTS
             this.generujRaportButton.Visible = false;
             this.generujRaportButton.Click += new System.EventHandler(this.generujRaportButton_Click);
             // 
+            // ban
+            // 
+            this.ban.BackColor = System.Drawing.Color.Transparent;
+            this.ban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ban.Image = global::AMTS.Properties.Resources.ban;
+            this.ban.Location = new System.Drawing.Point(740, 31);
+            this.ban.Name = "ban";
+            this.ban.Size = new System.Drawing.Size(116, 23);
+            this.ban.TabIndex = 44;
+            this.ban.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -648,6 +660,7 @@ namespace AMTS
             this.Controls.Add(this.teamRegistrationsButton);
             this.Controls.Add(this.panelAdmina);
             this.Controls.Add(this.registerTeamButton);
+            this.Controls.Add(this.ban);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
@@ -702,6 +715,7 @@ namespace AMTS
         private System.Windows.Forms.Label nazwa;
         private System.Windows.Forms.Label logo;
         private System.Windows.Forms.Button generujRaportButton;
+        private System.Windows.Forms.Label ban;
     }
 }
 

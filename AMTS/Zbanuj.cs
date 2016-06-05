@@ -51,10 +51,7 @@ namespace AMTS
                 string[] nazwiskoImie = spisOsob.SelectedItem.ToString().Split(' ');
                 string mail = "SELECT Mail FROM UZYTKOWNICY WHERE Nazwisko LIKE '" + nazwiskoImie[0] + "' AND Imie LIKE '" + nazwiskoImie[1] + "'";
                 User osoba = new User(conn, mail);
-                SqlCommand sqlcomm = new SqlCommand("UPDATE UZYTKOWNICY SET Ban = ~Ban WHERE Mail = @mail");
-                sqlcomm.Parameters.Add("@mail", SqlDbType.VarChar, 50).Value = mail;
-                sqlcomm.Connection = conn;
-                sqlcomm.ExecuteNonQuery();
+                osoba.setBan();
                 this.Close();
             }
         }

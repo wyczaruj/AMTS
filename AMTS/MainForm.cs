@@ -72,6 +72,7 @@ namespace AMTS
             gosc.Visible = true;
             brakDruzyny.Visible = false;
             generujRaportButton.Visible = false;
+            ban.Visible = false;
 
             messagesButton.Image = Resources.greyMailImage;
 
@@ -145,6 +146,20 @@ namespace AMTS
             if (!messageBackgroundWorker.IsBusy)
             {
                 messageBackgroundWorker.RunWorkerAsync();
+            }
+            if(LoggedInUser.isBanned())
+            {
+                teamRegistrationsButton.Enabled = false;
+                registerTeamButton.Enabled = false;
+                druzynaLabel.Visible = false;
+                teamLabel.Visible = false;
+                myRegistrationButton.Enabled = false;
+                messagesButton.Enabled = false;
+                zarzadzajDruzyna.Enabled = false;
+                loggedInAs.Enabled = false;
+                admin.Visible = false;
+                generujRaportButton.Enabled = false;
+                ban.Visible = true;
             }
         }
 

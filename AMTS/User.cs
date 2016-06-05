@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace AMTS
@@ -11,6 +12,7 @@ namespace AMTS
         private bool pendingTeamRequest;
         private bool pendingConfirmation;
         private bool Captain;
+        private bool ban;
 
         public User(SqlConnection connection, string email)
         {
@@ -20,15 +22,19 @@ namespace AMTS
             pendingTeamRequest = false;
             this.email = email;
             teamName = "";
+            ban = false;
+            refreshData(connection);
         }
 
         public void refreshData(SqlConnection connection)
         {
-            SqlCommand sqlcomm = new SqlCommand("SELECT Druzyna AS TEAM, PESEL AS PSL FROM UZYTKOWNICY WHERE Mail=" + "'" + email + "'", connection);
+            SqlCommand sqlcomm = new SqlCommand("SELECT Druzyna AS TEAM, PESEL AS PSL FROM UZYTKOWNICY WHERE Mail = @mail", connection);
+            sqlcomm.Parameters.Add("@mail", SqlDbType.VarChar, 50).Value = this.email;
             string pesel;
             SqlDataReader r = sqlcomm.ExecuteReader();
+            r.Read();
             Object team = r["TEAM"];
-            pesel = r["PSL"].ToString();          
+            pesel = r["PSL"].ToString();
             r.Close();
             if(DBNull.Value != team)
             {
@@ -54,17 +60,17 @@ namespace AMTS
                     teamName = r2["TEAMNAME"].ToString();
                 }
                 r2.Close();
-                if(pendingTeamRequest || hasTeam)
+            }
+            if(pendingTeamRequest || hasTeam)
+            {
+                sqlcomm = new SqlCommand("SELECT Kapitan AS CAP FROM DRUZYNY WHERE Nazwa=" + "'" + teamName + "'", connection);
+                r = sqlcomm.ExecuteReader();
+                r.Read();
+                if(r["CAP"].ToString().Equals(pesel))
                 {
-                    sqlcomm = new SqlCommand("SELECT Kapitan AS CAP FROM DRUZYNY WHERE Nazwa=" + "'" + teamName + "'", connection);
-                    r = sqlcomm.ExecuteReader();
-                    r.Read();
-                    if(r["CAP"].ToString().Equals(pesel))
-                    {
-                        Captain = true;
-                    }
-                    r.Close();
+                    Captain = true;
                 }
+                r.Close();
             }
         }
 
@@ -98,5 +104,17 @@ namespace AMTS
             return pendingConfirmation;
         }
 
+        public bool isBanned()
+        {
+            return ban;
+        }
+
+        public void setBan()
+        {
+            if(ban)
+                ban = false;
+            else
+                ban = true;
+        }
     }
 }
