@@ -370,5 +370,16 @@ namespace AMTS
             ProcessStartInfo link = new ProcessStartInfo("https://plus.google.com/");
             Process.Start(link);
         }
+
+        private void generujRaportButton_Click(object sender, EventArgs e)
+        {
+            if (openedWindow == false)
+            {
+                Raport raport = new Raport(this);
+                changeOpenedWindow();
+                raport.Visible = true;
+
+            }
+        }
     }
 }
