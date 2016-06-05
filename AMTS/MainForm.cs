@@ -381,5 +381,12 @@ namespace AMTS
 
             }
         }
+
+        private void zarzadzajDruzyna_Click(object sender, EventArgs e)
+        {
+            Menage men = new Menage(connection, this, LoggedInUser);
+            changeOpenedWindow();
+            men.Visible = true;
+        }
     }
 }
