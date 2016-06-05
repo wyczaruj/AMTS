@@ -375,7 +375,7 @@ namespace AMTS
         {
             if (openedWindow == false)
             {
-                Raport raport = new Raport(this);
+                Raport raport = new Raport(this, connection);
                 changeOpenedWindow();
                 raport.Visible = true;
 
