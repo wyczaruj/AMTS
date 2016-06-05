@@ -33,8 +33,8 @@
             this.dateColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.subjectColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.messageTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.nadawca = new System.Windows.Forms.Label();
+            this.wiadomość = new System.Windows.Forms.Label();
             this.sendNewMessageButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -82,23 +82,23 @@
             this.messageTextBox.Size = new System.Drawing.Size(504, 348);
             this.messageTextBox.TabIndex = 2;
             // 
-            // label1
+            // nadawca
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Nadawca";
+            this.nadawca.AutoSize = true;
+            this.nadawca.Location = new System.Drawing.Point(19, 9);
+            this.nadawca.Name = "nadawca";
+            this.nadawca.Size = new System.Drawing.Size(66, 17);
+            this.nadawca.TabIndex = 3;
+            this.nadawca.Text = "Nadawca";
             // 
-            // label3
+            // wiadomość
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(573, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Wiadomość";
+            this.wiadomość.AutoSize = true;
+            this.wiadomość.Location = new System.Drawing.Point(573, 9);
+            this.wiadomość.Name = "wiadomość";
+            this.wiadomość.Size = new System.Drawing.Size(81, 17);
+            this.wiadomość.TabIndex = 5;
+            this.wiadomość.Text = "Wiadomość";
             // 
             // sendNewMessageButton
             // 
@@ -114,10 +114,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1227, 425);
             this.Controls.Add(this.sendNewMessageButton);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.wiadomość);
+            this.Controls.Add(this.nadawca);
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.subjectListView);
             this.Controls.Add(this.sendersListView);
@@ -134,8 +135,8 @@
         private System.Windows.Forms.ListView sendersListView;
         private System.Windows.Forms.ListView subjectListView;
         private System.Windows.Forms.TextBox messageTextBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label nadawca;
+        private System.Windows.Forms.Label wiadomość;
         private System.Windows.Forms.Button sendNewMessageButton;
         private System.Windows.Forms.ColumnHeader dateColumnHeader;
         private System.Windows.Forms.ColumnHeader subjectColumnHeader;

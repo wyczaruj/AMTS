@@ -30,7 +30,7 @@ namespace AMTS
         {
             this.serverComboBox = new System.Windows.Forms.ComboBox();
             this.startButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.haslo = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.startPWButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -64,14 +64,14 @@ namespace AMTS
             this.startButton.Visible = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
-            // label1
+            // haslo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "HAS£O:";
+            this.haslo.AutoSize = true;
+            this.haslo.Location = new System.Drawing.Point(74, 115);
+            this.haslo.Name = "haslo";
+            this.haslo.Size = new System.Drawing.Size(59, 17);
+            this.haslo.TabIndex = 2;
+            this.haslo.Text = "HAS£O:";
             // 
             // passwordTextBox
             // 
@@ -97,10 +97,11 @@ namespace AMTS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(511, 283);
             this.Controls.Add(this.startPWButton);
             this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.haslo);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.serverComboBox);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -115,7 +116,7 @@ namespace AMTS
 
         private System.Windows.Forms.ComboBox serverComboBox;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label haslo;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button startPWButton;
     }

@@ -28,62 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.złaDrużyna = new System.Windows.Forms.Label();
+            this.runda = new System.Windows.Forms.Label();
+            this.zmiany = new System.Windows.Forms.Label();
+            this.data = new System.Windows.Forms.Label();
             this.saveEdit = new System.Windows.Forms.Button();
             this.discardEdit = new System.Windows.Forms.Button();
             this.termOpt = new System.Windows.Forms.Label();
             this.termAdd = new System.Windows.Forms.Button();
             this.termEdit = new System.Windows.Forms.Button();
             this.terminarzDataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.generuj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.terminarzDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // label5
+            // złaDrużyna
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(448, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 17);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Nieprawidłowa drużyna";
+            this.złaDrużyna.AutoSize = true;
+            this.złaDrużyna.ForeColor = System.Drawing.Color.Red;
+            this.złaDrużyna.Location = new System.Drawing.Point(448, 280);
+            this.złaDrużyna.Name = "złaDrużyna";
+            this.złaDrużyna.Size = new System.Drawing.Size(153, 17);
+            this.złaDrużyna.TabIndex = 13;
+            this.złaDrużyna.Text = "Nieprawidłowa drużyna";
             // 
-            // label3
+            // runda
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(448, 263);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 17);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Nieprawidłowa wartość rundy";
+            this.runda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.runda.AutoSize = true;
+            this.runda.ForeColor = System.Drawing.Color.Red;
+            this.runda.Location = new System.Drawing.Point(448, 263);
+            this.runda.Name = "runda";
+            this.runda.Size = new System.Drawing.Size(190, 17);
+            this.runda.TabIndex = 11;
+            this.runda.Text = "Nieprawidłowa wartość rundy";
             // 
-            // label2
+            // zmiany
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(448, 246);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(215, 17);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Zmiany nie zostały wprowadzone";
+            this.zmiany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.zmiany.AutoSize = true;
+            this.zmiany.ForeColor = System.Drawing.Color.Red;
+            this.zmiany.Location = new System.Drawing.Point(448, 246);
+            this.zmiany.Name = "zmiany";
+            this.zmiany.Size = new System.Drawing.Size(215, 17);
+            this.zmiany.TabIndex = 10;
+            this.zmiany.Text = "Zmiany nie zostały wprowadzone";
             // 
-            // label1
+            // data
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(448, 297);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 17);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Nieprawidłowa data";
+            this.data.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.data.AutoSize = true;
+            this.data.ForeColor = System.Drawing.Color.Red;
+            this.data.Location = new System.Drawing.Point(448, 297);
+            this.data.Name = "data";
+            this.data.Size = new System.Drawing.Size(130, 17);
+            this.data.TabIndex = 9;
+            this.data.Text = "Nieprawidłowa data";
             // 
             // saveEdit
             // 
@@ -165,16 +165,16 @@
             this.terminarzDataGridView.TabIndex = 1;
             this.terminarzDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.terminarzDataGridView_DataError_1);
             // 
-            // button1
+            // generuj
             // 
-            this.button1.Location = new System.Drawing.Point(448, 248);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(258, 29);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Generuj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.generuj.Location = new System.Drawing.Point(448, 248);
+            this.generuj.Name = "generuj";
+            this.generuj.Size = new System.Drawing.Size(258, 29);
+            this.generuj.TabIndex = 14;
+            this.generuj.Text = "Generuj";
+            this.generuj.UseVisualStyleBackColor = true;
+            this.generuj.Visible = false;
+            this.generuj.Click += new System.EventHandler(this.button1_Click);
             // 
             // Terminarz
             // 
@@ -182,11 +182,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(718, 412);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.generuj);
+            this.Controls.Add(this.złaDrużyna);
+            this.Controls.Add(this.runda);
+            this.Controls.Add(this.zmiany);
+            this.Controls.Add(this.data);
             this.Controls.Add(this.saveEdit);
             this.Controls.Add(this.discardEdit);
             this.Controls.Add(this.termOpt);
@@ -211,10 +211,10 @@
         private System.Windows.Forms.Label termOpt;
         private System.Windows.Forms.Button discardEdit;
         private System.Windows.Forms.Button saveEdit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label data;
+        private System.Windows.Forms.Label zmiany;
+        private System.Windows.Forms.Label runda;
+        private System.Windows.Forms.Label złaDrużyna;
+        private System.Windows.Forms.Button generuj;
     }
 }

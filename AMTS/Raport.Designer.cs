@@ -33,6 +33,7 @@
             // 
             // pdfViewer
             // 
+            this.pdfViewer.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pdfViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pdfViewer.Location = new System.Drawing.Point(0, 0);
             this.pdfViewer.Margin = new System.Windows.Forms.Padding(5);
