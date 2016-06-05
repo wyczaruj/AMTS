@@ -209,6 +209,12 @@
     <Compile Include="WynikiForm.Designer.cs">
       <DependentUpon>WynikiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zbanuj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zbanuj.Designer.cs">
+      <DependentUpon>Zbanuj.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AbstractForm.resx">
       <DependentUpon>AbstractForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WynikiForm.resx">
       <DependentUpon>WynikiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zbanuj.resx">
+      <DependentUpon>Zbanuj.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AMTSDataSet.xsc">
       <DependentUpon>AMTSDataSet.xsd</DependentUpon>
@@ -358,6 +367,7 @@
     <None Include="Resources\reklama.png" />
     <None Include="Resources\RSS.png" />
     <None Include="Resources\generuj.png" />
+    <None Include="Resources\ban.png" />
     <Content Include="x64\pdfium.dll" />
     <Content Include="x86\pdfium.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
