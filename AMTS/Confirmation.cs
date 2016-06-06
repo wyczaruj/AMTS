@@ -20,7 +20,7 @@ namespace AMTS
             confirmButton.Enabled = false;
             string comm = "SELECT DRUZYNA AS TEAM FROM ZGLOSZENIA WHERE Mail ='"
                 + user.getEmail() + "'";
-            SqlCommand sqlcomm = new SqlCommand(comm , connection);
+            SqlCommand sqlcomm = new SqlCommand(comm, connection);
             SqlDataReader r = sqlcomm.ExecuteReader();
             while (r.Read())
             {
@@ -61,7 +61,7 @@ namespace AMTS
                 lastname = r["LASTNAME"].ToString();
                 mail = r["EMAIL"].ToString();
                 if (mail.Equals(captnEmail))
-                    captain = "     X";
+                    captain = "     X       ";
                 else
                     captain = "";
                 string conf = r["AGREE"].ToString();
@@ -75,7 +75,7 @@ namespace AMTS
                 playersListView.Items.Add(LVitem);
             }
             r.Close();
-
+            playersListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
 
         private void confirmButton_Click(object sender, EventArgs e)
