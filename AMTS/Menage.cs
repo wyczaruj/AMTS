@@ -16,8 +16,7 @@ namespace AMTS
         private DataTable mecze2;
         private DataTable mecze;
         private DataTable zawodnicy;
-        private SqlDataAdapter dataAdMecze2;
-        private SqlDataAdapter dataAdMecze;
+
 
         public Menage(SqlConnection connection, AbstractForm MF, User cpt)
         {
@@ -48,11 +47,11 @@ namespace AMTS
                 trzeci.Items.Add(r["Imie"].ToString() + " " + r["Nazwisko"].ToString());
 
             }
-            dataAdMecze = new SqlDataAdapter("  select Data, Druzyna, p1, p2, p3 from TERMINARZ where Przeciwnik like '" + captain.getTeamName() + "'", this.connection);
-            dataAdMecze2 = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", this.connection);
+            SqlDataAdapter dataAdMecze = new SqlDataAdapter("  select Data, Druzyna, p1, p2, p3 from TERMINARZ where Przeciwnik like '" + captain.getTeamName() + "'", this.connection);
             mecze = new DataTable();
             mecze2 = new DataTable();
             dataAdMecze.Fill(mecze);
+            SqlDataAdapter dataAdMecze2 = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", this.connection);
             dataAdMecze2.Fill(mecze2);
             foreach (DataRow r in mecze.Rows)
             {
@@ -204,11 +203,11 @@ namespace AMTS
                 data = mecz.SelectedItem.ToString().Split(':');
                 DataRow[] row;
                 string z1, z2, z3;
-                row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
+                row = mecze.Select("Druzyna like '" + data[0] + "' and Data like'" + data[1] + "'");
 
                 if (row.Length <= 0)
                 {
-                    row = mecze2.Select("Przeciwnik like '" + data[0] + "'and Data like'" + data[1] + "'");
+                    row = mecze2.Select("Przeciwnik like '" + data[0] + "' and Data like'" + data[1] + "'");
                     z1 = row[0]["z1"].ToString();
                     z2 = row[0]["z2"].ToString();
                     z3 = row[0]["z3"].ToString();
@@ -304,8 +303,6 @@ namespace AMTS
                         SqlCommand com = new SqlCommand("  update TERMINARZ set z3 = '" + a3 + "' where Przeciwnik like '" + data[0] + "' and Data like '" + data[1] + "'", connection);
                         com.ExecuteNonQuery();
                     }
-                    mecze2.Clear();
-                    dataAdMecze2.Fill(mecze2);
                 }
                 else
                 {
@@ -324,11 +321,17 @@ namespace AMTS
                         SqlCommand com = new SqlCommand("  update TERMINARZ set p3 = '" + a3 + "' where Druzyna like '" + data[0] + "' and Data like '" + data[1] + "'", connection);
                         com.ExecuteNonQuery();
                     }
-                    mecze.Clear();
-                    dataAdMecze.Fill(mecze);
+                    
                 }
 
             }
+             mecze2.Clear();
+            
+            mecze.Clear();
+            SqlDataAdapter dataAdMecze = new SqlDataAdapter("  select Data, Druzyna, p1, p2, p3 from TERMINARZ where Przeciwnik like '" + captain.getTeamName() + "'", this.connection);
+            dataAdMecze.Fill(mecze);
+            SqlDataAdapter dataAdMecze2 = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", this.connection);
+            dataAdMecze2.Fill(mecze2);
         }
 
         private void button5_Click(object sender, EventArgs e)
