@@ -61,14 +61,14 @@
             // 
             this.Runda.HeaderText = "Runda";
             this.Runda.Name = "Runda";
-            this.Runda.Width = 79;
+            this.Runda.Width = 64;
             // 
             // Data
             // 
             this.Data.HeaderText = "Data";
             this.Data.MaxInputLength = 10;
             this.Data.Name = "Data";
-            this.Data.Width = 67;
+            this.Data.Width = 55;
             // 
             // usuń
             // 
@@ -82,9 +82,10 @@
             // 
             // generator
             // 
-            this.generator.Location = new System.Drawing.Point(264, 74);
+            this.generator.Location = new System.Drawing.Point(198, 60);
+            this.generator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.generator.Name = "generator";
-            this.generator.Size = new System.Drawing.Size(175, 24);
+            this.generator.Size = new System.Drawing.Size(131, 20);
             this.generator.TabIndex = 2;
             this.generator.Text = "Generuj";
             this.generator.UseVisualStyleBackColor = true;
@@ -92,9 +93,10 @@
             // 
             // discard
             // 
-            this.discard.Location = new System.Drawing.Point(255, 131);
+            this.discard.Location = new System.Drawing.Point(191, 106);
+            this.discard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.discard.Name = "discard";
-            this.discard.Size = new System.Drawing.Size(75, 23);
+            this.discard.Size = new System.Drawing.Size(56, 19);
             this.discard.TabIndex = 3;
             this.discard.Text = "Anuluj";
             this.discard.UseVisualStyleBackColor = true;
@@ -102,9 +104,10 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(379, 131);
+            this.save.Location = new System.Drawing.Point(284, 106);
+            this.save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.Size = new System.Drawing.Size(56, 19);
             this.save.TabIndex = 4;
             this.save.Text = "Zapisz";
             this.save.UseVisualStyleBackColor = true;
@@ -131,7 +134,7 @@
             // 
             // GeneratorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(502, 235);
@@ -143,7 +146,7 @@
             this.Controls.Add(this.usuń);
             this.Controls.Add(this.terminy);
             this.Name = "GeneratorForm";
-            this.Text = "GeneratorForm";
+            this.Text = "Generuj terminy";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GeneratorForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.terminy)).EndInit();
             this.ResumeLayout(false);

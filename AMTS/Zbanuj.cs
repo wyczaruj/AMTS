@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AMTS
 {
-    public partial class UsunOsobe: AbstractForm 
+    public partial class Zbanuj: AbstractForm
     {
         SqlConnection conn;
         AbstractForm mainForm;
@@ -19,7 +19,7 @@ namespace AMTS
         SqlDataAdapter dataAdapter;
         SqlCommandBuilder commandBuilder;
 
-        public UsunOsobe(SqlConnection connection, AbstractForm MF)
+        public Zbanuj(SqlConnection connection, AbstractForm MF)
         {
             mainForm = MF;
             conn = connection;
@@ -42,37 +42,21 @@ namespace AMTS
             }
         }
 
-        private void usuwanie_Click(object sender, EventArgs e)
+        private void banowanie_Click(object sender, EventArgs e)
         {
-            DialogResult choose = MessageBox.Show("Czy na pewno chcesz usunąć tego użytkownika?", "Usuwanie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult choose = MessageBox.Show("Czy na pewno chcesz zablokować tego użytkownika?", "Blokowanie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if(choose == DialogResult.Yes)
             {
                 string[] nazwiskoImie = spisOsob.SelectedItem.ToString().Split(' ');
-                string mail = "SELECT Mail FROM UZYTKOWNICY WHERE Nazwisko LIKE '" +nazwiskoImie[0] +"' AND Imie LIKE '" +nazwiskoImie[1] +"'";
+                string mail = "SELECT Mail FROM UZYTKOWNICY WHERE Nazwisko LIKE '" + nazwiskoImie[0] + "' AND Imie LIKE '" + nazwiskoImie[1] + "'";
                 User osoba = new User(conn, mail);
-
-                if(osoba.isCaptain())
-                {
-                    MessageBox.Show("Kapitanów drużyn można tylko blokować.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.Close();
-                }
-                else
-                {
-                    SqlCommand sqlcomm;
-                    string usunWiadomosci = "usunWiadomosci @mail";
-                    sqlcomm = new SqlCommand(usunWiadomosci, conn);
-                    sqlcomm.Parameters.Add("@mail", SqlDbType.VarChar, 50).Value = mail;
-                    sqlcomm.ExecuteReader();
-                    string usunUzytkownika = "exec dbo.usunUzytkownika '" + nazwiskoImie[1] + "', '" + nazwiskoImie[0] + "'";
-                    sqlcomm = new SqlCommand(usunUzytkownika, conn);
-                    sqlcomm.ExecuteReader();
-                    this.Close();
-                }
+                osoba.setBan();
+                this.Close();
             }
         }
 
-        private void UsunOsobe_FormClosed(object sender, FormClosedEventArgs e)
+        private void banowanie_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.changeOpenedWindow();
         }

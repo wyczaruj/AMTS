@@ -49,10 +49,10 @@ namespace AMTS
 
             }
             dataAdMecze = new SqlDataAdapter("  select Data, Druzyna, p1, p2, p3 from TERMINARZ where Przeciwnik like '" + captain.getTeamName() + "'", this.connection);
-            dataAdMecze = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", this.connection);
             mecze = new DataTable();
             mecze2 = new DataTable();
             dataAdMecze.Fill(mecze);
+            dataAdMecze = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", this.connection);
             dataAdMecze.Fill(mecze2);
             foreach (DataRow r in mecze.Rows)
             {
