@@ -40,7 +40,7 @@
             // 
             // teamsListView
             // 
-            this.teamsListView.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamsListView.Font = new System.Drawing.Font("Calibri", 15.2F);
             this.teamsListView.Location = new System.Drawing.Point(12, 21);
             this.teamsListView.MultiSelect = false;
             this.teamsListView.Name = "teamsListView";
@@ -59,7 +59,7 @@
             this.emailColumnHeader,
             this.captainColumnHeader,
             this.confirmationColumnHeader});
-            this.playersListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.playersListView.Font = new System.Drawing.Font("Calibri", 10.8F);
             this.playersListView.Location = new System.Drawing.Point(256, 21);
             this.playersListView.MultiSelect = false;
             this.playersListView.Name = "playersListView";
@@ -96,6 +96,7 @@
             // 
             // confirmButton
             // 
+            this.confirmButton.Font = new System.Drawing.Font("Calibri", 16.2F);
             this.confirmButton.Location = new System.Drawing.Point(256, 420);
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(664, 55);
