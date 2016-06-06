@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DodajDruzyne));
             this.uzytkownicyComboBox = new System.Windows.Forms.ComboBox();
             this.nazwisko1 = new System.Windows.Forms.TextBox();
             this.n1 = new System.Windows.Forms.Label();
@@ -67,54 +68,62 @@
             // 
             this.uzytkownicyComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.uzytkownicyComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.uzytkownicyComboBox.Font = new System.Drawing.Font("Calibri", 9F);
             this.uzytkownicyComboBox.FormattingEnabled = true;
             this.uzytkownicyComboBox.Location = new System.Drawing.Point(117, 43);
             this.uzytkownicyComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.uzytkownicyComboBox.Name = "uzytkownicyComboBox";
-            this.uzytkownicyComboBox.Size = new System.Drawing.Size(281, 24);
+            this.uzytkownicyComboBox.Size = new System.Drawing.Size(281, 26);
             this.uzytkownicyComboBox.Sorted = true;
             this.uzytkownicyComboBox.TabIndex = 1;
             // 
             // nazwisko1
             // 
-            this.nazwisko1.Location = new System.Drawing.Point(83, 122);
+            this.nazwisko1.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko1.Location = new System.Drawing.Point(56, 123);
             this.nazwisko1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko1.Name = "nazwisko1";
             this.nazwisko1.ReadOnly = true;
-            this.nazwisko1.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko1.Size = new System.Drawing.Size(149, 26);
             this.nazwisko1.TabIndex = 14;
             // 
             // n1
             // 
             this.n1.AutoSize = true;
-            this.n1.Location = new System.Drawing.Point(80, 95);
+            this.n1.BackColor = System.Drawing.Color.Transparent;
+            this.n1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.n1.Location = new System.Drawing.Point(53, 96);
             this.n1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.n1.Name = "n1";
-            this.n1.Size = new System.Drawing.Size(67, 17);
+            this.n1.Size = new System.Drawing.Size(67, 18);
             this.n1.TabIndex = 13;
             this.n1.Text = "Nazwisko";
             // 
             // i1
             // 
             this.i1.AutoSize = true;
-            this.i1.Location = new System.Drawing.Point(314, 95);
+            this.i1.BackColor = System.Drawing.Color.Transparent;
+            this.i1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.i1.Location = new System.Drawing.Point(287, 96);
             this.i1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.i1.Name = "i1";
-            this.i1.Size = new System.Drawing.Size(33, 17);
+            this.i1.Size = new System.Drawing.Size(36, 18);
             this.i1.TabIndex = 12;
             this.i1.Text = "Imię";
             // 
             // imie1
             // 
-            this.imie1.Location = new System.Drawing.Point(319, 122);
+            this.imie1.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie1.Location = new System.Drawing.Point(292, 123);
             this.imie1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie1.Name = "imie1";
             this.imie1.ReadOnly = true;
-            this.imie1.Size = new System.Drawing.Size(156, 22);
+            this.imie1.Size = new System.Drawing.Size(156, 26);
             this.imie1.TabIndex = 11;
             // 
             // addPerson
             // 
+            this.addPerson.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold);
             this.addPerson.Location = new System.Drawing.Point(402, 38);
             this.addPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addPerson.Name = "addPerson";
@@ -126,6 +135,7 @@
             // 
             // cancelTeam
             // 
+            this.cancelTeam.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold);
             this.cancelTeam.Location = new System.Drawing.Point(8, 585);
             this.cancelTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelTeam.Name = "cancelTeam";
@@ -137,6 +147,7 @@
             // 
             // registerTeam
             // 
+            this.registerTeam.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold);
             this.registerTeam.Location = new System.Drawing.Point(323, 585);
             this.registerTeam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.registerTeam.Name = "registerTeam";
@@ -148,220 +159,245 @@
             // 
             // nazwisko2
             // 
-            this.nazwisko2.Location = new System.Drawing.Point(83, 164);
+            this.nazwisko2.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko2.Location = new System.Drawing.Point(56, 165);
             this.nazwisko2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko2.Name = "nazwisko2";
             this.nazwisko2.ReadOnly = true;
-            this.nazwisko2.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko2.Size = new System.Drawing.Size(149, 26);
             this.nazwisko2.TabIndex = 22;
             this.nazwisko2.Visible = false;
             // 
             // nazwisko4
             // 
-            this.nazwisko4.Location = new System.Drawing.Point(83, 246);
+            this.nazwisko4.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko4.Location = new System.Drawing.Point(56, 247);
             this.nazwisko4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko4.Name = "nazwisko4";
             this.nazwisko4.ReadOnly = true;
-            this.nazwisko4.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko4.Size = new System.Drawing.Size(149, 26);
             this.nazwisko4.TabIndex = 30;
             this.nazwisko4.Visible = false;
             // 
             // imie4
             // 
-            this.imie4.Location = new System.Drawing.Point(319, 246);
+            this.imie4.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie4.Location = new System.Drawing.Point(292, 247);
             this.imie4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie4.Name = "imie4";
             this.imie4.ReadOnly = true;
-            this.imie4.Size = new System.Drawing.Size(156, 22);
+            this.imie4.Size = new System.Drawing.Size(156, 26);
             this.imie4.TabIndex = 27;
             this.imie4.Visible = false;
             // 
             // nazwisko3
             // 
-            this.nazwisko3.Location = new System.Drawing.Point(83, 204);
+            this.nazwisko3.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko3.Location = new System.Drawing.Point(56, 205);
             this.nazwisko3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko3.Name = "nazwisko3";
             this.nazwisko3.ReadOnly = true;
-            this.nazwisko3.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko3.Size = new System.Drawing.Size(149, 26);
             this.nazwisko3.TabIndex = 26;
             this.nazwisko3.Visible = false;
             // 
             // imie3
             // 
-            this.imie3.Location = new System.Drawing.Point(319, 204);
+            this.imie3.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie3.Location = new System.Drawing.Point(292, 205);
             this.imie3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie3.Name = "imie3";
             this.imie3.ReadOnly = true;
-            this.imie3.Size = new System.Drawing.Size(156, 22);
+            this.imie3.Size = new System.Drawing.Size(156, 26);
             this.imie3.TabIndex = 23;
             this.imie3.Visible = false;
             // 
             // nazwisko8
             // 
-            this.nazwisko8.Location = new System.Drawing.Point(83, 411);
+            this.nazwisko8.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko8.Location = new System.Drawing.Point(56, 412);
             this.nazwisko8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko8.Name = "nazwisko8";
             this.nazwisko8.ReadOnly = true;
-            this.nazwisko8.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko8.Size = new System.Drawing.Size(149, 26);
             this.nazwisko8.TabIndex = 46;
             this.nazwisko8.Visible = false;
             // 
             // imie8
             // 
-            this.imie8.Location = new System.Drawing.Point(319, 411);
+            this.imie8.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie8.Location = new System.Drawing.Point(292, 412);
             this.imie8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie8.Name = "imie8";
             this.imie8.ReadOnly = true;
-            this.imie8.Size = new System.Drawing.Size(156, 22);
+            this.imie8.Size = new System.Drawing.Size(156, 26);
             this.imie8.TabIndex = 43;
             this.imie8.Visible = false;
             // 
             // nazwisko7
             // 
-            this.nazwisko7.Location = new System.Drawing.Point(83, 369);
+            this.nazwisko7.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko7.Location = new System.Drawing.Point(56, 370);
             this.nazwisko7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko7.Name = "nazwisko7";
             this.nazwisko7.ReadOnly = true;
-            this.nazwisko7.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko7.Size = new System.Drawing.Size(149, 26);
             this.nazwisko7.TabIndex = 42;
             this.nazwisko7.Visible = false;
             // 
             // imie7
             // 
-            this.imie7.Location = new System.Drawing.Point(319, 369);
+            this.imie7.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie7.Location = new System.Drawing.Point(292, 370);
             this.imie7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie7.Name = "imie7";
             this.imie7.ReadOnly = true;
-            this.imie7.Size = new System.Drawing.Size(156, 22);
+            this.imie7.Size = new System.Drawing.Size(156, 26);
             this.imie7.TabIndex = 39;
             this.imie7.Visible = false;
             // 
             // nazwisko6
             // 
-            this.nazwisko6.Location = new System.Drawing.Point(83, 329);
+            this.nazwisko6.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko6.Location = new System.Drawing.Point(56, 330);
             this.nazwisko6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko6.Name = "nazwisko6";
             this.nazwisko6.ReadOnly = true;
-            this.nazwisko6.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko6.Size = new System.Drawing.Size(149, 26);
             this.nazwisko6.TabIndex = 38;
             this.nazwisko6.Visible = false;
             // 
             // imie6
             // 
-            this.imie6.Location = new System.Drawing.Point(319, 329);
+            this.imie6.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie6.Location = new System.Drawing.Point(292, 330);
             this.imie6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie6.Name = "imie6";
             this.imie6.ReadOnly = true;
-            this.imie6.Size = new System.Drawing.Size(156, 22);
+            this.imie6.Size = new System.Drawing.Size(156, 26);
             this.imie6.TabIndex = 35;
             this.imie6.Visible = false;
             // 
             // nazwisko5
             // 
-            this.nazwisko5.Location = new System.Drawing.Point(83, 287);
+            this.nazwisko5.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko5.Location = new System.Drawing.Point(56, 288);
             this.nazwisko5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko5.Name = "nazwisko5";
             this.nazwisko5.ReadOnly = true;
-            this.nazwisko5.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko5.Size = new System.Drawing.Size(149, 26);
             this.nazwisko5.TabIndex = 34;
             this.nazwisko5.Visible = false;
             // 
             // imie5
             // 
-            this.imie5.Location = new System.Drawing.Point(319, 287);
+            this.imie5.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie5.Location = new System.Drawing.Point(292, 288);
             this.imie5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie5.Name = "imie5";
             this.imie5.ReadOnly = true;
-            this.imie5.Size = new System.Drawing.Size(156, 22);
+            this.imie5.Size = new System.Drawing.Size(156, 26);
             this.imie5.TabIndex = 31;
             this.imie5.Visible = false;
             // 
             // nazwisko10
             // 
-            this.nazwisko10.Location = new System.Drawing.Point(83, 494);
+            this.nazwisko10.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko10.Location = new System.Drawing.Point(56, 495);
             this.nazwisko10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko10.Name = "nazwisko10";
             this.nazwisko10.ReadOnly = true;
-            this.nazwisko10.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko10.Size = new System.Drawing.Size(149, 26);
             this.nazwisko10.TabIndex = 54;
             this.nazwisko10.Visible = false;
             // 
             // imie10
             // 
-            this.imie10.Location = new System.Drawing.Point(317, 494);
+            this.imie10.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie10.Location = new System.Drawing.Point(290, 495);
             this.imie10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie10.Name = "imie10";
             this.imie10.ReadOnly = true;
-            this.imie10.Size = new System.Drawing.Size(156, 22);
+            this.imie10.Size = new System.Drawing.Size(156, 26);
             this.imie10.TabIndex = 51;
             this.imie10.Visible = false;
             // 
             // nazwisko9
             // 
-            this.nazwisko9.Location = new System.Drawing.Point(83, 452);
+            this.nazwisko9.Font = new System.Drawing.Font("Calibri", 9F);
+            this.nazwisko9.Location = new System.Drawing.Point(56, 453);
             this.nazwisko9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko9.Name = "nazwisko9";
             this.nazwisko9.ReadOnly = true;
-            this.nazwisko9.Size = new System.Drawing.Size(149, 22);
+            this.nazwisko9.Size = new System.Drawing.Size(149, 26);
             this.nazwisko9.TabIndex = 50;
             this.nazwisko9.Visible = false;
             // 
             // imie9
             // 
-            this.imie9.Location = new System.Drawing.Point(319, 452);
+            this.imie9.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie9.Location = new System.Drawing.Point(292, 453);
             this.imie9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie9.Name = "imie9";
             this.imie9.ReadOnly = true;
-            this.imie9.Size = new System.Drawing.Size(156, 22);
+            this.imie9.Size = new System.Drawing.Size(156, 26);
             this.imie9.TabIndex = 47;
             this.imie9.Visible = false;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.label18.Location = new System.Drawing.Point(5, 17);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(104, 17);
+            this.label18.Size = new System.Drawing.Size(101, 18);
             this.label18.TabIndex = 58;
             this.label18.Text = "Nazwa drużyny";
             // 
             // teamNameTextBox
             // 
+            this.teamNameTextBox.Font = new System.Drawing.Font("Calibri", 9F);
             this.teamNameTextBox.Location = new System.Drawing.Point(116, 14);
             this.teamNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.teamNameTextBox.Name = "teamNameTextBox";
-            this.teamNameTextBox.Size = new System.Drawing.Size(282, 22);
+            this.teamNameTextBox.Size = new System.Drawing.Size(282, 26);
             this.teamNameTextBox.TabIndex = 57;
             this.teamNameTextBox.TextChanged += new System.EventHandler(this.teamName_TextChanged);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.label19.Location = new System.Drawing.Point(5, 78);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 17);
+            this.label19.Size = new System.Drawing.Size(84, 18);
             this.label19.TabIndex = 59;
             this.label19.Text = "Członkowie:";
             // 
             // imie2
             // 
-            this.imie2.Location = new System.Drawing.Point(317, 164);
+            this.imie2.Font = new System.Drawing.Font("Calibri", 9F);
+            this.imie2.Location = new System.Drawing.Point(290, 165);
             this.imie2.Margin = new System.Windows.Forms.Padding(4);
             this.imie2.Name = "imie2";
             this.imie2.ReadOnly = true;
-            this.imie2.Size = new System.Drawing.Size(159, 22);
+            this.imie2.Size = new System.Drawing.Size(159, 26);
             this.imie2.TabIndex = 62;
             this.imie2.Visible = false;
             // 
             // warningDownLabel
             // 
             this.warningDownLabel.AutoSize = true;
-            this.warningDownLabel.ForeColor = System.Drawing.Color.Red;
+            this.warningDownLabel.BackColor = System.Drawing.Color.Transparent;
+            this.warningDownLabel.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.warningDownLabel.ForeColor = System.Drawing.Color.Tomato;
             this.warningDownLabel.Location = new System.Drawing.Point(12, 538);
             this.warningDownLabel.Name = "warningDownLabel";
-            this.warningDownLabel.Size = new System.Drawing.Size(226, 17);
+            this.warningDownLabel.Size = new System.Drawing.Size(225, 18);
             this.warningDownLabel.TabIndex = 63;
             this.warningDownLabel.Text = "Masz mniej niż trzech zawodników.";
             this.warningDownLabel.Visible = false;
@@ -369,10 +405,12 @@
             // warningUpLabel
             // 
             this.warningUpLabel.AutoSize = true;
-            this.warningUpLabel.ForeColor = System.Drawing.Color.Red;
+            this.warningUpLabel.BackColor = System.Drawing.Color.Transparent;
+            this.warningUpLabel.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.warningUpLabel.ForeColor = System.Drawing.Color.Tomato;
             this.warningUpLabel.Location = new System.Drawing.Point(12, 555);
             this.warningUpLabel.Name = "warningUpLabel";
-            this.warningUpLabel.Size = new System.Drawing.Size(249, 17);
+            this.warningUpLabel.Size = new System.Drawing.Size(247, 18);
             this.warningUpLabel.TabIndex = 64;
             this.warningUpLabel.Text = "Nie możesz dodać więcej zawodników.";
             this.warningUpLabel.Visible = false;
@@ -380,10 +418,12 @@
             // TeamNameTakenLabel
             // 
             this.TeamNameTakenLabel.AutoSize = true;
-            this.TeamNameTakenLabel.ForeColor = System.Drawing.Color.Red;
+            this.TeamNameTakenLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TeamNameTakenLabel.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.TeamNameTakenLabel.ForeColor = System.Drawing.Color.Tomato;
             this.TeamNameTakenLabel.Location = new System.Drawing.Point(404, 19);
             this.TeamNameTakenLabel.Name = "TeamNameTakenLabel";
-            this.TeamNameTakenLabel.Size = new System.Drawing.Size(92, 17);
+            this.TeamNameTakenLabel.Size = new System.Drawing.Size(89, 18);
             this.TeamNameTakenLabel.TabIndex = 65;
             this.TeamNameTakenLabel.Text = "Nazwa zajęta";
             this.TeamNameTakenLabel.Visible = false;
@@ -391,10 +431,12 @@
             // alreadyAddedLabel
             // 
             this.alreadyAddedLabel.AutoSize = true;
-            this.alreadyAddedLabel.ForeColor = System.Drawing.Color.Red;
+            this.alreadyAddedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.alreadyAddedLabel.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.alreadyAddedLabel.ForeColor = System.Drawing.Color.Tomato;
             this.alreadyAddedLabel.Location = new System.Drawing.Point(12, 521);
             this.alreadyAddedLabel.Name = "alreadyAddedLabel";
-            this.alreadyAddedLabel.Size = new System.Drawing.Size(190, 17);
+            this.alreadyAddedLabel.Size = new System.Drawing.Size(183, 18);
             this.alreadyAddedLabel.TabIndex = 66;
             this.alreadyAddedLabel.Text = "Już dodałeś tego zawodnika.";
             this.alreadyAddedLabel.Visible = false;
@@ -442,6 +484,7 @@
             this.Controls.Add(this.uzytkownicyComboBox);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DodajDruzyne";
             this.Text = "Zgłoś drużynę";

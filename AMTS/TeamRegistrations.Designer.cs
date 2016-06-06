@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeamRegistrations));
             this.acceptButton = new System.Windows.Forms.Button();
             this.teamsListView = new System.Windows.Forms.ListView();
             this.selectAllButton = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             // 
             // acceptButton
             // 
+            this.acceptButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold);
             this.acceptButton.Location = new System.Drawing.Point(500, 478);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(186, 39);
@@ -66,6 +68,7 @@
             // 
             // selectAllButton
             // 
+            this.selectAllButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold);
             this.selectAllButton.Location = new System.Drawing.Point(23, 478);
             this.selectAllButton.Name = "selectAllButton";
             this.selectAllButton.Size = new System.Drawing.Size(238, 39);
@@ -81,7 +84,7 @@
             this.lastNameColumnHeader,
             this.emailColumnHeader,
             this.captainColumnHeader});
-            this.playersListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.playersListView.Font = new System.Drawing.Font("Calibri", 10.8F);
             this.playersListView.Location = new System.Drawing.Point(279, 22);
             this.playersListView.MultiSelect = false;
             this.playersListView.Name = "playersListView";
@@ -113,6 +116,7 @@
             // 
             // closeButton
             // 
+            this.closeButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.closeButton.Location = new System.Drawing.Point(692, 478);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(202, 39);
@@ -123,6 +127,7 @@
             // 
             // rejectButton
             // 
+            this.rejectButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold);
             this.rejectButton.Location = new System.Drawing.Point(279, 478);
             this.rejectButton.Name = "rejectButton";
             this.rejectButton.Size = new System.Drawing.Size(215, 39);
@@ -136,6 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::AMTS.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(930, 529);
             this.Controls.Add(this.rejectButton);
             this.Controls.Add(this.closeButton);
@@ -143,6 +149,7 @@
             this.Controls.Add(this.selectAllButton);
             this.Controls.Add(this.teamsListView);
             this.Controls.Add(this.acceptButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TeamRegistrations";
             this.Text = "Zgłoszenia";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeamRegistrations_FormClosed);

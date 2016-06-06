@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendMessage));
             this.usersListView = new System.Windows.Forms.ListView();
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.subjectTextBox = new System.Windows.Forms.TextBox();
@@ -72,9 +73,12 @@
             // 
             this.TematLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TematLabel.AutoSize = true;
+            this.TematLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TematLabel.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TematLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TematLabel.Location = new System.Drawing.Point(238, 9);
             this.TematLabel.Name = "TematLabel";
-            this.TematLabel.Size = new System.Drawing.Size(48, 17);
+            this.TematLabel.Size = new System.Drawing.Size(46, 18);
             this.TematLabel.TabIndex = 3;
             this.TematLabel.Text = "Temat";
             // 
@@ -82,9 +86,12 @@
             // 
             this.wiadomość.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.wiadomość.AutoSize = true;
+            this.wiadomość.BackColor = System.Drawing.Color.Transparent;
+            this.wiadomość.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wiadomość.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.wiadomość.Location = new System.Drawing.Point(240, 56);
             this.wiadomość.Name = "wiadomość";
-            this.wiadomość.Size = new System.Drawing.Size(81, 17);
+            this.wiadomość.Size = new System.Drawing.Size(80, 18);
             this.wiadomość.TabIndex = 4;
             this.wiadomość.Text = "Wiadomość";
             // 
@@ -92,6 +99,7 @@
             // 
             this.sendMessageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sendMessageButton.Enabled = false;
+            this.sendMessageButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sendMessageButton.Location = new System.Drawing.Point(241, 318);
             this.sendMessageButton.Name = "sendMessageButton";
             this.sendMessageButton.Size = new System.Drawing.Size(404, 42);
@@ -102,6 +110,7 @@
             // 
             // selectAllButton
             // 
+            this.selectAllButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.selectAllButton.Location = new System.Drawing.Point(13, 319);
             this.selectAllButton.Name = "selectAllButton";
             this.selectAllButton.Size = new System.Drawing.Size(221, 41);
@@ -114,12 +123,15 @@
             // teamMessageCheckBox
             // 
             this.teamMessageCheckBox.AutoSize = true;
+            this.teamMessageCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.teamMessageCheckBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.teamMessageCheckBox.ForeColor = System.Drawing.Color.Orange;
             this.teamMessageCheckBox.Location = new System.Drawing.Point(13, 330);
             this.teamMessageCheckBox.Name = "teamMessageCheckBox";
-            this.teamMessageCheckBox.Size = new System.Drawing.Size(211, 21);
+            this.teamMessageCheckBox.Size = new System.Drawing.Size(213, 22);
             this.teamMessageCheckBox.TabIndex = 14;
             this.teamMessageCheckBox.Text = "Wyślij wiadomość drużynową";
-            this.teamMessageCheckBox.UseVisualStyleBackColor = true;
+            this.teamMessageCheckBox.UseVisualStyleBackColor = false;
             this.teamMessageCheckBox.Visible = false;
             this.teamMessageCheckBox.CheckedChanged += new System.EventHandler(this.teamMessageCheckBox_CheckedChanged);
             // 
@@ -128,6 +140,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::AMTS.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(681, 383);
             this.Controls.Add(this.teamMessageCheckBox);
             this.Controls.Add(this.selectAllButton);
@@ -137,8 +151,10 @@
             this.Controls.Add(this.subjectTextBox);
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.usersListView);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SendMessage";
-            this.Text = "SendMessage";
+            this.Text = "Wyślij wiadomość";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SendMessage_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

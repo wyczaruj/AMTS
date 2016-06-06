@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             this.email = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.haslo = new System.Windows.Forms.Label();
@@ -37,12 +38,14 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // email
             // 
             this.email.AutoSize = true;
+            this.email.BackColor = System.Drawing.Color.Transparent;
+            this.email.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.email.Location = new System.Drawing.Point(12, 37);
-            this.email.Name = "label1";
-            this.email.Size = new System.Drawing.Size(87, 17);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(87, 18);
             this.email.TabIndex = 0;
             this.email.Text = "Adres e-mail";
             // 
@@ -54,12 +57,14 @@
             this.emailTextBox.TabIndex = 1;
             this.emailTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.emailTextBox_KeyDown);
             // 
-            // label2
+            // haslo
             // 
             this.haslo.AutoSize = true;
+            this.haslo.BackColor = System.Drawing.Color.Transparent;
+            this.haslo.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.haslo.Location = new System.Drawing.Point(13, 65);
-            this.haslo.Name = "label2";
-            this.haslo.Size = new System.Drawing.Size(44, 17);
+            this.haslo.Name = "haslo";
+            this.haslo.Size = new System.Drawing.Size(42, 18);
             this.haslo.TabIndex = 2;
             this.haslo.Text = "Hasło";
             // 
@@ -75,16 +80,19 @@
             // incorrectLabel
             // 
             this.incorrectLabel.AutoSize = true;
-            this.incorrectLabel.ForeColor = System.Drawing.Color.Red;
+            this.incorrectLabel.BackColor = System.Drawing.Color.Transparent;
+            this.incorrectLabel.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.incorrectLabel.ForeColor = System.Drawing.Color.Tomato;
             this.incorrectLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.incorrectLabel.Location = new System.Drawing.Point(12, 9);
             this.incorrectLabel.Name = "incorrectLabel";
-            this.incorrectLabel.Size = new System.Drawing.Size(347, 17);
+            this.incorrectLabel.Size = new System.Drawing.Size(348, 18);
             this.incorrectLabel.TabIndex = 4;
             this.incorrectLabel.Text = "Sprawdź wprowadzone informacje i spróbuj ponownie.";
             // 
             // logInButton
             // 
+            this.logInButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.logInButton.Location = new System.Drawing.Point(279, 137);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(75, 35);
@@ -95,6 +103,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.cancelButton.Location = new System.Drawing.Point(15, 141);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 31);
@@ -108,6 +117,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::AMTS.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(380, 200);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.logInButton);
@@ -116,9 +127,11 @@
             this.Controls.Add(this.haslo);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.email);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LogInForm";
-            this.Text = "LogInForm";
+            this.Text = "Zaloguj się";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LogInForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

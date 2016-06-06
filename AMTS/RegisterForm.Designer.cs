@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.imie = new System.Windows.Forms.Label();
             this.nazwisko = new System.Windows.Forms.Label();
             this.pesel = new System.Windows.Forms.Label();
@@ -59,7 +60,8 @@
             // imie
             // 
             this.imie.AutoSize = true;
-            this.imie.Location = new System.Drawing.Point(44, 40);
+            this.imie.BackColor = System.Drawing.Color.Transparent;
+            this.imie.Location = new System.Drawing.Point(43, 41);
             this.imie.Name = "imie";
             this.imie.Size = new System.Drawing.Size(38, 17);
             this.imie.TabIndex = 0;
@@ -68,6 +70,7 @@
             // nazwisko
             // 
             this.nazwisko.AutoSize = true;
+            this.nazwisko.BackColor = System.Drawing.Color.Transparent;
             this.nazwisko.Location = new System.Drawing.Point(42, 68);
             this.nazwisko.Name = "nazwisko";
             this.nazwisko.Size = new System.Drawing.Size(72, 17);
@@ -77,6 +80,7 @@
             // pesel
             // 
             this.pesel.AutoSize = true;
+            this.pesel.BackColor = System.Drawing.Color.Transparent;
             this.pesel.Location = new System.Drawing.Point(42, 96);
             this.pesel.Name = "pesel";
             this.pesel.Size = new System.Drawing.Size(57, 17);
@@ -86,6 +90,7 @@
             // email
             // 
             this.email.AutoSize = true;
+            this.email.BackColor = System.Drawing.Color.Transparent;
             this.email.Location = new System.Drawing.Point(42, 124);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(92, 17);
@@ -95,7 +100,8 @@
             // haslo
             // 
             this.haslo.AutoSize = true;
-            this.haslo.Location = new System.Drawing.Point(44, 152);
+            this.haslo.BackColor = System.Drawing.Color.Transparent;
+            this.haslo.Location = new System.Drawing.Point(43, 151);
             this.haslo.Name = "haslo";
             this.haslo.Size = new System.Drawing.Size(49, 17);
             this.haslo.TabIndex = 4;
@@ -104,7 +110,8 @@
             // telefon
             // 
             this.telefon.AutoSize = true;
-            this.telefon.Location = new System.Drawing.Point(44, 180);
+            this.telefon.BackColor = System.Drawing.Color.Transparent;
+            this.telefon.Location = new System.Drawing.Point(43, 180);
             this.telefon.Name = "telefon";
             this.telefon.Size = new System.Drawing.Size(56, 17);
             this.telefon.TabIndex = 5;
@@ -113,17 +120,19 @@
             // acceptCheckBox
             // 
             this.acceptCheckBox.AutoSize = true;
+            this.acceptCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.acceptCheckBox.Location = new System.Drawing.Point(45, 219);
             this.acceptCheckBox.Name = "acceptCheckBox";
             this.acceptCheckBox.Size = new System.Drawing.Size(142, 21);
             this.acceptCheckBox.TabIndex = 6;
             this.acceptCheckBox.Text = "Przeczytałem/-am";
-            this.acceptCheckBox.UseVisualStyleBackColor = true;
+            this.acceptCheckBox.UseVisualStyleBackColor = false;
             this.acceptCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // regulaminLinkLabel
             // 
             this.regulaminLinkLabel.AutoSize = true;
+            this.regulaminLinkLabel.BackColor = System.Drawing.Color.Transparent;
             this.regulaminLinkLabel.Location = new System.Drawing.Point(193, 220);
             this.regulaminLinkLabel.Name = "regulaminLinkLabel";
             this.regulaminLinkLabel.Size = new System.Drawing.Size(89, 17);
@@ -135,6 +144,7 @@
             // accLabel
             // 
             this.accLabel.AutoSize = true;
+            this.accLabel.BackColor = System.Drawing.Color.Transparent;
             this.accLabel.Location = new System.Drawing.Point(288, 220);
             this.accLabel.Name = "accLabel";
             this.accLabel.Size = new System.Drawing.Size(100, 17);
@@ -143,7 +153,7 @@
             // 
             // imieTextBox
             // 
-            this.imieTextBox.Location = new System.Drawing.Point(140, 35);
+            this.imieTextBox.Location = new System.Drawing.Point(139, 35);
             this.imieTextBox.Name = "imieTextBox";
             this.imieTextBox.Size = new System.Drawing.Size(182, 22);
             this.imieTextBox.TabIndex = 9;
@@ -151,7 +161,7 @@
             // 
             // nazwiskoTextBox
             // 
-            this.nazwiskoTextBox.Location = new System.Drawing.Point(140, 63);
+            this.nazwiskoTextBox.Location = new System.Drawing.Point(139, 63);
             this.nazwiskoTextBox.Name = "nazwiskoTextBox";
             this.nazwiskoTextBox.Size = new System.Drawing.Size(182, 22);
             this.nazwiskoTextBox.TabIndex = 10;
@@ -159,7 +169,7 @@
             // 
             // PESELTextBox
             // 
-            this.PESELTextBox.Location = new System.Drawing.Point(140, 91);
+            this.PESELTextBox.Location = new System.Drawing.Point(139, 91);
             this.PESELTextBox.Name = "PESELTextBox";
             this.PESELTextBox.Size = new System.Drawing.Size(182, 22);
             this.PESELTextBox.TabIndex = 11;
@@ -167,7 +177,7 @@
             // 
             // mailTextBox
             // 
-            this.mailTextBox.Location = new System.Drawing.Point(140, 119);
+            this.mailTextBox.Location = new System.Drawing.Point(139, 119);
             this.mailTextBox.Name = "mailTextBox";
             this.mailTextBox.Size = new System.Drawing.Size(182, 22);
             this.mailTextBox.TabIndex = 12;
@@ -175,7 +185,7 @@
             // 
             // hasloTextBox
             // 
-            this.hasloTextBox.Location = new System.Drawing.Point(140, 147);
+            this.hasloTextBox.Location = new System.Drawing.Point(139, 147);
             this.hasloTextBox.Name = "hasloTextBox";
             this.hasloTextBox.PasswordChar = '*';
             this.hasloTextBox.Size = new System.Drawing.Size(182, 22);
@@ -184,7 +194,7 @@
             // 
             // telefonTextBox
             // 
-            this.telefonTextBox.Location = new System.Drawing.Point(140, 175);
+            this.telefonTextBox.Location = new System.Drawing.Point(139, 175);
             this.telefonTextBox.Name = "telefonTextBox";
             this.telefonTextBox.Size = new System.Drawing.Size(182, 22);
             this.telefonTextBox.TabIndex = 14;
@@ -192,6 +202,7 @@
             // 
             // registerButton
             // 
+            this.registerButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.registerButton.Location = new System.Drawing.Point(368, 287);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(96, 31);
@@ -202,6 +213,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.cancelButton.Location = new System.Drawing.Point(25, 287);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 31);
@@ -213,10 +225,12 @@
             // incorrectLastName
             // 
             this.incorrectLastName.AutoSize = true;
-            this.incorrectLastName.ForeColor = System.Drawing.Color.Red;
+            this.incorrectLastName.BackColor = System.Drawing.Color.Transparent;
+            this.incorrectLastName.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.incorrectLastName.ForeColor = System.Drawing.Color.Tomato;
             this.incorrectLastName.Location = new System.Drawing.Point(328, 68);
             this.incorrectLastName.Name = "incorrectLastName";
-            this.incorrectLastName.Size = new System.Drawing.Size(152, 17);
+            this.incorrectLastName.Size = new System.Drawing.Size(153, 18);
             this.incorrectLastName.TabIndex = 17;
             this.incorrectLastName.Text = "Niepoprawne nazwisko";
             this.incorrectLastName.Visible = false;
@@ -224,10 +238,12 @@
             // incorrectName
             // 
             this.incorrectName.AutoSize = true;
-            this.incorrectName.ForeColor = System.Drawing.Color.Red;
-            this.incorrectName.Location = new System.Drawing.Point(328, 40);
+            this.incorrectName.BackColor = System.Drawing.Color.Transparent;
+            this.incorrectName.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.incorrectName.ForeColor = System.Drawing.Color.Tomato;
+            this.incorrectName.Location = new System.Drawing.Point(328, 41);
             this.incorrectName.Name = "incorrectName";
-            this.incorrectName.Size = new System.Drawing.Size(120, 17);
+            this.incorrectName.Size = new System.Drawing.Size(124, 18);
             this.incorrectName.TabIndex = 18;
             this.incorrectName.Text = "Niepoprawne imię";
             this.incorrectName.Visible = false;
@@ -235,10 +251,12 @@
             // incorrectPESEL
             // 
             this.incorrectPESEL.AutoSize = true;
-            this.incorrectPESEL.ForeColor = System.Drawing.Color.Red;
+            this.incorrectPESEL.BackColor = System.Drawing.Color.Transparent;
+            this.incorrectPESEL.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.incorrectPESEL.ForeColor = System.Drawing.Color.Tomato;
             this.incorrectPESEL.Location = new System.Drawing.Point(326, 96);
             this.incorrectPESEL.Name = "incorrectPESEL";
-            this.incorrectPESEL.Size = new System.Drawing.Size(138, 17);
+            this.incorrectPESEL.Size = new System.Drawing.Size(130, 18);
             this.incorrectPESEL.TabIndex = 19;
             this.incorrectPESEL.Text = "Niepoprawny PESEL";
             this.incorrectPESEL.Visible = false;
@@ -246,10 +264,12 @@
             // incorrectMail
             // 
             this.incorrectMail.AutoSize = true;
-            this.incorrectMail.ForeColor = System.Drawing.Color.Red;
+            this.incorrectMail.BackColor = System.Drawing.Color.Transparent;
+            this.incorrectMail.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.incorrectMail.ForeColor = System.Drawing.Color.Tomato;
             this.incorrectMail.Location = new System.Drawing.Point(326, 124);
             this.incorrectMail.Name = "incorrectMail";
-            this.incorrectMail.Size = new System.Drawing.Size(130, 17);
+            this.incorrectMail.Size = new System.Drawing.Size(129, 18);
             this.incorrectMail.TabIndex = 20;
             this.incorrectMail.Text = "Niepoprawny adres";
             this.incorrectMail.Visible = false;
@@ -257,10 +277,12 @@
             // incorrectPassword
             // 
             this.incorrectPassword.AutoSize = true;
-            this.incorrectPassword.ForeColor = System.Drawing.Color.Red;
-            this.incorrectPassword.Location = new System.Drawing.Point(328, 152);
+            this.incorrectPassword.BackColor = System.Drawing.Color.Transparent;
+            this.incorrectPassword.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.incorrectPassword.ForeColor = System.Drawing.Color.Tomato;
+            this.incorrectPassword.Location = new System.Drawing.Point(328, 151);
             this.incorrectPassword.Name = "incorrectPassword";
-            this.incorrectPassword.Size = new System.Drawing.Size(129, 17);
+            this.incorrectPassword.Size = new System.Drawing.Size(129, 18);
             this.incorrectPassword.TabIndex = 21;
             this.incorrectPassword.Text = "Niepoprawne hasło";
             this.incorrectPassword.Visible = false;
@@ -268,10 +290,12 @@
             // incorrectPhone
             // 
             this.incorrectPhone.AutoSize = true;
-            this.incorrectPhone.ForeColor = System.Drawing.Color.Red;
+            this.incorrectPhone.BackColor = System.Drawing.Color.Transparent;
+            this.incorrectPhone.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.incorrectPhone.ForeColor = System.Drawing.Color.Tomato;
             this.incorrectPhone.Location = new System.Drawing.Point(328, 180);
             this.incorrectPhone.Name = "incorrectPhone";
-            this.incorrectPhone.Size = new System.Drawing.Size(134, 17);
+            this.incorrectPhone.Size = new System.Drawing.Size(136, 18);
             this.incorrectPhone.TabIndex = 22;
             this.incorrectPhone.Text = "Niepoprawny numer";
             this.incorrectPhone.Visible = false;
@@ -279,10 +303,12 @@
             // MailTaken
             // 
             this.MailTaken.AutoSize = true;
-            this.MailTaken.ForeColor = System.Drawing.Color.Red;
+            this.MailTaken.BackColor = System.Drawing.Color.Transparent;
+            this.MailTaken.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.MailTaken.ForeColor = System.Drawing.Color.Tomato;
             this.MailTaken.Location = new System.Drawing.Point(328, 124);
             this.MailTaken.Name = "MailTaken";
-            this.MailTaken.Size = new System.Drawing.Size(86, 17);
+            this.MailTaken.Size = new System.Drawing.Size(84, 18);
             this.MailTaken.TabIndex = 23;
             this.MailTaken.Text = "Adres zajęty";
             this.MailTaken.Visible = false;
@@ -290,10 +316,12 @@
             // nameTaken
             // 
             this.nameTaken.AutoSize = true;
-            this.nameTaken.ForeColor = System.Drawing.Color.Red;
+            this.nameTaken.BackColor = System.Drawing.Color.Transparent;
+            this.nameTaken.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.nameTaken.ForeColor = System.Drawing.Color.Tomato;
             this.nameTaken.Location = new System.Drawing.Point(45, 247);
             this.nameTaken.Name = "nameTaken";
-            this.nameTaken.Size = new System.Drawing.Size(317, 17);
+            this.nameTaken.Size = new System.Drawing.Size(323, 18);
             this.nameTaken.TabIndex = 24;
             this.nameTaken.Text = "Użytkownik o takim imieniu i nazwisku już istnieje.";
             this.nameTaken.Visible = false;
@@ -301,10 +329,12 @@
             // PESELTaken
             // 
             this.PESELTaken.AutoSize = true;
-            this.PESELTaken.ForeColor = System.Drawing.Color.Red;
+            this.PESELTaken.BackColor = System.Drawing.Color.Transparent;
+            this.PESELTaken.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PESELTaken.ForeColor = System.Drawing.Color.Tomato;
             this.PESELTaken.Location = new System.Drawing.Point(328, 96);
             this.PESELTaken.Name = "PESELTaken";
-            this.PESELTaken.Size = new System.Drawing.Size(95, 17);
+            this.PESELTaken.Size = new System.Drawing.Size(84, 18);
             this.PESELTaken.TabIndex = 25;
             this.PESELTaken.Text = "Zajęty PESEL";
             this.PESELTaken.Visible = false;
@@ -314,6 +344,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::AMTS.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(496, 347);
             this.Controls.Add(this.PESELTaken);
             this.Controls.Add(this.nameTaken);
@@ -341,6 +372,7 @@
             this.Controls.Add(this.pesel);
             this.Controls.Add(this.nazwisko);
             this.Controls.Add(this.imie);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterForm";
             this.Text = "Rejestracja";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterForm_FormClosed);

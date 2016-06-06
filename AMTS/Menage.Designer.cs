@@ -30,6 +30,7 @@ namespace AMTS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menage));
             this.manege = new System.Windows.Forms.TabControl();
             this.kontakty = new System.Windows.Forms.TabPage();
             this.zmiany = new System.Windows.Forms.Label();
@@ -280,8 +281,9 @@ namespace AMTS
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(657, 192);
             this.Controls.Add(this.manege);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menage";
-            this.Text = "Menage";
+            this.Text = "Zarządaj";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menage_FormClosed);
             this.manege.ResumeLayout(false);
             this.kontakty.ResumeLayout(false);

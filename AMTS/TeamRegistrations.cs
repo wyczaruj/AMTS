@@ -66,7 +66,7 @@ namespace AMTS
                 playersListView.Items.Add(LVitem);
             }
             r.Close();
-
+            playersListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 
         }
 
