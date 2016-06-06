@@ -325,13 +325,14 @@ namespace AMTS
                 }
 
             }
-         /*   mecze2.Clear();
+             mecze2.Clear();
+            
+            mecze.Clear();
             SqlDataAdapter dataAdMecze = new SqlDataAdapter("  select Data, Druzyna, p1, p2, p3 from TERMINARZ where Przeciwnik like '" + captain.getTeamName() + "'", this.connection);
             dataAdMecze.Fill(mecze);
-            mecze.Clear();
             SqlDataAdapter dataAdMecze2 = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", this.connection);
             dataAdMecze2.Fill(mecze2);
-        */}
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
