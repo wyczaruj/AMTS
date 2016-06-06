@@ -49,11 +49,11 @@ namespace AMTS
 
             }
             dataAdMecze = new SqlDataAdapter("  select Data, Druzyna, p1, p2, p3 from TERMINARZ where Przeciwnik like '" + captain.getTeamName() + "'", this.connection);
+            dataAdMecze2 = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", this.connection);
             mecze = new DataTable();
             mecze2 = new DataTable();
             dataAdMecze.Fill(mecze);
-            dataAdMecze = new SqlDataAdapter("  select Data, Przeciwnik, z1, z2, z3 from TERMINARZ where Druzyna like '" + captain.getTeamName() + "'", this.connection);
-            dataAdMecze.Fill(mecze2);
+            dataAdMecze2.Fill(mecze2);
             foreach (DataRow r in mecze.Rows)
             {
                 mecz.Items.Add(r["Druzyna"].ToString() + ":" + r["Data"].ToString());
@@ -199,7 +199,7 @@ namespace AMTS
         private void comboBox1_DropDownClosed(object sender, EventArgs e)
         {
             string[] data;
-            if (!string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
+            if (mecz.SelectedItem != null && !string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
             {
                 data = mecz.SelectedItem.ToString().Split(':');
                 DataRow[] row;
@@ -257,13 +257,13 @@ namespace AMTS
         private void button4_Click(object sender, EventArgs e)
         {
             string[] data;
-            if (mecz.SelectedItem!=null &&!string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
+            if (mecz.SelectedItem != null && !string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
             {
                 data = mecz.SelectedItem.ToString().Split(':');
                 DataRow[] row;
                 string[] z1, z2, z3;
                 string a1, a2, a3;
-                if(pierwszy.SelectedItem!=null&&!string.IsNullOrEmpty(pierwszy.SelectedItem.ToString()))
+                if (pierwszy.SelectedItem != null && !string.IsNullOrEmpty(pierwszy.SelectedItem.ToString()))
                 {
                     z1 = pierwszy.SelectedItem.ToString().Split(' ');
                     row = zawodnicy.Select("Imie like '" + z1[0] + "'and Nazwisko like '" + z1[1] + "'");
@@ -284,13 +284,13 @@ namespace AMTS
                     a3 = row[0]["PESEL"].ToString();
                 }
                 else a3 = "";
-               
+
                 row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
                 if (row.Length <= 0)
                 {
                     if (!a1.Equals(""))
                     {
-                        SqlCommand com = new SqlCommand("  update TERMINARZ set z1 = '"+a1+"' where Przeciwnik like '"+data[0]+"' and Data like '"+data[1]+"'", connection);
+                        SqlCommand com = new SqlCommand("  update TERMINARZ set z1 = '" + a1 + "' where Przeciwnik like '" + data[0] + "' and Data like '" + data[1] + "'", connection);
                         com.ExecuteNonQuery();
 
                     }
@@ -305,7 +305,7 @@ namespace AMTS
                         com.ExecuteNonQuery();
                     }
                     mecze2.Clear();
-                    dataAdMecze.Fill(mecze2);
+                    dataAdMecze2.Fill(mecze2);
                 }
                 else
                 {
@@ -334,7 +334,7 @@ namespace AMTS
         private void button5_Click(object sender, EventArgs e)
         {
             string[] data;
-            if (!string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
+            if (mecz.SelectedItem != null && !string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
             {
                 data = mecz.SelectedItem.ToString().Split(':');
                 DataRow[] row;
