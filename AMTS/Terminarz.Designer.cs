@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Terminarz));
             this.złaDrużyna = new System.Windows.Forms.Label();
             this.runda = new System.Windows.Forms.Label();
             this.zmiany = new System.Windows.Forms.Label();
@@ -193,6 +194,7 @@
             this.Controls.Add(this.termAdd);
             this.Controls.Add(this.termEdit);
             this.Controls.Add(this.terminarzDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Terminarz";
             this.Text = "Terminarz";

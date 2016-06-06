@@ -57,6 +57,7 @@ namespace AMTS
                 playersListView.Items.Add(LVitem);
             }
             r.Close();
+            playersListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
 
         private void cancelRegistrationButton_Click(object sender, System.EventArgs e)

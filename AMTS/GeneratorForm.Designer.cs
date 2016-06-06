@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneratorForm));
             this.terminy = new System.Windows.Forms.DataGridView();
             this.Runda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,29 +52,31 @@
             this.terminy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Runda,
             this.Data});
-            this.terminy.Location = new System.Drawing.Point(2, 2);
+            this.terminy.Location = new System.Drawing.Point(3, 2);
+            this.terminy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.terminy.Name = "terminy";
             this.terminy.RowTemplate.Height = 24;
-            this.terminy.Size = new System.Drawing.Size(244, 230);
+            this.terminy.Size = new System.Drawing.Size(325, 283);
             this.terminy.TabIndex = 0;
             // 
             // Runda
             // 
             this.Runda.HeaderText = "Runda";
             this.Runda.Name = "Runda";
-            this.Runda.Width = 64;
+            this.Runda.Width = 79;
             // 
             // Data
             // 
             this.Data.HeaderText = "Data";
             this.Data.MaxInputLength = 10;
             this.Data.Name = "Data";
-            this.Data.Width = 55;
+            this.Data.Width = 67;
             // 
             // usuń
             // 
             this.usuń.AutoSize = true;
-            this.usuń.Location = new System.Drawing.Point(255, 104);
+            this.usuń.Location = new System.Drawing.Point(264, 105);
+            this.usuń.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.usuń.Name = "usuń";
             this.usuń.Size = new System.Drawing.Size(199, 21);
             this.usuń.TabIndex = 1;
@@ -82,10 +85,10 @@
             // 
             // generator
             // 
-            this.generator.Location = new System.Drawing.Point(198, 60);
-            this.generator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.generator.Location = new System.Drawing.Point(264, 74);
+            this.generator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.generator.Name = "generator";
-            this.generator.Size = new System.Drawing.Size(131, 20);
+            this.generator.Size = new System.Drawing.Size(175, 25);
             this.generator.TabIndex = 2;
             this.generator.Text = "Generuj";
             this.generator.UseVisualStyleBackColor = true;
@@ -93,10 +96,10 @@
             // 
             // discard
             // 
-            this.discard.Location = new System.Drawing.Point(191, 106);
-            this.discard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.discard.Location = new System.Drawing.Point(255, 130);
+            this.discard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.discard.Name = "discard";
-            this.discard.Size = new System.Drawing.Size(56, 19);
+            this.discard.Size = new System.Drawing.Size(75, 23);
             this.discard.TabIndex = 3;
             this.discard.Text = "Anuluj";
             this.discard.UseVisualStyleBackColor = true;
@@ -104,10 +107,10 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(284, 106);
-            this.save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.save.Location = new System.Drawing.Point(379, 130);
+            this.save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(56, 19);
+            this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 4;
             this.save.Text = "Zapisz";
             this.save.UseVisualStyleBackColor = true;
@@ -116,7 +119,8 @@
             // poprawny
             // 
             this.poprawny.AutoSize = true;
-            this.poprawny.Location = new System.Drawing.Point(252, 157);
+            this.poprawny.Location = new System.Drawing.Point(336, 193);
+            this.poprawny.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.poprawny.Name = "poprawny";
             this.poprawny.Size = new System.Drawing.Size(233, 17);
             this.poprawny.TabIndex = 5;
@@ -126,7 +130,8 @@
             // 
             this.niepoprawny.AutoSize = true;
             this.niepoprawny.ForeColor = System.Drawing.Color.Red;
-            this.niepoprawny.Location = new System.Drawing.Point(252, 128);
+            this.niepoprawny.Location = new System.Drawing.Point(336, 158);
+            this.niepoprawny.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.niepoprawny.Name = "niepoprawny";
             this.niepoprawny.Size = new System.Drawing.Size(165, 17);
             this.niepoprawny.TabIndex = 6;
@@ -134,10 +139,10 @@
             // 
             // GeneratorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(502, 235);
+            this.ClientSize = new System.Drawing.Size(669, 289);
             this.Controls.Add(this.niepoprawny);
             this.Controls.Add(this.poprawny);
             this.Controls.Add(this.save);
@@ -145,6 +150,8 @@
             this.Controls.Add(this.generator);
             this.Controls.Add(this.usuń);
             this.Controls.Add(this.terminy);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GeneratorForm";
             this.Text = "Generuj terminy";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GeneratorForm_FormClosed);

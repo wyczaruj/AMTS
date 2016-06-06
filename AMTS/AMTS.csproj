@@ -81,12 +81,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMTSDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ChooseServer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChooseServer.Designer.cs">
-      <DependentUpon>ChooseServer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Confirmation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,9 +211,6 @@
     </Compile>
     <EmbeddedResource Include="AbstractForm.resx">
       <DependentUpon>AbstractForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChooseServer.resx">
-      <DependentUpon>ChooseServer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Confirmation.resx">
       <DependentUpon>Confirmation.cs</DependentUpon>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WynikiForm));
             this.aMTSDataSet = new AMTS.AMTSDataSet();
             this.wynikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wynikTableAdapter = new AMTS.AMTSDataSetTableAdapters.wynikTableAdapter();
@@ -74,10 +75,11 @@
             // 
             // runda
             // 
+            this.runda.Font = new System.Drawing.Font("Calibri", 9F);
             this.runda.FormattingEnabled = true;
             this.runda.Location = new System.Drawing.Point(627, 139);
             this.runda.Name = "runda";
-            this.runda.Size = new System.Drawing.Size(75, 24);
+            this.runda.Size = new System.Drawing.Size(75, 26);
             this.runda.TabIndex = 1;
             this.runda.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
@@ -92,6 +94,7 @@
             // 
             // edit
             // 
+            this.edit.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.edit.Location = new System.Drawing.Point(522, 169);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(159, 33);
@@ -102,6 +105,7 @@
             // 
             // discard
             // 
+            this.discard.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.discard.Location = new System.Drawing.Point(494, 208);
             this.discard.Name = "discard";
             this.discard.Size = new System.Drawing.Size(86, 33);
@@ -112,6 +116,7 @@
             // 
             // save
             // 
+            this.save.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.save.Location = new System.Drawing.Point(619, 208);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(83, 33);
@@ -143,8 +148,9 @@
             this.Controls.Add(this.wybór);
             this.Controls.Add(this.runda);
             this.Controls.Add(this.wyniki);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WynikiForm";
-            this.Text = "WynikiForm";
+            this.Text = "Wyniki";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WynikiForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.aMTSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wynikBindingSource)).EndInit();

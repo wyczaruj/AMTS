@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsunOsobe));
             this.usuwanie = new System.Windows.Forms.Button();
             this.ktoraOsoba = new System.Windows.Forms.Label();
             this.spisOsob = new System.Windows.Forms.ComboBox();
@@ -35,8 +36,9 @@
             // 
             // usuwanie
             // 
+            this.usuwanie.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.usuwanie.Location = new System.Drawing.Point(279, 32);
-            this.usuwanie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usuwanie.Margin = new System.Windows.Forms.Padding(4);
             this.usuwanie.Name = "usuwanie";
             this.usuwanie.Size = new System.Drawing.Size(100, 28);
             this.usuwanie.TabIndex = 2;
@@ -47,10 +49,12 @@
             // ktoraOsoba
             // 
             this.ktoraOsoba.AutoSize = true;
+            this.ktoraOsoba.BackColor = System.Drawing.Color.Transparent;
+            this.ktoraOsoba.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.ktoraOsoba.Location = new System.Drawing.Point(4, 11);
             this.ktoraOsoba.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ktoraOsoba.Name = "ktoraOsoba";
-            this.ktoraOsoba.Size = new System.Drawing.Size(143, 17);
+            this.ktoraOsoba.Size = new System.Drawing.Size(145, 18);
             this.ktoraOsoba.TabIndex = 1;
             this.ktoraOsoba.Text = "Wybierz użytkownika:";
             // 
@@ -58,7 +62,7 @@
             // 
             this.spisOsob.FormattingEnabled = true;
             this.spisOsob.Location = new System.Drawing.Point(8, 32);
-            this.spisOsob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.spisOsob.Margin = new System.Windows.Forms.Padding(4);
             this.spisOsob.Name = "spisOsob";
             this.spisOsob.Size = new System.Drawing.Size(261, 24);
             this.spisOsob.TabIndex = 0;
@@ -68,11 +72,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(379, 334);
+            this.BackgroundImage = global::AMTS.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(396, 321);
             this.Controls.Add(this.usuwanie);
             this.Controls.Add(this.ktoraOsoba);
             this.Controls.Add(this.spisOsob);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsunOsobe";
             this.Text = "Usuń użytkownika";
             this.ResumeLayout(false);

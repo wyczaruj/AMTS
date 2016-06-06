@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raport));
             this.pdfViewer = new PdfiumViewer.PdfViewer();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1145, 648);
             this.Controls.Add(this.pdfViewer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Raport";
             this.Text = "Raport";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Raport_FormClosed);

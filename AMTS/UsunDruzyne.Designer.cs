@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsunDruzyne));
             this.usuwanie = new System.Windows.Forms.Button();
             this.ktoraDruzna = new System.Windows.Forms.Label();
             this.spisDruzyn = new System.Windows.Forms.ComboBox();
@@ -35,8 +36,9 @@
             // 
             // usuwanie
             // 
+            this.usuwanie.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.usuwanie.Location = new System.Drawing.Point(275, 26);
-            this.usuwanie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usuwanie.Margin = new System.Windows.Forms.Padding(4);
             this.usuwanie.Name = "usuwanie";
             this.usuwanie.Size = new System.Drawing.Size(100, 28);
             this.usuwanie.TabIndex = 5;
@@ -47,18 +49,20 @@
             // ktoraDruzna
             // 
             this.ktoraDruzna.AutoSize = true;
+            this.ktoraDruzna.BackColor = System.Drawing.Color.Transparent;
+            this.ktoraDruzna.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.ktoraDruzna.Location = new System.Drawing.Point(0, 5);
             this.ktoraDruzna.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ktoraDruzna.Name = "ktoraDruzna";
-            this.ktoraDruzna.Size = new System.Drawing.Size(114, 17);
+            this.ktoraDruzna.Size = new System.Drawing.Size(117, 18);
             this.ktoraDruzna.TabIndex = 4;
-            this.ktoraDruzna.Text = "Wybierz drużynę";
+            this.ktoraDruzna.Text = "Wybierz drużynę:";
             // 
             // spisDruzyn
             // 
             this.spisDruzyn.FormattingEnabled = true;
             this.spisDruzyn.Location = new System.Drawing.Point(4, 26);
-            this.spisDruzyn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.spisDruzyn.Margin = new System.Windows.Forms.Padding(4);
             this.spisDruzyn.Name = "spisDruzyn";
             this.spisDruzyn.Size = new System.Drawing.Size(261, 24);
             this.spisDruzyn.TabIndex = 3;
@@ -68,13 +72,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::AMTS.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(379, 322);
             this.Controls.Add(this.usuwanie);
             this.Controls.Add(this.ktoraDruzna);
             this.Controls.Add(this.spisDruzyn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsunDruzyne";
-            this.Text = "UsunDruzyne";
+            this.Text = "Usuń drużynę";
             this.ResumeLayout(false);
             this.PerformLayout();
 

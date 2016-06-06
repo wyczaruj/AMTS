@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AMTS
@@ -16,7 +13,8 @@ namespace AMTS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChooseServer());
+            string serwer = "Server = tcp:alts.database.windows.net,1433; Data Source = alts.database.windows.net; Initial Catalog = ALTS; Persist Security Info = False; User ID = patrykvan; Pooling = False; MultipleActiveResultSets = True; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30; Password =ALTSio12";
+            Application.Run(new MainForm(serwer));
         }
     }
 }
