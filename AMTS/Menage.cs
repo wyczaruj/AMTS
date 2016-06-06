@@ -199,71 +199,72 @@ namespace AMTS
         private void comboBox1_DropDownClosed(object sender, EventArgs e)
         {
             string[] data;
-            if (!string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
-            {
-                data = mecz.SelectedItem.ToString().Split(':');
-                DataRow[] row;
-                string z1, z2, z3;
-                row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
+            if (mecz.SelectedItem != null)
+                if (!string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
+                {
+                    data = mecz.SelectedItem.ToString().Split(':');
+                    DataRow[] row;
+                    string z1, z2, z3;
+                    row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
 
-                if (row.Length <= 0)
-                {
-                    row = mecze2.Select("Przeciwnik like '" + data[0] + "'and Data like'" + data[1] + "'");
-                    z1 = row[0]["z1"].ToString();
-                    z2 = row[0]["z2"].ToString();
-                    z3 = row[0]["z3"].ToString();
-                }
-                else
-                {
-                    z1 = row[0]["p1"].ToString();
-                    z2 = row[0]["p2"].ToString();
-                    z3 = row[0]["p3"].ToString();
-                }
+                    if (row.Length <= 0)
+                    {
+                        row = mecze2.Select("Przeciwnik like '" + data[0] + "'and Data like'" + data[1] + "'");
+                        z1 = row[0]["z1"].ToString();
+                        z2 = row[0]["z2"].ToString();
+                        z3 = row[0]["z3"].ToString();
+                    }
+                    else
+                    {
+                        z1 = row[0]["p1"].ToString();
+                        z2 = row[0]["p2"].ToString();
+                        z3 = row[0]["p3"].ToString();
+                    }
 
 
-                if (check(z1, "\\d{11}"))
-                {
-                    row = zawodnicy.Select("PESEL like'" + z1 + "'");
-                    pierwszy.SelectedIndex = pierwszy.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                    if (check(z1, "\\d{11}"))
+                    {
+                        row = zawodnicy.Select("PESEL like'" + z1 + "'");
+                        pierwszy.SelectedIndex = pierwszy.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                    }
+                    else
+                    {
+                        pierwszy.ResetText();
+                        pierwszy.SelectedIndex = -1;
+                    }
+                    if (check(z2, "\\d{11}"))
+                    {
+                        row = zawodnicy.Select("PESEL like'" + z2 + "'");
+                        drugi.SelectedIndex = drugi.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                    }
+                    else
+                    {
+                        drugi.ResetText();
+                        drugi.SelectedIndex = -1;
+                    }
+                    if (check(z3, "\\d{11}"))
+                    {
+                        row = zawodnicy.Select("PESEL like'" + z3 + "'");
+                        trzeci.SelectedIndex = trzeci.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                    }
+                    else
+                    {
+                        trzeci.ResetText();
+                        trzeci.SelectedIndex = -1;
+                    }
                 }
-                else
-                {
-                    pierwszy.ResetText();
-                    pierwszy.SelectedIndex = -1;
-                }
-                if (check(z2, "\\d{11}"))
-                {
-                    row = zawodnicy.Select("PESEL like'" + z2 + "'");
-                    drugi.SelectedIndex = drugi.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
-                }
-                else
-                {
-                    drugi.ResetText();
-                    drugi.SelectedIndex = -1;
-                }
-                if (check(z3, "\\d{11}"))
-                {
-                    row = zawodnicy.Select("PESEL like'" + z3 + "'");
-                    trzeci.SelectedIndex = trzeci.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
-                }
-                else
-                {
-                    trzeci.ResetText();
-                    trzeci.SelectedIndex = -1;
-                }
-            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             string[] data;
-            if (mecz.SelectedItem!=null &&!string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
+            if (mecz.SelectedItem != null && !string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
             {
                 data = mecz.SelectedItem.ToString().Split(':');
                 DataRow[] row;
                 string[] z1, z2, z3;
                 string a1, a2, a3;
-                if(pierwszy.SelectedItem!=null&&!string.IsNullOrEmpty(pierwszy.SelectedItem.ToString()))
+                if (pierwszy.SelectedItem != null && !string.IsNullOrEmpty(pierwszy.SelectedItem.ToString()))
                 {
                     z1 = pierwszy.SelectedItem.ToString().Split(' ');
                     row = zawodnicy.Select("Imie like '" + z1[0] + "'and Nazwisko like '" + z1[1] + "'");
@@ -284,13 +285,13 @@ namespace AMTS
                     a3 = row[0]["PESEL"].ToString();
                 }
                 else a3 = "";
-               
+
                 row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
                 if (row.Length <= 0)
                 {
                     if (!a1.Equals(""))
                     {
-                        SqlCommand com = new SqlCommand("  update TERMINARZ set z1 = '"+a1+"' where Przeciwnik like '"+data[0]+"' and Data like '"+data[1]+"'", connection);
+                        SqlCommand com = new SqlCommand("  update TERMINARZ set z1 = '" + a1 + "' where Przeciwnik like '" + data[0] + "' and Data like '" + data[1] + "'", connection);
                         com.ExecuteNonQuery();
 
                     }
@@ -334,59 +335,60 @@ namespace AMTS
         private void button5_Click(object sender, EventArgs e)
         {
             string[] data;
-            if (!string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
-            {
-                data = mecz.SelectedItem.ToString().Split(':');
-                DataRow[] row;
-                string z1, z2, z3;
-                row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
+            if (mecz.SelectedItem != null)
+                if (!string.IsNullOrEmpty(mecz.SelectedItem.ToString()))
+                {
+                    data = mecz.SelectedItem.ToString().Split(':');
+                    DataRow[] row;
+                    string z1, z2, z3;
+                    row = mecze.Select("Druzyna like '" + data[0] + "'and Data like'" + data[1] + "'");
 
-                if (row.Length <= 0)
-                {
-                    row = mecze2.Select("Przeciwnik like '" + data[0] + "'and Data like'" + data[1] + "'");
-                    z1 = row[0]["z1"].ToString();
-                    z2 = row[0]["z2"].ToString();
-                    z3 = row[0]["z3"].ToString();
-                }
-                else
-                {
-                    z1 = row[0]["p1"].ToString();
-                    z2 = row[0]["p2"].ToString();
-                    z3 = row[0]["p3"].ToString();
-                }
+                    if (row.Length <= 0)
+                    {
+                        row = mecze2.Select("Przeciwnik like '" + data[0] + "'and Data like'" + data[1] + "'");
+                        z1 = row[0]["z1"].ToString();
+                        z2 = row[0]["z2"].ToString();
+                        z3 = row[0]["z3"].ToString();
+                    }
+                    else
+                    {
+                        z1 = row[0]["p1"].ToString();
+                        z2 = row[0]["p2"].ToString();
+                        z3 = row[0]["p3"].ToString();
+                    }
 
 
-                if (check(z1, "\\d{11}"))
-                {
-                    row = zawodnicy.Select("PESEL like'" + z1 + "'");
-                    pierwszy.SelectedIndex = pierwszy.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                    if (check(z1, "\\d{11}"))
+                    {
+                        row = zawodnicy.Select("PESEL like'" + z1 + "'");
+                        pierwszy.SelectedIndex = pierwszy.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                    }
+                    else
+                    {
+                        pierwszy.ResetText();
+                        pierwszy.SelectedIndex = -1;
+                    }
+                    if (check(z2, "\\d{11}"))
+                    {
+                        row = zawodnicy.Select("PESEL like'" + z2 + "'");
+                        drugi.SelectedIndex = drugi.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                    }
+                    else
+                    {
+                        drugi.ResetText();
+                        drugi.SelectedIndex = -1;
+                    }
+                    if (check(z3, "\\d{11}"))
+                    {
+                        row = zawodnicy.Select("PESEL like'" + z3 + "'");
+                        trzeci.SelectedIndex = trzeci.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
+                    }
+                    else
+                    {
+                        trzeci.ResetText();
+                        trzeci.SelectedIndex = -1;
+                    }
                 }
-                else
-                {
-                    pierwszy.ResetText();
-                    pierwszy.SelectedIndex = -1;
-                }
-                if (check(z2, "\\d{11}"))
-                {
-                    row = zawodnicy.Select("PESEL like'" + z2 + "'");
-                    drugi.SelectedIndex = drugi.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
-                }
-                else
-                {
-                    drugi.ResetText();
-                    drugi.SelectedIndex = -1;
-                }
-                if (check(z3, "\\d{11}"))
-                {
-                    row = zawodnicy.Select("PESEL like'" + z3 + "'");
-                    trzeci.SelectedIndex = trzeci.FindStringExact(row[0]["Imie"].ToString() + " " + row[0]["Nazwisko"].ToString());
-                }
-                else
-                {
-                    trzeci.ResetText();
-                    trzeci.SelectedIndex = -1;
-                }
-            }
         }
     }
 }
