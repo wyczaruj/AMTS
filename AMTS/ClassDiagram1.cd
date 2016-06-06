@@ -1,217 +1,300 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="AMTS.AbstractForm">
-    <Position X="18.5" Y="6" Width="1.5" />
+    <Position X="27.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAACACAACAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>AbstractForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AMTS.AMTSDataSet">
-    <Position X="37.75" Y="3.75" Width="1.5" />
-    <NestedTypes>
-      <Delegate Name="AMTS.AMTSDataSet.wynikRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Class Name="AMTS.AMTSDataSet.wynikDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="AMTS.AMTSDataSet.wynikRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="AMTS.AMTSDataSet.wynikRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-    </NestedTypes>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAwAAAAJABAAAQAAAAAgCQBgAQAAEAAEABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AMTS.ChooseServer">
-    <Position X="43" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAgAAAACMAAhAAgCSAAAACAAAAAAACAAAAAAAAAAI=</HashCode>
-      <FileName>ChooseServer.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="AMTS.Confirmation">
-    <Position X="20.75" Y="9.25" Width="1.5" />
+    <Position X="27.75" Y="6.75" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedToPoint="true">
+      <Path>
+        <Point X="28.5" Y="6.204" />
+        <Point X="28.5" Y="6.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>ABAAAAAAACAAAAAAAgGBAAACAAAAAiCEEAAAAQEAAIE=</HashCode>
       <FileName>Confirmation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.DodajDruzyne">
-    <Position X="27.5" Y="9.25" Width="1.5" />
+    <Position X="29.5" Y="12.25" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedToPoint="true">
+      <Path>
+        <Point X="28.5" Y="6.204" />
+        <Point X="28.5" Y="6.397" />
+        <Point X="29.384" Y="6.397" />
+        <Point X="29.384" Y="12.938" />
+        <Point X="29.5" Y="12.938" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>QAAAQIAIIXAAAkCgQgCBAAADKkECAQAAVAJHAmSCIDI=</HashCode>
       <FileName>DodajDruzyne.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.GeneratorForm">
-    <Position X="44.75" Y="3.75" Width="1.5" />
+    <Position X="29.5" Y="29.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAACCAABAAiACEAAADAAwAABAQAAFAAIEBIAA=</HashCode>
+      <HashCode>AAAAABAAACCAAAAAiECEAAADAAQAABAQAAFAAIBBIEA=</HashCode>
       <FileName>GeneratorForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.LogInForm">
-    <Position X="0.5" Y="9.25" Width="1.5" />
+    <Position X="29.5" Y="24.5" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedToPoint="true">
+      <Path>
+        <Point X="28.5" Y="6.204" />
+        <Point X="28.5" Y="6.397" />
+        <Point X="29.384" Y="6.397" />
+        <Point X="29.384" Y="25.188" />
+        <Point X="29.5" Y="25.188" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>ACAAAgAAACQAABEAAiCBAAACAAAAAAACBAAQAAACAAA=</HashCode>
+      <HashCode>ACAAAgAAACQAAAEgAiCBAAACAAAAAAACBAAQAAACAAE=</HashCode>
       <FileName>LogInForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.MainForm">
-    <Position X="7.25" Y="9.25" Width="1.5" />
+    <Position X="27.75" Y="15" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedToPoint="true">
+      <Path>
+        <Point X="28.5" Y="6.204" />
+        <Point X="28.5" Y="6.397" />
+        <Point X="27.627" Y="6.397" />
+        <Point X="27.627" Y="15.688" />
+        <Point X="27.75" Y="15.688" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>GkCoEEIkAGEDCC0EgBedGhaTYAM0SgRYAAYgFgAqZYQ=</HashCode>
       <FileName>MainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.Menage">
-    <Position X="14" Y="9.25" Width="1.5" />
+    <Position X="26" Y="18" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="25.8" Y="3.375" />
+        <Point X="25.8" Y="18.688" />
+        <Point X="26" Y="18.688" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AACAAAQCASAIABBQgwCAAgACAMw4AAAAAHgMAAABJAI=</HashCode>
+      <HashCode>AAEAUAYCASAIAAAQAgCBEwBDgCAAAIAAgHmNASAAIAM=</HashCode>
       <FileName>Menage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.Messages">
-    <Position X="23" Y="9.25" Width="1.5" />
+    <Position X="29.5" Y="6" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedToPoint="true">
+      <Path>
+        <Point X="28.5" Y="6.204" />
+        <Point X="28.5" Y="6.397" />
+        <Point X="29.384" Y="6.397" />
+        <Point X="29.384" Y="6.688" />
+        <Point X="29.5" Y="6.688" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAIAAAACCAIABAAAgCBEhACAAFAAAAEAgIEEAAMAQA=</HashCode>
+      <HashCode>AAQIAAAACCAIAAAAAgCBEhACAgFAAAAEAgIEEAAMAQA=</HashCode>
       <FileName>Messages.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.MyTeamRegistration">
-    <Position X="29.75" Y="9.25" Width="1.5" />
+    <Position X="31.25" Y="10.25" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="32.904" Y="3.375" />
+        <Point X="32.904" Y="11" />
+        <Point X="32.75" Y="11" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>ABAAAAAAACAAAFAABgGBAAACEAAAAiAEBAAAAQAAAAA=</HashCode>
+      <HashCode>ABAAAAAAACAAAkAABgGBAAACEAAAAiAEBAAAAQAAIAA=</HashCode>
       <FileName>MyTeamRegistration.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AMTS.Program">
-    <Position X="43.25" Y="8" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="AMTS.Raport">
-    <Position X="2.75" Y="9.25" Width="1.5" />
+    <Position X="31.25" Y="28.75" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="32.904" Y="3.375" />
+        <Point X="32.904" Y="29.438" />
+        <Point X="32.75" Y="29.438" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAQCCEAAAAAhDBAAAKAAABAACAAAAAAAQAAAA=</HashCode>
       <FileName>Raport.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.RegisterForm">
-    <Position X="9.5" Y="9.25" Width="1.5" />
+    <Position X="26" Y="27.75" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="25.8" Y="3.375" />
+        <Point X="25.8" Y="28.438" />
+        <Point X="26" Y="28.438" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAISwBOQIABMACgCBAABDRAEAAAAAAgAQQBAIACA=</HashCode>
+      <HashCode>AAEQAISwBOQIAAOgCgCBAABDRAEAAAAAAgAQQBCIACE=</HashCode>
       <FileName>RegisterForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.Regulamin">
-    <Position X="16.25" Y="9.25" Width="1.5" />
+    <Position X="26" Y="7.75" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="25.8" Y="3.375" />
+        <Point X="25.8" Y="8.438" />
+        <Point X="26" Y="8.438" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AQAACAACAGAAAAAAABCCAAAKAAQAAAAAEAAAACAAQQA=</HashCode>
       <FileName>Regulamin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.SendMessage">
-    <Position X="41.5" Y="7.75" Width="1.5" />
+    <Position X="27.75" Y="32" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAACYSCBgAAgSBACACEAEQACAEARACAEAAIQA=</HashCode>
+      <HashCode>AAAAACAAACYSCAgAAgSBACACEgEQACAEARACAEAAIQA=</HashCode>
       <FileName>SendMessage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.TeamRegistrations">
-    <Position X="32" Y="9.25" Width="1.5" />
+    <Position X="31.25" Y="22.75" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="32.904" Y="3.375" />
+        <Point X="32.904" Y="23.5" />
+        <Point X="32.75" Y="23.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>EJAAAACAACACAAgAAgGBICACAAAAACAEEAAAAQAgABA=</HashCode>
       <FileName>TeamRegistrations.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.Terminarz">
-    <Position X="36.5" Y="9.25" Width="1.5" />
+    <Position X="31.25" Y="15.75" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="32.904" Y="3.375" />
+        <Point X="32.904" Y="16.438" />
+        <Point X="32.75" Y="16.438" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAACFAgCAAABAgAgCACgACQAQoAAAAAEMIABgAAAI=</HashCode>
+      <HashCode>AAAAACFAgCAAAAAwggCACgACQAQgAQAABEMYABgAAAI=</HashCode>
       <FileName>Terminarz.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.TerminNowy">
-    <Position X="5" Y="9.25" Width="1.5" />
+    <Position X="26" Y="12.5" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="25.8" Y="3.375" />
+        <Point X="25.8" Y="13.188" />
+        <Point X="26" Y="13.188" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>gAAAAAAAgCCAgAACgACEAAAKAEQAAQAQRAAQAAABIAA=</HashCode>
+      <HashCode>gQAEAAAAACCAgAAAgACFAAAKAAAAAQAQRAAQQAABIAA=</HashCode>
       <FileName>TerminNowy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.User">
-    <Position X="41.25" Y="3.75" Width="1.5" />
+    <Position X="31.25" Y="33.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEgAACAABAAAIgiAAEAAAAAAAAAAAABgAAAIIAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.UsunDruzyne">
-    <Position X="18.5" Y="9.25" Width="1.5" />
+    <Position X="26" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="26.688" Y="3.375" />
+        <Point X="26.688" Y="3.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAIADACAAAEAAAhiAAAACAAQAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>UsunDruzyne.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.UsunOsobe">
-    <Position X="25.25" Y="9.25" Width="1.5" />
+    <Position X="29.5" Y="3.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="30.125" Y="3.375" />
+        <Point X="30.125" Y="3.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAIADACAAAEAAAgCAAAACAEQAAAAAAACAAAAAAAI=</HashCode>
       <FileName>UsunOsobe.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AMTS.WynikiForm">
-    <Position X="34.25" Y="9.25" Width="1.5" />
+    <Position X="31.25" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.562" Y="3.75" />
+        <Point X="28.562" Y="3.375" />
+        <Point X="32.062" Y="3.375" />
+        <Point X="32.062" Y="3.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAgAACiAAJAQggCFAgACAAgAAACEAAEQAggBABI=</HashCode>
+      <HashCode>gAAAAAgAACiAAIAQggCFAgACAAAAAQCEAAEUAggBABI=</HashCode>
       <FileName>WynikiForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AMTS.AMTSDataSetTableAdapters.wynikTableAdapter">
-    <Position X="43.25" Y="11.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EACAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AMTS.AMTSDataSetTableAdapters.TableAdapterManager">
-    <Position X="45" Y="9.5" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="AMTS.AMTSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
-        <TypeIdentifier />
-      </Enum>
-      <Class Name="AMTS.AMTSDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
-        <TypeIdentifier />
-        <Lollipop Position="0.2" />
-      </Class>
-    </NestedTypes>
-    <TypeIdentifier>
-      <HashCode>AQAAACAAAABABAEBAAAAMAAgAAACgAAAAAQAAAAABAQ=</HashCode>
-    </TypeIdentifier>
-  </Class>
   <Class Name="AMTS.Data.Klasyfikacja">
-    <Position X="11.75" Y="9.25" Width="1.5" />
+    <Position X="27.75" Y="11.75" Width="1.5" />
+    <InheritanceLine Type="AMTS.AbstractForm" FixedToPoint="true">
+      <Path>
+        <Point X="28.5" Y="6.204" />
+        <Point X="28.5" Y="6.397" />
+        <Point X="27.627" Y="6.397" />
+        <Point X="27.627" Y="12.438" />
+        <Point X="27.75" Y="12.438" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAgCAAAACAAQBAAAAAAEAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAgCBAAACAAABAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Klasyfikacja.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AMTS.Properties.Resources">
-    <Position X="39.5" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IgCCQAIkQEQAIIADgAEBGgACOVMBAQBABAAsAAEAaIA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AMTS.Properties.Settings">
-    <Position X="43.25" Y="9.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
